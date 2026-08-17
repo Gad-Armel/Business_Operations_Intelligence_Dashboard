@@ -1,0 +1,280 @@
+﻿Entity_Type,Entity_ID,Entity,Continent,Country,Region,City,Latitude,Longitude,Representative,Location_Source
+Customer,AGC-00001,Northstar Energy Systems,Europe,Norway,Oslo,Oslo,59.913900,10.752200,Noah Keller,Synthetic enterprise geography master
+Customer,AGC-00002,Northstar Marine Services,Asia,Oman,Muscat,Muscat,23.588000,58.382900,Adrian Walker,Synthetic enterprise geography master
+Customer,AGC-00003,Northstar Industrial Group,Asia,Malaysia,Federal Territory,Kuala Lumpur,3.139000,101.686900,Zara Grant,Synthetic enterprise geography master
+Customer,AGC-00004,Northstar Process Solutions,Asia,Vietnam,Hanoi,Hanoi,21.027800,105.834200,Theo Price,Synthetic enterprise geography master
+Customer,AGC-00005,Northstar Offshore Engineering,South America,Argentina,Neuquén,Neuquén,-38.951600,-68.059100,Lucas Hayes,Synthetic enterprise geography master
+Customer,AGC-00006,Northstar Flow Technologies,Europe,Italy,Lombardy,Milan,45.464200,9.190000,Avery Morgan,Synthetic enterprise geography master
+Customer,AGC-00007,Northstar Infrastructure,Africa,Ghana,Western,Takoradi,4.884500,-1.755400,Grace Perry,Synthetic enterprise geography master
+Customer,AGC-00008,Northstar Petro Systems,Oceania,Australia,New South Wales,Sydney,-33.868800,151.209300,Julian Howard,Synthetic enterprise geography master
+Customer,AGC-00009,Northstar Mining Services,North America,Canada,Ontario,Toronto,43.653200,-79.383200,Lina Sato,Synthetic enterprise geography master
+Customer,AGC-00010,Northstar Waterworks,Europe,France,Île-de-France,Paris,48.856600,2.352200,Camille Martin,Synthetic enterprise geography master
+Customer,AGC-00011,Northstar Automation,Asia,United Arab Emirates,Dubai,Dubai,25.204800,55.270800,Mila Diaz,Synthetic enterprise geography master
+Customer,AGC-00012,Northstar Utilities,Africa,Kenya,Nairobi County,Nairobi,-1.292100,36.821900,Leo Foster,Synthetic enterprise geography master
+Customer,AGC-00013,Northstar Field Services,Asia,South Korea,Seoul,Seoul,37.566500,126.978000,Eva Lewis,Synthetic enterprise geography master
+Customer,AGC-00014,Northstar Mechanical,South America,Brazil,Rio de Janeiro,Rio de Janeiro,-22.906800,-43.172900,Priya Nguyen,Synthetic enterprise geography master
+Customer,AGC-00015,Northstar Power Partners,Europe,Netherlands,South Holland,Rotterdam,51.924400,4.477700,Noah Keller,Synthetic enterprise geography master
+Customer,AGC-00016,Northstar Process Controls,Asia,Qatar,Doha,Doha,25.285400,51.531000,Adrian Walker,Synthetic enterprise geography master
+Customer,AGC-00017,Northstar Engineering,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,Zara Grant,Synthetic enterprise geography master
+Customer,AGC-00018,Northstar Drilling Solutions,Asia,Thailand,Bangkok,Bangkok,13.756300,100.501800,Theo Price,Synthetic enterprise geography master
+Customer,AGC-00019,Northstar Compression,South America,Chile,Santiago Metropolitan,Santiago,-33.448900,-70.669300,Lucas Hayes,Synthetic enterprise geography master
+Customer,AGC-00020,Northstar Industrial Maintenance,Europe,Spain,Community of Madrid,Madrid,40.416800,-3.703800,Avery Morgan,Synthetic enterprise geography master
+Customer,AGC-00021,Northstar Resources,Africa,South Africa,Gauteng,Johannesburg,-26.204100,28.047300,Grace Perry,Synthetic enterprise geography master
+Customer,AGC-00022,Northstar Pipeline Services,Asia,Indonesia,Jakarta,Jakarta,-6.208800,106.845600,Julian Howard,Synthetic enterprise geography master
+Customer,AGC-00023,Northstar Rotating Equipment,North America,United States,California,Los Angeles,34.052200,-118.243700,Lina Sato,Synthetic enterprise geography master
+Customer,AGC-00024,Northstar Technical Supply,Europe,United Kingdom,England,London,51.507400,-0.127800,Camille Martin,Synthetic enterprise geography master
+Customer,AGC-00025,Northstar Refinery Services,Europe,Poland,Masovian,Warsaw,52.229700,21.012200,Mila Diaz,Synthetic enterprise geography master
+Customer,AGC-00026,Northstar Energy Projects,Africa,Nigeria,Rivers,Port Harcourt,4.815600,7.049800,Leo Foster,Synthetic enterprise geography master
+Customer,AGC-00027,Northstar Marine Engineering,Asia,Japan,Tokyo,Tokyo,35.676200,139.650300,Eva Lewis,Synthetic enterprise geography master
+Customer,AGC-00028,Northstar Production Services,North America,Mexico,Nuevo León,Monterrey,25.686600,-100.316100,Priya Nguyen,Synthetic enterprise geography master
+Customer,AGC-00029,Northstar Controls,Europe,Germany,Hesse,Frankfurt,50.110900,8.682100,Noah Keller,Synthetic enterprise geography master
+Customer,AGC-00030,Northstar Offshore Systems,Asia,Saudi Arabia,Eastern Province,Dammam,26.420700,50.088800,Adrian Walker,Synthetic enterprise geography master
+Customer,AGC-00031,Northstar Mechanical Group,Africa,Egypt,Alexandria,Alexandria,31.200100,29.918700,Zara Grant,Synthetic enterprise geography master
+Customer,AGC-00032,Northstar Industrial Services,Asia,India,Tamil Nadu,Chennai,13.082700,80.270700,Theo Price,Synthetic enterprise geography master
+Customer,AGC-00033,Northstar Flow Systems,South America,Colombia,Bolívar,Cartagena,10.391000,-75.479400,Lucas Hayes,Synthetic enterprise geography master
+Customer,AGC-00034,Northstar Instrumentation,Europe,Norway,Rogaland,Stavanger,58.970000,5.733100,Avery Morgan,Synthetic enterprise geography master
+Customer,AGC-00035,Northstar Technical Services,Asia,Oman,Muscat,Muscat,23.588000,58.382900,Grace Perry,Synthetic enterprise geography master
+Customer,AGC-00036,Northstar Industrial Solutions,Asia,Malaysia,Federal Territory,Kuala Lumpur,3.139000,101.686900,Julian Howard,Synthetic enterprise geography master
+Customer,AGC-00037,Northstar Marine Supply,Asia,Vietnam,Ho Chi Minh City,Ho Chi Minh City,10.823100,106.629700,Lina Sato,Synthetic enterprise geography master
+Customer,AGC-00038,Helios Energy Systems,South America,Argentina,Neuquén,Neuquén,-38.951600,-68.059100,Camille Martin,Synthetic enterprise geography master
+Customer,AGC-00039,Helios Marine Services,Europe,Italy,Liguria,Genoa,44.405600,8.946300,Mila Diaz,Synthetic enterprise geography master
+Customer,AGC-00040,Helios Industrial Group,Africa,Ghana,Greater Accra,Accra,5.603700,-0.187000,Leo Foster,Synthetic enterprise geography master
+Customer,AGC-00041,Helios Process Solutions,Oceania,Australia,Western Australia,Perth,-31.950500,115.860500,Eva Lewis,Synthetic enterprise geography master
+Customer,AGC-00042,Helios Offshore Engineering,North America,Canada,Alberta,Calgary,51.044700,-114.071900,Priya Nguyen,Synthetic enterprise geography master
+Customer,AGC-00043,Helios Flow Technologies,Europe,France,Île-de-France,Paris,48.856600,2.352200,Noah Keller,Synthetic enterprise geography master
+Customer,AGC-00044,Helios Infrastructure,Asia,United Arab Emirates,Abu Dhabi,Abu Dhabi,24.453900,54.377300,Adrian Walker,Synthetic enterprise geography master
+Customer,AGC-00045,Helios Petro Systems,Africa,Kenya,Mombasa County,Mombasa,-4.043500,39.668200,Zara Grant,Synthetic enterprise geography master
+Customer,AGC-00046,Helios Mining Services,Asia,South Korea,Busan,Busan,35.179600,129.075600,Theo Price,Synthetic enterprise geography master
+Customer,AGC-00047,Helios Waterworks,South America,Brazil,São Paulo,São Paulo,-23.550500,-46.633300,Lucas Hayes,Synthetic enterprise geography master
+Customer,AGC-00048,Helios Automation,Europe,Netherlands,North Holland,Amsterdam,52.367600,4.904100,Avery Morgan,Synthetic enterprise geography master
+Customer,AGC-00049,Helios Utilities,Asia,Qatar,Doha,Doha,25.285400,51.531000,Grace Perry,Synthetic enterprise geography master
+Customer,AGC-00050,Helios Field Services,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,Julian Howard,Synthetic enterprise geography master
+Customer,AGC-00051,Helios Mechanical,Asia,Thailand,Bangkok,Bangkok,13.756300,100.501800,Lina Sato,Synthetic enterprise geography master
+Customer,AGC-00052,Helios Power Partners,South America,Chile,Santiago Metropolitan,Santiago,-33.448900,-70.669300,Camille Martin,Synthetic enterprise geography master
+Customer,AGC-00053,Helios Process Controls,Europe,Spain,Basque Country,Bilbao,43.263000,-2.935000,Mila Diaz,Synthetic enterprise geography master
+Customer,AGC-00054,Helios Engineering,Africa,South Africa,Gauteng,Johannesburg,-26.204100,28.047300,Leo Foster,Synthetic enterprise geography master
+Customer,AGC-00055,Helios Drilling Solutions,Asia,Indonesia,Jakarta,Jakarta,-6.208800,106.845600,Eva Lewis,Synthetic enterprise geography master
+Customer,AGC-00056,Helios Compression,North America,United States,Texas,Houston,29.760400,-95.369800,Priya Nguyen,Synthetic enterprise geography master
+Customer,AGC-00057,Helios Industrial Maintenance,Europe,United Kingdom,Scotland,Aberdeen,57.149700,-2.094300,Noah Keller,Synthetic enterprise geography master
+Customer,AGC-00058,Helios Resources,Europe,Poland,Pomeranian,Gdańsk,54.352000,18.646600,Adrian Walker,Synthetic enterprise geography master
+Customer,AGC-00059,Helios Pipeline Services,Africa,Nigeria,Lagos,Lagos,6.524400,3.379200,Zara Grant,Synthetic enterprise geography master
+Customer,AGC-00060,Helios Rotating Equipment,Asia,Japan,Tokyo,Tokyo,35.676200,139.650300,Theo Price,Synthetic enterprise geography master
+Customer,AGC-00061,Helios Technical Supply,North America,Mexico,Nuevo León,Monterrey,25.686600,-100.316100,Lucas Hayes,Synthetic enterprise geography master
+Customer,AGC-00062,Helios Refinery Services,Europe,Germany,Hesse,Frankfurt,50.110900,8.682100,Avery Morgan,Synthetic enterprise geography master
+Customer,AGC-00063,Helios Energy Projects,Asia,Saudi Arabia,Riyadh,Riyadh,24.713600,46.675300,Grace Perry,Synthetic enterprise geography master
+Customer,AGC-00064,Helios Marine Engineering,Africa,Egypt,Alexandria,Alexandria,31.200100,29.918700,Julian Howard,Synthetic enterprise geography master
+Customer,AGC-00065,Helios Production Services,Asia,India,Maharashtra,Mumbai,19.076000,72.877700,Lina Sato,Synthetic enterprise geography master
+Customer,AGC-00066,Helios Controls,South America,Colombia,Bogotá D.C.,Bogotá,4.711000,-74.072100,Camille Martin,Synthetic enterprise geography master
+Customer,AGC-00067,Helios Offshore Systems,Europe,Norway,Oslo,Oslo,59.913900,10.752200,Mila Diaz,Synthetic enterprise geography master
+Customer,AGC-00068,Helios Mechanical Group,Asia,Oman,Muscat,Muscat,23.588000,58.382900,Leo Foster,Synthetic enterprise geography master
+Customer,AGC-00069,Helios Industrial Services,Asia,Malaysia,Johor,Johor Bahru,1.492700,103.741400,Eva Lewis,Synthetic enterprise geography master
+Customer,AGC-00070,Helios Flow Systems,Asia,Vietnam,Hanoi,Hanoi,21.027800,105.834200,Priya Nguyen,Synthetic enterprise geography master
+Customer,AGC-00071,Helios Instrumentation,South America,Argentina,Buenos Aires,Buenos Aires,-34.603700,-58.381600,Noah Keller,Synthetic enterprise geography master
+Customer,AGC-00072,Helios Technical Services,Europe,Italy,Lombardy,Milan,45.464200,9.190000,Adrian Walker,Synthetic enterprise geography master
+Customer,AGC-00073,Helios Industrial Solutions,Africa,Ghana,Greater Accra,Accra,5.603700,-0.187000,Zara Grant,Synthetic enterprise geography master
+Customer,AGC-00074,Helios Marine Supply,Oceania,Australia,New South Wales,Sydney,-33.868800,151.209300,Theo Price,Synthetic enterprise geography master
+Customer,AGC-00075,Cobalt Energy Systems,North America,Canada,British Columbia,Vancouver,49.282700,-123.120700,Lucas Hayes,Synthetic enterprise geography master
+Customer,AGC-00076,Cobalt Marine Services,Europe,France,Auvergne-Rhône-Alpes,Lyon,45.764000,4.835700,Avery Morgan,Synthetic enterprise geography master
+Customer,AGC-00077,Cobalt Industrial Group,Asia,United Arab Emirates,Abu Dhabi,Abu Dhabi,24.453900,54.377300,Grace Perry,Synthetic enterprise geography master
+Customer,AGC-00078,Cobalt Process Solutions,Africa,Kenya,Nairobi County,Nairobi,-1.292100,36.821900,Julian Howard,Synthetic enterprise geography master
+Customer,AGC-00079,Cobalt Offshore Engineering,Asia,South Korea,Seoul,Seoul,37.566500,126.978000,Lina Sato,Synthetic enterprise geography master
+Customer,AGC-00080,Cobalt Flow Technologies,South America,Brazil,Rio de Janeiro,Rio de Janeiro,-22.906800,-43.172900,Camille Martin,Synthetic enterprise geography master
+Customer,AGC-00081,Cobalt Infrastructure,Europe,Netherlands,South Holland,Rotterdam,51.924400,4.477700,Mila Diaz,Synthetic enterprise geography master
+Customer,AGC-00082,Cobalt Petro Systems,Asia,Qatar,Doha,Doha,25.285400,51.531000,Leo Foster,Synthetic enterprise geography master
+Customer,AGC-00083,Cobalt Mining Services,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,Eva Lewis,Synthetic enterprise geography master
+Customer,AGC-00084,Cobalt Waterworks,Asia,Thailand,Rayong,Rayong,12.681400,101.281600,Priya Nguyen,Synthetic enterprise geography master
+Customer,AGC-00085,Cobalt Automation,South America,Chile,Antofagasta,Antofagasta,-23.650900,-70.397500,Noah Keller,Synthetic enterprise geography master
+Customer,AGC-00086,Cobalt Utilities,Europe,Spain,Community of Madrid,Madrid,40.416800,-3.703800,Adrian Walker,Synthetic enterprise geography master
+Customer,AGC-00087,Cobalt Field Services,Africa,South Africa,Gauteng,Johannesburg,-26.204100,28.047300,Zara Grant,Synthetic enterprise geography master
+Customer,AGC-00088,Cobalt Mechanical,Asia,Indonesia,East Java,Surabaya,-7.257500,112.752100,Theo Price,Synthetic enterprise geography master
+Customer,AGC-00089,Cobalt Power Partners,North America,United States,California,Los Angeles,34.052200,-118.243700,Lucas Hayes,Synthetic enterprise geography master
+Customer,AGC-00090,Cobalt Process Controls,Europe,United Kingdom,England,London,51.507400,-0.127800,Avery Morgan,Synthetic enterprise geography master
+Customer,AGC-00091,Cobalt Engineering,Europe,Poland,Masovian,Warsaw,52.229700,21.012200,Grace Perry,Synthetic enterprise geography master
+Customer,AGC-00092,Cobalt Drilling Solutions,Africa,Nigeria,Rivers,Port Harcourt,4.815600,7.049800,Julian Howard,Synthetic enterprise geography master
+Customer,AGC-00093,Cobalt Compression,Asia,Japan,Kanagawa,Yokohama,35.443700,139.638000,Lina Sato,Synthetic enterprise geography master
+Customer,AGC-00094,Cobalt Industrial Maintenance,North America,Mexico,Nuevo León,Monterrey,25.686600,-100.316100,Camille Martin,Synthetic enterprise geography master
+Customer,AGC-00095,Cobalt Resources,Europe,Germany,Hesse,Frankfurt,50.110900,8.682100,Mila Diaz,Synthetic enterprise geography master
+Customer,AGC-00096,Cobalt Pipeline Services,Asia,Saudi Arabia,Riyadh,Riyadh,24.713600,46.675300,Leo Foster,Synthetic enterprise geography master
+Customer,AGC-00097,Cobalt Rotating Equipment,Africa,Egypt,Alexandria,Alexandria,31.200100,29.918700,Eva Lewis,Synthetic enterprise geography master
+Customer,AGC-00098,Cobalt Technical Supply,Asia,India,Delhi,New Delhi,28.613900,77.209000,Priya Nguyen,Synthetic enterprise geography master
+Customer,AGC-00099,Cobalt Refinery Services,South America,Colombia,Bogotá D.C.,Bogotá,4.711000,-74.072100,Noah Keller,Synthetic enterprise geography master
+Customer,AGC-00100,Cobalt Energy Projects,Europe,Norway,Rogaland,Stavanger,58.970000,5.733100,Adrian Walker,Synthetic enterprise geography master
+Customer,AGC-00101,Cobalt Marine Engineering,Asia,Oman,Muscat,Muscat,23.588000,58.382900,Zara Grant,Synthetic enterprise geography master
+Customer,AGC-00102,Cobalt Production Services,Asia,Malaysia,Federal Territory,Kuala Lumpur,3.139000,101.686900,Theo Price,Synthetic enterprise geography master
+Customer,AGC-00103,Cobalt Controls,Asia,Vietnam,Hanoi,Hanoi,21.027800,105.834200,Lucas Hayes,Synthetic enterprise geography master
+Customer,AGC-00104,Cobalt Offshore Systems,South America,Argentina,Buenos Aires,Buenos Aires,-34.603700,-58.381600,Avery Morgan,Synthetic enterprise geography master
+Customer,AGC-00105,Cobalt Mechanical Group,Europe,Italy,Liguria,Genoa,44.405600,8.946300,Grace Perry,Synthetic enterprise geography master
+Customer,AGC-00106,Cobalt Industrial Services,Africa,Ghana,Greater Accra,Accra,5.603700,-0.187000,Julian Howard,Synthetic enterprise geography master
+Customer,AGC-00107,Cobalt Flow Systems,Oceania,Australia,Western Australia,Perth,-31.950500,115.860500,Lina Sato,Synthetic enterprise geography master
+Customer,AGC-00108,Cobalt Instrumentation,North America,Canada,British Columbia,Vancouver,49.282700,-123.120700,Camille Martin,Synthetic enterprise geography master
+Customer,AGC-00109,Cobalt Technical Services,Europe,France,Auvergne-Rhône-Alpes,Lyon,45.764000,4.835700,Mila Diaz,Synthetic enterprise geography master
+Customer,AGC-00110,Cobalt Industrial Solutions,Asia,United Arab Emirates,Dubai,Dubai,25.204800,55.270800,Leo Foster,Synthetic enterprise geography master
+Customer,AGC-00111,Cobalt Marine Supply,Africa,Kenya,Nairobi County,Nairobi,-1.292100,36.821900,Eva Lewis,Synthetic enterprise geography master
+Customer,AGC-00112,Meridian Energy Systems,Asia,South Korea,Seoul,Seoul,37.566500,126.978000,Priya Nguyen,Synthetic enterprise geography master
+Customer,AGC-00113,Meridian Marine Services,South America,Brazil,São Paulo,São Paulo,-23.550500,-46.633300,Noah Keller,Synthetic enterprise geography master
+Customer,AGC-00114,Meridian Industrial Group,Europe,Netherlands,North Holland,Amsterdam,52.367600,4.904100,Adrian Walker,Synthetic enterprise geography master
+Customer,AGC-00115,Meridian Process Solutions,Asia,Qatar,Doha,Doha,25.285400,51.531000,Zara Grant,Synthetic enterprise geography master
+Customer,AGC-00116,Meridian Offshore Engineering,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,Theo Price,Synthetic enterprise geography master
+Customer,AGC-00117,Meridian Flow Technologies,Asia,Thailand,Rayong,Rayong,12.681400,101.281600,Lucas Hayes,Synthetic enterprise geography master
+Customer,AGC-00118,Meridian Infrastructure,South America,Chile,Santiago Metropolitan,Santiago,-33.448900,-70.669300,Avery Morgan,Synthetic enterprise geography master
+Customer,AGC-00119,Meridian Petro Systems,Europe,Spain,Community of Madrid,Madrid,40.416800,-3.703800,Grace Perry,Synthetic enterprise geography master
+Customer,AGC-00120,Meridian Mining Services,Africa,South Africa,Gauteng,Johannesburg,-26.204100,28.047300,Julian Howard,Synthetic enterprise geography master
+Customer,AGC-00121,Meridian Waterworks,Asia,Indonesia,Jakarta,Jakarta,-6.208800,106.845600,Lina Sato,Synthetic enterprise geography master
+Customer,AGC-00122,Meridian Automation,North America,United States,Texas,Houston,29.760400,-95.369800,Camille Martin,Synthetic enterprise geography master
+Customer,AGC-00123,Meridian Utilities,Europe,United Kingdom,Scotland,Aberdeen,57.149700,-2.094300,Mila Diaz,Synthetic enterprise geography master
+Customer,AGC-00124,Meridian Field Services,Europe,Poland,Masovian,Warsaw,52.229700,21.012200,Leo Foster,Synthetic enterprise geography master
+Customer,AGC-00125,Meridian Mechanical,Africa,Nigeria,Lagos,Lagos,6.524400,3.379200,Eva Lewis,Synthetic enterprise geography master
+Customer,AGC-00126,Meridian Power Partners,Asia,Japan,Tokyo,Tokyo,35.676200,139.650300,Priya Nguyen,Synthetic enterprise geography master
+Customer,AGC-00127,Meridian Process Controls,North America,Mexico,CDMX,Mexico City,19.432600,-99.133200,Noah Keller,Synthetic enterprise geography master
+Customer,AGC-00128,Meridian Engineering,Europe,Germany,Hesse,Frankfurt,50.110900,8.682100,Adrian Walker,Synthetic enterprise geography master
+Customer,AGC-00129,Meridian Drilling Solutions,Asia,Saudi Arabia,Riyadh,Riyadh,24.713600,46.675300,Zara Grant,Synthetic enterprise geography master
+Customer,AGC-00130,Meridian Compression,Africa,Egypt,Cairo,Cairo,30.044400,31.235700,Theo Price,Synthetic enterprise geography master
+Customer,AGC-00131,Meridian Industrial Maintenance,Asia,India,Tamil Nadu,Chennai,13.082700,80.270700,Lucas Hayes,Synthetic enterprise geography master
+Customer,AGC-00132,Meridian Resources,South America,Colombia,Bolívar,Cartagena,10.391000,-75.479400,Avery Morgan,Synthetic enterprise geography master
+Customer,AGC-00133,Meridian Pipeline Services,Europe,Norway,Oslo,Oslo,59.913900,10.752200,Grace Perry,Synthetic enterprise geography master
+Customer,AGC-00134,Meridian Rotating Equipment,Asia,Oman,Muscat,Muscat,23.588000,58.382900,Julian Howard,Synthetic enterprise geography master
+Customer,AGC-00135,Meridian Technical Supply,Asia,Malaysia,Federal Territory,Kuala Lumpur,3.139000,101.686900,Lina Sato,Synthetic enterprise geography master
+Customer,AGC-00136,Meridian Refinery Services,Asia,Vietnam,Ho Chi Minh City,Ho Chi Minh City,10.823100,106.629700,Camille Martin,Synthetic enterprise geography master
+Customer,AGC-00137,Meridian Energy Projects,South America,Argentina,Buenos Aires,Buenos Aires,-34.603700,-58.381600,Mila Diaz,Synthetic enterprise geography master
+Customer,AGC-00138,Meridian Marine Engineering,Europe,Italy,Lombardy,Milan,45.464200,9.190000,Leo Foster,Synthetic enterprise geography master
+Customer,AGC-00139,Meridian Production Services,Africa,Ghana,Greater Accra,Accra,5.603700,-0.187000,Eva Lewis,Synthetic enterprise geography master
+Customer,AGC-00140,Meridian Controls,Oceania,Australia,New South Wales,Sydney,-33.868800,151.209300,Priya Nguyen,Synthetic enterprise geography master
+Customer,AGC-00141,Meridian Offshore Systems,North America,Canada,British Columbia,Vancouver,49.282700,-123.120700,Noah Keller,Synthetic enterprise geography master
+Customer,AGC-00142,Meridian Mechanical Group,Europe,France,Auvergne-Rhône-Alpes,Lyon,45.764000,4.835700,Adrian Walker,Synthetic enterprise geography master
+Customer,AGC-00143,Meridian Industrial Services,Asia,United Arab Emirates,Abu Dhabi,Abu Dhabi,24.453900,54.377300,Zara Grant,Synthetic enterprise geography master
+Customer,AGC-00144,Meridian Flow Systems,Africa,Kenya,Nairobi County,Nairobi,-1.292100,36.821900,Theo Price,Synthetic enterprise geography master
+Customer,AGC-00145,Meridian Instrumentation,Asia,South Korea,Seoul,Seoul,37.566500,126.978000,Lucas Hayes,Synthetic enterprise geography master
+Customer,AGC-00146,Meridian Technical Services,South America,Brazil,São Paulo,São Paulo,-23.550500,-46.633300,Avery Morgan,Synthetic enterprise geography master
+Customer,AGC-00147,Meridian Industrial Solutions,Europe,Netherlands,North Holland,Amsterdam,52.367600,4.904100,Grace Perry,Synthetic enterprise geography master
+Customer,AGC-00148,Meridian Marine Supply,Asia,Qatar,Doha,Doha,25.285400,51.531000,Julian Howard,Synthetic enterprise geography master
+Customer,AGC-00149,Arcadia Energy Systems,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,Lina Sato,Synthetic enterprise geography master
+Customer,AGC-00150,Arcadia Marine Services,Asia,Thailand,Rayong,Rayong,12.681400,101.281600,Camille Martin,Synthetic enterprise geography master
+Customer,AGC-00151,Arcadia Industrial Group,South America,Chile,Antofagasta,Antofagasta,-23.650900,-70.397500,Mila Diaz,Synthetic enterprise geography master
+Customer,AGC-00152,Arcadia Process Solutions,Europe,Spain,Community of Madrid,Madrid,40.416800,-3.703800,Leo Foster,Synthetic enterprise geography master
+Customer,AGC-00153,Arcadia Offshore Engineering,Africa,South Africa,Gauteng,Johannesburg,-26.204100,28.047300,Eva Lewis,Synthetic enterprise geography master
+Customer,AGC-00154,Arcadia Flow Technologies,Asia,Indonesia,East Java,Surabaya,-7.257500,112.752100,Priya Nguyen,Synthetic enterprise geography master
+Customer,AGC-00155,Arcadia Infrastructure,North America,United States,Illinois,Chicago,41.878100,-87.629800,Noah Keller,Synthetic enterprise geography master
+Customer,AGC-00156,Arcadia Petro Systems,Europe,United Kingdom,Scotland,Aberdeen,57.149700,-2.094300,Adrian Walker,Synthetic enterprise geography master
+Customer,AGC-00157,Arcadia Mining Services,Europe,Poland,Pomeranian,Gdańsk,54.352000,18.646600,Zara Grant,Synthetic enterprise geography master
+Customer,AGC-00158,Arcadia Waterworks,Africa,Nigeria,Lagos,Lagos,6.524400,3.379200,Theo Price,Synthetic enterprise geography master
+Customer,AGC-00159,Arcadia Automation,Asia,Japan,Tokyo,Tokyo,35.676200,139.650300,Lucas Hayes,Synthetic enterprise geography master
+Customer,AGC-00160,Arcadia Utilities,North America,Mexico,CDMX,Mexico City,19.432600,-99.133200,Avery Morgan,Synthetic enterprise geography master
+Customer,AGC-00161,Arcadia Field Services,Europe,Germany,Hamburg,Hamburg,53.551100,9.993700,Grace Perry,Synthetic enterprise geography master
+Customer,AGC-00162,Arcadia Mechanical,Asia,Saudi Arabia,Riyadh,Riyadh,24.713600,46.675300,Julian Howard,Synthetic enterprise geography master
+Customer,AGC-00163,Arcadia Power Partners,Africa,Egypt,Cairo,Cairo,30.044400,31.235700,Lina Sato,Synthetic enterprise geography master
+Customer,AGC-00164,Arcadia Process Controls,Asia,India,Delhi,New Delhi,28.613900,77.209000,Camille Martin,Synthetic enterprise geography master
+Customer,AGC-00165,Arcadia Engineering,South America,Colombia,Bolívar,Cartagena,10.391000,-75.479400,Mila Diaz,Synthetic enterprise geography master
+Customer,AGC-00166,Arcadia Drilling Solutions,Europe,Norway,Rogaland,Stavanger,58.970000,5.733100,Leo Foster,Synthetic enterprise geography master
+Customer,AGC-00167,Arcadia Compression,Asia,Oman,Muscat,Muscat,23.588000,58.382900,Eva Lewis,Synthetic enterprise geography master
+Customer,AGC-00168,Arcadia Industrial Maintenance,Asia,Malaysia,Johor,Johor Bahru,1.492700,103.741400,Priya Nguyen,Synthetic enterprise geography master
+Customer,AGC-00169,Arcadia Resources,Asia,Vietnam,Hanoi,Hanoi,21.027800,105.834200,Noah Keller,Synthetic enterprise geography master
+Customer,AGC-00170,Arcadia Pipeline Services,South America,Argentina,Buenos Aires,Buenos Aires,-34.603700,-58.381600,Adrian Walker,Synthetic enterprise geography master
+Customer,AGC-00171,Arcadia Rotating Equipment,Europe,Italy,Liguria,Genoa,44.405600,8.946300,Zara Grant,Synthetic enterprise geography master
+Customer,AGC-00172,Arcadia Technical Supply,Africa,Ghana,Western,Takoradi,4.884500,-1.755400,Theo Price,Synthetic enterprise geography master
+Customer,AGC-00173,Arcadia Refinery Services,Oceania,Australia,Western Australia,Perth,-31.950500,115.860500,Lucas Hayes,Synthetic enterprise geography master
+Customer,AGC-00174,Arcadia Energy Projects,North America,Canada,Ontario,Toronto,43.653200,-79.383200,Avery Morgan,Synthetic enterprise geography master
+Customer,AGC-00175,Arcadia Marine Engineering,Europe,France,Auvergne-Rhône-Alpes,Lyon,45.764000,4.835700,Grace Perry,Synthetic enterprise geography master
+Customer,AGC-00176,Arcadia Production Services,Asia,United Arab Emirates,Dubai,Dubai,25.204800,55.270800,Julian Howard,Synthetic enterprise geography master
+Customer,AGC-00177,Arcadia Controls,Africa,Kenya,Mombasa County,Mombasa,-4.043500,39.668200,Lina Sato,Synthetic enterprise geography master
+Customer,AGC-00178,Arcadia Offshore Systems,Asia,South Korea,Seoul,Seoul,37.566500,126.978000,Camille Martin,Synthetic enterprise geography master
+Customer,AGC-00179,Arcadia Mechanical Group,South America,Brazil,Rio de Janeiro,Rio de Janeiro,-22.906800,-43.172900,Mila Diaz,Synthetic enterprise geography master
+Customer,AGC-00180,Arcadia Industrial Services,Europe,Netherlands,North Holland,Amsterdam,52.367600,4.904100,Leo Foster,Synthetic enterprise geography master
+Supplier,AGS-0001,VectorValve Manufacturing,Europe,Italy,Lombardy,Milan,45.464200,9.190000,,Synthetic enterprise geography master
+Supplier,AGS-0002,VectorValve Components,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0003,VectorValve Pumps,North America,Mexico,CDMX,Mexico City,19.432600,-99.133200,,Synthetic enterprise geography master
+Supplier,AGS-0004,VectorValve Industries,Europe,Italy,Liguria,Genoa,44.405600,8.946300,,Synthetic enterprise geography master
+Supplier,AGS-0005,VectorValve Instrumentation,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0006,VectorValve Systems,North America,Mexico,CDMX,Mexico City,19.432600,-99.133200,,Synthetic enterprise geography master
+Supplier,AGS-0007,VectorValve Bearing Works,Europe,Italy,Lombardy,Milan,45.464200,9.190000,,Synthetic enterprise geography master
+Supplier,AGS-0008,VectorValve Hydraulics,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0009,VectorValve Actuation,North America,Mexico,Nuevo León,Monterrey,25.686600,-100.316100,,Synthetic enterprise geography master
+Supplier,AGS-0010,VectorValve Technologies,Europe,Italy,Lombardy,Milan,45.464200,9.190000,,Synthetic enterprise geography master
+Supplier,AGS-0011,VectorValve Gasket & Seal,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0012,VectorValve Electric,North America,Mexico,CDMX,Mexico City,19.432600,-99.133200,,Synthetic enterprise geography master
+Supplier,AGS-0013,VectorValve Controls,Europe,Italy,Liguria,Genoa,44.405600,8.946300,,Synthetic enterprise geography master
+Supplier,AGS-0014,VectorValve Fasteners,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0015,VectorValve Fabrication,North America,Mexico,CDMX,Mexico City,19.432600,-99.133200,,Synthetic enterprise geography master
+Supplier,AGS-0016,VectorValve Process Equipment,Europe,Italy,Liguria,Genoa,44.405600,8.946300,,Synthetic enterprise geography master
+Supplier,AGS-0017,VectorValve Cable Systems,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0018,VectorValve Filter Technologies,North America,Mexico,Nuevo León,Monterrey,25.686600,-100.316100,,Synthetic enterprise geography master
+Supplier,AGS-0019,VectorValve Safety Supply,Europe,Italy,Liguria,Genoa,44.405600,8.946300,,Synthetic enterprise geography master
+Supplier,AGS-0020,VectorValve Gearworks,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0021,VectorValve Marine Components,North America,Mexico,CDMX,Mexico City,19.432600,-99.133200,,Synthetic enterprise geography master
+Supplier,AGS-0022,VectorValve Compressor Parts,Europe,Italy,Lombardy,Milan,45.464200,9.190000,,Synthetic enterprise geography master
+Supplier,AGS-0023,VectorValve Industrial Plastics,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0024,VectorValve Heat Transfer,North America,Mexico,Nuevo León,Monterrey,25.686600,-100.316100,,Synthetic enterprise geography master
+Supplier,AGS-0025,VectorValve Valve Automation,Europe,Italy,Liguria,Genoa,44.405600,8.946300,,Synthetic enterprise geography master
+Supplier,AGS-0026,VectorValve Sensor Labs,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0027,VectorValve Technical Metals,North America,Mexico,CDMX,Mexico City,19.432600,-99.133200,,Synthetic enterprise geography master
+Supplier,AGS-0028,VectorValve Hose & Fittings,Europe,Italy,Lombardy,Milan,45.464200,9.190000,,Synthetic enterprise geography master
+Supplier,AGS-0029,VectorValve Motion Controls,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0030,VectorValve Mechanical Supply,North America,Mexico,CDMX,Mexico City,19.432600,-99.133200,,Synthetic enterprise geography master
+Supplier,AGS-0031,VectorValve Process Instruments,Europe,Italy,Lombardy,Milan,45.464200,9.190000,,Synthetic enterprise geography master
+Supplier,AGS-0032,VectorValve Specialty Alloys,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0033,PrimeFlow Manufacturing,North America,Mexico,CDMX,Mexico City,19.432600,-99.133200,,Synthetic enterprise geography master
+Supplier,AGS-0034,PrimeFlow Components,Europe,Italy,Liguria,Genoa,44.405600,8.946300,,Synthetic enterprise geography master
+Supplier,AGS-0035,PrimeFlow Pumps,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0036,PrimeFlow Industries,North America,Mexico,CDMX,Mexico City,19.432600,-99.133200,,Synthetic enterprise geography master
+Supplier,AGS-0037,PrimeFlow Instrumentation,Europe,Italy,Lombardy,Milan,45.464200,9.190000,,Synthetic enterprise geography master
+Supplier,AGS-0038,PrimeFlow Systems,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0039,PrimeFlow Bearing Works,North America,Mexico,CDMX,Mexico City,19.432600,-99.133200,,Synthetic enterprise geography master
+Supplier,AGS-0040,PrimeFlow Hydraulics,Europe,Italy,Lombardy,Milan,45.464200,9.190000,,Synthetic enterprise geography master
+Supplier,AGS-0041,PrimeFlow Actuation,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0042,PrimeFlow Technologies,North America,Mexico,Nuevo León,Monterrey,25.686600,-100.316100,,Synthetic enterprise geography master
+Supplier,AGS-0043,PrimeFlow Gasket & Seal,Europe,Italy,Liguria,Genoa,44.405600,8.946300,,Synthetic enterprise geography master
+Supplier,AGS-0044,PrimeFlow Electric,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0045,PrimeFlow Controls,North America,Mexico,CDMX,Mexico City,19.432600,-99.133200,,Synthetic enterprise geography master
+Supplier,AGS-0046,PrimeFlow Fasteners,Europe,Italy,Lombardy,Milan,45.464200,9.190000,,Synthetic enterprise geography master
+Supplier,AGS-0047,PrimeFlow Fabrication,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0048,PrimeFlow Process Equipment,North America,Mexico,Nuevo León,Monterrey,25.686600,-100.316100,,Synthetic enterprise geography master
+Supplier,AGS-0049,PrimeFlow Cable Systems,Europe,Italy,Liguria,Genoa,44.405600,8.946300,,Synthetic enterprise geography master
+Supplier,AGS-0050,PrimeFlow Filter Technologies,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0051,PrimeFlow Safety Supply,North America,Mexico,Nuevo León,Monterrey,25.686600,-100.316100,,Synthetic enterprise geography master
+Supplier,AGS-0052,PrimeFlow Gearworks,Europe,Italy,Liguria,Genoa,44.405600,8.946300,,Synthetic enterprise geography master
+Supplier,AGS-0053,PrimeFlow Marine Components,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0054,PrimeFlow Compressor Parts,North America,Mexico,Nuevo León,Monterrey,25.686600,-100.316100,,Synthetic enterprise geography master
+Supplier,AGS-0055,PrimeFlow Industrial Plastics,Europe,Italy,Liguria,Genoa,44.405600,8.946300,,Synthetic enterprise geography master
+Supplier,AGS-0056,PrimeFlow Heat Transfer,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0057,PrimeFlow Valve Automation,North America,Mexico,Nuevo León,Monterrey,25.686600,-100.316100,,Synthetic enterprise geography master
+Supplier,AGS-0058,PrimeFlow Sensor Labs,Europe,Italy,Liguria,Genoa,44.405600,8.946300,,Synthetic enterprise geography master
+Supplier,AGS-0059,PrimeFlow Technical Metals,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0060,PrimeFlow Hose & Fittings,North America,Mexico,CDMX,Mexico City,19.432600,-99.133200,,Synthetic enterprise geography master
+Supplier,AGS-0061,PrimeFlow Motion Controls,Europe,Italy,Liguria,Genoa,44.405600,8.946300,,Synthetic enterprise geography master
+Supplier,AGS-0062,PrimeFlow Mechanical Supply,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0063,PrimeFlow Process Instruments,North America,Mexico,CDMX,Mexico City,19.432600,-99.133200,,Synthetic enterprise geography master
+Supplier,AGS-0064,PrimeFlow Specialty Alloys,Europe,Italy,Liguria,Genoa,44.405600,8.946300,,Synthetic enterprise geography master
+Supplier,AGS-0065,NorthForge Manufacturing,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0066,NorthForge Components,North America,Mexico,CDMX,Mexico City,19.432600,-99.133200,,Synthetic enterprise geography master
+Supplier,AGS-0067,NorthForge Pumps,Europe,Italy,Lombardy,Milan,45.464200,9.190000,,Synthetic enterprise geography master
+Supplier,AGS-0068,NorthForge Industries,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0069,NorthForge Instrumentation,North America,Mexico,Nuevo León,Monterrey,25.686600,-100.316100,,Synthetic enterprise geography master
+Supplier,AGS-0070,NorthForge Systems,Europe,Italy,Liguria,Genoa,44.405600,8.946300,,Synthetic enterprise geography master
+Supplier,AGS-0071,NorthForge Bearing Works,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0072,NorthForge Hydraulics,North America,Mexico,Nuevo León,Monterrey,25.686600,-100.316100,,Synthetic enterprise geography master
+Supplier,AGS-0073,NorthForge Actuation,Europe,Italy,Lombardy,Milan,45.464200,9.190000,,Synthetic enterprise geography master
+Supplier,AGS-0074,NorthForge Technologies,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0075,NorthForge Gasket & Seal,North America,Mexico,CDMX,Mexico City,19.432600,-99.133200,,Synthetic enterprise geography master
+Supplier,AGS-0076,NorthForge Electric,Europe,Italy,Liguria,Genoa,44.405600,8.946300,,Synthetic enterprise geography master
+Supplier,AGS-0077,NorthForge Controls,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0078,NorthForge Fasteners,North America,Mexico,Nuevo León,Monterrey,25.686600,-100.316100,,Synthetic enterprise geography master
+Supplier,AGS-0079,NorthForge Fabrication,Europe,Italy,Lombardy,Milan,45.464200,9.190000,,Synthetic enterprise geography master
+Supplier,AGS-0080,NorthForge Process Equipment,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0081,NorthForge Cable Systems,North America,Mexico,Nuevo León,Monterrey,25.686600,-100.316100,,Synthetic enterprise geography master
+Supplier,AGS-0082,NorthForge Filter Technologies,Europe,Italy,Liguria,Genoa,44.405600,8.946300,,Synthetic enterprise geography master
+Supplier,AGS-0083,NorthForge Safety Supply,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,,Synthetic enterprise geography master
+Supplier,AGS-0084,NorthForge Gearworks,North America,Mexico,CDMX,Mexico City,19.432600,-99.133200,,Synthetic enterprise geography master
+Supplier,AGS-0085,NorthForge Marine Components,Europe,Italy,Lombardy,Milan,45.464200,9.190000,,Synthetic enterprise geography master
+Representative,AGR-001,Adrian Walker,North America,United States,Texas,Houston,29.760400,-95.369800,Adrian Walker,Synthetic Aurelis office network
+Representative,AGR-002,Avery Morgan,North America,United States,New York,New York,40.712800,-74.006000,Avery Morgan,Synthetic Aurelis office network
+Representative,AGR-003,Camille Martin,Europe,Netherlands,South Holland,Rotterdam,51.924400,4.477700,Camille Martin,Synthetic Aurelis office network
+Representative,AGR-004,Eva Lewis,Europe,United Kingdom,England,London,51.507400,-0.127800,Eva Lewis,Synthetic Aurelis office network
+Representative,AGR-005,Grace Perry,Asia,United Arab Emirates,Dubai,Dubai,25.204800,55.270800,Grace Perry,Synthetic Aurelis office network
+Representative,AGR-006,Julian Howard,Asia,Singapore,Central Region,Singapore,1.352100,103.819800,Julian Howard,Synthetic Aurelis office network
+Representative,AGR-007,Leo Foster,Africa,South Africa,Gauteng,Johannesburg,-26.204100,28.047300,Leo Foster,Synthetic Aurelis office network
+Representative,AGR-008,Lina Sato,South America,Brazil,São Paulo,São Paulo,-23.550500,-46.633300,Lina Sato,Synthetic Aurelis office network
+Representative,AGR-009,Lucas Hayes,Oceania,Australia,New South Wales,Sydney,-33.868800,151.209300,Lucas Hayes,Synthetic Aurelis office network
+Representative,AGR-010,Mila Diaz,North America,United States,Texas,Houston,29.760400,-95.369800,Mila Diaz,Synthetic Aurelis office network
+Representative,AGR-011,Noah Keller,North America,United States,New York,New York,40.712800,-74.006000,Noah Keller,Synthetic Aurelis office network
+Representative,AGR-012,Priya Nguyen,Europe,Netherlands,South Holland,Rotterdam,51.924400,4.477700,Priya Nguyen,Synthetic Aurelis office network
+Representative,AGR-013,Theo Price,Europe,United Kingdom,England,London,51.507400,-0.127800,Theo Price,Synthetic Aurelis office network
+Representative,AGR-014,Zara Grant,Asia,United Arab Emirates,Dubai,Dubai,25.204800,55.270800,Zara Grant,Synthetic Aurelis office network

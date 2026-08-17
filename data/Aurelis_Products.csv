@@ -1,0 +1,801 @@
+﻿Part_Number,Description,Category,Preferred_Supplier,Base_Unit_Cost,Unit
+AUR-PMP-00001,Centrifugal Pump Series 101,PMP,VectorValve Hydraulics,12774.26,EA
+AUR-VLV-00002,Control Valve Series 102,VLV,VectorValve Fabrication,8313.72,SET
+AUR-BRG-00003,Industrial Bearing Series 103,BRG,VectorValve Compressor Parts,4356.9,EA
+AUR-INS-00004,Pressure Instrument Series 104,INS,VectorValve Motion Controls,2935.66,EA
+AUR-MTR-00005,Electric Motor Series 105,MTR,PrimeFlow Industries,5695.69,EA
+AUR-SEA-00006,Mechanical Seal Series 106,SEA,PrimeFlow Gasket & Seal,4926.36,EA
+AUR-FLT-00007,Process Filter Series 107,FLT,PrimeFlow Filter Technologies,7026.06,KIT
+AUR-ACT-00008,Valve Actuator Series 108,ACT,PrimeFlow Valve Automation,3136.8,KIT
+AUR-GSK-00009,Industrial Gasket Series 109,GSK,NorthForge Manufacturing,8467.63,EA
+AUR-HOS-00010,Hydraulic Hose Series 110,HOS,NorthForge Hydraulics,8174.59,SET
+AUR-FIT-00011,Pipe Fitting Series 111,FIT,NorthForge Fabrication,6963.27,EA
+AUR-CAB-00012,Instrumentation Cable Series 112,CAB,VectorValve Manufacturing,3233.66,SET
+AUR-SEN-00013,Process Sensor Series 113,SEN,VectorValve Hydraulics,4165.93,EA
+AUR-CMP-00014,Compressor Component Series 114,CMP,VectorValve Fabrication,9644.38,MTR
+AUR-SAF-00015,Safety Equipment Series 115,SAF,VectorValve Compressor Parts,6928.04,EA
+AUR-PLC-00016,Automation Controller Series 116,PLC,VectorValve Motion Controls,3771.76,KIT
+AUR-DRV-00017,Variable Frequency Drive Series 117,DRV,PrimeFlow Industries,937.5,MTR
+AUR-HEX-00018,Heat Exchanger Part Series 118,HEX,PrimeFlow Electric,24614.3,MTR
+AUR-LUB-00019,Industrial Lubrication Series 119,LUB,PrimeFlow Safety Supply,7131.37,EA
+AUR-TOL-00020,Specialty Tooling Series 120,TOL,PrimeFlow Sensor Labs,1906.97,SET
+AUR-PMP-00021,Centrifugal Pump Series 121,PMP,NorthForge Manufacturing,11036.16,EA
+AUR-VLV-00022,Control Valve Series 122,VLV,NorthForge Hydraulics,6744.03,EA
+AUR-BRG-00023,Industrial Bearing Series 123,BRG,NorthForge Fabrication,5056.38,EA
+AUR-INS-00024,Pressure Instrument Series 124,INS,VectorValve Manufacturing,3341.3,EA
+AUR-MTR-00025,Electric Motor Series 125,MTR,VectorValve Hydraulics,13955.86,MTR
+AUR-SEA-00026,Mechanical Seal Series 126,SEA,VectorValve Fabrication,2828.11,KIT
+AUR-FLT-00027,Process Filter Series 127,FLT,VectorValve Industrial Plastics,5597.53,EA
+AUR-ACT-00028,Valve Actuator Series 128,ACT,VectorValve Mechanical Supply,4356.03,MTR
+AUR-GSK-00029,Industrial Gasket Series 129,GSK,PrimeFlow Instrumentation,1319.09,EA
+AUR-HOS-00030,Hydraulic Hose Series 130,HOS,PrimeFlow Electric,2465.9,SET
+AUR-FIT-00031,Pipe Fitting Series 131,FIT,PrimeFlow Safety Supply,2403.28,MTR
+AUR-CAB-00032,Instrumentation Cable Series 132,CAB,PrimeFlow Sensor Labs,8195.39,MTR
+AUR-SEN-00033,Process Sensor Series 133,SEN,NorthForge Manufacturing,5647.44,MTR
+AUR-CMP-00034,Compressor Component Series 134,CMP,NorthForge Hydraulics,5502.52,KIT
+AUR-SAF-00035,Safety Equipment Series 135,SAF,NorthForge Fabrication,3864.94,MTR
+AUR-PLC-00036,Automation Controller Series 136,PLC,VectorValve Components,4740.01,KIT
+AUR-DRV-00037,Variable Frequency Drive Series 137,DRV,VectorValve Actuation,6190.45,SET
+AUR-HEX-00038,Heat Exchanger Part Series 138,HEX,VectorValve Process Equipment,9212.74,EA
+AUR-LUB-00039,Industrial Lubrication Series 139,LUB,VectorValve Industrial Plastics,1896.2,MTR
+AUR-TOL-00040,Specialty Tooling Series 140,TOL,VectorValve Mechanical Supply,1960.07,MTR
+AUR-PMP-00041,Centrifugal Pump Series 141,PMP,PrimeFlow Instrumentation,26944.06,KIT
+AUR-VLV-00042,Control Valve Series 142,VLV,PrimeFlow Electric,1486.94,EA
+AUR-BRG-00043,Industrial Bearing Series 143,BRG,PrimeFlow Safety Supply,1004.61,SET
+AUR-INS-00044,Pressure Instrument Series 144,INS,PrimeFlow Sensor Labs,1614.7,MTR
+AUR-MTR-00045,Electric Motor Series 145,MTR,NorthForge Components,28538.02,EA
+AUR-SEA-00046,Mechanical Seal Series 146,SEA,NorthForge Actuation,1791.71,KIT
+AUR-FLT-00047,Process Filter Series 147,FLT,NorthForge Process Equipment,7882.59,EA
+AUR-ACT-00048,Valve Actuator Series 148,ACT,VectorValve Components,4505.96,EA
+AUR-GSK-00049,Industrial Gasket Series 149,GSK,VectorValve Actuation,5051.06,SET
+AUR-HOS-00050,Hydraulic Hose Series 150,HOS,VectorValve Process Equipment,6524.61,EA
+AUR-FIT-00051,Pipe Fitting Series 151,FIT,VectorValve Industrial Plastics,3953.51,EA
+AUR-CAB-00052,Instrumentation Cable Series 152,CAB,VectorValve Mechanical Supply,2292.73,MTR
+AUR-SEN-00053,Process Sensor Series 153,SEN,PrimeFlow Instrumentation,1245.83,EA
+AUR-CMP-00054,Compressor Component Series 154,CMP,PrimeFlow Controls,5143.87,MTR
+AUR-SAF-00055,Safety Equipment Series 155,SAF,PrimeFlow Gearworks,124.67,EA
+AUR-PLC-00056,Automation Controller Series 156,PLC,PrimeFlow Technical Metals,2702.21,EA
+AUR-DRV-00057,Variable Frequency Drive Series 157,DRV,NorthForge Components,245.55,EA
+AUR-HEX-00058,Heat Exchanger Part Series 158,HEX,NorthForge Actuation,21513.8,EA
+AUR-LUB-00059,Industrial Lubrication Series 159,LUB,NorthForge Process Equipment,6638.46,SET
+AUR-TOL-00060,Specialty Tooling Series 160,TOL,VectorValve Components,5203.26,SET
+AUR-PMP-00061,Centrifugal Pump Series 161,PMP,VectorValve Actuation,736.88,KIT
+AUR-VLV-00062,Control Valve Series 162,VLV,VectorValve Process Equipment,6669.25,KIT
+AUR-BRG-00063,Industrial Bearing Series 163,BRG,VectorValve Heat Transfer,6209.73,EA
+AUR-INS-00064,Pressure Instrument Series 164,INS,VectorValve Process Instruments,509.16,EA
+AUR-MTR-00065,Electric Motor Series 165,MTR,PrimeFlow Systems,15668.6,MTR
+AUR-SEA-00066,Mechanical Seal Series 166,SEA,PrimeFlow Controls,759.13,KIT
+AUR-FLT-00067,Process Filter Series 167,FLT,PrimeFlow Gearworks,7830.32,MTR
+AUR-ACT-00068,Valve Actuator Series 168,ACT,PrimeFlow Technical Metals,3357.34,SET
+AUR-GSK-00069,Industrial Gasket Series 169,GSK,NorthForge Components,4116.05,SET
+AUR-HOS-00070,Hydraulic Hose Series 170,HOS,NorthForge Actuation,6628.37,EA
+AUR-FIT-00071,Pipe Fitting Series 171,FIT,NorthForge Process Equipment,6131.12,MTR
+AUR-CAB-00072,Instrumentation Cable Series 172,CAB,VectorValve Pumps,3014.93,KIT
+AUR-SEN-00073,Process Sensor Series 173,SEN,VectorValve Technologies,6017.68,EA
+AUR-CMP-00074,Compressor Component Series 174,CMP,VectorValve Cable Systems,8094.99,SET
+AUR-SAF-00075,Safety Equipment Series 175,SAF,VectorValve Heat Transfer,804.49,KIT
+AUR-PLC-00076,Automation Controller Series 176,PLC,VectorValve Process Instruments,2734.52,SET
+AUR-DRV-00077,Variable Frequency Drive Series 177,DRV,PrimeFlow Systems,8190.01,MTR
+AUR-HEX-00078,Heat Exchanger Part Series 178,HEX,PrimeFlow Controls,501.8,EA
+AUR-LUB-00079,Industrial Lubrication Series 179,LUB,PrimeFlow Gearworks,5893.68,EA
+AUR-TOL-00080,Specialty Tooling Series 180,TOL,PrimeFlow Technical Metals,3836.29,EA
+AUR-PMP-00081,Centrifugal Pump Series 181,PMP,NorthForge Pumps,26733.91,EA
+AUR-VLV-00082,Control Valve Series 182,VLV,NorthForge Technologies,4560.8,EA
+AUR-BRG-00083,Industrial Bearing Series 183,BRG,NorthForge Cable Systems,2577.8,SET
+AUR-INS-00084,Pressure Instrument Series 184,INS,VectorValve Pumps,6539.36,SET
+AUR-MTR-00085,Electric Motor Series 185,MTR,VectorValve Technologies,8353.71,KIT
+AUR-SEA-00086,Mechanical Seal Series 186,SEA,VectorValve Cable Systems,1689.01,EA
+AUR-FLT-00087,Process Filter Series 187,FLT,VectorValve Heat Transfer,3050.52,EA
+AUR-ACT-00088,Valve Actuator Series 188,ACT,VectorValve Process Instruments,3355.58,SET
+AUR-GSK-00089,Industrial Gasket Series 189,GSK,PrimeFlow Systems,6258.2,EA
+AUR-HOS-00090,Hydraulic Hose Series 190,HOS,PrimeFlow Fasteners,4610.13,KIT
+AUR-FIT-00091,Pipe Fitting Series 191,FIT,PrimeFlow Marine Components,3771.37,EA
+AUR-CAB-00092,Instrumentation Cable Series 192,CAB,PrimeFlow Hose & Fittings,7530.18,EA
+AUR-SEN-00093,Process Sensor Series 193,SEN,NorthForge Pumps,2617.96,EA
+AUR-CMP-00094,Compressor Component Series 194,CMP,NorthForge Technologies,4019.54,EA
+AUR-SAF-00095,Safety Equipment Series 195,SAF,NorthForge Cable Systems,8474.65,EA
+AUR-PLC-00096,Automation Controller Series 196,PLC,VectorValve Pumps,2460.23,EA
+AUR-DRV-00097,Variable Frequency Drive Series 197,DRV,VectorValve Technologies,3051.19,KIT
+AUR-HEX-00098,Heat Exchanger Part Series 198,HEX,VectorValve Cable Systems,10439.45,EA
+AUR-LUB-00099,Industrial Lubrication Series 199,LUB,VectorValve Valve Automation,1445.95,EA
+AUR-TOL-00100,Specialty Tooling Series 200,TOL,VectorValve Specialty Alloys,6992.02,KIT
+AUR-PMP-00101,Centrifugal Pump Series 201,PMP,PrimeFlow Bearing Works,2079.06,EA
+AUR-VLV-00102,Control Valve Series 202,VLV,PrimeFlow Fasteners,1609.43,EA
+AUR-BRG-00103,Industrial Bearing Series 203,BRG,PrimeFlow Marine Components,3967.95,EA
+AUR-INS-00104,Pressure Instrument Series 204,INS,PrimeFlow Hose & Fittings,3277.13,EA
+AUR-MTR-00105,Electric Motor Series 205,MTR,NorthForge Pumps,13914.92,KIT
+AUR-SEA-00106,Mechanical Seal Series 206,SEA,NorthForge Technologies,8203.74,SET
+AUR-FLT-00107,Process Filter Series 207,FLT,NorthForge Cable Systems,5811.3,EA
+AUR-ACT-00108,Valve Actuator Series 208,ACT,VectorValve Industries,3035.01,SET
+AUR-GSK-00109,Industrial Gasket Series 209,GSK,VectorValve Gasket & Seal,4696.06,KIT
+AUR-HOS-00110,Hydraulic Hose Series 210,HOS,VectorValve Filter Technologies,8072.9,MTR
+AUR-FIT-00111,Pipe Fitting Series 211,FIT,VectorValve Valve Automation,4023.24,EA
+AUR-CAB-00112,Instrumentation Cable Series 212,CAB,VectorValve Specialty Alloys,6522.94,EA
+AUR-SEN-00113,Process Sensor Series 213,SEN,PrimeFlow Bearing Works,7742.57,EA
+AUR-CMP-00114,Compressor Component Series 214,CMP,PrimeFlow Fasteners,8428.31,EA
+AUR-SAF-00115,Safety Equipment Series 215,SAF,PrimeFlow Marine Components,4060.83,EA
+AUR-PLC-00116,Automation Controller Series 216,PLC,PrimeFlow Hose & Fittings,4019.49,SET
+AUR-DRV-00117,Variable Frequency Drive Series 217,DRV,NorthForge Industries,1332.77,EA
+AUR-HEX-00118,Heat Exchanger Part Series 218,HEX,NorthForge Gasket & Seal,15183.84,EA
+AUR-LUB-00119,Industrial Lubrication Series 219,LUB,NorthForge Filter Technologies,3039.96,SET
+AUR-TOL-00120,Specialty Tooling Series 220,TOL,VectorValve Industries,4196.4,SET
+AUR-PMP-00121,Centrifugal Pump Series 221,PMP,VectorValve Gasket & Seal,8825.84,KIT
+AUR-VLV-00122,Control Valve Series 222,VLV,VectorValve Filter Technologies,8035.1,SET
+AUR-BRG-00123,Industrial Bearing Series 223,BRG,VectorValve Valve Automation,4639.85,MTR
+AUR-INS-00124,Pressure Instrument Series 224,INS,VectorValve Specialty Alloys,1590.52,SET
+AUR-MTR-00125,Electric Motor Series 225,MTR,PrimeFlow Bearing Works,1671.73,EA
+AUR-SEA-00126,Mechanical Seal Series 226,SEA,PrimeFlow Fabrication,2542.82,MTR
+AUR-FLT-00127,Process Filter Series 227,FLT,PrimeFlow Compressor Parts,4641.14,EA
+AUR-ACT-00128,Valve Actuator Series 228,ACT,PrimeFlow Motion Controls,2473.39,SET
+AUR-GSK-00129,Industrial Gasket Series 229,GSK,NorthForge Industries,7657.04,SET
+AUR-HOS-00130,Hydraulic Hose Series 230,HOS,NorthForge Gasket & Seal,7207.69,EA
+AUR-FIT-00131,Pipe Fitting Series 231,FIT,NorthForge Filter Technologies,6872.38,EA
+AUR-CAB-00132,Instrumentation Cable Series 232,CAB,VectorValve Industries,5931.41,SET
+AUR-SEN-00133,Process Sensor Series 233,SEN,VectorValve Gasket & Seal,6685.19,EA
+AUR-CMP-00134,Compressor Component Series 234,CMP,VectorValve Filter Technologies,8425.05,EA
+AUR-SAF-00135,Safety Equipment Series 235,SAF,VectorValve Sensor Labs,6653.99,MTR
+AUR-PLC-00136,Automation Controller Series 236,PLC,PrimeFlow Manufacturing,4723.49,KIT
+AUR-DRV-00137,Variable Frequency Drive Series 237,DRV,PrimeFlow Hydraulics,2281.57,EA
+AUR-HEX-00138,Heat Exchanger Part Series 238,HEX,PrimeFlow Fabrication,1526.75,KIT
+AUR-LUB-00139,Industrial Lubrication Series 239,LUB,PrimeFlow Compressor Parts,2564.66,EA
+AUR-TOL-00140,Specialty Tooling Series 240,TOL,PrimeFlow Motion Controls,7224.22,EA
+AUR-PMP-00141,Centrifugal Pump Series 241,PMP,NorthForge Industries,22464.04,EA
+AUR-VLV-00142,Control Valve Series 242,VLV,NorthForge Gasket & Seal,2701.3,MTR
+AUR-BRG-00143,Industrial Bearing Series 243,BRG,NorthForge Filter Technologies,5767.53,MTR
+AUR-INS-00144,Pressure Instrument Series 244,INS,VectorValve Instrumentation,8131.01,KIT
+AUR-MTR-00145,Electric Motor Series 245,MTR,VectorValve Electric,22484.79,EA
+AUR-SEA-00146,Mechanical Seal Series 246,SEA,VectorValve Safety Supply,202.41,KIT
+AUR-FLT-00147,Process Filter Series 247,FLT,VectorValve Sensor Labs,4272.74,SET
+AUR-ACT-00148,Valve Actuator Series 248,ACT,PrimeFlow Manufacturing,2704.91,SET
+AUR-GSK-00149,Industrial Gasket Series 249,GSK,PrimeFlow Hydraulics,2512.53,SET
+AUR-HOS-00150,Hydraulic Hose Series 250,HOS,PrimeFlow Fabrication,1791.86,KIT
+AUR-FIT-00151,Pipe Fitting Series 251,FIT,PrimeFlow Compressor Parts,6328.15,EA
+AUR-CAB-00152,Instrumentation Cable Series 252,CAB,PrimeFlow Motion Controls,2810.03,MTR
+AUR-SEN-00153,Process Sensor Series 253,SEN,NorthForge Instrumentation,6765.65,EA
+AUR-CMP-00154,Compressor Component Series 254,CMP,NorthForge Electric,8475.17,KIT
+AUR-SAF-00155,Safety Equipment Series 255,SAF,NorthForge Safety Supply,5814.93,EA
+AUR-PLC-00156,Automation Controller Series 256,PLC,VectorValve Instrumentation,4417.23,EA
+AUR-DRV-00157,Variable Frequency Drive Series 257,DRV,VectorValve Electric,1723.28,EA
+AUR-HEX-00158,Heat Exchanger Part Series 258,HEX,VectorValve Safety Supply,3634.07,EA
+AUR-LUB-00159,Industrial Lubrication Series 259,LUB,VectorValve Sensor Labs,704.45,SET
+AUR-TOL-00160,Specialty Tooling Series 260,TOL,PrimeFlow Manufacturing,6956.51,EA
+AUR-PMP-00161,Centrifugal Pump Series 261,PMP,PrimeFlow Hydraulics,8665.4,EA
+AUR-VLV-00162,Control Valve Series 262,VLV,PrimeFlow Process Equipment,4197.91,EA
+AUR-BRG-00163,Industrial Bearing Series 263,BRG,PrimeFlow Industrial Plastics,1491.1,EA
+AUR-INS-00164,Pressure Instrument Series 264,INS,PrimeFlow Mechanical Supply,8147.13,SET
+AUR-MTR-00165,Electric Motor Series 265,MTR,NorthForge Instrumentation,14690.42,EA
+AUR-SEA-00166,Mechanical Seal Series 266,SEA,NorthForge Electric,8423.17,EA
+AUR-FLT-00167,Process Filter Series 267,FLT,NorthForge Safety Supply,4102.42,MTR
+AUR-ACT-00168,Valve Actuator Series 268,ACT,VectorValve Instrumentation,2554.33,EA
+AUR-GSK-00169,Industrial Gasket Series 269,GSK,VectorValve Electric,820.36,MTR
+AUR-HOS-00170,Hydraulic Hose Series 270,HOS,VectorValve Safety Supply,419.67,KIT
+AUR-FIT-00171,Pipe Fitting Series 271,FIT,VectorValve Technical Metals,7423.49,EA
+AUR-CAB-00172,Instrumentation Cable Series 272,CAB,PrimeFlow Components,6311.21,EA
+AUR-SEN-00173,Process Sensor Series 273,SEN,PrimeFlow Actuation,4735.82,EA
+AUR-CMP-00174,Compressor Component Series 274,CMP,PrimeFlow Process Equipment,21922.4,EA
+AUR-SAF-00175,Safety Equipment Series 275,SAF,PrimeFlow Industrial Plastics,3276.89,EA
+AUR-PLC-00176,Automation Controller Series 276,PLC,PrimeFlow Mechanical Supply,3555.06,KIT
+AUR-DRV-00177,Variable Frequency Drive Series 277,DRV,NorthForge Instrumentation,183.14,KIT
+AUR-HEX-00178,Heat Exchanger Part Series 278,HEX,NorthForge Electric,8750.79,SET
+AUR-LUB-00179,Industrial Lubrication Series 279,LUB,NorthForge Safety Supply,293.83,MTR
+AUR-TOL-00180,Specialty Tooling Series 100,TOL,VectorValve Systems,4603.11,SET
+AUR-PMP-00181,Centrifugal Pump Series 101,PMP,VectorValve Controls,14485.25,EA
+AUR-VLV-00182,Control Valve Series 102,VLV,VectorValve Gearworks,3105.31,KIT
+AUR-BRG-00183,Industrial Bearing Series 103,BRG,VectorValve Technical Metals,811.17,KIT
+AUR-INS-00184,Pressure Instrument Series 104,INS,PrimeFlow Components,1711.02,EA
+AUR-MTR-00185,Electric Motor Series 105,MTR,PrimeFlow Actuation,16627.01,MTR
+AUR-SEA-00186,Mechanical Seal Series 106,SEA,PrimeFlow Process Equipment,4745.67,EA
+AUR-FLT-00187,Process Filter Series 107,FLT,PrimeFlow Industrial Plastics,2561.46,KIT
+AUR-ACT-00188,Valve Actuator Series 108,ACT,PrimeFlow Mechanical Supply,1820.26,KIT
+AUR-GSK-00189,Industrial Gasket Series 109,GSK,NorthForge Systems,2954.64,EA
+AUR-HOS-00190,Hydraulic Hose Series 110,HOS,NorthForge Controls,3114.5,EA
+AUR-FIT-00191,Pipe Fitting Series 111,FIT,NorthForge Gearworks,1350.81,EA
+AUR-CAB-00192,Instrumentation Cable Series 112,CAB,VectorValve Systems,2613.05,EA
+AUR-SEN-00193,Process Sensor Series 113,SEN,VectorValve Controls,2619.23,KIT
+AUR-CMP-00194,Compressor Component Series 114,CMP,VectorValve Gearworks,14011.34,MTR
+AUR-SAF-00195,Safety Equipment Series 115,SAF,VectorValve Technical Metals,5314.5,MTR
+AUR-PLC-00196,Automation Controller Series 116,PLC,PrimeFlow Components,5020.62,MTR
+AUR-DRV-00197,Variable Frequency Drive Series 117,DRV,PrimeFlow Actuation,7629.12,EA
+AUR-HEX-00198,Heat Exchanger Part Series 118,HEX,PrimeFlow Cable Systems,10541.17,EA
+AUR-LUB-00199,Industrial Lubrication Series 119,LUB,PrimeFlow Heat Transfer,1138.94,EA
+AUR-TOL-00200,Specialty Tooling Series 120,TOL,PrimeFlow Process Instruments,5818.51,EA
+AUR-PMP-00201,Centrifugal Pump Series 121,PMP,NorthForge Systems,17762.45,EA
+AUR-VLV-00202,Control Valve Series 122,VLV,NorthForge Controls,3923.0,EA
+AUR-BRG-00203,Industrial Bearing Series 123,BRG,NorthForge Gearworks,3930.65,EA
+AUR-INS-00204,Pressure Instrument Series 124,INS,VectorValve Systems,2794.45,EA
+AUR-MTR-00205,Electric Motor Series 125,MTR,VectorValve Controls,10223.17,EA
+AUR-SEA-00206,Mechanical Seal Series 126,SEA,VectorValve Gearworks,1296.33,EA
+AUR-FLT-00207,Process Filter Series 127,FLT,VectorValve Hose & Fittings,6301.53,MTR
+AUR-ACT-00208,Valve Actuator Series 128,ACT,PrimeFlow Pumps,8413.66,MTR
+AUR-GSK-00209,Industrial Gasket Series 129,GSK,PrimeFlow Technologies,4164.76,MTR
+AUR-HOS-00210,Hydraulic Hose Series 130,HOS,PrimeFlow Cable Systems,5099.46,EA
+AUR-FIT-00211,Pipe Fitting Series 131,FIT,PrimeFlow Heat Transfer,5129.21,KIT
+AUR-CAB-00212,Instrumentation Cable Series 132,CAB,PrimeFlow Process Instruments,4308.97,EA
+AUR-SEN-00213,Process Sensor Series 133,SEN,NorthForge Systems,5528.89,EA
+AUR-CMP-00214,Compressor Component Series 134,CMP,NorthForge Controls,21031.89,MTR
+AUR-SAF-00215,Safety Equipment Series 135,SAF,NorthForge Gearworks,1661.96,MTR
+AUR-PLC-00216,Automation Controller Series 136,PLC,VectorValve Bearing Works,5577.63,SET
+AUR-DRV-00217,Variable Frequency Drive Series 137,DRV,VectorValve Fasteners,2358.8,EA
+AUR-HEX-00218,Heat Exchanger Part Series 138,HEX,VectorValve Marine Components,12334.16,SET
+AUR-LUB-00219,Industrial Lubrication Series 139,LUB,VectorValve Hose & Fittings,4772.37,KIT
+AUR-TOL-00220,Specialty Tooling Series 140,TOL,PrimeFlow Pumps,1013.59,MTR
+AUR-PMP-00221,Centrifugal Pump Series 141,PMP,PrimeFlow Technologies,939.92,EA
+AUR-VLV-00222,Control Valve Series 142,VLV,PrimeFlow Cable Systems,61.08,EA
+AUR-BRG-00223,Industrial Bearing Series 143,BRG,PrimeFlow Heat Transfer,7473.51,MTR
+AUR-INS-00224,Pressure Instrument Series 144,INS,PrimeFlow Process Instruments,4228.93,EA
+AUR-MTR-00225,Electric Motor Series 145,MTR,NorthForge Bearing Works,13466.64,EA
+AUR-SEA-00226,Mechanical Seal Series 146,SEA,NorthForge Fasteners,1938.47,EA
+AUR-FLT-00227,Process Filter Series 147,FLT,NorthForge Marine Components,1037.59,MTR
+AUR-ACT-00228,Valve Actuator Series 148,ACT,VectorValve Bearing Works,1952.53,MTR
+AUR-GSK-00229,Industrial Gasket Series 149,GSK,VectorValve Fasteners,1051.46,SET
+AUR-HOS-00230,Hydraulic Hose Series 150,HOS,VectorValve Marine Components,3393.61,KIT
+AUR-FIT-00231,Pipe Fitting Series 151,FIT,VectorValve Hose & Fittings,2234.61,EA
+AUR-CAB-00232,Instrumentation Cable Series 152,CAB,PrimeFlow Pumps,5176.58,EA
+AUR-SEN-00233,Process Sensor Series 153,SEN,PrimeFlow Technologies,7519.73,MTR
+AUR-CMP-00234,Compressor Component Series 154,CMP,PrimeFlow Filter Technologies,14878.41,EA
+AUR-SAF-00235,Safety Equipment Series 155,SAF,PrimeFlow Valve Automation,3168.85,EA
+AUR-PLC-00236,Automation Controller Series 156,PLC,PrimeFlow Specialty Alloys,5384.07,KIT
+AUR-DRV-00237,Variable Frequency Drive Series 157,DRV,NorthForge Bearing Works,5572.34,KIT
+AUR-HEX-00238,Heat Exchanger Part Series 158,HEX,NorthForge Fasteners,3395.58,SET
+AUR-LUB-00239,Industrial Lubrication Series 159,LUB,NorthForge Marine Components,7607.77,KIT
+AUR-TOL-00240,Specialty Tooling Series 160,TOL,VectorValve Bearing Works,5999.47,EA
+AUR-PMP-00241,Centrifugal Pump Series 161,PMP,VectorValve Fasteners,19866.84,EA
+AUR-VLV-00242,Control Valve Series 162,VLV,VectorValve Marine Components,6426.37,EA
+AUR-BRG-00243,Industrial Bearing Series 163,BRG,VectorValve Motion Controls,5784.71,KIT
+AUR-INS-00244,Pressure Instrument Series 164,INS,PrimeFlow Industries,6455.7,MTR
+AUR-MTR-00245,Electric Motor Series 165,MTR,PrimeFlow Gasket & Seal,15578.79,SET
+AUR-SEA-00246,Mechanical Seal Series 166,SEA,PrimeFlow Filter Technologies,2710.84,MTR
+AUR-FLT-00247,Process Filter Series 167,FLT,PrimeFlow Valve Automation,6914.45,MTR
+AUR-ACT-00248,Valve Actuator Series 168,ACT,PrimeFlow Specialty Alloys,3743.18,KIT
+AUR-GSK-00249,Industrial Gasket Series 169,GSK,NorthForge Bearing Works,3733.21,EA
+AUR-HOS-00250,Hydraulic Hose Series 170,HOS,NorthForge Fasteners,8074.06,SET
+AUR-FIT-00251,Pipe Fitting Series 171,FIT,NorthForge Marine Components,2245.32,EA
+AUR-CAB-00252,Instrumentation Cable Series 172,CAB,VectorValve Hydraulics,7310.85,EA
+AUR-SEN-00253,Process Sensor Series 173,SEN,VectorValve Fabrication,1694.64,EA
+AUR-CMP-00254,Compressor Component Series 174,CMP,VectorValve Compressor Parts,24311.16,KIT
+AUR-SAF-00255,Safety Equipment Series 175,SAF,VectorValve Motion Controls,2723.15,EA
+AUR-PLC-00256,Automation Controller Series 176,PLC,PrimeFlow Industries,2624.78,EA
+AUR-DRV-00257,Variable Frequency Drive Series 177,DRV,PrimeFlow Gasket & Seal,3999.95,EA
+AUR-HEX-00258,Heat Exchanger Part Series 178,HEX,PrimeFlow Filter Technologies,21756.7,SET
+AUR-LUB-00259,Industrial Lubrication Series 179,LUB,PrimeFlow Valve Automation,8221.58,EA
+AUR-TOL-00260,Specialty Tooling Series 180,TOL,PrimeFlow Specialty Alloys,3825.89,EA
+AUR-PMP-00261,Centrifugal Pump Series 181,PMP,NorthForge Hydraulics,11250.8,KIT
+AUR-VLV-00262,Control Valve Series 182,VLV,NorthForge Fabrication,1515.66,KIT
+AUR-BRG-00263,Industrial Bearing Series 183,BRG,VectorValve Manufacturing,6104.21,MTR
+AUR-INS-00264,Pressure Instrument Series 184,INS,VectorValve Hydraulics,4137.93,KIT
+AUR-MTR-00265,Electric Motor Series 185,MTR,VectorValve Fabrication,27437.33,KIT
+AUR-SEA-00266,Mechanical Seal Series 186,SEA,VectorValve Compressor Parts,368.17,MTR
+AUR-FLT-00267,Process Filter Series 187,FLT,VectorValve Motion Controls,1616.05,EA
+AUR-ACT-00268,Valve Actuator Series 188,ACT,PrimeFlow Industries,5888.71,EA
+AUR-GSK-00269,Industrial Gasket Series 189,GSK,PrimeFlow Gasket & Seal,794.55,SET
+AUR-HOS-00270,Hydraulic Hose Series 190,HOS,PrimeFlow Safety Supply,8368.51,SET
+AUR-FIT-00271,Pipe Fitting Series 191,FIT,PrimeFlow Sensor Labs,4419.3,EA
+AUR-CAB-00272,Instrumentation Cable Series 192,CAB,NorthForge Manufacturing,4386.24,EA
+AUR-SEN-00273,Process Sensor Series 193,SEN,NorthForge Hydraulics,1224.42,SET
+AUR-CMP-00274,Compressor Component Series 194,CMP,NorthForge Fabrication,3124.76,KIT
+AUR-SAF-00275,Safety Equipment Series 195,SAF,VectorValve Manufacturing,2821.86,EA
+AUR-PLC-00276,Automation Controller Series 196,PLC,VectorValve Hydraulics,6408.29,SET
+AUR-DRV-00277,Variable Frequency Drive Series 197,DRV,VectorValve Fabrication,3554.63,KIT
+AUR-HEX-00278,Heat Exchanger Part Series 198,HEX,VectorValve Compressor Parts,3841.12,KIT
+AUR-LUB-00279,Industrial Lubrication Series 199,LUB,VectorValve Mechanical Supply,2933.14,SET
+AUR-TOL-00280,Specialty Tooling Series 200,TOL,PrimeFlow Instrumentation,5088.65,EA
+AUR-PMP-00281,Centrifugal Pump Series 201,PMP,PrimeFlow Electric,8811.95,SET
+AUR-VLV-00282,Control Valve Series 202,VLV,PrimeFlow Safety Supply,5149.1,EA
+AUR-BRG-00283,Industrial Bearing Series 203,BRG,PrimeFlow Sensor Labs,1806.98,SET
+AUR-INS-00284,Pressure Instrument Series 204,INS,NorthForge Manufacturing,786.64,SET
+AUR-MTR-00285,Electric Motor Series 205,MTR,NorthForge Hydraulics,12613.08,EA
+AUR-SEA-00286,Mechanical Seal Series 206,SEA,NorthForge Fabrication,5669.55,MTR
+AUR-FLT-00287,Process Filter Series 207,FLT,VectorValve Manufacturing,2182.2,KIT
+AUR-ACT-00288,Valve Actuator Series 208,ACT,VectorValve Actuation,8302.27,KIT
+AUR-GSK-00289,Industrial Gasket Series 209,GSK,VectorValve Process Equipment,8266.57,EA
+AUR-HOS-00290,Hydraulic Hose Series 210,HOS,VectorValve Industrial Plastics,7400.97,EA
+AUR-FIT-00291,Pipe Fitting Series 211,FIT,VectorValve Mechanical Supply,5238.85,EA
+AUR-CAB-00292,Instrumentation Cable Series 212,CAB,PrimeFlow Instrumentation,469.97,EA
+AUR-SEN-00293,Process Sensor Series 213,SEN,PrimeFlow Electric,4634.63,EA
+AUR-CMP-00294,Compressor Component Series 214,CMP,PrimeFlow Safety Supply,11684.42,EA
+AUR-SAF-00295,Safety Equipment Series 215,SAF,PrimeFlow Sensor Labs,1839.88,SET
+AUR-PLC-00296,Automation Controller Series 216,PLC,NorthForge Manufacturing,1696.17,EA
+AUR-DRV-00297,Variable Frequency Drive Series 217,DRV,NorthForge Actuation,2395.99,EA
+AUR-HEX-00298,Heat Exchanger Part Series 218,HEX,NorthForge Process Equipment,10965.92,EA
+AUR-LUB-00299,Industrial Lubrication Series 219,LUB,VectorValve Components,3753.3,KIT
+AUR-TOL-00300,Specialty Tooling Series 220,TOL,VectorValve Actuation,6975.39,EA
+AUR-PMP-00301,Centrifugal Pump Series 221,PMP,VectorValve Process Equipment,11060.61,MTR
+AUR-VLV-00302,Control Valve Series 222,VLV,VectorValve Industrial Plastics,1015.56,KIT
+AUR-BRG-00303,Industrial Bearing Series 223,BRG,VectorValve Mechanical Supply,3938.16,EA
+AUR-INS-00304,Pressure Instrument Series 224,INS,PrimeFlow Instrumentation,1454.12,EA
+AUR-MTR-00305,Electric Motor Series 225,MTR,PrimeFlow Electric,10427.76,EA
+AUR-SEA-00306,Mechanical Seal Series 226,SEA,PrimeFlow Gearworks,7539.55,SET
+AUR-FLT-00307,Process Filter Series 227,FLT,PrimeFlow Technical Metals,6072.17,MTR
+AUR-ACT-00308,Valve Actuator Series 228,ACT,NorthForge Components,6322.08,SET
+AUR-GSK-00309,Industrial Gasket Series 229,GSK,NorthForge Actuation,3494.25,EA
+AUR-HOS-00310,Hydraulic Hose Series 230,HOS,NorthForge Process Equipment,6273.26,SET
+AUR-FIT-00311,Pipe Fitting Series 231,FIT,VectorValve Components,1893.73,KIT
+AUR-CAB-00312,Instrumentation Cable Series 232,CAB,VectorValve Actuation,896.43,EA
+AUR-SEN-00313,Process Sensor Series 233,SEN,VectorValve Process Equipment,6016.21,SET
+AUR-CMP-00314,Compressor Component Series 234,CMP,VectorValve Industrial Plastics,11428.21,MTR
+AUR-SAF-00315,Safety Equipment Series 235,SAF,VectorValve Process Instruments,1834.35,MTR
+AUR-PLC-00316,Automation Controller Series 236,PLC,PrimeFlow Systems,3678.67,EA
+AUR-DRV-00317,Variable Frequency Drive Series 237,DRV,PrimeFlow Controls,1612.06,SET
+AUR-HEX-00318,Heat Exchanger Part Series 238,HEX,PrimeFlow Gearworks,13528.6,EA
+AUR-LUB-00319,Industrial Lubrication Series 239,LUB,PrimeFlow Technical Metals,4203.31,EA
+AUR-TOL-00320,Specialty Tooling Series 240,TOL,NorthForge Components,5756.17,EA
+AUR-PMP-00321,Centrifugal Pump Series 241,PMP,NorthForge Actuation,16933.75,EA
+AUR-VLV-00322,Control Valve Series 242,VLV,NorthForge Process Equipment,1867.33,EA
+AUR-BRG-00323,Industrial Bearing Series 243,BRG,VectorValve Components,2677.5,EA
+AUR-INS-00324,Pressure Instrument Series 244,INS,VectorValve Technologies,7308.28,MTR
+AUR-MTR-00325,Electric Motor Series 245,MTR,VectorValve Cable Systems,19076.87,MTR
+AUR-SEA-00326,Mechanical Seal Series 246,SEA,VectorValve Heat Transfer,3933.62,MTR
+AUR-FLT-00327,Process Filter Series 247,FLT,VectorValve Process Instruments,4343.16,EA
+AUR-ACT-00328,Valve Actuator Series 248,ACT,PrimeFlow Systems,776.96,SET
+AUR-GSK-00329,Industrial Gasket Series 249,GSK,PrimeFlow Controls,2610.03,EA
+AUR-HOS-00330,Hydraulic Hose Series 250,HOS,PrimeFlow Gearworks,7236.63,EA
+AUR-FIT-00331,Pipe Fitting Series 251,FIT,PrimeFlow Technical Metals,2949.35,MTR
+AUR-CAB-00332,Instrumentation Cable Series 252,CAB,NorthForge Components,5342.86,EA
+AUR-SEN-00333,Process Sensor Series 253,SEN,NorthForge Technologies,574.2,KIT
+AUR-CMP-00334,Compressor Component Series 254,CMP,NorthForge Cable Systems,1529.29,EA
+AUR-SAF-00335,Safety Equipment Series 255,SAF,VectorValve Pumps,915.87,SET
+AUR-PLC-00336,Automation Controller Series 256,PLC,VectorValve Technologies,3295.27,KIT
+AUR-DRV-00337,Variable Frequency Drive Series 257,DRV,VectorValve Cable Systems,1269.81,EA
+AUR-HEX-00338,Heat Exchanger Part Series 258,HEX,VectorValve Heat Transfer,13173.22,MTR
+AUR-LUB-00339,Industrial Lubrication Series 259,LUB,VectorValve Process Instruments,3247.09,EA
+AUR-TOL-00340,Specialty Tooling Series 260,TOL,PrimeFlow Systems,1057.98,KIT
+AUR-PMP-00341,Centrifugal Pump Series 261,PMP,PrimeFlow Controls,3603.1,KIT
+AUR-VLV-00342,Control Valve Series 262,VLV,PrimeFlow Marine Components,1340.21,MTR
+AUR-BRG-00343,Industrial Bearing Series 263,BRG,PrimeFlow Hose & Fittings,696.47,EA
+AUR-INS-00344,Pressure Instrument Series 264,INS,NorthForge Pumps,285.15,MTR
+AUR-MTR-00345,Electric Motor Series 265,MTR,NorthForge Technologies,1876.28,KIT
+AUR-SEA-00346,Mechanical Seal Series 266,SEA,NorthForge Cable Systems,2631.81,MTR
+AUR-FLT-00347,Process Filter Series 267,FLT,VectorValve Pumps,6063.51,EA
+AUR-ACT-00348,Valve Actuator Series 268,ACT,VectorValve Technologies,3026.08,EA
+AUR-GSK-00349,Industrial Gasket Series 269,GSK,VectorValve Cable Systems,4274.16,EA
+AUR-HOS-00350,Hydraulic Hose Series 270,HOS,VectorValve Heat Transfer,5956.19,SET
+AUR-FIT-00351,Pipe Fitting Series 271,FIT,VectorValve Specialty Alloys,7306.12,EA
+AUR-CAB-00352,Instrumentation Cable Series 272,CAB,PrimeFlow Bearing Works,1940.4,MTR
+AUR-SEN-00353,Process Sensor Series 273,SEN,PrimeFlow Fasteners,1724.18,EA
+AUR-CMP-00354,Compressor Component Series 274,CMP,PrimeFlow Marine Components,4212.26,MTR
+AUR-SAF-00355,Safety Equipment Series 275,SAF,PrimeFlow Hose & Fittings,4101.29,SET
+AUR-PLC-00356,Automation Controller Series 276,PLC,NorthForge Pumps,1294.76,MTR
+AUR-DRV-00357,Variable Frequency Drive Series 277,DRV,NorthForge Technologies,6406.82,EA
+AUR-HEX-00358,Heat Exchanger Part Series 278,HEX,NorthForge Cable Systems,17430.9,EA
+AUR-LUB-00359,Industrial Lubrication Series 279,LUB,VectorValve Pumps,3579.54,EA
+AUR-TOL-00360,Specialty Tooling Series 100,TOL,VectorValve Gasket & Seal,8293.4,MTR
+AUR-PMP-00361,Centrifugal Pump Series 101,PMP,VectorValve Filter Technologies,24086.37,MTR
+AUR-VLV-00362,Control Valve Series 102,VLV,VectorValve Valve Automation,2692.55,KIT
+AUR-BRG-00363,Industrial Bearing Series 103,BRG,VectorValve Specialty Alloys,4243.16,EA
+AUR-INS-00364,Pressure Instrument Series 104,INS,PrimeFlow Bearing Works,7226.09,EA
+AUR-MTR-00365,Electric Motor Series 105,MTR,PrimeFlow Fasteners,8415.05,EA
+AUR-SEA-00366,Mechanical Seal Series 106,SEA,PrimeFlow Marine Components,5846.96,KIT
+AUR-FLT-00367,Process Filter Series 107,FLT,PrimeFlow Hose & Fittings,5552.81,MTR
+AUR-ACT-00368,Valve Actuator Series 108,ACT,NorthForge Pumps,5031.69,EA
+AUR-GSK-00369,Industrial Gasket Series 109,GSK,NorthForge Gasket & Seal,2126.68,KIT
+AUR-HOS-00370,Hydraulic Hose Series 110,HOS,NorthForge Filter Technologies,6304.07,MTR
+AUR-FIT-00371,Pipe Fitting Series 111,FIT,VectorValve Industries,3415.26,EA
+AUR-CAB-00372,Instrumentation Cable Series 112,CAB,VectorValve Gasket & Seal,1793.51,EA
+AUR-SEN-00373,Process Sensor Series 113,SEN,VectorValve Filter Technologies,2221.67,KIT
+AUR-CMP-00374,Compressor Component Series 114,CMP,VectorValve Valve Automation,8291.36,EA
+AUR-SAF-00375,Safety Equipment Series 115,SAF,VectorValve Specialty Alloys,7764.02,KIT
+AUR-PLC-00376,Automation Controller Series 116,PLC,PrimeFlow Bearing Works,3016.79,EA
+AUR-DRV-00377,Variable Frequency Drive Series 117,DRV,PrimeFlow Fasteners,3250.89,SET
+AUR-HEX-00378,Heat Exchanger Part Series 118,HEX,PrimeFlow Compressor Parts,10238.71,EA
+AUR-LUB-00379,Industrial Lubrication Series 119,LUB,PrimeFlow Motion Controls,6376.5,EA
+AUR-TOL-00380,Specialty Tooling Series 120,TOL,NorthForge Industries,129.21,EA
+AUR-PMP-00381,Centrifugal Pump Series 121,PMP,NorthForge Gasket & Seal,17129.33,SET
+AUR-VLV-00382,Control Valve Series 122,VLV,NorthForge Filter Technologies,2045.18,SET
+AUR-BRG-00383,Industrial Bearing Series 123,BRG,VectorValve Industries,7559.9,EA
+AUR-INS-00384,Pressure Instrument Series 124,INS,VectorValve Gasket & Seal,1062.57,EA
+AUR-MTR-00385,Electric Motor Series 125,MTR,VectorValve Filter Technologies,14523.5,KIT
+AUR-SEA-00386,Mechanical Seal Series 126,SEA,VectorValve Valve Automation,6172.88,EA
+AUR-FLT-00387,Process Filter Series 127,FLT,PrimeFlow Manufacturing,291.05,EA
+AUR-ACT-00388,Valve Actuator Series 128,ACT,PrimeFlow Hydraulics,7528.05,MTR
+AUR-GSK-00389,Industrial Gasket Series 129,GSK,PrimeFlow Fabrication,73.14,EA
+AUR-HOS-00390,Hydraulic Hose Series 130,HOS,PrimeFlow Compressor Parts,1034.45,EA
+AUR-FIT-00391,Pipe Fitting Series 131,FIT,PrimeFlow Motion Controls,6214.2,EA
+AUR-CAB-00392,Instrumentation Cable Series 132,CAB,NorthForge Industries,7078.15,MTR
+AUR-SEN-00393,Process Sensor Series 133,SEN,NorthForge Gasket & Seal,5324.69,SET
+AUR-CMP-00394,Compressor Component Series 134,CMP,NorthForge Filter Technologies,17953.54,EA
+AUR-SAF-00395,Safety Equipment Series 135,SAF,VectorValve Industries,4845.69,EA
+AUR-PLC-00396,Automation Controller Series 136,PLC,VectorValve Electric,2277.01,EA
+AUR-DRV-00397,Variable Frequency Drive Series 137,DRV,VectorValve Safety Supply,702.26,SET
+AUR-HEX-00398,Heat Exchanger Part Series 138,HEX,VectorValve Sensor Labs,8136.28,KIT
+AUR-LUB-00399,Industrial Lubrication Series 139,LUB,PrimeFlow Manufacturing,1217.07,MTR
+AUR-TOL-00400,Specialty Tooling Series 140,TOL,PrimeFlow Hydraulics,205.67,MTR
+AUR-PMP-00401,Centrifugal Pump Series 141,PMP,PrimeFlow Fabrication,25163.23,MTR
+AUR-VLV-00402,Control Valve Series 142,VLV,PrimeFlow Compressor Parts,3299.15,MTR
+AUR-BRG-00403,Industrial Bearing Series 143,BRG,PrimeFlow Motion Controls,8396.15,EA
+AUR-INS-00404,Pressure Instrument Series 144,INS,NorthForge Industries,120.51,SET
+AUR-MTR-00405,Electric Motor Series 145,MTR,NorthForge Electric,8694.44,SET
+AUR-SEA-00406,Mechanical Seal Series 146,SEA,NorthForge Safety Supply,7692.87,KIT
+AUR-FLT-00407,Process Filter Series 147,FLT,VectorValve Instrumentation,7541.63,EA
+AUR-ACT-00408,Valve Actuator Series 148,ACT,VectorValve Electric,3464.63,MTR
+AUR-GSK-00409,Industrial Gasket Series 149,GSK,VectorValve Safety Supply,542.76,EA
+AUR-HOS-00410,Hydraulic Hose Series 150,HOS,VectorValve Sensor Labs,887.41,EA
+AUR-FIT-00411,Pipe Fitting Series 151,FIT,PrimeFlow Manufacturing,5467.18,EA
+AUR-CAB-00412,Instrumentation Cable Series 152,CAB,PrimeFlow Hydraulics,5440.72,SET
+AUR-SEN-00413,Process Sensor Series 153,SEN,PrimeFlow Fabrication,6361.05,EA
+AUR-CMP-00414,Compressor Component Series 154,CMP,PrimeFlow Industrial Plastics,2624.33,KIT
+AUR-SAF-00415,Safety Equipment Series 155,SAF,PrimeFlow Mechanical Supply,2098.53,MTR
+AUR-PLC-00416,Automation Controller Series 156,PLC,NorthForge Instrumentation,1483.63,SET
+AUR-DRV-00417,Variable Frequency Drive Series 157,DRV,NorthForge Electric,3447.58,KIT
+AUR-HEX-00418,Heat Exchanger Part Series 158,HEX,NorthForge Safety Supply,15812.46,KIT
+AUR-LUB-00419,Industrial Lubrication Series 159,LUB,VectorValve Instrumentation,1524.93,KIT
+AUR-TOL-00420,Specialty Tooling Series 160,TOL,VectorValve Electric,5017.28,MTR
+AUR-PMP-00421,Centrifugal Pump Series 161,PMP,VectorValve Safety Supply,18740.62,EA
+AUR-VLV-00422,Control Valve Series 162,VLV,VectorValve Sensor Labs,7130.33,KIT
+AUR-BRG-00423,Industrial Bearing Series 163,BRG,PrimeFlow Components,5749.7,MTR
+AUR-INS-00424,Pressure Instrument Series 164,INS,PrimeFlow Actuation,4477.49,EA
+AUR-MTR-00425,Electric Motor Series 165,MTR,PrimeFlow Process Equipment,16619.05,KIT
+AUR-SEA-00426,Mechanical Seal Series 166,SEA,PrimeFlow Industrial Plastics,8475.76,KIT
+AUR-FLT-00427,Process Filter Series 167,FLT,PrimeFlow Mechanical Supply,7559.74,KIT
+AUR-ACT-00428,Valve Actuator Series 168,ACT,NorthForge Instrumentation,6250.85,EA
+AUR-GSK-00429,Industrial Gasket Series 169,GSK,NorthForge Electric,2774.86,EA
+AUR-HOS-00430,Hydraulic Hose Series 170,HOS,NorthForge Safety Supply,5172.69,EA
+AUR-FIT-00431,Pipe Fitting Series 171,FIT,VectorValve Instrumentation,2228.65,EA
+AUR-CAB-00432,Instrumentation Cable Series 172,CAB,VectorValve Controls,645.32,EA
+AUR-SEN-00433,Process Sensor Series 173,SEN,VectorValve Gearworks,5539.34,KIT
+AUR-CMP-00434,Compressor Component Series 174,CMP,VectorValve Technical Metals,5976.21,EA
+AUR-SAF-00435,Safety Equipment Series 175,SAF,PrimeFlow Components,39.49,EA
+AUR-PLC-00436,Automation Controller Series 176,PLC,PrimeFlow Actuation,6347.91,KIT
+AUR-DRV-00437,Variable Frequency Drive Series 177,DRV,PrimeFlow Process Equipment,980.31,EA
+AUR-HEX-00438,Heat Exchanger Part Series 178,HEX,PrimeFlow Industrial Plastics,15767.22,EA
+AUR-LUB-00439,Industrial Lubrication Series 179,LUB,PrimeFlow Mechanical Supply,5628.44,EA
+AUR-TOL-00440,Specialty Tooling Series 180,TOL,NorthForge Instrumentation,7850.24,EA
+AUR-PMP-00441,Centrifugal Pump Series 181,PMP,NorthForge Controls,14868.59,EA
+AUR-VLV-00442,Control Valve Series 182,VLV,NorthForge Gearworks,3823.71,SET
+AUR-BRG-00443,Industrial Bearing Series 183,BRG,VectorValve Systems,3885.04,KIT
+AUR-INS-00444,Pressure Instrument Series 184,INS,VectorValve Controls,7996.05,EA
+AUR-MTR-00445,Electric Motor Series 185,MTR,VectorValve Gearworks,2145.16,EA
+AUR-SEA-00446,Mechanical Seal Series 186,SEA,VectorValve Technical Metals,7104.44,MTR
+AUR-FLT-00447,Process Filter Series 187,FLT,PrimeFlow Components,3772.16,EA
+AUR-ACT-00448,Valve Actuator Series 188,ACT,PrimeFlow Actuation,4760.24,EA
+AUR-GSK-00449,Industrial Gasket Series 189,GSK,PrimeFlow Process Equipment,6360.82,SET
+AUR-HOS-00450,Hydraulic Hose Series 190,HOS,PrimeFlow Heat Transfer,623.36,EA
+AUR-FIT-00451,Pipe Fitting Series 191,FIT,PrimeFlow Process Instruments,1108.7,EA
+AUR-CAB-00452,Instrumentation Cable Series 192,CAB,NorthForge Systems,7978.82,EA
+AUR-SEN-00453,Process Sensor Series 193,SEN,NorthForge Controls,3073.28,EA
+AUR-CMP-00454,Compressor Component Series 194,CMP,NorthForge Gearworks,10991.61,MTR
+AUR-SAF-00455,Safety Equipment Series 195,SAF,VectorValve Systems,2341.79,MTR
+AUR-PLC-00456,Automation Controller Series 196,PLC,VectorValve Controls,1185.71,EA
+AUR-DRV-00457,Variable Frequency Drive Series 197,DRV,VectorValve Gearworks,7207.54,SET
+AUR-HEX-00458,Heat Exchanger Part Series 198,HEX,VectorValve Technical Metals,18626.47,EA
+AUR-LUB-00459,Industrial Lubrication Series 199,LUB,PrimeFlow Pumps,234.54,EA
+AUR-TOL-00460,Specialty Tooling Series 200,TOL,PrimeFlow Technologies,5989.88,SET
+AUR-PMP-00461,Centrifugal Pump Series 201,PMP,PrimeFlow Cable Systems,28240.74,EA
+AUR-VLV-00462,Control Valve Series 202,VLV,PrimeFlow Heat Transfer,6208.16,MTR
+AUR-BRG-00463,Industrial Bearing Series 203,BRG,PrimeFlow Process Instruments,7799.01,SET
+AUR-INS-00464,Pressure Instrument Series 204,INS,NorthForge Systems,6189.34,KIT
+AUR-MTR-00465,Electric Motor Series 205,MTR,NorthForge Controls,10108.25,EA
+AUR-SEA-00466,Mechanical Seal Series 206,SEA,NorthForge Gearworks,1200.57,MTR
+AUR-FLT-00467,Process Filter Series 207,FLT,VectorValve Systems,4078.97,SET
+AUR-ACT-00468,Valve Actuator Series 208,ACT,VectorValve Fasteners,2222.58,EA
+AUR-GSK-00469,Industrial Gasket Series 209,GSK,VectorValve Marine Components,1066.13,MTR
+AUR-HOS-00470,Hydraulic Hose Series 210,HOS,VectorValve Hose & Fittings,1410.19,EA
+AUR-FIT-00471,Pipe Fitting Series 211,FIT,PrimeFlow Pumps,1559.87,KIT
+AUR-CAB-00472,Instrumentation Cable Series 212,CAB,PrimeFlow Technologies,8077.99,EA
+AUR-SEN-00473,Process Sensor Series 213,SEN,PrimeFlow Cable Systems,578.31,KIT
+AUR-CMP-00474,Compressor Component Series 214,CMP,PrimeFlow Heat Transfer,8008.15,EA
+AUR-SAF-00475,Safety Equipment Series 215,SAF,PrimeFlow Process Instruments,4052.02,MTR
+AUR-PLC-00476,Automation Controller Series 216,PLC,NorthForge Systems,6498.78,KIT
+AUR-DRV-00477,Variable Frequency Drive Series 217,DRV,NorthForge Fasteners,6146.14,EA
+AUR-HEX-00478,Heat Exchanger Part Series 218,HEX,NorthForge Marine Components,21881.17,EA
+AUR-LUB-00479,Industrial Lubrication Series 219,LUB,VectorValve Bearing Works,4023.59,KIT
+AUR-TOL-00480,Specialty Tooling Series 220,TOL,VectorValve Fasteners,4829.43,KIT
+AUR-PMP-00481,Centrifugal Pump Series 221,PMP,VectorValve Marine Components,20610.74,EA
+AUR-VLV-00482,Control Valve Series 222,VLV,VectorValve Hose & Fittings,1552.44,EA
+AUR-BRG-00483,Industrial Bearing Series 223,BRG,PrimeFlow Pumps,3452.42,EA
+AUR-INS-00484,Pressure Instrument Series 224,INS,PrimeFlow Technologies,6175.95,SET
+AUR-MTR-00485,Electric Motor Series 225,MTR,PrimeFlow Cable Systems,2337.3,EA
+AUR-SEA-00486,Mechanical Seal Series 226,SEA,PrimeFlow Valve Automation,4523.2,MTR
+AUR-FLT-00487,Process Filter Series 227,FLT,PrimeFlow Specialty Alloys,6014.66,EA
+AUR-ACT-00488,Valve Actuator Series 228,ACT,NorthForge Bearing Works,5348.09,KIT
+AUR-GSK-00489,Industrial Gasket Series 229,GSK,NorthForge Fasteners,4422.38,EA
+AUR-HOS-00490,Hydraulic Hose Series 230,HOS,NorthForge Marine Components,7945.58,KIT
+AUR-FIT-00491,Pipe Fitting Series 231,FIT,VectorValve Bearing Works,8139.15,MTR
+AUR-CAB-00492,Instrumentation Cable Series 232,CAB,VectorValve Fasteners,8251.37,KIT
+AUR-SEN-00493,Process Sensor Series 233,SEN,VectorValve Marine Components,5535.67,KIT
+AUR-CMP-00494,Compressor Component Series 234,CMP,VectorValve Hose & Fittings,7038.06,KIT
+AUR-SAF-00495,Safety Equipment Series 235,SAF,PrimeFlow Industries,1592.53,SET
+AUR-PLC-00496,Automation Controller Series 236,PLC,PrimeFlow Gasket & Seal,2497.56,EA
+AUR-DRV-00497,Variable Frequency Drive Series 237,DRV,PrimeFlow Filter Technologies,3394.39,EA
+AUR-HEX-00498,Heat Exchanger Part Series 238,HEX,PrimeFlow Valve Automation,7453.67,EA
+AUR-LUB-00499,Industrial Lubrication Series 239,LUB,PrimeFlow Specialty Alloys,4268.69,SET
+AUR-TOL-00500,Specialty Tooling Series 240,TOL,NorthForge Bearing Works,8384.22,EA
+AUR-PMP-00501,Centrifugal Pump Series 241,PMP,NorthForge Fasteners,2175.31,EA
+AUR-VLV-00502,Control Valve Series 242,VLV,NorthForge Marine Components,7246.85,SET
+AUR-BRG-00503,Industrial Bearing Series 243,BRG,VectorValve Bearing Works,8476.28,EA
+AUR-INS-00504,Pressure Instrument Series 244,INS,VectorValve Fabrication,8385.84,EA
+AUR-MTR-00505,Electric Motor Series 245,MTR,VectorValve Compressor Parts,8903.67,EA
+AUR-SEA-00506,Mechanical Seal Series 246,SEA,VectorValve Motion Controls,5329.87,SET
+AUR-FLT-00507,Process Filter Series 247,FLT,PrimeFlow Industries,2155.22,EA
+AUR-ACT-00508,Valve Actuator Series 248,ACT,PrimeFlow Gasket & Seal,1207.58,EA
+AUR-GSK-00509,Industrial Gasket Series 249,GSK,PrimeFlow Filter Technologies,7777.12,EA
+AUR-HOS-00510,Hydraulic Hose Series 250,HOS,PrimeFlow Valve Automation,4054.48,SET
+AUR-FIT-00511,Pipe Fitting Series 251,FIT,PrimeFlow Specialty Alloys,4839.6,SET
+AUR-CAB-00512,Instrumentation Cable Series 252,CAB,NorthForge Bearing Works,5889.12,EA
+AUR-SEN-00513,Process Sensor Series 253,SEN,NorthForge Fabrication,1689.55,MTR
+AUR-CMP-00514,Compressor Component Series 254,CMP,VectorValve Manufacturing,6967.22,EA
+AUR-SAF-00515,Safety Equipment Series 255,SAF,VectorValve Hydraulics,4807.26,EA
+AUR-PLC-00516,Automation Controller Series 256,PLC,VectorValve Fabrication,6038.78,SET
+AUR-DRV-00517,Variable Frequency Drive Series 257,DRV,VectorValve Compressor Parts,5762.16,KIT
+AUR-HEX-00518,Heat Exchanger Part Series 258,HEX,VectorValve Motion Controls,7868.63,SET
+AUR-LUB-00519,Industrial Lubrication Series 259,LUB,PrimeFlow Industries,1358.13,MTR
+AUR-TOL-00520,Specialty Tooling Series 260,TOL,PrimeFlow Gasket & Seal,5062.59,KIT
+AUR-PMP-00521,Centrifugal Pump Series 261,PMP,PrimeFlow Filter Technologies,13404.77,EA
+AUR-VLV-00522,Control Valve Series 262,VLV,PrimeFlow Sensor Labs,6325.9,EA
+AUR-BRG-00523,Industrial Bearing Series 263,BRG,NorthForge Manufacturing,8195.76,EA
+AUR-INS-00524,Pressure Instrument Series 264,INS,NorthForge Hydraulics,3440.69,MTR
+AUR-MTR-00525,Electric Motor Series 265,MTR,NorthForge Fabrication,21042.92,SET
+AUR-SEA-00526,Mechanical Seal Series 266,SEA,VectorValve Manufacturing,5538.57,MTR
+AUR-FLT-00527,Process Filter Series 267,FLT,VectorValve Hydraulics,1883.28,SET
+AUR-ACT-00528,Valve Actuator Series 268,ACT,VectorValve Fabrication,6501.71,SET
+AUR-GSK-00529,Industrial Gasket Series 269,GSK,VectorValve Compressor Parts,266.57,KIT
+AUR-HOS-00530,Hydraulic Hose Series 270,HOS,VectorValve Motion Controls,5423.39,KIT
+AUR-FIT-00531,Pipe Fitting Series 271,FIT,PrimeFlow Instrumentation,2883.03,KIT
+AUR-CAB-00532,Instrumentation Cable Series 272,CAB,PrimeFlow Electric,2135.49,SET
+AUR-SEN-00533,Process Sensor Series 273,SEN,PrimeFlow Safety Supply,5331.71,EA
+AUR-CMP-00534,Compressor Component Series 274,CMP,PrimeFlow Sensor Labs,18619.43,SET
+AUR-SAF-00535,Safety Equipment Series 275,SAF,NorthForge Manufacturing,3620.68,EA
+AUR-PLC-00536,Automation Controller Series 276,PLC,NorthForge Hydraulics,7083.56,EA
+AUR-DRV-00537,Variable Frequency Drive Series 277,DRV,NorthForge Fabrication,2613.65,EA
+AUR-HEX-00538,Heat Exchanger Part Series 278,HEX,VectorValve Manufacturing,10046.47,EA
+AUR-LUB-00539,Industrial Lubrication Series 279,LUB,VectorValve Hydraulics,5031.86,EA
+AUR-TOL-00540,Specialty Tooling Series 100,TOL,VectorValve Process Equipment,1647.57,EA
+AUR-PMP-00541,Centrifugal Pump Series 101,PMP,VectorValve Industrial Plastics,2059.08,KIT
+AUR-VLV-00542,Control Valve Series 102,VLV,VectorValve Mechanical Supply,3714.49,SET
+AUR-BRG-00543,Industrial Bearing Series 103,BRG,PrimeFlow Instrumentation,2198.64,SET
+AUR-INS-00544,Pressure Instrument Series 104,INS,PrimeFlow Electric,5426.47,SET
+AUR-MTR-00545,Electric Motor Series 105,MTR,PrimeFlow Safety Supply,9185.75,EA
+AUR-SEA-00546,Mechanical Seal Series 106,SEA,PrimeFlow Sensor Labs,183.04,EA
+AUR-FLT-00547,Process Filter Series 107,FLT,NorthForge Manufacturing,2989.12,EA
+AUR-ACT-00548,Valve Actuator Series 108,ACT,NorthForge Hydraulics,3113.21,MTR
+AUR-GSK-00549,Industrial Gasket Series 109,GSK,NorthForge Process Equipment,3797.32,EA
+AUR-HOS-00550,Hydraulic Hose Series 110,HOS,VectorValve Components,5403.65,SET
+AUR-FIT-00551,Pipe Fitting Series 111,FIT,VectorValve Actuation,410.15,SET
+AUR-CAB-00552,Instrumentation Cable Series 112,CAB,VectorValve Process Equipment,466.12,MTR
+AUR-SEN-00553,Process Sensor Series 113,SEN,VectorValve Industrial Plastics,2304.82,KIT
+AUR-CMP-00554,Compressor Component Series 114,CMP,VectorValve Mechanical Supply,4224.89,EA
+AUR-SAF-00555,Safety Equipment Series 115,SAF,PrimeFlow Instrumentation,6609.54,KIT
+AUR-PLC-00556,Automation Controller Series 116,PLC,PrimeFlow Electric,5552.22,EA
+AUR-DRV-00557,Variable Frequency Drive Series 117,DRV,PrimeFlow Safety Supply,887.11,SET
+AUR-HEX-00558,Heat Exchanger Part Series 118,HEX,PrimeFlow Technical Metals,8965.79,SET
+AUR-LUB-00559,Industrial Lubrication Series 119,LUB,NorthForge Components,2752.79,EA
+AUR-TOL-00560,Specialty Tooling Series 120,TOL,NorthForge Actuation,4357.95,EA
+AUR-PMP-00561,Centrifugal Pump Series 121,PMP,NorthForge Process Equipment,5456.11,EA
+AUR-VLV-00562,Control Valve Series 122,VLV,VectorValve Components,1811.01,MTR
+AUR-BRG-00563,Industrial Bearing Series 123,BRG,VectorValve Actuation,3533.36,EA
+AUR-INS-00564,Pressure Instrument Series 124,INS,VectorValve Process Equipment,1368.47,EA
+AUR-MTR-00565,Electric Motor Series 125,MTR,VectorValve Industrial Plastics,423.55,KIT
+AUR-SEA-00566,Mechanical Seal Series 126,SEA,VectorValve Mechanical Supply,6083.87,EA
+AUR-FLT-00567,Process Filter Series 127,FLT,PrimeFlow Systems,191.56,EA
+AUR-ACT-00568,Valve Actuator Series 128,ACT,PrimeFlow Controls,5898.91,EA
+AUR-GSK-00569,Industrial Gasket Series 129,GSK,PrimeFlow Gearworks,7852.0,EA
+AUR-HOS-00570,Hydraulic Hose Series 130,HOS,PrimeFlow Technical Metals,698.24,EA
+AUR-FIT-00571,Pipe Fitting Series 131,FIT,NorthForge Components,4710.4,MTR
+AUR-CAB-00572,Instrumentation Cable Series 132,CAB,NorthForge Actuation,2841.0,EA
+AUR-SEN-00573,Process Sensor Series 133,SEN,NorthForge Process Equipment,3212.63,EA
+AUR-CMP-00574,Compressor Component Series 134,CMP,VectorValve Components,14641.34,SET
+AUR-SAF-00575,Safety Equipment Series 135,SAF,VectorValve Actuation,3509.89,SET
+AUR-PLC-00576,Automation Controller Series 136,PLC,VectorValve Cable Systems,6004.57,EA
+AUR-DRV-00577,Variable Frequency Drive Series 137,DRV,VectorValve Heat Transfer,7634.69,EA
+AUR-HEX-00578,Heat Exchanger Part Series 138,HEX,VectorValve Process Instruments,4201.38,MTR
+AUR-LUB-00579,Industrial Lubrication Series 139,LUB,PrimeFlow Systems,6648.8,SET
+AUR-TOL-00580,Specialty Tooling Series 140,TOL,PrimeFlow Controls,7085.53,EA
+AUR-PMP-00581,Centrifugal Pump Series 141,PMP,PrimeFlow Gearworks,10767.53,EA
+AUR-VLV-00582,Control Valve Series 142,VLV,PrimeFlow Technical Metals,7564.82,KIT
+AUR-BRG-00583,Industrial Bearing Series 143,BRG,NorthForge Components,1106.81,SET
+AUR-INS-00584,Pressure Instrument Series 144,INS,NorthForge Actuation,5936.43,MTR
+AUR-MTR-00585,Electric Motor Series 145,MTR,NorthForge Cable Systems,3335.32,SET
+AUR-SEA-00586,Mechanical Seal Series 146,SEA,VectorValve Pumps,3657.52,KIT
+AUR-FLT-00587,Process Filter Series 147,FLT,VectorValve Technologies,7928.55,KIT
+AUR-ACT-00588,Valve Actuator Series 148,ACT,VectorValve Cable Systems,1633.36,SET
+AUR-GSK-00589,Industrial Gasket Series 149,GSK,VectorValve Heat Transfer,5819.35,EA
+AUR-HOS-00590,Hydraulic Hose Series 150,HOS,VectorValve Process Instruments,1165.49,SET
+AUR-FIT-00591,Pipe Fitting Series 151,FIT,PrimeFlow Systems,1274.5,EA
+AUR-CAB-00592,Instrumentation Cable Series 152,CAB,PrimeFlow Controls,2671.52,EA
+AUR-SEN-00593,Process Sensor Series 153,SEN,PrimeFlow Gearworks,4722.19,SET
+AUR-CMP-00594,Compressor Component Series 154,CMP,PrimeFlow Hose & Fittings,977.01,EA
+AUR-SAF-00595,Safety Equipment Series 155,SAF,NorthForge Pumps,8210.58,KIT
+AUR-PLC-00596,Automation Controller Series 156,PLC,NorthForge Technologies,3123.43,SET
+AUR-DRV-00597,Variable Frequency Drive Series 157,DRV,NorthForge Cable Systems,2355.18,MTR
+AUR-HEX-00598,Heat Exchanger Part Series 158,HEX,VectorValve Pumps,9294.15,EA
+AUR-LUB-00599,Industrial Lubrication Series 159,LUB,VectorValve Technologies,4525.07,KIT
+AUR-TOL-00600,Specialty Tooling Series 160,TOL,VectorValve Cable Systems,4289.79,EA
+AUR-PMP-00601,Centrifugal Pump Series 161,PMP,VectorValve Heat Transfer,16320.68,MTR
+AUR-VLV-00602,Control Valve Series 162,VLV,VectorValve Process Instruments,4978.61,KIT
+AUR-BRG-00603,Industrial Bearing Series 163,BRG,PrimeFlow Bearing Works,667.03,MTR
+AUR-INS-00604,Pressure Instrument Series 164,INS,PrimeFlow Fasteners,78.37,EA
+AUR-MTR-00605,Electric Motor Series 165,MTR,PrimeFlow Marine Components,5350.23,SET
+AUR-SEA-00606,Mechanical Seal Series 166,SEA,PrimeFlow Hose & Fittings,7204.39,KIT
+AUR-FLT-00607,Process Filter Series 167,FLT,NorthForge Pumps,3758.02,EA
+AUR-ACT-00608,Valve Actuator Series 168,ACT,NorthForge Technologies,810.44,EA
+AUR-GSK-00609,Industrial Gasket Series 169,GSK,NorthForge Cable Systems,1200.97,EA
+AUR-HOS-00610,Hydraulic Hose Series 170,HOS,VectorValve Pumps,1106.09,EA
+AUR-FIT-00611,Pipe Fitting Series 171,FIT,VectorValve Technologies,4782.06,SET
+AUR-CAB-00612,Instrumentation Cable Series 172,CAB,VectorValve Filter Technologies,6459.85,EA
+AUR-SEN-00613,Process Sensor Series 173,SEN,VectorValve Valve Automation,1810.56,EA
+AUR-CMP-00614,Compressor Component Series 174,CMP,VectorValve Specialty Alloys,389.76,EA
+AUR-SAF-00615,Safety Equipment Series 175,SAF,PrimeFlow Bearing Works,6597.09,EA
+AUR-PLC-00616,Automation Controller Series 176,PLC,PrimeFlow Fasteners,7763.61,EA
+AUR-DRV-00617,Variable Frequency Drive Series 177,DRV,PrimeFlow Marine Components,7782.09,MTR
+AUR-HEX-00618,Heat Exchanger Part Series 178,HEX,PrimeFlow Hose & Fittings,7691.39,EA
+AUR-LUB-00619,Industrial Lubrication Series 179,LUB,NorthForge Pumps,685.8,EA
+AUR-TOL-00620,Specialty Tooling Series 180,TOL,NorthForge Technologies,1725.08,SET
+AUR-PMP-00621,Centrifugal Pump Series 181,PMP,NorthForge Filter Technologies,15607.1,EA
+AUR-VLV-00622,Control Valve Series 182,VLV,VectorValve Industries,2982.99,KIT
+AUR-BRG-00623,Industrial Bearing Series 183,BRG,VectorValve Gasket & Seal,7426.51,EA
+AUR-INS-00624,Pressure Instrument Series 184,INS,VectorValve Filter Technologies,6820.44,MTR
+AUR-MTR-00625,Electric Motor Series 185,MTR,VectorValve Valve Automation,5687.4,EA
+AUR-SEA-00626,Mechanical Seal Series 186,SEA,VectorValve Specialty Alloys,855.86,EA
+AUR-FLT-00627,Process Filter Series 187,FLT,PrimeFlow Bearing Works,1323.82,MTR
+AUR-ACT-00628,Valve Actuator Series 188,ACT,PrimeFlow Fasteners,6937.22,EA
+AUR-GSK-00629,Industrial Gasket Series 189,GSK,PrimeFlow Marine Components,2156.88,SET
+AUR-HOS-00630,Hydraulic Hose Series 190,HOS,PrimeFlow Motion Controls,1626.32,EA
+AUR-FIT-00631,Pipe Fitting Series 191,FIT,NorthForge Industries,1154.35,EA
+AUR-CAB-00632,Instrumentation Cable Series 192,CAB,NorthForge Gasket & Seal,6468.27,MTR
+AUR-SEN-00633,Process Sensor Series 193,SEN,NorthForge Filter Technologies,5165.59,EA
+AUR-CMP-00634,Compressor Component Series 194,CMP,VectorValve Industries,6902.56,EA
+AUR-SAF-00635,Safety Equipment Series 195,SAF,VectorValve Gasket & Seal,1911.01,EA
+AUR-PLC-00636,Automation Controller Series 196,PLC,VectorValve Filter Technologies,571.6,MTR
+AUR-DRV-00637,Variable Frequency Drive Series 197,DRV,VectorValve Valve Automation,2240.08,EA
+AUR-HEX-00638,Heat Exchanger Part Series 198,HEX,VectorValve Specialty Alloys,4721.93,EA
+AUR-LUB-00639,Industrial Lubrication Series 199,LUB,PrimeFlow Hydraulics,2129.82,MTR
+AUR-TOL-00640,Specialty Tooling Series 200,TOL,PrimeFlow Fabrication,657.48,EA
+AUR-PMP-00641,Centrifugal Pump Series 201,PMP,PrimeFlow Compressor Parts,11116.92,KIT
+AUR-VLV-00642,Control Valve Series 202,VLV,PrimeFlow Motion Controls,4730.62,SET
+AUR-BRG-00643,Industrial Bearing Series 203,BRG,NorthForge Industries,2449.52,EA
+AUR-INS-00644,Pressure Instrument Series 204,INS,NorthForge Gasket & Seal,1186.57,KIT
+AUR-MTR-00645,Electric Motor Series 205,MTR,NorthForge Filter Technologies,12889.93,EA
+AUR-SEA-00646,Mechanical Seal Series 206,SEA,VectorValve Industries,5009.86,MTR
+AUR-FLT-00647,Process Filter Series 207,FLT,VectorValve Gasket & Seal,3008.55,EA
+AUR-ACT-00648,Valve Actuator Series 208,ACT,VectorValve Safety Supply,6879.88,EA
+AUR-GSK-00649,Industrial Gasket Series 209,GSK,VectorValve Sensor Labs,7007.56,EA
+AUR-HOS-00650,Hydraulic Hose Series 210,HOS,PrimeFlow Manufacturing,5120.5,EA
+AUR-FIT-00651,Pipe Fitting Series 211,FIT,PrimeFlow Hydraulics,3094.65,MTR
+AUR-CAB-00652,Instrumentation Cable Series 212,CAB,PrimeFlow Fabrication,1741.01,EA
+AUR-SEN-00653,Process Sensor Series 213,SEN,PrimeFlow Compressor Parts,2470.79,SET
+AUR-CMP-00654,Compressor Component Series 214,CMP,PrimeFlow Motion Controls,11756.58,SET
+AUR-SAF-00655,Safety Equipment Series 215,SAF,NorthForge Industries,3229.58,SET
+AUR-PLC-00656,Automation Controller Series 216,PLC,NorthForge Gasket & Seal,4838.91,EA
+AUR-DRV-00657,Variable Frequency Drive Series 217,DRV,NorthForge Safety Supply,5600.63,SET
+AUR-HEX-00658,Heat Exchanger Part Series 218,HEX,VectorValve Instrumentation,25811.25,KIT
+AUR-LUB-00659,Industrial Lubrication Series 219,LUB,VectorValve Electric,7599.34,EA
+AUR-TOL-00660,Specialty Tooling Series 220,TOL,VectorValve Safety Supply,379.4,KIT
+AUR-PMP-00661,Centrifugal Pump Series 221,PMP,VectorValve Sensor Labs,1262.24,EA
+AUR-VLV-00662,Control Valve Series 222,VLV,PrimeFlow Manufacturing,4432.2,MTR
+AUR-BRG-00663,Industrial Bearing Series 223,BRG,PrimeFlow Hydraulics,3758.64,MTR
+AUR-INS-00664,Pressure Instrument Series 224,INS,PrimeFlow Fabrication,7721.39,SET
+AUR-MTR-00665,Electric Motor Series 225,MTR,PrimeFlow Compressor Parts,26734.19,EA
+AUR-SEA-00666,Mechanical Seal Series 226,SEA,PrimeFlow Mechanical Supply,3545.03,SET
+AUR-FLT-00667,Process Filter Series 227,FLT,NorthForge Instrumentation,4471.93,EA
+AUR-ACT-00668,Valve Actuator Series 228,ACT,NorthForge Electric,1450.82,EA
+AUR-GSK-00669,Industrial Gasket Series 229,GSK,NorthForge Safety Supply,6417.3,KIT
+AUR-HOS-00670,Hydraulic Hose Series 230,HOS,VectorValve Instrumentation,197.72,MTR
+AUR-FIT-00671,Pipe Fitting Series 231,FIT,VectorValve Electric,7375.48,SET
+AUR-CAB-00672,Instrumentation Cable Series 232,CAB,VectorValve Safety Supply,1498.41,SET
+AUR-SEN-00673,Process Sensor Series 233,SEN,VectorValve Sensor Labs,2376.89,EA
+AUR-CMP-00674,Compressor Component Series 234,CMP,PrimeFlow Manufacturing,2170.72,MTR
+AUR-SAF-00675,Safety Equipment Series 235,SAF,PrimeFlow Actuation,5529.99,EA
+AUR-PLC-00676,Automation Controller Series 236,PLC,PrimeFlow Process Equipment,4066.26,EA
+AUR-DRV-00677,Variable Frequency Drive Series 237,DRV,PrimeFlow Industrial Plastics,740.9,SET
+AUR-HEX-00678,Heat Exchanger Part Series 238,HEX,PrimeFlow Mechanical Supply,8451.26,EA
+AUR-LUB-00679,Industrial Lubrication Series 239,LUB,NorthForge Instrumentation,3766.03,EA
+AUR-TOL-00680,Specialty Tooling Series 240,TOL,NorthForge Electric,3359.8,SET
+AUR-PMP-00681,Centrifugal Pump Series 241,PMP,NorthForge Safety Supply,15589.18,MTR
+AUR-VLV-00682,Control Valve Series 242,VLV,VectorValve Instrumentation,766.33,SET
+AUR-BRG-00683,Industrial Bearing Series 243,BRG,VectorValve Electric,5670.63,SET
+AUR-INS-00684,Pressure Instrument Series 244,INS,VectorValve Gearworks,6768.55,SET
+AUR-MTR-00685,Electric Motor Series 245,MTR,VectorValve Technical Metals,14485.93,EA
+AUR-SEA-00686,Mechanical Seal Series 246,SEA,PrimeFlow Components,3905.24,KIT
+AUR-FLT-00687,Process Filter Series 247,FLT,PrimeFlow Actuation,7615.42,EA
+AUR-ACT-00688,Valve Actuator Series 248,ACT,PrimeFlow Process Equipment,3274.71,SET
+AUR-GSK-00689,Industrial Gasket Series 249,GSK,PrimeFlow Industrial Plastics,944.37,SET
+AUR-HOS-00690,Hydraulic Hose Series 250,HOS,PrimeFlow Mechanical Supply,6877.86,MTR
+AUR-FIT-00691,Pipe Fitting Series 251,FIT,NorthForge Instrumentation,5970.91,EA
+AUR-CAB-00692,Instrumentation Cable Series 252,CAB,NorthForge Electric,7459.9,EA
+AUR-SEN-00693,Process Sensor Series 253,SEN,NorthForge Gearworks,5128.06,EA
+AUR-CMP-00694,Compressor Component Series 254,CMP,VectorValve Systems,4719.49,KIT
+AUR-SAF-00695,Safety Equipment Series 255,SAF,VectorValve Controls,7385.77,MTR
+AUR-PLC-00696,Automation Controller Series 256,PLC,VectorValve Gearworks,6034.65,EA
+AUR-DRV-00697,Variable Frequency Drive Series 257,DRV,VectorValve Technical Metals,7830.42,SET
+AUR-HEX-00698,Heat Exchanger Part Series 258,HEX,PrimeFlow Components,10650.9,KIT
+AUR-LUB-00699,Industrial Lubrication Series 259,LUB,PrimeFlow Actuation,4103.06,KIT
+AUR-TOL-00700,Specialty Tooling Series 260,TOL,PrimeFlow Process Equipment,1065.35,MTR
+AUR-PMP-00701,Centrifugal Pump Series 261,PMP,PrimeFlow Industrial Plastics,15938.18,EA
+AUR-VLV-00702,Control Valve Series 262,VLV,PrimeFlow Process Instruments,2373.24,EA
+AUR-BRG-00703,Industrial Bearing Series 263,BRG,NorthForge Systems,5353.63,KIT
+AUR-INS-00704,Pressure Instrument Series 264,INS,NorthForge Controls,3981.18,EA
+AUR-MTR-00705,Electric Motor Series 265,MTR,NorthForge Gearworks,17430.49,MTR
+AUR-SEA-00706,Mechanical Seal Series 266,SEA,VectorValve Systems,3823.43,MTR
+AUR-FLT-00707,Process Filter Series 267,FLT,VectorValve Controls,7287.11,EA
+AUR-ACT-00708,Valve Actuator Series 268,ACT,VectorValve Gearworks,3122.03,EA
+AUR-GSK-00709,Industrial Gasket Series 269,GSK,VectorValve Technical Metals,2040.03,MTR
+AUR-HOS-00710,Hydraulic Hose Series 270,HOS,PrimeFlow Components,2052.16,EA
+AUR-FIT-00711,Pipe Fitting Series 271,FIT,PrimeFlow Technologies,5588.57,EA
+AUR-CAB-00712,Instrumentation Cable Series 272,CAB,PrimeFlow Cable Systems,6833.88,EA
+AUR-SEN-00713,Process Sensor Series 273,SEN,PrimeFlow Heat Transfer,77.44,EA
+AUR-CMP-00714,Compressor Component Series 274,CMP,PrimeFlow Process Instruments,6115.97,EA
+AUR-SAF-00715,Safety Equipment Series 275,SAF,NorthForge Systems,6484.54,EA
+AUR-PLC-00716,Automation Controller Series 276,PLC,NorthForge Controls,707.51,EA
+AUR-DRV-00717,Variable Frequency Drive Series 277,DRV,NorthForge Gearworks,526.86,MTR
+AUR-HEX-00718,Heat Exchanger Part Series 278,HEX,VectorValve Systems,31057.73,EA
+AUR-LUB-00719,Industrial Lubrication Series 279,LUB,VectorValve Controls,1621.36,EA
+AUR-TOL-00720,Specialty Tooling Series 100,TOL,VectorValve Marine Components,5468.45,MTR
+AUR-PMP-00721,Centrifugal Pump Series 101,PMP,VectorValve Hose & Fittings,15725.16,EA
+AUR-VLV-00722,Control Valve Series 102,VLV,PrimeFlow Pumps,5112.44,SET
+AUR-BRG-00723,Industrial Bearing Series 103,BRG,PrimeFlow Technologies,7021.03,EA
+AUR-INS-00724,Pressure Instrument Series 104,INS,PrimeFlow Cable Systems,566.28,EA
+AUR-MTR-00725,Electric Motor Series 105,MTR,PrimeFlow Heat Transfer,2458.85,EA
+AUR-SEA-00726,Mechanical Seal Series 106,SEA,PrimeFlow Process Instruments,1411.87,MTR
+AUR-FLT-00727,Process Filter Series 107,FLT,NorthForge Systems,3323.65,SET
+AUR-ACT-00728,Valve Actuator Series 108,ACT,NorthForge Controls,4064.94,EA
+AUR-GSK-00729,Industrial Gasket Series 109,GSK,NorthForge Marine Components,7095.9,EA
+AUR-HOS-00730,Hydraulic Hose Series 110,HOS,VectorValve Bearing Works,593.5,KIT
+AUR-FIT-00731,Pipe Fitting Series 111,FIT,VectorValve Fasteners,5089.94,KIT
+AUR-CAB-00732,Instrumentation Cable Series 112,CAB,VectorValve Marine Components,1007.16,MTR
+AUR-SEN-00733,Process Sensor Series 113,SEN,VectorValve Hose & Fittings,372.52,MTR
+AUR-CMP-00734,Compressor Component Series 114,CMP,PrimeFlow Pumps,9222.11,KIT
+AUR-SAF-00735,Safety Equipment Series 115,SAF,PrimeFlow Technologies,2076.39,EA
+AUR-PLC-00736,Automation Controller Series 116,PLC,PrimeFlow Cable Systems,1317.43,EA
+AUR-DRV-00737,Variable Frequency Drive Series 117,DRV,PrimeFlow Heat Transfer,5160.59,EA
+AUR-HEX-00738,Heat Exchanger Part Series 118,HEX,PrimeFlow Specialty Alloys,6854.84,EA
+AUR-LUB-00739,Industrial Lubrication Series 119,LUB,NorthForge Bearing Works,5715.71,MTR
+AUR-TOL-00740,Specialty Tooling Series 120,TOL,NorthForge Fasteners,4549.06,EA
+AUR-PMP-00741,Centrifugal Pump Series 121,PMP,NorthForge Marine Components,16594.91,EA
+AUR-VLV-00742,Control Valve Series 122,VLV,VectorValve Bearing Works,403.92,KIT
+AUR-BRG-00743,Industrial Bearing Series 123,BRG,VectorValve Fasteners,1233.8,KIT
+AUR-INS-00744,Pressure Instrument Series 124,INS,VectorValve Marine Components,4367.03,EA
+AUR-MTR-00745,Electric Motor Series 125,MTR,VectorValve Hose & Fittings,17804.88,EA
+AUR-SEA-00746,Mechanical Seal Series 126,SEA,PrimeFlow Pumps,4360.56,KIT
+AUR-FLT-00747,Process Filter Series 127,FLT,PrimeFlow Gasket & Seal,1830.12,EA
+AUR-ACT-00748,Valve Actuator Series 128,ACT,PrimeFlow Filter Technologies,1907.23,MTR
+AUR-GSK-00749,Industrial Gasket Series 129,GSK,PrimeFlow Valve Automation,1632.19,MTR
+AUR-HOS-00750,Hydraulic Hose Series 130,HOS,PrimeFlow Specialty Alloys,7548.72,KIT
+AUR-FIT-00751,Pipe Fitting Series 131,FIT,NorthForge Bearing Works,1248.13,EA
+AUR-CAB-00752,Instrumentation Cable Series 132,CAB,NorthForge Fasteners,1065.5,KIT
+AUR-SEN-00753,Process Sensor Series 133,SEN,NorthForge Marine Components,2018.0,KIT
+AUR-CMP-00754,Compressor Component Series 134,CMP,VectorValve Bearing Works,17975.79,EA
+AUR-SAF-00755,Safety Equipment Series 135,SAF,VectorValve Fasteners,1199.03,KIT
+AUR-PLC-00756,Automation Controller Series 136,PLC,VectorValve Compressor Parts,3321.42,MTR
+AUR-DRV-00757,Variable Frequency Drive Series 137,DRV,VectorValve Motion Controls,2575.76,EA
+AUR-HEX-00758,Heat Exchanger Part Series 138,HEX,PrimeFlow Industries,22714.81,EA
+AUR-LUB-00759,Industrial Lubrication Series 139,LUB,PrimeFlow Gasket & Seal,1069.12,EA
+AUR-TOL-00760,Specialty Tooling Series 140,TOL,PrimeFlow Filter Technologies,1872.54,EA
+AUR-PMP-00761,Centrifugal Pump Series 141,PMP,PrimeFlow Valve Automation,14509.72,SET
+AUR-VLV-00762,Control Valve Series 142,VLV,PrimeFlow Specialty Alloys,5037.49,KIT
+AUR-BRG-00763,Industrial Bearing Series 143,BRG,NorthForge Bearing Works,2940.99,MTR
+AUR-INS-00764,Pressure Instrument Series 144,INS,NorthForge Fasteners,1203.64,KIT
+AUR-MTR-00765,Electric Motor Series 145,MTR,VectorValve Manufacturing,8075.54,EA
+AUR-SEA-00766,Mechanical Seal Series 146,SEA,VectorValve Hydraulics,4841.53,EA
+AUR-FLT-00767,Process Filter Series 147,FLT,VectorValve Fabrication,7577.02,MTR
+AUR-ACT-00768,Valve Actuator Series 148,ACT,VectorValve Compressor Parts,6855.24,EA
+AUR-GSK-00769,Industrial Gasket Series 149,GSK,VectorValve Motion Controls,1121.6,EA
+AUR-HOS-00770,Hydraulic Hose Series 150,HOS,PrimeFlow Industries,8372.1,MTR
+AUR-FIT-00771,Pipe Fitting Series 151,FIT,PrimeFlow Gasket & Seal,4418.15,EA
+AUR-CAB-00772,Instrumentation Cable Series 152,CAB,PrimeFlow Filter Technologies,6244.3,MTR
+AUR-SEN-00773,Process Sensor Series 153,SEN,PrimeFlow Valve Automation,1494.17,EA
+AUR-CMP-00774,Compressor Component Series 154,CMP,NorthForge Manufacturing,13449.68,EA
+AUR-SAF-00775,Safety Equipment Series 155,SAF,NorthForge Hydraulics,4516.5,SET
+AUR-PLC-00776,Automation Controller Series 156,PLC,NorthForge Fabrication,6461.62,EA
+AUR-DRV-00777,Variable Frequency Drive Series 157,DRV,VectorValve Manufacturing,2595.31,EA
+AUR-HEX-00778,Heat Exchanger Part Series 158,HEX,VectorValve Hydraulics,1989.58,MTR
+AUR-LUB-00779,Industrial Lubrication Series 159,LUB,VectorValve Fabrication,3735.93,MTR
+AUR-TOL-00780,Specialty Tooling Series 160,TOL,VectorValve Compressor Parts,1255.44,SET
+AUR-PMP-00781,Centrifugal Pump Series 161,PMP,VectorValve Motion Controls,6368.58,EA
+AUR-VLV-00782,Control Valve Series 162,VLV,PrimeFlow Industries,953.55,SET
+AUR-BRG-00783,Industrial Bearing Series 163,BRG,PrimeFlow Electric,8440.86,EA
+AUR-INS-00784,Pressure Instrument Series 164,INS,PrimeFlow Safety Supply,6366.52,EA
+AUR-MTR-00785,Electric Motor Series 165,MTR,PrimeFlow Sensor Labs,18300.84,EA
+AUR-SEA-00786,Mechanical Seal Series 166,SEA,NorthForge Manufacturing,4725.71,MTR
+AUR-FLT-00787,Process Filter Series 167,FLT,NorthForge Hydraulics,3445.43,MTR
+AUR-ACT-00788,Valve Actuator Series 168,ACT,NorthForge Fabrication,4711.12,KIT
+AUR-GSK-00789,Industrial Gasket Series 169,GSK,VectorValve Manufacturing,2833.91,MTR
+AUR-HOS-00790,Hydraulic Hose Series 170,HOS,VectorValve Hydraulics,453.97,MTR
+AUR-FIT-00791,Pipe Fitting Series 171,FIT,VectorValve Fabrication,3043.6,EA
+AUR-CAB-00792,Instrumentation Cable Series 172,CAB,VectorValve Industrial Plastics,4494.9,SET
+AUR-SEN-00793,Process Sensor Series 173,SEN,VectorValve Mechanical Supply,7125.93,EA
+AUR-CMP-00794,Compressor Component Series 174,CMP,PrimeFlow Instrumentation,15850.14,SET
+AUR-SAF-00795,Safety Equipment Series 175,SAF,PrimeFlow Electric,5020.45,SET
+AUR-PLC-00796,Automation Controller Series 176,PLC,PrimeFlow Safety Supply,6482.39,SET
+AUR-DRV-00797,Variable Frequency Drive Series 177,DRV,PrimeFlow Sensor Labs,338.92,EA
+AUR-HEX-00798,Heat Exchanger Part Series 178,HEX,NorthForge Manufacturing,1578.35,EA
+AUR-LUB-00799,Industrial Lubrication Series 179,LUB,NorthForge Hydraulics,4637.03,KIT
+AUR-TOL-00800,Specialty Tooling Series 180,TOL,NorthForge Fabrication,1009.15,KIT

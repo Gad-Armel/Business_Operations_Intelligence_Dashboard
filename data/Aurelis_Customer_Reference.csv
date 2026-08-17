@@ -1,0 +1,181 @@
+﻿Customer_Code,Company,Terms,Payment_Min_Months,Payment_Average_Months,Payment_Max_Months
+AGC-00001,Northstar Energy Systems,NET 45 DAYS,1.19,1.67,2.43
+AGC-00002,Northstar Marine Services,NET 45 DAYS,1.14,1.61,2.37
+AGC-00003,Northstar Industrial Group,NET 45 DAYS,1.17,1.71,2.2
+AGC-00004,Northstar Process Solutions,NET 30 DAYS,0.69,1.07,1.74
+AGC-00005,Northstar Offshore Engineering,NET 45 DAYS,0.93,1.7,2.59
+AGC-00006,Northstar Flow Technologies,NET 30 DAYS,0.71,0.97,1.64
+AGC-00007,Northstar Infrastructure,30% ADVANCE / NET 60,1.39,1.95,3.05
+AGC-00008,Northstar Petro Systems,NET 60 DAYS,1.38,2.12,3.52
+AGC-00009,Northstar Mining Services,NET 60 DAYS,1.44,1.95,3.49
+AGC-00010,Northstar Waterworks,NET 60 DAYS,1.49,2.4,2.92
+AGC-00011,Northstar Automation,20% ADVANCE / NET 60,1.61,2.04,3.8
+AGC-00012,Northstar Utilities,NET 60 DAYS,1.4,2.17,3.46
+AGC-00013,Northstar Field Services,NET 60 DAYS,1.47,1.93,3.77
+AGC-00014,Northstar Mechanical,NET 60 DAYS,1.51,2.28,4.0
+AGC-00015,Northstar Power Partners,NET 60 DAYS,1.46,2.27,3.72
+AGC-00016,Northstar Process Controls,NET 60 DAYS,1.39,2.15,3.25
+AGC-00017,Northstar Engineering,NET 30 DAYS,0.74,1.22,1.84
+AGC-00018,Northstar Drilling Solutions,NET 60 DAYS,1.53,2.07,3.15
+AGC-00019,Northstar Compression,NET 90 DAYS,2.22,3.37,4.11
+AGC-00020,Northstar Industrial Maintenance,20% ADVANCE / NET 90,2.06,3.32,5.84
+AGC-00021,Northstar Resources,NET 45 DAYS,1.07,1.54,2.4
+AGC-00022,Northstar Pipeline Services,NET 90 DAYS,1.94,3.34,5.38
+AGC-00023,Northstar Rotating Equipment,30% ADVANCE / NET 60,1.57,2.27,3.35
+AGC-00024,Northstar Technical Supply,NET 60 DAYS,1.51,2.06,3.47
+AGC-00025,Northstar Refinery Services,30% ADVANCE / NET 60,1.56,2.28,2.8
+AGC-00026,Northstar Energy Projects,NET 30 DAYS,0.81,1.18,1.37
+AGC-00027,Northstar Marine Engineering,NET 60 DAYS,1.61,2.44,3.94
+AGC-00028,Northstar Production Services,NET 60 DAYS,1.48,1.9,3.59
+AGC-00029,Northstar Controls,NET 60 DAYS,1.49,2.1,2.97
+AGC-00030,Northstar Offshore Systems,NET 60 DAYS,1.47,2.24,3.39
+AGC-00031,Northstar Mechanical Group,20% ADVANCE / NET 60,1.52,2.3,3.74
+AGC-00032,Northstar Industrial Services,30% ADVANCE / NET 60,1.61,1.91,3.17
+AGC-00033,Northstar Flow Systems,NET 60 DAYS,1.41,2.23,3.89
+AGC-00034,Northstar Instrumentation,NET 60 DAYS,1.25,1.98,3.21
+AGC-00035,Northstar Technical Services,NET 30 DAYS,0.75,1.2,1.68
+AGC-00036,Northstar Industrial Solutions,NET 45 DAYS,1.23,1.54,2.3
+AGC-00037,Northstar Marine Supply,NET 60 DAYS,1.61,2.32,2.86
+AGC-00038,Helios Energy Systems,NET 60 DAYS,1.49,2.24,3.89
+AGC-00039,Helios Marine Services,20% ADVANCE / NET 60,1.51,2.43,2.87
+AGC-00040,Helios Industrial Group,NET 90 DAYS,2.18,3.17,5.58
+AGC-00041,Helios Process Solutions,20% ADVANCE / NET 60,1.26,2.32,3.28
+AGC-00042,Helios Offshore Engineering,20% ADVANCE / NET 60,1.35,2.03,2.74
+AGC-00043,Helios Flow Technologies,NET 30 DAYS,0.74,1.18,1.39
+AGC-00044,Helios Infrastructure,NET 60 DAYS,1.41,1.98,3.2
+AGC-00045,Helios Petro Systems,20% ADVANCE / NET 90,2.24,2.92,4.88
+AGC-00046,Helios Mining Services,NET 60 DAYS,1.34,2.0,3.37
+AGC-00047,Helios Waterworks,NET 60 DAYS,1.35,2.41,3.28
+AGC-00048,Helios Automation,20% ADVANCE / NET 60,1.43,2.24,3.86
+AGC-00049,Helios Utilities,30% ADVANCE / NET 60,1.35,2.06,2.87
+AGC-00050,Helios Field Services,30% ADVANCE / NET 60,1.29,2.01,3.2
+AGC-00051,Helios Mechanical,NET 45 DAYS,1.09,1.6,2.64
+AGC-00052,Helios Power Partners,20% ADVANCE / NET 90,2.25,2.94,5.43
+AGC-00053,Helios Process Controls,NET 30 DAYS,0.8,1.22,1.5
+AGC-00054,Helios Engineering,NET 30 DAYS,0.77,1.04,1.62
+AGC-00055,Helios Drilling Solutions,NET 30 DAYS,0.76,0.97,1.51
+AGC-00056,Helios Compression,NET 60 DAYS,1.45,1.99,3.58
+AGC-00057,Helios Industrial Maintenance,NET 30 DAYS,0.69,1.02,1.4
+AGC-00058,Helios Resources,30% ADVANCE / NET 60,1.29,2.34,3.05
+AGC-00059,Helios Pipeline Services,NET 90 DAYS,2.05,3.42,4.38
+AGC-00060,Helios Rotating Equipment,20% ADVANCE / NET 60,1.35,2.09,2.91
+AGC-00061,Helios Technical Supply,NET 30 DAYS,0.69,1.15,1.44
+AGC-00062,Helios Refinery Services,NET 90 DAYS,1.97,2.85,4.11
+AGC-00063,Helios Energy Projects,20% ADVANCE / NET 60,1.59,2.02,2.99
+AGC-00064,Helios Marine Engineering,NET 90 DAYS,1.96,3.52,5.78
+AGC-00065,Helios Production Services,NET 30 DAYS,0.74,1.1,1.82
+AGC-00066,Helios Controls,NET 90 DAYS,2.37,3.36,4.88
+AGC-00067,Helios Offshore Systems,NET 60 DAYS,1.39,2.4,3.92
+AGC-00068,Helios Mechanical Group,NET 60 DAYS,1.62,2.24,3.3
+AGC-00069,Helios Industrial Services,NET 30 DAYS,0.76,1.0,1.8
+AGC-00070,Helios Flow Systems,NET 60 DAYS,1.52,2.31,3.16
+AGC-00071,Helios Instrumentation,NET 30 DAYS,0.7,1.05,1.53
+AGC-00072,Helios Technical Services,NET 90 DAYS,1.96,3.03,5.26
+AGC-00073,Helios Industrial Solutions,NET 90 DAYS,2.41,3.47,4.87
+AGC-00074,Helios Marine Supply,30% ADVANCE / NET 60,1.49,2.36,3.29
+AGC-00075,Cobalt Energy Systems,NET 60 DAYS,1.55,2.31,3.43
+AGC-00076,Cobalt Marine Services,NET 60 DAYS,1.6,2.3,2.82
+AGC-00077,Cobalt Industrial Group,20% ADVANCE / NET 90,2.05,3.39,4.98
+AGC-00078,Cobalt Process Solutions,20% ADVANCE / NET 60,1.26,2.1,3.08
+AGC-00079,Cobalt Offshore Engineering,NET 90 DAYS,2.32,3.19,5.42
+AGC-00080,Cobalt Flow Technologies,30% ADVANCE / NET 60,1.28,2.04,2.88
+AGC-00081,Cobalt Infrastructure,NET 60 DAYS,1.35,2.3,3.7
+AGC-00082,Cobalt Petro Systems,NET 30 DAYS,0.64,1.12,1.71
+AGC-00083,Cobalt Mining Services,NET 60 DAYS,1.52,2.43,2.87
+AGC-00084,Cobalt Waterworks,NET 45 DAYS,1.16,1.48,2.97
+AGC-00085,Cobalt Automation,NET 60 DAYS,1.26,2.38,2.78
+AGC-00086,Cobalt Utilities,NET 30 DAYS,0.73,1.22,1.5
+AGC-00087,Cobalt Field Services,NET 30 DAYS,0.67,1.18,1.76
+AGC-00088,Cobalt Mechanical,NET 30 DAYS,0.7,1.06,1.37
+AGC-00089,Cobalt Power Partners,NET 30 DAYS,0.73,1.02,1.5
+AGC-00090,Cobalt Process Controls,NET 45 DAYS,1.07,1.58,2.7
+AGC-00091,Cobalt Engineering,NET 30 DAYS,0.77,1.01,1.54
+AGC-00092,Cobalt Drilling Solutions,NET 90 DAYS,2.26,3.63,5.38
+AGC-00093,Cobalt Compression,NET 60 DAYS,1.59,1.99,3.14
+AGC-00094,Cobalt Industrial Maintenance,NET 30 DAYS,0.72,1.03,1.74
+AGC-00095,Cobalt Resources,NET 60 DAYS,1.49,1.99,3.69
+AGC-00096,Cobalt Pipeline Services,NET 60 DAYS,1.44,2.04,2.79
+AGC-00097,Cobalt Rotating Equipment,NET 60 DAYS,1.32,2.18,3.37
+AGC-00098,Cobalt Technical Supply,20% ADVANCE / NET 90,2.12,3.26,4.31
+AGC-00099,Cobalt Refinery Services,NET 45 DAYS,0.94,1.56,2.06
+AGC-00100,Cobalt Energy Projects,NET 30 DAYS,0.78,0.98,1.7
+AGC-00101,Cobalt Marine Engineering,NET 60 DAYS,1.25,2.28,3.86
+AGC-00102,Cobalt Production Services,NET 90 DAYS,2.27,3.57,4.1
+AGC-00103,Cobalt Controls,NET 60 DAYS,1.24,2.39,2.72
+AGC-00104,Cobalt Offshore Systems,NET 60 DAYS,1.35,2.31,3.85
+AGC-00105,Cobalt Mechanical Group,NET 60 DAYS,1.44,2.24,3.14
+AGC-00106,Cobalt Industrial Services,30% ADVANCE / NET 60,1.34,2.32,3.14
+AGC-00107,Cobalt Flow Systems,NET 60 DAYS,1.33,2.27,2.75
+AGC-00108,Cobalt Instrumentation,NET 30 DAYS,0.72,1.16,1.38
+AGC-00109,Cobalt Technical Services,NET 60 DAYS,1.38,2.06,3.03
+AGC-00110,Cobalt Industrial Solutions,NET 30 DAYS,0.72,0.98,1.91
+AGC-00111,Cobalt Marine Supply,NET 30 DAYS,0.8,1.0,1.92
+AGC-00112,Meridian Energy Systems,NET 60 DAYS,1.5,2.29,2.96
+AGC-00113,Meridian Marine Services,NET 60 DAYS,1.62,2.17,3.39
+AGC-00114,Meridian Industrial Group,NET 30 DAYS,0.74,1.15,1.79
+AGC-00115,Meridian Process Solutions,NET 45 DAYS,0.99,1.46,2.23
+AGC-00116,Meridian Offshore Engineering,NET 60 DAYS,1.49,2.04,3.71
+AGC-00117,Meridian Flow Technologies,NET 60 DAYS,1.36,2.19,3.87
+AGC-00118,Meridian Infrastructure,NET 90 DAYS,2.21,3.55,5.15
+AGC-00119,Meridian Petro Systems,NET 30 DAYS,0.81,0.96,1.78
+AGC-00120,Meridian Mining Services,NET 30 DAYS,0.72,1.13,1.64
+AGC-00121,Meridian Waterworks,NET 45 DAYS,1.03,1.51,2.77
+AGC-00122,Meridian Automation,NET 60 DAYS,1.46,2.29,2.8
+AGC-00123,Meridian Utilities,NET 30 DAYS,0.72,1.14,1.53
+AGC-00124,Meridian Field Services,NET 60 DAYS,1.5,2.04,3.35
+AGC-00125,Meridian Mechanical,NET 60 DAYS,1.46,2.28,3.82
+AGC-00126,Meridian Power Partners,NET 60 DAYS,1.37,2.42,3.6
+AGC-00127,Meridian Process Controls,NET 60 DAYS,1.51,2.24,3.3
+AGC-00128,Meridian Engineering,NET 60 DAYS,1.29,2.19,3.17
+AGC-00129,Meridian Drilling Solutions,NET 90 DAYS,2.11,3.16,5.78
+AGC-00130,Meridian Compression,NET 60 DAYS,1.44,2.13,3.46
+AGC-00131,Meridian Industrial Maintenance,NET 30 DAYS,0.77,1.14,1.91
+AGC-00132,Meridian Resources,NET 60 DAYS,1.63,2.16,3.29
+AGC-00133,Meridian Pipeline Services,NET 30 DAYS,0.63,1.14,1.55
+AGC-00134,Meridian Rotating Equipment,NET 45 DAYS,1.09,1.46,2.33
+AGC-00135,Meridian Technical Supply,30% ADVANCE / NET 60,1.52,2.33,3.31
+AGC-00136,Meridian Refinery Services,20% ADVANCE / NET 60,1.4,2.24,3.45
+AGC-00137,Meridian Energy Projects,NET 30 DAYS,0.67,0.99,1.59
+AGC-00138,Meridian Marine Engineering,NET 60 DAYS,1.62,2.31,3.19
+AGC-00139,Meridian Production Services,NET 90 DAYS,2.37,3.15,4.87
+AGC-00140,Meridian Controls,NET 30 DAYS,0.7,1.05,1.68
+AGC-00141,Meridian Offshore Systems,NET 45 DAYS,0.96,1.55,2.56
+AGC-00142,Meridian Mechanical Group,NET 60 DAYS,1.36,2.28,3.29
+AGC-00143,Meridian Industrial Services,20% ADVANCE / NET 90,2.02,3.56,5.31
+AGC-00144,Meridian Flow Systems,NET 60 DAYS,1.31,2.06,3.94
+AGC-00145,Meridian Instrumentation,NET 90 DAYS,2.37,3.38,5.64
+AGC-00146,Meridian Technical Services,NET 60 DAYS,1.61,2.08,3.85
+AGC-00147,Meridian Industrial Solutions,30% ADVANCE / NET 60,1.56,2.06,3.45
+AGC-00148,Meridian Marine Supply,NET 60 DAYS,1.33,1.94,2.89
+AGC-00149,Arcadia Energy Systems,NET 90 DAYS,2.33,3.48,4.06
+AGC-00150,Arcadia Marine Services,NET 45 DAYS,1.14,1.58,2.73
+AGC-00151,Arcadia Industrial Group,20% ADVANCE / NET 60,1.47,2.29,2.86
+AGC-00152,Arcadia Process Solutions,NET 30 DAYS,0.71,1.05,1.91
+AGC-00153,Arcadia Offshore Engineering,20% ADVANCE / NET 90,2.13,2.89,4.38
+AGC-00154,Arcadia Flow Technologies,NET 30 DAYS,0.71,1.12,2.0
+AGC-00155,Arcadia Infrastructure,20% ADVANCE / NET 90,2.17,3.05,4.47
+AGC-00156,Arcadia Petro Systems,NET 30 DAYS,0.75,0.96,1.46
+AGC-00157,Arcadia Mining Services,30% ADVANCE / NET 60,1.58,2.16,3.49
+AGC-00158,Arcadia Waterworks,NET 30 DAYS,0.79,1.09,1.58
+AGC-00159,Arcadia Automation,NET 60 DAYS,1.52,1.96,3.27
+AGC-00160,Arcadia Utilities,NET 90 DAYS,2.26,3.07,5.87
+AGC-00161,Arcadia Field Services,20% ADVANCE / NET 90,1.91,3.25,5.99
+AGC-00162,Arcadia Mechanical,NET 30 DAYS,0.79,1.2,1.37
+AGC-00163,Arcadia Power Partners,NET 30 DAYS,0.69,1.18,1.76
+AGC-00164,Arcadia Process Controls,30% ADVANCE / NET 60,1.25,2.36,3.59
+AGC-00165,Arcadia Engineering,20% ADVANCE / NET 60,1.29,1.99,2.88
+AGC-00166,Arcadia Drilling Solutions,20% ADVANCE / NET 60,1.31,2.34,3.48
+AGC-00167,Arcadia Compression,NET 60 DAYS,1.63,2.11,3.54
+AGC-00168,Arcadia Industrial Maintenance,NET 45 DAYS,1.18,1.65,2.05
+AGC-00169,Arcadia Resources,20% ADVANCE / NET 60,1.24,2.04,2.88
+AGC-00170,Arcadia Pipeline Services,20% ADVANCE / NET 90,2.32,3.18,4.56
+AGC-00171,Arcadia Rotating Equipment,NET 60 DAYS,1.54,2.01,3.19
+AGC-00172,Arcadia Technical Supply,30% ADVANCE / NET 60,1.46,2.01,3.53
+AGC-00173,Arcadia Refinery Services,NET 30 DAYS,0.65,1.03,1.87
+AGC-00174,Arcadia Energy Projects,NET 60 DAYS,1.33,2.03,3.35
+AGC-00175,Arcadia Marine Engineering,NET 30 DAYS,0.66,1.1,1.56
+AGC-00176,Arcadia Production Services,20% ADVANCE / NET 90,2.35,3.44,4.83
+AGC-00177,Arcadia Controls,NET 45 DAYS,1.19,1.58,2.04
+AGC-00178,Arcadia Offshore Systems,30% ADVANCE / NET 60,1.38,1.92,3.52
+AGC-00179,Arcadia Mechanical Group,NET 30 DAYS,0.64,1.12,1.84
+AGC-00180,Arcadia Industrial Services,20% ADVANCE / NET 60,1.52,1.99,3.18

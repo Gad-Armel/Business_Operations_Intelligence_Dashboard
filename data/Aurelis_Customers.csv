@@ -1,0 +1,181 @@
+﻿Customer_ID,Company,Country,Parent_Company,Relationship_Start_Year,Customer_Segment,Default_Terms,Sales_Representative,Preferred_Buyer
+AGC-00001,Northstar Energy Systems,Norway,Northstar Holdings,2015,Core,NET 45 DAYS,Noah Keller,Marcus Reed
+AGC-00002,Northstar Marine Services,Oman,Helios Holdings,2019,Core,NET 45 DAYS,Adrian Walker,Chloe Dubois
+AGC-00003,Northstar Industrial Group,Malaysia,Cobalt Holdings,2016,Core,NET 45 DAYS,Zara Grant,Owen Rossi
+AGC-00004,Northstar Process Solutions,Vietnam,Meridian Holdings,2021,Core,NET 30 DAYS,Theo Price,Sofia Laurent
+AGC-00005,Northstar Offshore Engineering,Argentina,Independent Entity,2017,Strategic,NET 45 DAYS,Lucas Hayes,Jordan Kim
+AGC-00006,Northstar Flow Technologies,Italy,Summit Holdings,2024,Growth,NET 30 DAYS,Avery Morgan,Leila Shah
+AGC-00007,Northstar Infrastructure,Ghana,BluePeak Holdings,2016,Growth,30% ADVANCE / NET 60,Grace Perry,Lucas Hayes
+AGC-00008,Northstar Petro Systems,Australia,Vantage Holdings,2015,Enterprise,NET 60 DAYS,Julian Howard,Nina Patel
+AGC-00009,Northstar Mining Services,Canada,Sterling Holdings,2016,Enterprise,NET 60 DAYS,Lina Sato,Victor Bennett
+AGC-00010,Northstar Waterworks,France,Independent Entity,2016,Core,NET 60 DAYS,Camille Martin,Isabella Stone
+AGC-00011,Northstar Automation,United Arab Emirates,Redwood Holdings,2018,Core,20% ADVANCE / NET 60,Mila Diaz,Daniel Brooks
+AGC-00012,Northstar Utilities,Kenya,NovaGrid Holdings,2022,Strategic,NET 60 DAYS,Leo Foster,Elena Costa
+AGC-00013,Northstar Field Services,South Korea,Crescent Holdings,2015,Strategic,NET 60 DAYS,Eva Lewis,Samuel Carter
+AGC-00014,Northstar Mechanical,Brazil,Ironwood Holdings,2023,Growth,NET 60 DAYS,Priya Nguyen,Priya Nguyen
+AGC-00015,Northstar Power Partners,Netherlands,Independent Entity,2024,Core,NET 60 DAYS,Noah Keller,Ethan Cole
+AGC-00016,Northstar Process Controls,Qatar,Granite Holdings,2017,Core,NET 60 DAYS,Adrian Walker,Amara Okafor
+AGC-00017,Northstar Engineering,Singapore,Harborline Holdings,2015,Core,NET 30 DAYS,Zara Grant,Nathan Meyer
+AGC-00018,Northstar Drilling Solutions,Thailand,Vertex Holdings,2022,Enterprise,NET 60 DAYS,Theo Price,Maya Chen
+AGC-00019,Northstar Compression,Chile,Pioneer Holdings,2019,Core,NET 90 DAYS,Lucas Hayes,Marcus Reed
+AGC-00020,Northstar Industrial Maintenance,Spain,Independent Entity,2015,Enterprise,20% ADVANCE / NET 90,Avery Morgan,Chloe Dubois
+AGC-00021,Northstar Resources,South Africa,TerraNova Holdings,2021,Core,NET 45 DAYS,Grace Perry,Owen Rossi
+AGC-00022,Northstar Pipeline Services,Indonesia,Clearwater Holdings,2024,Enterprise,NET 90 DAYS,Julian Howard,Sofia Laurent
+AGC-00023,Northstar Rotating Equipment,United States,Falcon Holdings,2017,Enterprise,30% ADVANCE / NET 60,Lina Sato,Jordan Kim
+AGC-00024,Northstar Technical Supply,United Kingdom,Sierra Holdings,2017,Core,NET 60 DAYS,Camille Martin,Leila Shah
+AGC-00025,Northstar Refinery Services,Poland,Independent Entity,2015,Growth,30% ADVANCE / NET 60,Mila Diaz,Lucas Hayes
+AGC-00026,Northstar Energy Projects,Nigeria,Keystone Holdings,2015,Enterprise,NET 30 DAYS,Leo Foster,Nina Patel
+AGC-00027,Northstar Marine Engineering,Japan,Equinox Holdings,2016,Core,NET 60 DAYS,Eva Lewis,Victor Bennett
+AGC-00028,Northstar Production Services,Mexico,Westbridge Holdings,2022,Enterprise,NET 60 DAYS,Priya Nguyen,Isabella Stone
+AGC-00029,Northstar Controls,Germany,DeltaWorks Holdings,2020,Growth,NET 60 DAYS,Noah Keller,Daniel Brooks
+AGC-00030,Northstar Offshore Systems,Saudi Arabia,Independent Entity,2019,Enterprise,NET 60 DAYS,Adrian Walker,Elena Costa
+AGC-00031,Northstar Mechanical Group,Egypt,Silverline Holdings,2019,Enterprise,20% ADVANCE / NET 60,Zara Grant,Samuel Carter
+AGC-00032,Northstar Industrial Services,India,Noble Ridge Holdings,2018,Strategic,30% ADVANCE / NET 60,Theo Price,Priya Nguyen
+AGC-00033,Northstar Flow Systems,Colombia,Pacific Crest Holdings,2017,Core,NET 60 DAYS,Lucas Hayes,Ethan Cole
+AGC-00034,Northstar Instrumentation,Norway,Beacon Holdings,2021,Strategic,NET 60 DAYS,Avery Morgan,Amara Okafor
+AGC-00035,Northstar Technical Services,Oman,Independent Entity,2017,Enterprise,NET 30 DAYS,Grace Perry,Nathan Meyer
+AGC-00036,Northstar Industrial Solutions,Malaysia,Monarch Holdings,2015,Core,NET 45 DAYS,Julian Howard,Maya Chen
+AGC-00037,Northstar Marine Supply,Vietnam,Frontier Holdings,2018,Strategic,NET 60 DAYS,Lina Sato,Marcus Reed
+AGC-00038,Helios Energy Systems,Argentina,Trident Holdings,2015,Strategic,NET 60 DAYS,Camille Martin,Chloe Dubois
+AGC-00039,Helios Marine Services,Italy,Cascade Holdings,2019,Enterprise,20% ADVANCE / NET 60,Mila Diaz,Owen Rossi
+AGC-00040,Helios Industrial Group,Ghana,Independent Entity,2019,Growth,NET 90 DAYS,Leo Foster,Sofia Laurent
+AGC-00041,Helios Process Solutions,Australia,Zenith Holdings,2016,Strategic,20% ADVANCE / NET 60,Eva Lewis,Jordan Kim
+AGC-00042,Helios Offshore Engineering,Canada,Rivermark Holdings,2017,Strategic,20% ADVANCE / NET 60,Priya Nguyen,Leila Shah
+AGC-00043,Helios Flow Technologies,France,Lighthouse Holdings,2015,Core,NET 30 DAYS,Noah Keller,Lucas Hayes
+AGC-00044,Helios Infrastructure,United Arab Emirates,Apex Holdings,2020,Growth,NET 60 DAYS,Adrian Walker,Nina Patel
+AGC-00045,Helios Petro Systems,Kenya,Independent Entity,2017,Core,20% ADVANCE / NET 90,Zara Grant,Victor Bennett
+AGC-00046,Helios Mining Services,South Korea,Northstar Holdings,2024,Core,NET 60 DAYS,Theo Price,Isabella Stone
+AGC-00047,Helios Waterworks,Brazil,Helios Holdings,2019,Enterprise,NET 60 DAYS,Lucas Hayes,Daniel Brooks
+AGC-00048,Helios Automation,Netherlands,Cobalt Holdings,2023,Strategic,20% ADVANCE / NET 60,Avery Morgan,Elena Costa
+AGC-00049,Helios Utilities,Qatar,Meridian Holdings,2018,Enterprise,30% ADVANCE / NET 60,Grace Perry,Samuel Carter
+AGC-00050,Helios Field Services,Singapore,Independent Entity,2022,Strategic,30% ADVANCE / NET 60,Julian Howard,Priya Nguyen
+AGC-00051,Helios Mechanical,Thailand,Summit Holdings,2016,Enterprise,NET 45 DAYS,Lina Sato,Ethan Cole
+AGC-00052,Helios Power Partners,Chile,BluePeak Holdings,2016,Growth,20% ADVANCE / NET 90,Camille Martin,Amara Okafor
+AGC-00053,Helios Process Controls,Spain,Vantage Holdings,2017,Core,NET 30 DAYS,Mila Diaz,Nathan Meyer
+AGC-00054,Helios Engineering,South Africa,Sterling Holdings,2024,Growth,NET 30 DAYS,Leo Foster,Maya Chen
+AGC-00055,Helios Drilling Solutions,Indonesia,Independent Entity,2022,Strategic,NET 30 DAYS,Eva Lewis,Marcus Reed
+AGC-00056,Helios Compression,United States,Redwood Holdings,2018,Growth,NET 60 DAYS,Priya Nguyen,Chloe Dubois
+AGC-00057,Helios Industrial Maintenance,United Kingdom,NovaGrid Holdings,2022,Growth,NET 30 DAYS,Noah Keller,Owen Rossi
+AGC-00058,Helios Resources,Poland,Crescent Holdings,2020,Strategic,30% ADVANCE / NET 60,Adrian Walker,Sofia Laurent
+AGC-00059,Helios Pipeline Services,Nigeria,Ironwood Holdings,2018,Growth,NET 90 DAYS,Zara Grant,Jordan Kim
+AGC-00060,Helios Rotating Equipment,Japan,Independent Entity,2020,Core,20% ADVANCE / NET 60,Theo Price,Leila Shah
+AGC-00061,Helios Technical Supply,Mexico,Granite Holdings,2016,Strategic,NET 30 DAYS,Lucas Hayes,Lucas Hayes
+AGC-00062,Helios Refinery Services,Germany,Harborline Holdings,2018,Core,NET 90 DAYS,Avery Morgan,Nina Patel
+AGC-00063,Helios Energy Projects,Saudi Arabia,Vertex Holdings,2016,Core,20% ADVANCE / NET 60,Grace Perry,Victor Bennett
+AGC-00064,Helios Marine Engineering,Egypt,Pioneer Holdings,2020,Strategic,NET 90 DAYS,Julian Howard,Isabella Stone
+AGC-00065,Helios Production Services,India,Independent Entity,2022,Growth,NET 30 DAYS,Lina Sato,Daniel Brooks
+AGC-00066,Helios Controls,Colombia,TerraNova Holdings,2015,Growth,NET 90 DAYS,Camille Martin,Elena Costa
+AGC-00067,Helios Offshore Systems,Norway,Clearwater Holdings,2015,Growth,NET 60 DAYS,Mila Diaz,Samuel Carter
+AGC-00068,Helios Mechanical Group,Oman,Falcon Holdings,2022,Growth,NET 60 DAYS,Leo Foster,Priya Nguyen
+AGC-00069,Helios Industrial Services,Malaysia,Sierra Holdings,2017,Core,NET 30 DAYS,Eva Lewis,Ethan Cole
+AGC-00070,Helios Flow Systems,Vietnam,Independent Entity,2016,Growth,NET 60 DAYS,Priya Nguyen,Amara Okafor
+AGC-00071,Helios Instrumentation,Argentina,Keystone Holdings,2020,Core,NET 30 DAYS,Noah Keller,Nathan Meyer
+AGC-00072,Helios Technical Services,Italy,Equinox Holdings,2021,Core,NET 90 DAYS,Adrian Walker,Maya Chen
+AGC-00073,Helios Industrial Solutions,Ghana,Westbridge Holdings,2024,Enterprise,NET 90 DAYS,Zara Grant,Marcus Reed
+AGC-00074,Helios Marine Supply,Australia,DeltaWorks Holdings,2020,Core,30% ADVANCE / NET 60,Theo Price,Chloe Dubois
+AGC-00075,Cobalt Energy Systems,Canada,Independent Entity,2015,Enterprise,NET 60 DAYS,Lucas Hayes,Owen Rossi
+AGC-00076,Cobalt Marine Services,France,Silverline Holdings,2015,Core,NET 60 DAYS,Avery Morgan,Sofia Laurent
+AGC-00077,Cobalt Industrial Group,United Arab Emirates,Noble Ridge Holdings,2015,Core,20% ADVANCE / NET 90,Grace Perry,Jordan Kim
+AGC-00078,Cobalt Process Solutions,Kenya,Pacific Crest Holdings,2023,Core,20% ADVANCE / NET 60,Julian Howard,Leila Shah
+AGC-00079,Cobalt Offshore Engineering,South Korea,Beacon Holdings,2015,Core,NET 90 DAYS,Lina Sato,Lucas Hayes
+AGC-00080,Cobalt Flow Technologies,Brazil,Independent Entity,2023,Core,30% ADVANCE / NET 60,Camille Martin,Nina Patel
+AGC-00081,Cobalt Infrastructure,Netherlands,Monarch Holdings,2015,Growth,NET 60 DAYS,Mila Diaz,Victor Bennett
+AGC-00082,Cobalt Petro Systems,Qatar,Frontier Holdings,2024,Enterprise,NET 30 DAYS,Leo Foster,Isabella Stone
+AGC-00083,Cobalt Mining Services,Singapore,Trident Holdings,2019,Enterprise,NET 60 DAYS,Eva Lewis,Daniel Brooks
+AGC-00084,Cobalt Waterworks,Thailand,Cascade Holdings,2022,Core,NET 45 DAYS,Priya Nguyen,Elena Costa
+AGC-00085,Cobalt Automation,Chile,Independent Entity,2022,Core,NET 60 DAYS,Noah Keller,Samuel Carter
+AGC-00086,Cobalt Utilities,Spain,Zenith Holdings,2019,Core,NET 30 DAYS,Adrian Walker,Priya Nguyen
+AGC-00087,Cobalt Field Services,South Africa,Rivermark Holdings,2018,Growth,NET 30 DAYS,Zara Grant,Ethan Cole
+AGC-00088,Cobalt Mechanical,Indonesia,Lighthouse Holdings,2018,Core,NET 30 DAYS,Theo Price,Amara Okafor
+AGC-00089,Cobalt Power Partners,United States,Apex Holdings,2015,Core,NET 30 DAYS,Lucas Hayes,Nathan Meyer
+AGC-00090,Cobalt Process Controls,United Kingdom,Independent Entity,2020,Core,NET 45 DAYS,Avery Morgan,Maya Chen
+AGC-00091,Cobalt Engineering,Poland,Northstar Holdings,2018,Growth,NET 30 DAYS,Grace Perry,Marcus Reed
+AGC-00092,Cobalt Drilling Solutions,Nigeria,Helios Holdings,2020,Strategic,NET 90 DAYS,Julian Howard,Chloe Dubois
+AGC-00093,Cobalt Compression,Japan,Cobalt Holdings,2017,Core,NET 60 DAYS,Lina Sato,Owen Rossi
+AGC-00094,Cobalt Industrial Maintenance,Mexico,Meridian Holdings,2022,Core,NET 30 DAYS,Camille Martin,Sofia Laurent
+AGC-00095,Cobalt Resources,Germany,Independent Entity,2022,Strategic,NET 60 DAYS,Mila Diaz,Jordan Kim
+AGC-00096,Cobalt Pipeline Services,Saudi Arabia,Summit Holdings,2018,Growth,NET 60 DAYS,Leo Foster,Leila Shah
+AGC-00097,Cobalt Rotating Equipment,Egypt,BluePeak Holdings,2015,Core,NET 60 DAYS,Eva Lewis,Lucas Hayes
+AGC-00098,Cobalt Technical Supply,India,Vantage Holdings,2017,Growth,20% ADVANCE / NET 90,Priya Nguyen,Nina Patel
+AGC-00099,Cobalt Refinery Services,Colombia,Sterling Holdings,2018,Core,NET 45 DAYS,Noah Keller,Victor Bennett
+AGC-00100,Cobalt Energy Projects,Norway,Independent Entity,2024,Enterprise,NET 30 DAYS,Adrian Walker,Isabella Stone
+AGC-00101,Cobalt Marine Engineering,Oman,Redwood Holdings,2017,Core,NET 60 DAYS,Zara Grant,Daniel Brooks
+AGC-00102,Cobalt Production Services,Malaysia,NovaGrid Holdings,2020,Core,NET 90 DAYS,Theo Price,Elena Costa
+AGC-00103,Cobalt Controls,Vietnam,Crescent Holdings,2018,Core,NET 60 DAYS,Lucas Hayes,Samuel Carter
+AGC-00104,Cobalt Offshore Systems,Argentina,Ironwood Holdings,2022,Growth,NET 60 DAYS,Avery Morgan,Priya Nguyen
+AGC-00105,Cobalt Mechanical Group,Italy,Independent Entity,2023,Core,NET 60 DAYS,Grace Perry,Ethan Cole
+AGC-00106,Cobalt Industrial Services,Ghana,Granite Holdings,2018,Core,30% ADVANCE / NET 60,Julian Howard,Amara Okafor
+AGC-00107,Cobalt Flow Systems,Australia,Harborline Holdings,2021,Growth,NET 60 DAYS,Lina Sato,Nathan Meyer
+AGC-00108,Cobalt Instrumentation,Canada,Vertex Holdings,2021,Core,NET 30 DAYS,Camille Martin,Maya Chen
+AGC-00109,Cobalt Technical Services,France,Pioneer Holdings,2020,Enterprise,NET 60 DAYS,Mila Diaz,Marcus Reed
+AGC-00110,Cobalt Industrial Solutions,United Arab Emirates,Independent Entity,2021,Core,NET 30 DAYS,Leo Foster,Chloe Dubois
+AGC-00111,Cobalt Marine Supply,Kenya,TerraNova Holdings,2015,Core,NET 30 DAYS,Eva Lewis,Owen Rossi
+AGC-00112,Meridian Energy Systems,South Korea,Clearwater Holdings,2015,Core,NET 60 DAYS,Priya Nguyen,Sofia Laurent
+AGC-00113,Meridian Marine Services,Brazil,Falcon Holdings,2017,Strategic,NET 60 DAYS,Noah Keller,Jordan Kim
+AGC-00114,Meridian Industrial Group,Netherlands,Sierra Holdings,2018,Core,NET 30 DAYS,Adrian Walker,Leila Shah
+AGC-00115,Meridian Process Solutions,Qatar,Independent Entity,2019,Enterprise,NET 45 DAYS,Zara Grant,Lucas Hayes
+AGC-00116,Meridian Offshore Engineering,Singapore,Keystone Holdings,2022,Core,NET 60 DAYS,Theo Price,Nina Patel
+AGC-00117,Meridian Flow Technologies,Thailand,Equinox Holdings,2024,Growth,NET 60 DAYS,Lucas Hayes,Victor Bennett
+AGC-00118,Meridian Infrastructure,Chile,Westbridge Holdings,2022,Core,NET 90 DAYS,Avery Morgan,Isabella Stone
+AGC-00119,Meridian Petro Systems,Spain,DeltaWorks Holdings,2022,Growth,NET 30 DAYS,Grace Perry,Daniel Brooks
+AGC-00120,Meridian Mining Services,South Africa,Independent Entity,2017,Core,NET 30 DAYS,Julian Howard,Elena Costa
+AGC-00121,Meridian Waterworks,Indonesia,Silverline Holdings,2020,Growth,NET 45 DAYS,Lina Sato,Samuel Carter
+AGC-00122,Meridian Automation,United States,Noble Ridge Holdings,2021,Core,NET 60 DAYS,Camille Martin,Priya Nguyen
+AGC-00123,Meridian Utilities,United Kingdom,Pacific Crest Holdings,2019,Enterprise,NET 30 DAYS,Mila Diaz,Ethan Cole
+AGC-00124,Meridian Field Services,Poland,Beacon Holdings,2020,Growth,NET 60 DAYS,Leo Foster,Amara Okafor
+AGC-00125,Meridian Mechanical,Nigeria,Independent Entity,2019,Core,NET 60 DAYS,Eva Lewis,Nathan Meyer
+AGC-00126,Meridian Power Partners,Japan,Monarch Holdings,2019,Core,NET 60 DAYS,Priya Nguyen,Maya Chen
+AGC-00127,Meridian Process Controls,Mexico,Frontier Holdings,2018,Core,NET 60 DAYS,Noah Keller,Marcus Reed
+AGC-00128,Meridian Engineering,Germany,Trident Holdings,2019,Growth,NET 60 DAYS,Adrian Walker,Chloe Dubois
+AGC-00129,Meridian Drilling Solutions,Saudi Arabia,Cascade Holdings,2019,Growth,NET 90 DAYS,Zara Grant,Owen Rossi
+AGC-00130,Meridian Compression,Egypt,Independent Entity,2022,Strategic,NET 60 DAYS,Theo Price,Sofia Laurent
+AGC-00131,Meridian Industrial Maintenance,India,Zenith Holdings,2021,Core,NET 30 DAYS,Lucas Hayes,Jordan Kim
+AGC-00132,Meridian Resources,Colombia,Rivermark Holdings,2017,Enterprise,NET 60 DAYS,Avery Morgan,Leila Shah
+AGC-00133,Meridian Pipeline Services,Norway,Lighthouse Holdings,2016,Enterprise,NET 30 DAYS,Grace Perry,Lucas Hayes
+AGC-00134,Meridian Rotating Equipment,Oman,Apex Holdings,2022,Growth,NET 45 DAYS,Julian Howard,Nina Patel
+AGC-00135,Meridian Technical Supply,Malaysia,Independent Entity,2017,Core,30% ADVANCE / NET 60,Lina Sato,Victor Bennett
+AGC-00136,Meridian Refinery Services,Vietnam,Northstar Holdings,2017,Core,20% ADVANCE / NET 60,Camille Martin,Isabella Stone
+AGC-00137,Meridian Energy Projects,Argentina,Helios Holdings,2018,Enterprise,NET 30 DAYS,Mila Diaz,Daniel Brooks
+AGC-00138,Meridian Marine Engineering,Italy,Cobalt Holdings,2018,Enterprise,NET 60 DAYS,Leo Foster,Elena Costa
+AGC-00139,Meridian Production Services,Ghana,Meridian Holdings,2023,Growth,NET 90 DAYS,Eva Lewis,Samuel Carter
+AGC-00140,Meridian Controls,Australia,Independent Entity,2019,Enterprise,NET 30 DAYS,Priya Nguyen,Priya Nguyen
+AGC-00141,Meridian Offshore Systems,Canada,Summit Holdings,2017,Strategic,NET 45 DAYS,Noah Keller,Ethan Cole
+AGC-00142,Meridian Mechanical Group,France,BluePeak Holdings,2023,Core,NET 60 DAYS,Adrian Walker,Amara Okafor
+AGC-00143,Meridian Industrial Services,United Arab Emirates,Vantage Holdings,2015,Strategic,20% ADVANCE / NET 90,Zara Grant,Nathan Meyer
+AGC-00144,Meridian Flow Systems,Kenya,Sterling Holdings,2018,Enterprise,NET 60 DAYS,Theo Price,Maya Chen
+AGC-00145,Meridian Instrumentation,South Korea,Independent Entity,2017,Enterprise,NET 90 DAYS,Lucas Hayes,Marcus Reed
+AGC-00146,Meridian Technical Services,Brazil,Redwood Holdings,2017,Enterprise,NET 60 DAYS,Avery Morgan,Chloe Dubois
+AGC-00147,Meridian Industrial Solutions,Netherlands,NovaGrid Holdings,2018,Enterprise,30% ADVANCE / NET 60,Grace Perry,Owen Rossi
+AGC-00148,Meridian Marine Supply,Qatar,Crescent Holdings,2019,Core,NET 60 DAYS,Julian Howard,Sofia Laurent
+AGC-00149,Arcadia Energy Systems,Singapore,Ironwood Holdings,2023,Growth,NET 90 DAYS,Lina Sato,Jordan Kim
+AGC-00150,Arcadia Marine Services,Thailand,Independent Entity,2022,Core,NET 45 DAYS,Camille Martin,Leila Shah
+AGC-00151,Arcadia Industrial Group,Chile,Granite Holdings,2016,Growth,20% ADVANCE / NET 60,Mila Diaz,Lucas Hayes
+AGC-00152,Arcadia Process Solutions,Spain,Harborline Holdings,2019,Core,NET 30 DAYS,Leo Foster,Nina Patel
+AGC-00153,Arcadia Offshore Engineering,South Africa,Vertex Holdings,2021,Core,20% ADVANCE / NET 90,Eva Lewis,Victor Bennett
+AGC-00154,Arcadia Flow Technologies,Indonesia,Pioneer Holdings,2019,Strategic,NET 30 DAYS,Priya Nguyen,Isabella Stone
+AGC-00155,Arcadia Infrastructure,United States,Independent Entity,2015,Growth,20% ADVANCE / NET 90,Noah Keller,Daniel Brooks
+AGC-00156,Arcadia Petro Systems,United Kingdom,TerraNova Holdings,2018,Enterprise,NET 30 DAYS,Adrian Walker,Elena Costa
+AGC-00157,Arcadia Mining Services,Poland,Clearwater Holdings,2015,Core,30% ADVANCE / NET 60,Zara Grant,Samuel Carter
+AGC-00158,Arcadia Waterworks,Nigeria,Falcon Holdings,2015,Core,NET 30 DAYS,Theo Price,Priya Nguyen
+AGC-00159,Arcadia Automation,Japan,Sierra Holdings,2016,Core,NET 60 DAYS,Lucas Hayes,Ethan Cole
+AGC-00160,Arcadia Utilities,Mexico,Independent Entity,2019,Core,NET 90 DAYS,Avery Morgan,Amara Okafor
+AGC-00161,Arcadia Field Services,Germany,Keystone Holdings,2016,Core,20% ADVANCE / NET 90,Grace Perry,Nathan Meyer
+AGC-00162,Arcadia Mechanical,Saudi Arabia,Equinox Holdings,2023,Enterprise,NET 30 DAYS,Julian Howard,Maya Chen
+AGC-00163,Arcadia Power Partners,Egypt,Westbridge Holdings,2022,Core,NET 30 DAYS,Lina Sato,Marcus Reed
+AGC-00164,Arcadia Process Controls,India,DeltaWorks Holdings,2022,Enterprise,30% ADVANCE / NET 60,Camille Martin,Chloe Dubois
+AGC-00165,Arcadia Engineering,Colombia,Independent Entity,2020,Enterprise,20% ADVANCE / NET 60,Mila Diaz,Owen Rossi
+AGC-00166,Arcadia Drilling Solutions,Norway,Silverline Holdings,2017,Strategic,20% ADVANCE / NET 60,Leo Foster,Sofia Laurent
+AGC-00167,Arcadia Compression,Oman,Noble Ridge Holdings,2015,Core,NET 60 DAYS,Eva Lewis,Jordan Kim
+AGC-00168,Arcadia Industrial Maintenance,Malaysia,Pacific Crest Holdings,2015,Enterprise,NET 45 DAYS,Priya Nguyen,Leila Shah
+AGC-00169,Arcadia Resources,Vietnam,Beacon Holdings,2016,Core,20% ADVANCE / NET 60,Noah Keller,Lucas Hayes
+AGC-00170,Arcadia Pipeline Services,Argentina,Independent Entity,2016,Core,20% ADVANCE / NET 90,Adrian Walker,Nina Patel
+AGC-00171,Arcadia Rotating Equipment,Italy,Monarch Holdings,2015,Enterprise,NET 60 DAYS,Zara Grant,Victor Bennett
+AGC-00172,Arcadia Technical Supply,Ghana,Frontier Holdings,2015,Core,30% ADVANCE / NET 60,Theo Price,Isabella Stone
+AGC-00173,Arcadia Refinery Services,Australia,Trident Holdings,2023,Strategic,NET 30 DAYS,Lucas Hayes,Daniel Brooks
+AGC-00174,Arcadia Energy Projects,Canada,Cascade Holdings,2017,Growth,NET 60 DAYS,Avery Morgan,Elena Costa
+AGC-00175,Arcadia Marine Engineering,France,Independent Entity,2019,Strategic,NET 30 DAYS,Grace Perry,Samuel Carter
+AGC-00176,Arcadia Production Services,United Arab Emirates,Zenith Holdings,2015,Enterprise,20% ADVANCE / NET 90,Julian Howard,Priya Nguyen
+AGC-00177,Arcadia Controls,Kenya,Rivermark Holdings,2022,Enterprise,NET 45 DAYS,Lina Sato,Ethan Cole
+AGC-00178,Arcadia Offshore Systems,South Korea,Lighthouse Holdings,2017,Enterprise,30% ADVANCE / NET 60,Camille Martin,Amara Okafor
+AGC-00179,Arcadia Mechanical Group,Brazil,Apex Holdings,2015,Core,NET 30 DAYS,Mila Diaz,Nathan Meyer
+AGC-00180,Arcadia Industrial Services,Netherlands,Independent Entity,2016,Enterprise,20% ADVANCE / NET 60,Leo Foster,Maya Chen

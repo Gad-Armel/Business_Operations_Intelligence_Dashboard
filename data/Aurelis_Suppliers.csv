@@ -1,0 +1,86 @@
+﻿Supplier_ID,Supplier,Country,Reliability_Index,Active_Since
+AGS-0001,VectorValve Manufacturing,Italy,88.2,2013
+AGS-0002,VectorValve Components,Singapore,99.5,2015
+AGS-0003,VectorValve Pumps,Mexico,99.4,2010
+AGS-0004,VectorValve Industries,Italy,87.4,2021
+AGS-0005,VectorValve Instrumentation,Singapore,95.2,2015
+AGS-0006,VectorValve Systems,Mexico,88.6,2020
+AGS-0007,VectorValve Bearing Works,Italy,95.1,2016
+AGS-0008,VectorValve Hydraulics,Singapore,99.2,2015
+AGS-0009,VectorValve Actuation,Mexico,90.8,2014
+AGS-0010,VectorValve Technologies,Italy,94.3,2014
+AGS-0011,VectorValve Gasket & Seal,Singapore,98.1,2016
+AGS-0012,VectorValve Electric,Mexico,95.2,2022
+AGS-0013,VectorValve Controls,Italy,93.7,2021
+AGS-0014,VectorValve Fasteners,Singapore,93.8,2016
+AGS-0015,VectorValve Fabrication,Mexico,94.0,2010
+AGS-0016,VectorValve Process Equipment,Italy,93.9,2016
+AGS-0017,VectorValve Cable Systems,Singapore,91.2,2012
+AGS-0018,VectorValve Filter Technologies,Mexico,88.9,2011
+AGS-0019,VectorValve Safety Supply,Italy,99.5,2021
+AGS-0020,VectorValve Gearworks,Singapore,94.1,2010
+AGS-0021,VectorValve Marine Components,Mexico,98.8,2021
+AGS-0022,VectorValve Compressor Parts,Italy,95.8,2018
+AGS-0023,VectorValve Industrial Plastics,Singapore,93.7,2010
+AGS-0024,VectorValve Heat Transfer,Mexico,93.5,2022
+AGS-0025,VectorValve Valve Automation,Italy,92.5,2011
+AGS-0026,VectorValve Sensor Labs,Singapore,91.9,2013
+AGS-0027,VectorValve Technical Metals,Mexico,98.0,2020
+AGS-0028,VectorValve Hose & Fittings,Italy,91.7,2011
+AGS-0029,VectorValve Motion Controls,Singapore,97.3,2012
+AGS-0030,VectorValve Mechanical Supply,Mexico,90.5,2015
+AGS-0031,VectorValve Process Instruments,Italy,91.4,2013
+AGS-0032,VectorValve Specialty Alloys,Singapore,93.6,2013
+AGS-0033,PrimeFlow Manufacturing,Mexico,94.1,2012
+AGS-0034,PrimeFlow Components,Italy,98.3,2014
+AGS-0035,PrimeFlow Pumps,Singapore,99.5,2022
+AGS-0036,PrimeFlow Industries,Mexico,87.4,2016
+AGS-0037,PrimeFlow Instrumentation,Italy,96.4,2018
+AGS-0038,PrimeFlow Systems,Singapore,98.3,2019
+AGS-0039,PrimeFlow Bearing Works,Mexico,91.1,2011
+AGS-0040,PrimeFlow Hydraulics,Italy,92.4,2020
+AGS-0041,PrimeFlow Actuation,Singapore,94.5,2010
+AGS-0042,PrimeFlow Technologies,Mexico,95.6,2012
+AGS-0043,PrimeFlow Gasket & Seal,Italy,94.8,2019
+AGS-0044,PrimeFlow Electric,Singapore,97.4,2019
+AGS-0045,PrimeFlow Controls,Mexico,96.2,2014
+AGS-0046,PrimeFlow Fasteners,Italy,93.0,2015
+AGS-0047,PrimeFlow Fabrication,Singapore,94.5,2010
+AGS-0048,PrimeFlow Process Equipment,Mexico,92.0,2020
+AGS-0049,PrimeFlow Cable Systems,Italy,88.5,2021
+AGS-0050,PrimeFlow Filter Technologies,Singapore,92.0,2019
+AGS-0051,PrimeFlow Safety Supply,Mexico,89.6,2015
+AGS-0052,PrimeFlow Gearworks,Italy,94.0,2019
+AGS-0053,PrimeFlow Marine Components,Singapore,97.1,2014
+AGS-0054,PrimeFlow Compressor Parts,Mexico,95.7,2010
+AGS-0055,PrimeFlow Industrial Plastics,Italy,95.1,2016
+AGS-0056,PrimeFlow Heat Transfer,Singapore,92.5,2018
+AGS-0057,PrimeFlow Valve Automation,Mexico,91.7,2018
+AGS-0058,PrimeFlow Sensor Labs,Italy,95.6,2018
+AGS-0059,PrimeFlow Technical Metals,Singapore,91.0,2019
+AGS-0060,PrimeFlow Hose & Fittings,Mexico,91.5,2012
+AGS-0061,PrimeFlow Motion Controls,Italy,93.4,2018
+AGS-0062,PrimeFlow Mechanical Supply,Singapore,89.1,2013
+AGS-0063,PrimeFlow Process Instruments,Mexico,92.9,2017
+AGS-0064,PrimeFlow Specialty Alloys,Italy,91.4,2015
+AGS-0065,NorthForge Manufacturing,Singapore,95.2,2012
+AGS-0066,NorthForge Components,Mexico,99.5,2014
+AGS-0067,NorthForge Pumps,Italy,94.2,2014
+AGS-0068,NorthForge Industries,Singapore,92.9,2014
+AGS-0069,NorthForge Instrumentation,Mexico,95.6,2012
+AGS-0070,NorthForge Systems,Italy,95.6,2017
+AGS-0071,NorthForge Bearing Works,Singapore,99.5,2011
+AGS-0072,NorthForge Hydraulics,Mexico,92.1,2012
+AGS-0073,NorthForge Actuation,Italy,94.6,2019
+AGS-0074,NorthForge Technologies,Singapore,94.4,2015
+AGS-0075,NorthForge Gasket & Seal,Mexico,87.8,2020
+AGS-0076,NorthForge Electric,Italy,96.5,2015
+AGS-0077,NorthForge Controls,Singapore,99.5,2014
+AGS-0078,NorthForge Fasteners,Mexico,95.3,2010
+AGS-0079,NorthForge Fabrication,Italy,94.1,2010
+AGS-0080,NorthForge Process Equipment,Singapore,88.0,2020
+AGS-0081,NorthForge Cable Systems,Mexico,98.2,2010
+AGS-0082,NorthForge Filter Technologies,Italy,93.4,2013
+AGS-0083,NorthForge Safety Supply,Singapore,91.4,2017
+AGS-0084,NorthForge Gearworks,Mexico,89.5,2019
+AGS-0085,NorthForge Marine Components,Italy,96.1,2015

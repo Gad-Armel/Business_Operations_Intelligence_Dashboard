@@ -1,0 +1,608 @@
+﻿Entity,Country,Function,Department,Position,Contact_Name,AURELIS_Rep
+Northstar Energy Systems,Norway,Sourcing,Procurement,Procurement Manager,Alex Walker,Noah Keller
+Northstar Energy Systems,Norway,Operations,Operations,Maintenance / Operations Coordinator,Morgan Coleman,Noah Keller
+Northstar Energy Systems,Norway,Finance,Finance,Accounts Payable Lead,Taylor Price,Noah Keller
+Northstar Marine Services,Oman,Sourcing,Procurement,Procurement Manager,Skyler Hayes,Adrian Walker
+Northstar Marine Services,Oman,Operations,Operations,Maintenance / Operations Coordinator,Robin Foster,Adrian Walker
+Northstar Marine Services,Oman,Finance,Finance,Accounts Payable Lead,Parker Martin,Adrian Walker
+Northstar Industrial Group,Malaysia,Sourcing,Procurement,Procurement Manager,Casey Wilson,Zara Grant
+Northstar Industrial Group,Malaysia,Operations,Operations,Maintenance / Operations Coordinator,Riley Perry,Zara Grant
+Northstar Industrial Group,Malaysia,Finance,Finance,Accounts Payable Lead,Jamie Diaz,Zara Grant
+Northstar Process Solutions,Vietnam,Sourcing,Procurement,Procurement Manager,Emerson Miller,Theo Price
+Northstar Process Solutions,Vietnam,Operations,Operations,Maintenance / Operations Coordinator,Dylan Lewis,Theo Price
+Northstar Process Solutions,Vietnam,Finance,Finance,Accounts Payable Lead,Harper Grant,Theo Price
+Northstar Offshore Engineering,Argentina,Sourcing,Procurement,Procurement Manager,Cameron Rossi,Lucas Hayes
+Northstar Offshore Engineering,Argentina,Operations,Operations,Maintenance / Operations Coordinator,Drew Morgan,Lucas Hayes
+Northstar Offshore Engineering,Argentina,Finance,Finance,Accounts Payable Lead,Ari Howard,Lucas Hayes
+Northstar Offshore Engineering,Argentina,Technical,Engineering,Reliability Engineer,Reese Nguyen,Lucas Hayes
+Northstar Flow Technologies,Italy,Sourcing,Procurement,Procurement Manager,Logan Keller,Avery Morgan
+Northstar Flow Technologies,Italy,Operations,Operations,Maintenance / Operations Coordinator,Kendall Clark,Avery Morgan
+Northstar Flow Technologies,Italy,Finance,Finance,Accounts Payable Lead,Alex Walker,Avery Morgan
+Northstar Infrastructure,Ghana,Sourcing,Procurement,Procurement Manager,Reese Nguyen,Grace Perry
+Northstar Infrastructure,Ghana,Operations,Operations,Maintenance / Operations Coordinator,Quinn Santos,Grace Perry
+Northstar Infrastructure,Ghana,Finance,Finance,Accounts Payable Lead,Skyler Hayes,Grace Perry
+Northstar Petro Systems,Australia,Sourcing,Procurement,Procurement Manager,Morgan Coleman,Julian Howard
+Northstar Petro Systems,Australia,Operations,Operations,Maintenance / Operations Coordinator,Taylor Price,Julian Howard
+Northstar Petro Systems,Australia,Finance,Finance,Accounts Payable Lead,Casey Wilson,Julian Howard
+Northstar Petro Systems,Australia,Technical,Engineering,Reliability Engineer,Riley Perry,Julian Howard
+Northstar Mining Services,Canada,Sourcing,Procurement,Procurement Manager,Robin Foster,Lina Sato
+Northstar Mining Services,Canada,Operations,Operations,Maintenance / Operations Coordinator,Parker Martin,Lina Sato
+Northstar Mining Services,Canada,Finance,Finance,Accounts Payable Lead,Emerson Miller,Lina Sato
+Northstar Mining Services,Canada,Technical,Engineering,Reliability Engineer,Dylan Lewis,Lina Sato
+Northstar Waterworks,France,Sourcing,Procurement,Procurement Manager,Riley Perry,Camille Martin
+Northstar Waterworks,France,Operations,Operations,Maintenance / Operations Coordinator,Jamie Diaz,Camille Martin
+Northstar Waterworks,France,Finance,Finance,Accounts Payable Lead,Cameron Rossi,Camille Martin
+Northstar Automation,United Arab Emirates,Sourcing,Procurement,Procurement Manager,Dylan Lewis,Mila Diaz
+Northstar Automation,United Arab Emirates,Operations,Operations,Maintenance / Operations Coordinator,Harper Grant,Mila Diaz
+Northstar Automation,United Arab Emirates,Finance,Finance,Accounts Payable Lead,Logan Keller,Mila Diaz
+Northstar Utilities,Kenya,Sourcing,Procurement,Procurement Manager,Drew Morgan,Leo Foster
+Northstar Utilities,Kenya,Operations,Operations,Maintenance / Operations Coordinator,Ari Howard,Leo Foster
+Northstar Utilities,Kenya,Finance,Finance,Accounts Payable Lead,Reese Nguyen,Leo Foster
+Northstar Utilities,Kenya,Technical,Engineering,Reliability Engineer,Quinn Santos,Leo Foster
+Northstar Field Services,South Korea,Sourcing,Procurement,Procurement Manager,Kendall Clark,Eva Lewis
+Northstar Field Services,South Korea,Operations,Operations,Maintenance / Operations Coordinator,Alex Walker,Eva Lewis
+Northstar Field Services,South Korea,Finance,Finance,Accounts Payable Lead,Morgan Coleman,Eva Lewis
+Northstar Field Services,South Korea,Technical,Engineering,Reliability Engineer,Taylor Price,Eva Lewis
+Northstar Mechanical,Brazil,Sourcing,Procurement,Procurement Manager,Quinn Santos,Priya Nguyen
+Northstar Mechanical,Brazil,Operations,Operations,Maintenance / Operations Coordinator,Skyler Hayes,Priya Nguyen
+Northstar Mechanical,Brazil,Finance,Finance,Accounts Payable Lead,Robin Foster,Priya Nguyen
+Northstar Power Partners,Netherlands,Sourcing,Procurement,Procurement Manager,Taylor Price,Noah Keller
+Northstar Power Partners,Netherlands,Operations,Operations,Maintenance / Operations Coordinator,Casey Wilson,Noah Keller
+Northstar Power Partners,Netherlands,Finance,Finance,Accounts Payable Lead,Riley Perry,Noah Keller
+Northstar Process Controls,Qatar,Sourcing,Procurement,Procurement Manager,Parker Martin,Adrian Walker
+Northstar Process Controls,Qatar,Operations,Operations,Maintenance / Operations Coordinator,Emerson Miller,Adrian Walker
+Northstar Process Controls,Qatar,Finance,Finance,Accounts Payable Lead,Dylan Lewis,Adrian Walker
+Northstar Engineering,Singapore,Sourcing,Procurement,Procurement Manager,Jamie Diaz,Zara Grant
+Northstar Engineering,Singapore,Operations,Operations,Maintenance / Operations Coordinator,Cameron Rossi,Zara Grant
+Northstar Engineering,Singapore,Finance,Finance,Accounts Payable Lead,Drew Morgan,Zara Grant
+Northstar Drilling Solutions,Thailand,Sourcing,Procurement,Procurement Manager,Harper Grant,Theo Price
+Northstar Drilling Solutions,Thailand,Operations,Operations,Maintenance / Operations Coordinator,Logan Keller,Theo Price
+Northstar Drilling Solutions,Thailand,Finance,Finance,Accounts Payable Lead,Kendall Clark,Theo Price
+Northstar Drilling Solutions,Thailand,Technical,Engineering,Reliability Engineer,Alex Walker,Theo Price
+Northstar Compression,Chile,Sourcing,Procurement,Procurement Manager,Ari Howard,Lucas Hayes
+Northstar Compression,Chile,Operations,Operations,Maintenance / Operations Coordinator,Reese Nguyen,Lucas Hayes
+Northstar Compression,Chile,Finance,Finance,Accounts Payable Lead,Quinn Santos,Lucas Hayes
+Northstar Industrial Maintenance,Spain,Sourcing,Procurement,Procurement Manager,Alex Walker,Avery Morgan
+Northstar Industrial Maintenance,Spain,Operations,Operations,Maintenance / Operations Coordinator,Morgan Coleman,Avery Morgan
+Northstar Industrial Maintenance,Spain,Finance,Finance,Accounts Payable Lead,Taylor Price,Avery Morgan
+Northstar Industrial Maintenance,Spain,Technical,Engineering,Reliability Engineer,Casey Wilson,Avery Morgan
+Northstar Resources,South Africa,Sourcing,Procurement,Procurement Manager,Skyler Hayes,Grace Perry
+Northstar Resources,South Africa,Operations,Operations,Maintenance / Operations Coordinator,Robin Foster,Grace Perry
+Northstar Resources,South Africa,Finance,Finance,Accounts Payable Lead,Parker Martin,Grace Perry
+Northstar Pipeline Services,Indonesia,Sourcing,Procurement,Procurement Manager,Casey Wilson,Julian Howard
+Northstar Pipeline Services,Indonesia,Operations,Operations,Maintenance / Operations Coordinator,Riley Perry,Julian Howard
+Northstar Pipeline Services,Indonesia,Finance,Finance,Accounts Payable Lead,Jamie Diaz,Julian Howard
+Northstar Pipeline Services,Indonesia,Technical,Engineering,Reliability Engineer,Cameron Rossi,Julian Howard
+Northstar Rotating Equipment,United States,Sourcing,Procurement,Procurement Manager,Emerson Miller,Lina Sato
+Northstar Rotating Equipment,United States,Operations,Operations,Maintenance / Operations Coordinator,Dylan Lewis,Lina Sato
+Northstar Rotating Equipment,United States,Finance,Finance,Accounts Payable Lead,Harper Grant,Lina Sato
+Northstar Rotating Equipment,United States,Technical,Engineering,Reliability Engineer,Logan Keller,Lina Sato
+Northstar Technical Supply,United Kingdom,Sourcing,Procurement,Procurement Manager,Cameron Rossi,Camille Martin
+Northstar Technical Supply,United Kingdom,Operations,Operations,Maintenance / Operations Coordinator,Drew Morgan,Camille Martin
+Northstar Technical Supply,United Kingdom,Finance,Finance,Accounts Payable Lead,Ari Howard,Camille Martin
+Northstar Refinery Services,Poland,Sourcing,Procurement,Procurement Manager,Logan Keller,Mila Diaz
+Northstar Refinery Services,Poland,Operations,Operations,Maintenance / Operations Coordinator,Kendall Clark,Mila Diaz
+Northstar Refinery Services,Poland,Finance,Finance,Accounts Payable Lead,Alex Walker,Mila Diaz
+Northstar Energy Projects,Nigeria,Sourcing,Procurement,Procurement Manager,Reese Nguyen,Leo Foster
+Northstar Energy Projects,Nigeria,Operations,Operations,Maintenance / Operations Coordinator,Quinn Santos,Leo Foster
+Northstar Energy Projects,Nigeria,Finance,Finance,Accounts Payable Lead,Skyler Hayes,Leo Foster
+Northstar Energy Projects,Nigeria,Technical,Engineering,Reliability Engineer,Robin Foster,Leo Foster
+Northstar Marine Engineering,Japan,Sourcing,Procurement,Procurement Manager,Morgan Coleman,Eva Lewis
+Northstar Marine Engineering,Japan,Operations,Operations,Maintenance / Operations Coordinator,Taylor Price,Eva Lewis
+Northstar Marine Engineering,Japan,Finance,Finance,Accounts Payable Lead,Casey Wilson,Eva Lewis
+Northstar Production Services,Mexico,Sourcing,Procurement,Procurement Manager,Robin Foster,Priya Nguyen
+Northstar Production Services,Mexico,Operations,Operations,Maintenance / Operations Coordinator,Parker Martin,Priya Nguyen
+Northstar Production Services,Mexico,Finance,Finance,Accounts Payable Lead,Emerson Miller,Priya Nguyen
+Northstar Production Services,Mexico,Technical,Engineering,Reliability Engineer,Dylan Lewis,Priya Nguyen
+Northstar Controls,Germany,Sourcing,Procurement,Procurement Manager,Riley Perry,Noah Keller
+Northstar Controls,Germany,Operations,Operations,Maintenance / Operations Coordinator,Jamie Diaz,Noah Keller
+Northstar Controls,Germany,Finance,Finance,Accounts Payable Lead,Cameron Rossi,Noah Keller
+Northstar Offshore Systems,Saudi Arabia,Sourcing,Procurement,Procurement Manager,Dylan Lewis,Adrian Walker
+Northstar Offshore Systems,Saudi Arabia,Operations,Operations,Maintenance / Operations Coordinator,Harper Grant,Adrian Walker
+Northstar Offshore Systems,Saudi Arabia,Finance,Finance,Accounts Payable Lead,Logan Keller,Adrian Walker
+Northstar Offshore Systems,Saudi Arabia,Technical,Engineering,Reliability Engineer,Kendall Clark,Adrian Walker
+Northstar Mechanical Group,Egypt,Sourcing,Procurement,Procurement Manager,Drew Morgan,Zara Grant
+Northstar Mechanical Group,Egypt,Operations,Operations,Maintenance / Operations Coordinator,Ari Howard,Zara Grant
+Northstar Mechanical Group,Egypt,Finance,Finance,Accounts Payable Lead,Reese Nguyen,Zara Grant
+Northstar Mechanical Group,Egypt,Technical,Engineering,Reliability Engineer,Quinn Santos,Zara Grant
+Northstar Industrial Services,India,Sourcing,Procurement,Procurement Manager,Kendall Clark,Theo Price
+Northstar Industrial Services,India,Operations,Operations,Maintenance / Operations Coordinator,Alex Walker,Theo Price
+Northstar Industrial Services,India,Finance,Finance,Accounts Payable Lead,Morgan Coleman,Theo Price
+Northstar Industrial Services,India,Technical,Engineering,Reliability Engineer,Taylor Price,Theo Price
+Northstar Flow Systems,Colombia,Sourcing,Procurement,Procurement Manager,Quinn Santos,Lucas Hayes
+Northstar Flow Systems,Colombia,Operations,Operations,Maintenance / Operations Coordinator,Skyler Hayes,Lucas Hayes
+Northstar Flow Systems,Colombia,Finance,Finance,Accounts Payable Lead,Robin Foster,Lucas Hayes
+Northstar Instrumentation,Norway,Sourcing,Procurement,Procurement Manager,Taylor Price,Avery Morgan
+Northstar Instrumentation,Norway,Operations,Operations,Maintenance / Operations Coordinator,Casey Wilson,Avery Morgan
+Northstar Instrumentation,Norway,Finance,Finance,Accounts Payable Lead,Riley Perry,Avery Morgan
+Northstar Instrumentation,Norway,Technical,Engineering,Reliability Engineer,Jamie Diaz,Avery Morgan
+Northstar Technical Services,Oman,Sourcing,Procurement,Procurement Manager,Parker Martin,Grace Perry
+Northstar Technical Services,Oman,Operations,Operations,Maintenance / Operations Coordinator,Emerson Miller,Grace Perry
+Northstar Technical Services,Oman,Finance,Finance,Accounts Payable Lead,Dylan Lewis,Grace Perry
+Northstar Technical Services,Oman,Technical,Engineering,Reliability Engineer,Harper Grant,Grace Perry
+Northstar Industrial Solutions,Malaysia,Sourcing,Procurement,Procurement Manager,Jamie Diaz,Julian Howard
+Northstar Industrial Solutions,Malaysia,Operations,Operations,Maintenance / Operations Coordinator,Cameron Rossi,Julian Howard
+Northstar Industrial Solutions,Malaysia,Finance,Finance,Accounts Payable Lead,Drew Morgan,Julian Howard
+Northstar Marine Supply,Vietnam,Sourcing,Procurement,Procurement Manager,Harper Grant,Lina Sato
+Northstar Marine Supply,Vietnam,Operations,Operations,Maintenance / Operations Coordinator,Logan Keller,Lina Sato
+Northstar Marine Supply,Vietnam,Finance,Finance,Accounts Payable Lead,Kendall Clark,Lina Sato
+Northstar Marine Supply,Vietnam,Technical,Engineering,Reliability Engineer,Alex Walker,Lina Sato
+Helios Energy Systems,Argentina,Sourcing,Procurement,Procurement Manager,Ari Howard,Camille Martin
+Helios Energy Systems,Argentina,Operations,Operations,Maintenance / Operations Coordinator,Reese Nguyen,Camille Martin
+Helios Energy Systems,Argentina,Finance,Finance,Accounts Payable Lead,Quinn Santos,Camille Martin
+Helios Energy Systems,Argentina,Technical,Engineering,Reliability Engineer,Skyler Hayes,Camille Martin
+Helios Marine Services,Italy,Sourcing,Procurement,Procurement Manager,Alex Walker,Mila Diaz
+Helios Marine Services,Italy,Operations,Operations,Maintenance / Operations Coordinator,Morgan Coleman,Mila Diaz
+Helios Marine Services,Italy,Finance,Finance,Accounts Payable Lead,Taylor Price,Mila Diaz
+Helios Marine Services,Italy,Technical,Engineering,Reliability Engineer,Casey Wilson,Mila Diaz
+Helios Industrial Group,Ghana,Sourcing,Procurement,Procurement Manager,Skyler Hayes,Leo Foster
+Helios Industrial Group,Ghana,Operations,Operations,Maintenance / Operations Coordinator,Robin Foster,Leo Foster
+Helios Industrial Group,Ghana,Finance,Finance,Accounts Payable Lead,Parker Martin,Leo Foster
+Helios Process Solutions,Australia,Sourcing,Procurement,Procurement Manager,Casey Wilson,Eva Lewis
+Helios Process Solutions,Australia,Operations,Operations,Maintenance / Operations Coordinator,Riley Perry,Eva Lewis
+Helios Process Solutions,Australia,Finance,Finance,Accounts Payable Lead,Jamie Diaz,Eva Lewis
+Helios Process Solutions,Australia,Technical,Engineering,Reliability Engineer,Cameron Rossi,Eva Lewis
+Helios Offshore Engineering,Canada,Sourcing,Procurement,Procurement Manager,Emerson Miller,Priya Nguyen
+Helios Offshore Engineering,Canada,Operations,Operations,Maintenance / Operations Coordinator,Dylan Lewis,Priya Nguyen
+Helios Offshore Engineering,Canada,Finance,Finance,Accounts Payable Lead,Harper Grant,Priya Nguyen
+Helios Offshore Engineering,Canada,Technical,Engineering,Reliability Engineer,Logan Keller,Priya Nguyen
+Helios Flow Technologies,France,Sourcing,Procurement,Procurement Manager,Cameron Rossi,Noah Keller
+Helios Flow Technologies,France,Operations,Operations,Maintenance / Operations Coordinator,Drew Morgan,Noah Keller
+Helios Flow Technologies,France,Finance,Finance,Accounts Payable Lead,Ari Howard,Noah Keller
+Helios Infrastructure,United Arab Emirates,Sourcing,Procurement,Procurement Manager,Logan Keller,Adrian Walker
+Helios Infrastructure,United Arab Emirates,Operations,Operations,Maintenance / Operations Coordinator,Kendall Clark,Adrian Walker
+Helios Infrastructure,United Arab Emirates,Finance,Finance,Accounts Payable Lead,Alex Walker,Adrian Walker
+Helios Petro Systems,Kenya,Sourcing,Procurement,Procurement Manager,Reese Nguyen,Zara Grant
+Helios Petro Systems,Kenya,Operations,Operations,Maintenance / Operations Coordinator,Quinn Santos,Zara Grant
+Helios Petro Systems,Kenya,Finance,Finance,Accounts Payable Lead,Skyler Hayes,Zara Grant
+Helios Mining Services,South Korea,Sourcing,Procurement,Procurement Manager,Morgan Coleman,Theo Price
+Helios Mining Services,South Korea,Operations,Operations,Maintenance / Operations Coordinator,Taylor Price,Theo Price
+Helios Mining Services,South Korea,Finance,Finance,Accounts Payable Lead,Casey Wilson,Theo Price
+Helios Waterworks,Brazil,Sourcing,Procurement,Procurement Manager,Robin Foster,Lucas Hayes
+Helios Waterworks,Brazil,Operations,Operations,Maintenance / Operations Coordinator,Parker Martin,Lucas Hayes
+Helios Waterworks,Brazil,Finance,Finance,Accounts Payable Lead,Emerson Miller,Lucas Hayes
+Helios Waterworks,Brazil,Technical,Engineering,Reliability Engineer,Dylan Lewis,Lucas Hayes
+Helios Automation,Netherlands,Sourcing,Procurement,Procurement Manager,Riley Perry,Avery Morgan
+Helios Automation,Netherlands,Operations,Operations,Maintenance / Operations Coordinator,Jamie Diaz,Avery Morgan
+Helios Automation,Netherlands,Finance,Finance,Accounts Payable Lead,Cameron Rossi,Avery Morgan
+Helios Automation,Netherlands,Technical,Engineering,Reliability Engineer,Drew Morgan,Avery Morgan
+Helios Utilities,Qatar,Sourcing,Procurement,Procurement Manager,Dylan Lewis,Grace Perry
+Helios Utilities,Qatar,Operations,Operations,Maintenance / Operations Coordinator,Harper Grant,Grace Perry
+Helios Utilities,Qatar,Finance,Finance,Accounts Payable Lead,Logan Keller,Grace Perry
+Helios Utilities,Qatar,Technical,Engineering,Reliability Engineer,Kendall Clark,Grace Perry
+Helios Field Services,Singapore,Sourcing,Procurement,Procurement Manager,Drew Morgan,Julian Howard
+Helios Field Services,Singapore,Operations,Operations,Maintenance / Operations Coordinator,Ari Howard,Julian Howard
+Helios Field Services,Singapore,Finance,Finance,Accounts Payable Lead,Reese Nguyen,Julian Howard
+Helios Field Services,Singapore,Technical,Engineering,Reliability Engineer,Quinn Santos,Julian Howard
+Helios Mechanical,Thailand,Sourcing,Procurement,Procurement Manager,Kendall Clark,Lina Sato
+Helios Mechanical,Thailand,Operations,Operations,Maintenance / Operations Coordinator,Alex Walker,Lina Sato
+Helios Mechanical,Thailand,Finance,Finance,Accounts Payable Lead,Morgan Coleman,Lina Sato
+Helios Mechanical,Thailand,Technical,Engineering,Reliability Engineer,Taylor Price,Lina Sato
+Helios Power Partners,Chile,Sourcing,Procurement,Procurement Manager,Quinn Santos,Camille Martin
+Helios Power Partners,Chile,Operations,Operations,Maintenance / Operations Coordinator,Skyler Hayes,Camille Martin
+Helios Power Partners,Chile,Finance,Finance,Accounts Payable Lead,Robin Foster,Camille Martin
+Helios Process Controls,Spain,Sourcing,Procurement,Procurement Manager,Taylor Price,Mila Diaz
+Helios Process Controls,Spain,Operations,Operations,Maintenance / Operations Coordinator,Casey Wilson,Mila Diaz
+Helios Process Controls,Spain,Finance,Finance,Accounts Payable Lead,Riley Perry,Mila Diaz
+Helios Engineering,South Africa,Sourcing,Procurement,Procurement Manager,Parker Martin,Leo Foster
+Helios Engineering,South Africa,Operations,Operations,Maintenance / Operations Coordinator,Emerson Miller,Leo Foster
+Helios Engineering,South Africa,Finance,Finance,Accounts Payable Lead,Dylan Lewis,Leo Foster
+Helios Drilling Solutions,Indonesia,Sourcing,Procurement,Procurement Manager,Jamie Diaz,Eva Lewis
+Helios Drilling Solutions,Indonesia,Operations,Operations,Maintenance / Operations Coordinator,Cameron Rossi,Eva Lewis
+Helios Drilling Solutions,Indonesia,Finance,Finance,Accounts Payable Lead,Drew Morgan,Eva Lewis
+Helios Drilling Solutions,Indonesia,Technical,Engineering,Reliability Engineer,Ari Howard,Eva Lewis
+Helios Compression,United States,Sourcing,Procurement,Procurement Manager,Harper Grant,Priya Nguyen
+Helios Compression,United States,Operations,Operations,Maintenance / Operations Coordinator,Logan Keller,Priya Nguyen
+Helios Compression,United States,Finance,Finance,Accounts Payable Lead,Kendall Clark,Priya Nguyen
+Helios Industrial Maintenance,United Kingdom,Sourcing,Procurement,Procurement Manager,Ari Howard,Noah Keller
+Helios Industrial Maintenance,United Kingdom,Operations,Operations,Maintenance / Operations Coordinator,Reese Nguyen,Noah Keller
+Helios Industrial Maintenance,United Kingdom,Finance,Finance,Accounts Payable Lead,Quinn Santos,Noah Keller
+Helios Resources,Poland,Sourcing,Procurement,Procurement Manager,Alex Walker,Adrian Walker
+Helios Resources,Poland,Operations,Operations,Maintenance / Operations Coordinator,Morgan Coleman,Adrian Walker
+Helios Resources,Poland,Finance,Finance,Accounts Payable Lead,Taylor Price,Adrian Walker
+Helios Resources,Poland,Technical,Engineering,Reliability Engineer,Casey Wilson,Adrian Walker
+Helios Pipeline Services,Nigeria,Sourcing,Procurement,Procurement Manager,Skyler Hayes,Zara Grant
+Helios Pipeline Services,Nigeria,Operations,Operations,Maintenance / Operations Coordinator,Robin Foster,Zara Grant
+Helios Pipeline Services,Nigeria,Finance,Finance,Accounts Payable Lead,Parker Martin,Zara Grant
+Helios Rotating Equipment,Japan,Sourcing,Procurement,Procurement Manager,Casey Wilson,Theo Price
+Helios Rotating Equipment,Japan,Operations,Operations,Maintenance / Operations Coordinator,Riley Perry,Theo Price
+Helios Rotating Equipment,Japan,Finance,Finance,Accounts Payable Lead,Jamie Diaz,Theo Price
+Helios Technical Supply,Mexico,Sourcing,Procurement,Procurement Manager,Emerson Miller,Lucas Hayes
+Helios Technical Supply,Mexico,Operations,Operations,Maintenance / Operations Coordinator,Dylan Lewis,Lucas Hayes
+Helios Technical Supply,Mexico,Finance,Finance,Accounts Payable Lead,Harper Grant,Lucas Hayes
+Helios Technical Supply,Mexico,Technical,Engineering,Reliability Engineer,Logan Keller,Lucas Hayes
+Helios Refinery Services,Germany,Sourcing,Procurement,Procurement Manager,Cameron Rossi,Avery Morgan
+Helios Refinery Services,Germany,Operations,Operations,Maintenance / Operations Coordinator,Drew Morgan,Avery Morgan
+Helios Refinery Services,Germany,Finance,Finance,Accounts Payable Lead,Ari Howard,Avery Morgan
+Helios Energy Projects,Saudi Arabia,Sourcing,Procurement,Procurement Manager,Logan Keller,Grace Perry
+Helios Energy Projects,Saudi Arabia,Operations,Operations,Maintenance / Operations Coordinator,Kendall Clark,Grace Perry
+Helios Energy Projects,Saudi Arabia,Finance,Finance,Accounts Payable Lead,Alex Walker,Grace Perry
+Helios Marine Engineering,Egypt,Sourcing,Procurement,Procurement Manager,Reese Nguyen,Julian Howard
+Helios Marine Engineering,Egypt,Operations,Operations,Maintenance / Operations Coordinator,Quinn Santos,Julian Howard
+Helios Marine Engineering,Egypt,Finance,Finance,Accounts Payable Lead,Skyler Hayes,Julian Howard
+Helios Marine Engineering,Egypt,Technical,Engineering,Reliability Engineer,Robin Foster,Julian Howard
+Helios Production Services,India,Sourcing,Procurement,Procurement Manager,Morgan Coleman,Lina Sato
+Helios Production Services,India,Operations,Operations,Maintenance / Operations Coordinator,Taylor Price,Lina Sato
+Helios Production Services,India,Finance,Finance,Accounts Payable Lead,Casey Wilson,Lina Sato
+Helios Controls,Colombia,Sourcing,Procurement,Procurement Manager,Robin Foster,Camille Martin
+Helios Controls,Colombia,Operations,Operations,Maintenance / Operations Coordinator,Parker Martin,Camille Martin
+Helios Controls,Colombia,Finance,Finance,Accounts Payable Lead,Emerson Miller,Camille Martin
+Helios Offshore Systems,Norway,Sourcing,Procurement,Procurement Manager,Riley Perry,Mila Diaz
+Helios Offshore Systems,Norway,Operations,Operations,Maintenance / Operations Coordinator,Jamie Diaz,Mila Diaz
+Helios Offshore Systems,Norway,Finance,Finance,Accounts Payable Lead,Cameron Rossi,Mila Diaz
+Helios Mechanical Group,Oman,Sourcing,Procurement,Procurement Manager,Dylan Lewis,Leo Foster
+Helios Mechanical Group,Oman,Operations,Operations,Maintenance / Operations Coordinator,Harper Grant,Leo Foster
+Helios Mechanical Group,Oman,Finance,Finance,Accounts Payable Lead,Logan Keller,Leo Foster
+Helios Industrial Services,Malaysia,Sourcing,Procurement,Procurement Manager,Drew Morgan,Eva Lewis
+Helios Industrial Services,Malaysia,Operations,Operations,Maintenance / Operations Coordinator,Ari Howard,Eva Lewis
+Helios Industrial Services,Malaysia,Finance,Finance,Accounts Payable Lead,Reese Nguyen,Eva Lewis
+Helios Flow Systems,Vietnam,Sourcing,Procurement,Procurement Manager,Kendall Clark,Priya Nguyen
+Helios Flow Systems,Vietnam,Operations,Operations,Maintenance / Operations Coordinator,Alex Walker,Priya Nguyen
+Helios Flow Systems,Vietnam,Finance,Finance,Accounts Payable Lead,Morgan Coleman,Priya Nguyen
+Helios Instrumentation,Argentina,Sourcing,Procurement,Procurement Manager,Quinn Santos,Noah Keller
+Helios Instrumentation,Argentina,Operations,Operations,Maintenance / Operations Coordinator,Skyler Hayes,Noah Keller
+Helios Instrumentation,Argentina,Finance,Finance,Accounts Payable Lead,Robin Foster,Noah Keller
+Helios Technical Services,Italy,Sourcing,Procurement,Procurement Manager,Taylor Price,Adrian Walker
+Helios Technical Services,Italy,Operations,Operations,Maintenance / Operations Coordinator,Casey Wilson,Adrian Walker
+Helios Technical Services,Italy,Finance,Finance,Accounts Payable Lead,Riley Perry,Adrian Walker
+Helios Industrial Solutions,Ghana,Sourcing,Procurement,Procurement Manager,Parker Martin,Zara Grant
+Helios Industrial Solutions,Ghana,Operations,Operations,Maintenance / Operations Coordinator,Emerson Miller,Zara Grant
+Helios Industrial Solutions,Ghana,Finance,Finance,Accounts Payable Lead,Dylan Lewis,Zara Grant
+Helios Industrial Solutions,Ghana,Technical,Engineering,Reliability Engineer,Harper Grant,Zara Grant
+Helios Marine Supply,Australia,Sourcing,Procurement,Procurement Manager,Jamie Diaz,Theo Price
+Helios Marine Supply,Australia,Operations,Operations,Maintenance / Operations Coordinator,Cameron Rossi,Theo Price
+Helios Marine Supply,Australia,Finance,Finance,Accounts Payable Lead,Drew Morgan,Theo Price
+Cobalt Energy Systems,Canada,Sourcing,Procurement,Procurement Manager,Harper Grant,Lucas Hayes
+Cobalt Energy Systems,Canada,Operations,Operations,Maintenance / Operations Coordinator,Logan Keller,Lucas Hayes
+Cobalt Energy Systems,Canada,Finance,Finance,Accounts Payable Lead,Kendall Clark,Lucas Hayes
+Cobalt Energy Systems,Canada,Technical,Engineering,Reliability Engineer,Alex Walker,Lucas Hayes
+Cobalt Marine Services,France,Sourcing,Procurement,Procurement Manager,Ari Howard,Avery Morgan
+Cobalt Marine Services,France,Operations,Operations,Maintenance / Operations Coordinator,Reese Nguyen,Avery Morgan
+Cobalt Marine Services,France,Finance,Finance,Accounts Payable Lead,Quinn Santos,Avery Morgan
+Cobalt Industrial Group,United Arab Emirates,Sourcing,Procurement,Procurement Manager,Alex Walker,Grace Perry
+Cobalt Industrial Group,United Arab Emirates,Operations,Operations,Maintenance / Operations Coordinator,Morgan Coleman,Grace Perry
+Cobalt Industrial Group,United Arab Emirates,Finance,Finance,Accounts Payable Lead,Taylor Price,Grace Perry
+Cobalt Process Solutions,Kenya,Sourcing,Procurement,Procurement Manager,Skyler Hayes,Julian Howard
+Cobalt Process Solutions,Kenya,Operations,Operations,Maintenance / Operations Coordinator,Robin Foster,Julian Howard
+Cobalt Process Solutions,Kenya,Finance,Finance,Accounts Payable Lead,Parker Martin,Julian Howard
+Cobalt Offshore Engineering,South Korea,Sourcing,Procurement,Procurement Manager,Casey Wilson,Lina Sato
+Cobalt Offshore Engineering,South Korea,Operations,Operations,Maintenance / Operations Coordinator,Riley Perry,Lina Sato
+Cobalt Offshore Engineering,South Korea,Finance,Finance,Accounts Payable Lead,Jamie Diaz,Lina Sato
+Cobalt Flow Technologies,Brazil,Sourcing,Procurement,Procurement Manager,Emerson Miller,Camille Martin
+Cobalt Flow Technologies,Brazil,Operations,Operations,Maintenance / Operations Coordinator,Dylan Lewis,Camille Martin
+Cobalt Flow Technologies,Brazil,Finance,Finance,Accounts Payable Lead,Harper Grant,Camille Martin
+Cobalt Infrastructure,Netherlands,Sourcing,Procurement,Procurement Manager,Cameron Rossi,Mila Diaz
+Cobalt Infrastructure,Netherlands,Operations,Operations,Maintenance / Operations Coordinator,Drew Morgan,Mila Diaz
+Cobalt Infrastructure,Netherlands,Finance,Finance,Accounts Payable Lead,Ari Howard,Mila Diaz
+Cobalt Petro Systems,Qatar,Sourcing,Procurement,Procurement Manager,Logan Keller,Leo Foster
+Cobalt Petro Systems,Qatar,Operations,Operations,Maintenance / Operations Coordinator,Kendall Clark,Leo Foster
+Cobalt Petro Systems,Qatar,Finance,Finance,Accounts Payable Lead,Alex Walker,Leo Foster
+Cobalt Petro Systems,Qatar,Technical,Engineering,Reliability Engineer,Morgan Coleman,Leo Foster
+Cobalt Mining Services,Singapore,Sourcing,Procurement,Procurement Manager,Reese Nguyen,Eva Lewis
+Cobalt Mining Services,Singapore,Operations,Operations,Maintenance / Operations Coordinator,Quinn Santos,Eva Lewis
+Cobalt Mining Services,Singapore,Finance,Finance,Accounts Payable Lead,Skyler Hayes,Eva Lewis
+Cobalt Mining Services,Singapore,Technical,Engineering,Reliability Engineer,Robin Foster,Eva Lewis
+Cobalt Waterworks,Thailand,Sourcing,Procurement,Procurement Manager,Morgan Coleman,Priya Nguyen
+Cobalt Waterworks,Thailand,Operations,Operations,Maintenance / Operations Coordinator,Taylor Price,Priya Nguyen
+Cobalt Waterworks,Thailand,Finance,Finance,Accounts Payable Lead,Casey Wilson,Priya Nguyen
+Cobalt Automation,Chile,Sourcing,Procurement,Procurement Manager,Robin Foster,Noah Keller
+Cobalt Automation,Chile,Operations,Operations,Maintenance / Operations Coordinator,Parker Martin,Noah Keller
+Cobalt Automation,Chile,Finance,Finance,Accounts Payable Lead,Emerson Miller,Noah Keller
+Cobalt Utilities,Spain,Sourcing,Procurement,Procurement Manager,Riley Perry,Adrian Walker
+Cobalt Utilities,Spain,Operations,Operations,Maintenance / Operations Coordinator,Jamie Diaz,Adrian Walker
+Cobalt Utilities,Spain,Finance,Finance,Accounts Payable Lead,Cameron Rossi,Adrian Walker
+Cobalt Field Services,South Africa,Sourcing,Procurement,Procurement Manager,Dylan Lewis,Zara Grant
+Cobalt Field Services,South Africa,Operations,Operations,Maintenance / Operations Coordinator,Harper Grant,Zara Grant
+Cobalt Field Services,South Africa,Finance,Finance,Accounts Payable Lead,Logan Keller,Zara Grant
+Cobalt Mechanical,Indonesia,Sourcing,Procurement,Procurement Manager,Drew Morgan,Theo Price
+Cobalt Mechanical,Indonesia,Operations,Operations,Maintenance / Operations Coordinator,Ari Howard,Theo Price
+Cobalt Mechanical,Indonesia,Finance,Finance,Accounts Payable Lead,Reese Nguyen,Theo Price
+Cobalt Power Partners,United States,Sourcing,Procurement,Procurement Manager,Kendall Clark,Lucas Hayes
+Cobalt Power Partners,United States,Operations,Operations,Maintenance / Operations Coordinator,Alex Walker,Lucas Hayes
+Cobalt Power Partners,United States,Finance,Finance,Accounts Payable Lead,Morgan Coleman,Lucas Hayes
+Cobalt Process Controls,United Kingdom,Sourcing,Procurement,Procurement Manager,Quinn Santos,Avery Morgan
+Cobalt Process Controls,United Kingdom,Operations,Operations,Maintenance / Operations Coordinator,Skyler Hayes,Avery Morgan
+Cobalt Process Controls,United Kingdom,Finance,Finance,Accounts Payable Lead,Robin Foster,Avery Morgan
+Cobalt Engineering,Poland,Sourcing,Procurement,Procurement Manager,Taylor Price,Grace Perry
+Cobalt Engineering,Poland,Operations,Operations,Maintenance / Operations Coordinator,Casey Wilson,Grace Perry
+Cobalt Engineering,Poland,Finance,Finance,Accounts Payable Lead,Riley Perry,Grace Perry
+Cobalt Drilling Solutions,Nigeria,Sourcing,Procurement,Procurement Manager,Parker Martin,Julian Howard
+Cobalt Drilling Solutions,Nigeria,Operations,Operations,Maintenance / Operations Coordinator,Emerson Miller,Julian Howard
+Cobalt Drilling Solutions,Nigeria,Finance,Finance,Accounts Payable Lead,Dylan Lewis,Julian Howard
+Cobalt Drilling Solutions,Nigeria,Technical,Engineering,Reliability Engineer,Harper Grant,Julian Howard
+Cobalt Compression,Japan,Sourcing,Procurement,Procurement Manager,Jamie Diaz,Lina Sato
+Cobalt Compression,Japan,Operations,Operations,Maintenance / Operations Coordinator,Cameron Rossi,Lina Sato
+Cobalt Compression,Japan,Finance,Finance,Accounts Payable Lead,Drew Morgan,Lina Sato
+Cobalt Industrial Maintenance,Mexico,Sourcing,Procurement,Procurement Manager,Harper Grant,Camille Martin
+Cobalt Industrial Maintenance,Mexico,Operations,Operations,Maintenance / Operations Coordinator,Logan Keller,Camille Martin
+Cobalt Industrial Maintenance,Mexico,Finance,Finance,Accounts Payable Lead,Kendall Clark,Camille Martin
+Cobalt Resources,Germany,Sourcing,Procurement,Procurement Manager,Ari Howard,Mila Diaz
+Cobalt Resources,Germany,Operations,Operations,Maintenance / Operations Coordinator,Reese Nguyen,Mila Diaz
+Cobalt Resources,Germany,Finance,Finance,Accounts Payable Lead,Quinn Santos,Mila Diaz
+Cobalt Resources,Germany,Technical,Engineering,Reliability Engineer,Skyler Hayes,Mila Diaz
+Cobalt Pipeline Services,Saudi Arabia,Sourcing,Procurement,Procurement Manager,Alex Walker,Leo Foster
+Cobalt Pipeline Services,Saudi Arabia,Operations,Operations,Maintenance / Operations Coordinator,Morgan Coleman,Leo Foster
+Cobalt Pipeline Services,Saudi Arabia,Finance,Finance,Accounts Payable Lead,Taylor Price,Leo Foster
+Cobalt Rotating Equipment,Egypt,Sourcing,Procurement,Procurement Manager,Skyler Hayes,Eva Lewis
+Cobalt Rotating Equipment,Egypt,Operations,Operations,Maintenance / Operations Coordinator,Robin Foster,Eva Lewis
+Cobalt Rotating Equipment,Egypt,Finance,Finance,Accounts Payable Lead,Parker Martin,Eva Lewis
+Cobalt Technical Supply,India,Sourcing,Procurement,Procurement Manager,Casey Wilson,Priya Nguyen
+Cobalt Technical Supply,India,Operations,Operations,Maintenance / Operations Coordinator,Riley Perry,Priya Nguyen
+Cobalt Technical Supply,India,Finance,Finance,Accounts Payable Lead,Jamie Diaz,Priya Nguyen
+Cobalt Refinery Services,Colombia,Sourcing,Procurement,Procurement Manager,Emerson Miller,Noah Keller
+Cobalt Refinery Services,Colombia,Operations,Operations,Maintenance / Operations Coordinator,Dylan Lewis,Noah Keller
+Cobalt Refinery Services,Colombia,Finance,Finance,Accounts Payable Lead,Harper Grant,Noah Keller
+Cobalt Energy Projects,Norway,Sourcing,Procurement,Procurement Manager,Cameron Rossi,Adrian Walker
+Cobalt Energy Projects,Norway,Operations,Operations,Maintenance / Operations Coordinator,Drew Morgan,Adrian Walker
+Cobalt Energy Projects,Norway,Finance,Finance,Accounts Payable Lead,Ari Howard,Adrian Walker
+Cobalt Energy Projects,Norway,Technical,Engineering,Reliability Engineer,Reese Nguyen,Adrian Walker
+Cobalt Marine Engineering,Oman,Sourcing,Procurement,Procurement Manager,Logan Keller,Zara Grant
+Cobalt Marine Engineering,Oman,Operations,Operations,Maintenance / Operations Coordinator,Kendall Clark,Zara Grant
+Cobalt Marine Engineering,Oman,Finance,Finance,Accounts Payable Lead,Alex Walker,Zara Grant
+Cobalt Production Services,Malaysia,Sourcing,Procurement,Procurement Manager,Reese Nguyen,Theo Price
+Cobalt Production Services,Malaysia,Operations,Operations,Maintenance / Operations Coordinator,Quinn Santos,Theo Price
+Cobalt Production Services,Malaysia,Finance,Finance,Accounts Payable Lead,Skyler Hayes,Theo Price
+Cobalt Controls,Vietnam,Sourcing,Procurement,Procurement Manager,Morgan Coleman,Lucas Hayes
+Cobalt Controls,Vietnam,Operations,Operations,Maintenance / Operations Coordinator,Taylor Price,Lucas Hayes
+Cobalt Controls,Vietnam,Finance,Finance,Accounts Payable Lead,Casey Wilson,Lucas Hayes
+Cobalt Offshore Systems,Argentina,Sourcing,Procurement,Procurement Manager,Robin Foster,Avery Morgan
+Cobalt Offshore Systems,Argentina,Operations,Operations,Maintenance / Operations Coordinator,Parker Martin,Avery Morgan
+Cobalt Offshore Systems,Argentina,Finance,Finance,Accounts Payable Lead,Emerson Miller,Avery Morgan
+Cobalt Mechanical Group,Italy,Sourcing,Procurement,Procurement Manager,Riley Perry,Grace Perry
+Cobalt Mechanical Group,Italy,Operations,Operations,Maintenance / Operations Coordinator,Jamie Diaz,Grace Perry
+Cobalt Mechanical Group,Italy,Finance,Finance,Accounts Payable Lead,Cameron Rossi,Grace Perry
+Cobalt Industrial Services,Ghana,Sourcing,Procurement,Procurement Manager,Dylan Lewis,Julian Howard
+Cobalt Industrial Services,Ghana,Operations,Operations,Maintenance / Operations Coordinator,Harper Grant,Julian Howard
+Cobalt Industrial Services,Ghana,Finance,Finance,Accounts Payable Lead,Logan Keller,Julian Howard
+Cobalt Flow Systems,Australia,Sourcing,Procurement,Procurement Manager,Drew Morgan,Lina Sato
+Cobalt Flow Systems,Australia,Operations,Operations,Maintenance / Operations Coordinator,Ari Howard,Lina Sato
+Cobalt Flow Systems,Australia,Finance,Finance,Accounts Payable Lead,Reese Nguyen,Lina Sato
+Cobalt Instrumentation,Canada,Sourcing,Procurement,Procurement Manager,Kendall Clark,Camille Martin
+Cobalt Instrumentation,Canada,Operations,Operations,Maintenance / Operations Coordinator,Alex Walker,Camille Martin
+Cobalt Instrumentation,Canada,Finance,Finance,Accounts Payable Lead,Morgan Coleman,Camille Martin
+Cobalt Technical Services,France,Sourcing,Procurement,Procurement Manager,Quinn Santos,Mila Diaz
+Cobalt Technical Services,France,Operations,Operations,Maintenance / Operations Coordinator,Skyler Hayes,Mila Diaz
+Cobalt Technical Services,France,Finance,Finance,Accounts Payable Lead,Robin Foster,Mila Diaz
+Cobalt Technical Services,France,Technical,Engineering,Reliability Engineer,Parker Martin,Mila Diaz
+Cobalt Industrial Solutions,United Arab Emirates,Sourcing,Procurement,Procurement Manager,Taylor Price,Leo Foster
+Cobalt Industrial Solutions,United Arab Emirates,Operations,Operations,Maintenance / Operations Coordinator,Casey Wilson,Leo Foster
+Cobalt Industrial Solutions,United Arab Emirates,Finance,Finance,Accounts Payable Lead,Riley Perry,Leo Foster
+Cobalt Marine Supply,Kenya,Sourcing,Procurement,Procurement Manager,Parker Martin,Eva Lewis
+Cobalt Marine Supply,Kenya,Operations,Operations,Maintenance / Operations Coordinator,Emerson Miller,Eva Lewis
+Cobalt Marine Supply,Kenya,Finance,Finance,Accounts Payable Lead,Dylan Lewis,Eva Lewis
+Meridian Energy Systems,South Korea,Sourcing,Procurement,Procurement Manager,Jamie Diaz,Priya Nguyen
+Meridian Energy Systems,South Korea,Operations,Operations,Maintenance / Operations Coordinator,Cameron Rossi,Priya Nguyen
+Meridian Energy Systems,South Korea,Finance,Finance,Accounts Payable Lead,Drew Morgan,Priya Nguyen
+Meridian Marine Services,Brazil,Sourcing,Procurement,Procurement Manager,Harper Grant,Noah Keller
+Meridian Marine Services,Brazil,Operations,Operations,Maintenance / Operations Coordinator,Logan Keller,Noah Keller
+Meridian Marine Services,Brazil,Finance,Finance,Accounts Payable Lead,Kendall Clark,Noah Keller
+Meridian Marine Services,Brazil,Technical,Engineering,Reliability Engineer,Alex Walker,Noah Keller
+Meridian Industrial Group,Netherlands,Sourcing,Procurement,Procurement Manager,Ari Howard,Adrian Walker
+Meridian Industrial Group,Netherlands,Operations,Operations,Maintenance / Operations Coordinator,Reese Nguyen,Adrian Walker
+Meridian Industrial Group,Netherlands,Finance,Finance,Accounts Payable Lead,Quinn Santos,Adrian Walker
+Meridian Process Solutions,Qatar,Sourcing,Procurement,Procurement Manager,Alex Walker,Zara Grant
+Meridian Process Solutions,Qatar,Operations,Operations,Maintenance / Operations Coordinator,Morgan Coleman,Zara Grant
+Meridian Process Solutions,Qatar,Finance,Finance,Accounts Payable Lead,Taylor Price,Zara Grant
+Meridian Process Solutions,Qatar,Technical,Engineering,Reliability Engineer,Casey Wilson,Zara Grant
+Meridian Offshore Engineering,Singapore,Sourcing,Procurement,Procurement Manager,Skyler Hayes,Theo Price
+Meridian Offshore Engineering,Singapore,Operations,Operations,Maintenance / Operations Coordinator,Robin Foster,Theo Price
+Meridian Offshore Engineering,Singapore,Finance,Finance,Accounts Payable Lead,Parker Martin,Theo Price
+Meridian Flow Technologies,Thailand,Sourcing,Procurement,Procurement Manager,Casey Wilson,Lucas Hayes
+Meridian Flow Technologies,Thailand,Operations,Operations,Maintenance / Operations Coordinator,Riley Perry,Lucas Hayes
+Meridian Flow Technologies,Thailand,Finance,Finance,Accounts Payable Lead,Jamie Diaz,Lucas Hayes
+Meridian Infrastructure,Chile,Sourcing,Procurement,Procurement Manager,Emerson Miller,Avery Morgan
+Meridian Infrastructure,Chile,Operations,Operations,Maintenance / Operations Coordinator,Dylan Lewis,Avery Morgan
+Meridian Infrastructure,Chile,Finance,Finance,Accounts Payable Lead,Harper Grant,Avery Morgan
+Meridian Petro Systems,Spain,Sourcing,Procurement,Procurement Manager,Cameron Rossi,Grace Perry
+Meridian Petro Systems,Spain,Operations,Operations,Maintenance / Operations Coordinator,Drew Morgan,Grace Perry
+Meridian Petro Systems,Spain,Finance,Finance,Accounts Payable Lead,Ari Howard,Grace Perry
+Meridian Mining Services,South Africa,Sourcing,Procurement,Procurement Manager,Logan Keller,Julian Howard
+Meridian Mining Services,South Africa,Operations,Operations,Maintenance / Operations Coordinator,Kendall Clark,Julian Howard
+Meridian Mining Services,South Africa,Finance,Finance,Accounts Payable Lead,Alex Walker,Julian Howard
+Meridian Waterworks,Indonesia,Sourcing,Procurement,Procurement Manager,Reese Nguyen,Lina Sato
+Meridian Waterworks,Indonesia,Operations,Operations,Maintenance / Operations Coordinator,Quinn Santos,Lina Sato
+Meridian Waterworks,Indonesia,Finance,Finance,Accounts Payable Lead,Skyler Hayes,Lina Sato
+Meridian Automation,United States,Sourcing,Procurement,Procurement Manager,Morgan Coleman,Camille Martin
+Meridian Automation,United States,Operations,Operations,Maintenance / Operations Coordinator,Taylor Price,Camille Martin
+Meridian Automation,United States,Finance,Finance,Accounts Payable Lead,Casey Wilson,Camille Martin
+Meridian Utilities,United Kingdom,Sourcing,Procurement,Procurement Manager,Robin Foster,Mila Diaz
+Meridian Utilities,United Kingdom,Operations,Operations,Maintenance / Operations Coordinator,Parker Martin,Mila Diaz
+Meridian Utilities,United Kingdom,Finance,Finance,Accounts Payable Lead,Emerson Miller,Mila Diaz
+Meridian Utilities,United Kingdom,Technical,Engineering,Reliability Engineer,Dylan Lewis,Mila Diaz
+Meridian Field Services,Poland,Sourcing,Procurement,Procurement Manager,Riley Perry,Leo Foster
+Meridian Field Services,Poland,Operations,Operations,Maintenance / Operations Coordinator,Jamie Diaz,Leo Foster
+Meridian Field Services,Poland,Finance,Finance,Accounts Payable Lead,Cameron Rossi,Leo Foster
+Meridian Mechanical,Nigeria,Sourcing,Procurement,Procurement Manager,Dylan Lewis,Eva Lewis
+Meridian Mechanical,Nigeria,Operations,Operations,Maintenance / Operations Coordinator,Harper Grant,Eva Lewis
+Meridian Mechanical,Nigeria,Finance,Finance,Accounts Payable Lead,Logan Keller,Eva Lewis
+Meridian Power Partners,Japan,Sourcing,Procurement,Procurement Manager,Drew Morgan,Priya Nguyen
+Meridian Power Partners,Japan,Operations,Operations,Maintenance / Operations Coordinator,Ari Howard,Priya Nguyen
+Meridian Power Partners,Japan,Finance,Finance,Accounts Payable Lead,Reese Nguyen,Priya Nguyen
+Meridian Process Controls,Mexico,Sourcing,Procurement,Procurement Manager,Kendall Clark,Noah Keller
+Meridian Process Controls,Mexico,Operations,Operations,Maintenance / Operations Coordinator,Alex Walker,Noah Keller
+Meridian Process Controls,Mexico,Finance,Finance,Accounts Payable Lead,Morgan Coleman,Noah Keller
+Meridian Engineering,Germany,Sourcing,Procurement,Procurement Manager,Quinn Santos,Adrian Walker
+Meridian Engineering,Germany,Operations,Operations,Maintenance / Operations Coordinator,Skyler Hayes,Adrian Walker
+Meridian Engineering,Germany,Finance,Finance,Accounts Payable Lead,Robin Foster,Adrian Walker
+Meridian Drilling Solutions,Saudi Arabia,Sourcing,Procurement,Procurement Manager,Taylor Price,Zara Grant
+Meridian Drilling Solutions,Saudi Arabia,Operations,Operations,Maintenance / Operations Coordinator,Casey Wilson,Zara Grant
+Meridian Drilling Solutions,Saudi Arabia,Finance,Finance,Accounts Payable Lead,Riley Perry,Zara Grant
+Meridian Compression,Egypt,Sourcing,Procurement,Procurement Manager,Parker Martin,Theo Price
+Meridian Compression,Egypt,Operations,Operations,Maintenance / Operations Coordinator,Emerson Miller,Theo Price
+Meridian Compression,Egypt,Finance,Finance,Accounts Payable Lead,Dylan Lewis,Theo Price
+Meridian Compression,Egypt,Technical,Engineering,Reliability Engineer,Harper Grant,Theo Price
+Meridian Industrial Maintenance,India,Sourcing,Procurement,Procurement Manager,Jamie Diaz,Lucas Hayes
+Meridian Industrial Maintenance,India,Operations,Operations,Maintenance / Operations Coordinator,Cameron Rossi,Lucas Hayes
+Meridian Industrial Maintenance,India,Finance,Finance,Accounts Payable Lead,Drew Morgan,Lucas Hayes
+Meridian Resources,Colombia,Sourcing,Procurement,Procurement Manager,Harper Grant,Avery Morgan
+Meridian Resources,Colombia,Operations,Operations,Maintenance / Operations Coordinator,Logan Keller,Avery Morgan
+Meridian Resources,Colombia,Finance,Finance,Accounts Payable Lead,Kendall Clark,Avery Morgan
+Meridian Resources,Colombia,Technical,Engineering,Reliability Engineer,Alex Walker,Avery Morgan
+Meridian Pipeline Services,Norway,Sourcing,Procurement,Procurement Manager,Ari Howard,Grace Perry
+Meridian Pipeline Services,Norway,Operations,Operations,Maintenance / Operations Coordinator,Reese Nguyen,Grace Perry
+Meridian Pipeline Services,Norway,Finance,Finance,Accounts Payable Lead,Quinn Santos,Grace Perry
+Meridian Pipeline Services,Norway,Technical,Engineering,Reliability Engineer,Skyler Hayes,Grace Perry
+Meridian Rotating Equipment,Oman,Sourcing,Procurement,Procurement Manager,Alex Walker,Julian Howard
+Meridian Rotating Equipment,Oman,Operations,Operations,Maintenance / Operations Coordinator,Morgan Coleman,Julian Howard
+Meridian Rotating Equipment,Oman,Finance,Finance,Accounts Payable Lead,Taylor Price,Julian Howard
+Meridian Technical Supply,Malaysia,Sourcing,Procurement,Procurement Manager,Skyler Hayes,Lina Sato
+Meridian Technical Supply,Malaysia,Operations,Operations,Maintenance / Operations Coordinator,Robin Foster,Lina Sato
+Meridian Technical Supply,Malaysia,Finance,Finance,Accounts Payable Lead,Parker Martin,Lina Sato
+Meridian Refinery Services,Vietnam,Sourcing,Procurement,Procurement Manager,Casey Wilson,Camille Martin
+Meridian Refinery Services,Vietnam,Operations,Operations,Maintenance / Operations Coordinator,Riley Perry,Camille Martin
+Meridian Refinery Services,Vietnam,Finance,Finance,Accounts Payable Lead,Jamie Diaz,Camille Martin
+Meridian Energy Projects,Argentina,Sourcing,Procurement,Procurement Manager,Emerson Miller,Mila Diaz
+Meridian Energy Projects,Argentina,Operations,Operations,Maintenance / Operations Coordinator,Dylan Lewis,Mila Diaz
+Meridian Energy Projects,Argentina,Finance,Finance,Accounts Payable Lead,Harper Grant,Mila Diaz
+Meridian Energy Projects,Argentina,Technical,Engineering,Reliability Engineer,Logan Keller,Mila Diaz
+Meridian Marine Engineering,Italy,Sourcing,Procurement,Procurement Manager,Cameron Rossi,Leo Foster
+Meridian Marine Engineering,Italy,Operations,Operations,Maintenance / Operations Coordinator,Drew Morgan,Leo Foster
+Meridian Marine Engineering,Italy,Finance,Finance,Accounts Payable Lead,Ari Howard,Leo Foster
+Meridian Marine Engineering,Italy,Technical,Engineering,Reliability Engineer,Reese Nguyen,Leo Foster
+Meridian Production Services,Ghana,Sourcing,Procurement,Procurement Manager,Logan Keller,Eva Lewis
+Meridian Production Services,Ghana,Operations,Operations,Maintenance / Operations Coordinator,Kendall Clark,Eva Lewis
+Meridian Production Services,Ghana,Finance,Finance,Accounts Payable Lead,Alex Walker,Eva Lewis
+Meridian Controls,Australia,Sourcing,Procurement,Procurement Manager,Reese Nguyen,Priya Nguyen
+Meridian Controls,Australia,Operations,Operations,Maintenance / Operations Coordinator,Quinn Santos,Priya Nguyen
+Meridian Controls,Australia,Finance,Finance,Accounts Payable Lead,Skyler Hayes,Priya Nguyen
+Meridian Controls,Australia,Technical,Engineering,Reliability Engineer,Robin Foster,Priya Nguyen
+Meridian Offshore Systems,Canada,Sourcing,Procurement,Procurement Manager,Morgan Coleman,Noah Keller
+Meridian Offshore Systems,Canada,Operations,Operations,Maintenance / Operations Coordinator,Taylor Price,Noah Keller
+Meridian Offshore Systems,Canada,Finance,Finance,Accounts Payable Lead,Casey Wilson,Noah Keller
+Meridian Offshore Systems,Canada,Technical,Engineering,Reliability Engineer,Riley Perry,Noah Keller
+Meridian Mechanical Group,France,Sourcing,Procurement,Procurement Manager,Robin Foster,Adrian Walker
+Meridian Mechanical Group,France,Operations,Operations,Maintenance / Operations Coordinator,Parker Martin,Adrian Walker
+Meridian Mechanical Group,France,Finance,Finance,Accounts Payable Lead,Emerson Miller,Adrian Walker
+Meridian Industrial Services,United Arab Emirates,Sourcing,Procurement,Procurement Manager,Riley Perry,Zara Grant
+Meridian Industrial Services,United Arab Emirates,Operations,Operations,Maintenance / Operations Coordinator,Jamie Diaz,Zara Grant
+Meridian Industrial Services,United Arab Emirates,Finance,Finance,Accounts Payable Lead,Cameron Rossi,Zara Grant
+Meridian Industrial Services,United Arab Emirates,Technical,Engineering,Reliability Engineer,Drew Morgan,Zara Grant
+Meridian Flow Systems,Kenya,Sourcing,Procurement,Procurement Manager,Dylan Lewis,Theo Price
+Meridian Flow Systems,Kenya,Operations,Operations,Maintenance / Operations Coordinator,Harper Grant,Theo Price
+Meridian Flow Systems,Kenya,Finance,Finance,Accounts Payable Lead,Logan Keller,Theo Price
+Meridian Flow Systems,Kenya,Technical,Engineering,Reliability Engineer,Kendall Clark,Theo Price
+Meridian Instrumentation,South Korea,Sourcing,Procurement,Procurement Manager,Drew Morgan,Lucas Hayes
+Meridian Instrumentation,South Korea,Operations,Operations,Maintenance / Operations Coordinator,Ari Howard,Lucas Hayes
+Meridian Instrumentation,South Korea,Finance,Finance,Accounts Payable Lead,Reese Nguyen,Lucas Hayes
+Meridian Instrumentation,South Korea,Technical,Engineering,Reliability Engineer,Quinn Santos,Lucas Hayes
+Meridian Technical Services,Brazil,Sourcing,Procurement,Procurement Manager,Kendall Clark,Avery Morgan
+Meridian Technical Services,Brazil,Operations,Operations,Maintenance / Operations Coordinator,Alex Walker,Avery Morgan
+Meridian Technical Services,Brazil,Finance,Finance,Accounts Payable Lead,Morgan Coleman,Avery Morgan
+Meridian Technical Services,Brazil,Technical,Engineering,Reliability Engineer,Taylor Price,Avery Morgan
+Meridian Industrial Solutions,Netherlands,Sourcing,Procurement,Procurement Manager,Quinn Santos,Grace Perry
+Meridian Industrial Solutions,Netherlands,Operations,Operations,Maintenance / Operations Coordinator,Skyler Hayes,Grace Perry
+Meridian Industrial Solutions,Netherlands,Finance,Finance,Accounts Payable Lead,Robin Foster,Grace Perry
+Meridian Industrial Solutions,Netherlands,Technical,Engineering,Reliability Engineer,Parker Martin,Grace Perry
+Meridian Marine Supply,Qatar,Sourcing,Procurement,Procurement Manager,Taylor Price,Julian Howard
+Meridian Marine Supply,Qatar,Operations,Operations,Maintenance / Operations Coordinator,Casey Wilson,Julian Howard
+Meridian Marine Supply,Qatar,Finance,Finance,Accounts Payable Lead,Riley Perry,Julian Howard
+Arcadia Energy Systems,Singapore,Sourcing,Procurement,Procurement Manager,Parker Martin,Lina Sato
+Arcadia Energy Systems,Singapore,Operations,Operations,Maintenance / Operations Coordinator,Emerson Miller,Lina Sato
+Arcadia Energy Systems,Singapore,Finance,Finance,Accounts Payable Lead,Dylan Lewis,Lina Sato
+Arcadia Marine Services,Thailand,Sourcing,Procurement,Procurement Manager,Jamie Diaz,Camille Martin
+Arcadia Marine Services,Thailand,Operations,Operations,Maintenance / Operations Coordinator,Cameron Rossi,Camille Martin
+Arcadia Marine Services,Thailand,Finance,Finance,Accounts Payable Lead,Drew Morgan,Camille Martin
+Arcadia Industrial Group,Chile,Sourcing,Procurement,Procurement Manager,Harper Grant,Mila Diaz
+Arcadia Industrial Group,Chile,Operations,Operations,Maintenance / Operations Coordinator,Logan Keller,Mila Diaz
+Arcadia Industrial Group,Chile,Finance,Finance,Accounts Payable Lead,Kendall Clark,Mila Diaz
+Arcadia Process Solutions,Spain,Sourcing,Procurement,Procurement Manager,Ari Howard,Leo Foster
+Arcadia Process Solutions,Spain,Operations,Operations,Maintenance / Operations Coordinator,Reese Nguyen,Leo Foster
+Arcadia Process Solutions,Spain,Finance,Finance,Accounts Payable Lead,Quinn Santos,Leo Foster
+Arcadia Offshore Engineering,South Africa,Sourcing,Procurement,Procurement Manager,Alex Walker,Eva Lewis
+Arcadia Offshore Engineering,South Africa,Operations,Operations,Maintenance / Operations Coordinator,Morgan Coleman,Eva Lewis
+Arcadia Offshore Engineering,South Africa,Finance,Finance,Accounts Payable Lead,Taylor Price,Eva Lewis
+Arcadia Flow Technologies,Indonesia,Sourcing,Procurement,Procurement Manager,Skyler Hayes,Priya Nguyen
+Arcadia Flow Technologies,Indonesia,Operations,Operations,Maintenance / Operations Coordinator,Robin Foster,Priya Nguyen
+Arcadia Flow Technologies,Indonesia,Finance,Finance,Accounts Payable Lead,Parker Martin,Priya Nguyen
+Arcadia Flow Technologies,Indonesia,Technical,Engineering,Reliability Engineer,Emerson Miller,Priya Nguyen
+Arcadia Infrastructure,United States,Sourcing,Procurement,Procurement Manager,Casey Wilson,Noah Keller
+Arcadia Infrastructure,United States,Operations,Operations,Maintenance / Operations Coordinator,Riley Perry,Noah Keller
+Arcadia Infrastructure,United States,Finance,Finance,Accounts Payable Lead,Jamie Diaz,Noah Keller
+Arcadia Petro Systems,United Kingdom,Sourcing,Procurement,Procurement Manager,Emerson Miller,Adrian Walker
+Arcadia Petro Systems,United Kingdom,Operations,Operations,Maintenance / Operations Coordinator,Dylan Lewis,Adrian Walker
+Arcadia Petro Systems,United Kingdom,Finance,Finance,Accounts Payable Lead,Harper Grant,Adrian Walker
+Arcadia Petro Systems,United Kingdom,Technical,Engineering,Reliability Engineer,Logan Keller,Adrian Walker
+Arcadia Mining Services,Poland,Sourcing,Procurement,Procurement Manager,Cameron Rossi,Zara Grant
+Arcadia Mining Services,Poland,Operations,Operations,Maintenance / Operations Coordinator,Drew Morgan,Zara Grant
+Arcadia Mining Services,Poland,Finance,Finance,Accounts Payable Lead,Ari Howard,Zara Grant
+Arcadia Waterworks,Nigeria,Sourcing,Procurement,Procurement Manager,Logan Keller,Theo Price
+Arcadia Waterworks,Nigeria,Operations,Operations,Maintenance / Operations Coordinator,Kendall Clark,Theo Price
+Arcadia Waterworks,Nigeria,Finance,Finance,Accounts Payable Lead,Alex Walker,Theo Price
+Arcadia Automation,Japan,Sourcing,Procurement,Procurement Manager,Reese Nguyen,Lucas Hayes
+Arcadia Automation,Japan,Operations,Operations,Maintenance / Operations Coordinator,Quinn Santos,Lucas Hayes
+Arcadia Automation,Japan,Finance,Finance,Accounts Payable Lead,Skyler Hayes,Lucas Hayes
+Arcadia Utilities,Mexico,Sourcing,Procurement,Procurement Manager,Morgan Coleman,Avery Morgan
+Arcadia Utilities,Mexico,Operations,Operations,Maintenance / Operations Coordinator,Taylor Price,Avery Morgan
+Arcadia Utilities,Mexico,Finance,Finance,Accounts Payable Lead,Casey Wilson,Avery Morgan
+Arcadia Field Services,Germany,Sourcing,Procurement,Procurement Manager,Robin Foster,Grace Perry
+Arcadia Field Services,Germany,Operations,Operations,Maintenance / Operations Coordinator,Parker Martin,Grace Perry
+Arcadia Field Services,Germany,Finance,Finance,Accounts Payable Lead,Emerson Miller,Grace Perry
+Arcadia Mechanical,Saudi Arabia,Sourcing,Procurement,Procurement Manager,Riley Perry,Julian Howard
+Arcadia Mechanical,Saudi Arabia,Operations,Operations,Maintenance / Operations Coordinator,Jamie Diaz,Julian Howard
+Arcadia Mechanical,Saudi Arabia,Finance,Finance,Accounts Payable Lead,Cameron Rossi,Julian Howard
+Arcadia Mechanical,Saudi Arabia,Technical,Engineering,Reliability Engineer,Drew Morgan,Julian Howard
+Arcadia Power Partners,Egypt,Sourcing,Procurement,Procurement Manager,Dylan Lewis,Lina Sato
+Arcadia Power Partners,Egypt,Operations,Operations,Maintenance / Operations Coordinator,Harper Grant,Lina Sato
+Arcadia Power Partners,Egypt,Finance,Finance,Accounts Payable Lead,Logan Keller,Lina Sato
+Arcadia Process Controls,India,Sourcing,Procurement,Procurement Manager,Drew Morgan,Camille Martin
+Arcadia Process Controls,India,Operations,Operations,Maintenance / Operations Coordinator,Ari Howard,Camille Martin
+Arcadia Process Controls,India,Finance,Finance,Accounts Payable Lead,Reese Nguyen,Camille Martin
+Arcadia Process Controls,India,Technical,Engineering,Reliability Engineer,Quinn Santos,Camille Martin
+Arcadia Engineering,Colombia,Sourcing,Procurement,Procurement Manager,Kendall Clark,Mila Diaz
+Arcadia Engineering,Colombia,Operations,Operations,Maintenance / Operations Coordinator,Alex Walker,Mila Diaz
+Arcadia Engineering,Colombia,Finance,Finance,Accounts Payable Lead,Morgan Coleman,Mila Diaz
+Arcadia Engineering,Colombia,Technical,Engineering,Reliability Engineer,Taylor Price,Mila Diaz
+Arcadia Drilling Solutions,Norway,Sourcing,Procurement,Procurement Manager,Quinn Santos,Leo Foster
+Arcadia Drilling Solutions,Norway,Operations,Operations,Maintenance / Operations Coordinator,Skyler Hayes,Leo Foster
+Arcadia Drilling Solutions,Norway,Finance,Finance,Accounts Payable Lead,Robin Foster,Leo Foster
+Arcadia Drilling Solutions,Norway,Technical,Engineering,Reliability Engineer,Parker Martin,Leo Foster
+Arcadia Compression,Oman,Sourcing,Procurement,Procurement Manager,Taylor Price,Eva Lewis
+Arcadia Compression,Oman,Operations,Operations,Maintenance / Operations Coordinator,Casey Wilson,Eva Lewis
+Arcadia Compression,Oman,Finance,Finance,Accounts Payable Lead,Riley Perry,Eva Lewis
+Arcadia Industrial Maintenance,Malaysia,Sourcing,Procurement,Procurement Manager,Parker Martin,Priya Nguyen
+Arcadia Industrial Maintenance,Malaysia,Operations,Operations,Maintenance / Operations Coordinator,Emerson Miller,Priya Nguyen
+Arcadia Industrial Maintenance,Malaysia,Finance,Finance,Accounts Payable Lead,Dylan Lewis,Priya Nguyen
+Arcadia Industrial Maintenance,Malaysia,Technical,Engineering,Reliability Engineer,Harper Grant,Priya Nguyen
+Arcadia Resources,Vietnam,Sourcing,Procurement,Procurement Manager,Jamie Diaz,Noah Keller
+Arcadia Resources,Vietnam,Operations,Operations,Maintenance / Operations Coordinator,Cameron Rossi,Noah Keller
+Arcadia Resources,Vietnam,Finance,Finance,Accounts Payable Lead,Drew Morgan,Noah Keller
+Arcadia Pipeline Services,Argentina,Sourcing,Procurement,Procurement Manager,Harper Grant,Adrian Walker
+Arcadia Pipeline Services,Argentina,Operations,Operations,Maintenance / Operations Coordinator,Logan Keller,Adrian Walker
+Arcadia Pipeline Services,Argentina,Finance,Finance,Accounts Payable Lead,Kendall Clark,Adrian Walker
+Arcadia Rotating Equipment,Italy,Sourcing,Procurement,Procurement Manager,Ari Howard,Zara Grant
+Arcadia Rotating Equipment,Italy,Operations,Operations,Maintenance / Operations Coordinator,Reese Nguyen,Zara Grant
+Arcadia Rotating Equipment,Italy,Finance,Finance,Accounts Payable Lead,Quinn Santos,Zara Grant
+Arcadia Rotating Equipment,Italy,Technical,Engineering,Reliability Engineer,Skyler Hayes,Zara Grant
+Arcadia Technical Supply,Ghana,Sourcing,Procurement,Procurement Manager,Alex Walker,Theo Price
+Arcadia Technical Supply,Ghana,Operations,Operations,Maintenance / Operations Coordinator,Morgan Coleman,Theo Price
+Arcadia Technical Supply,Ghana,Finance,Finance,Accounts Payable Lead,Taylor Price,Theo Price
+Arcadia Refinery Services,Australia,Sourcing,Procurement,Procurement Manager,Skyler Hayes,Lucas Hayes
+Arcadia Refinery Services,Australia,Operations,Operations,Maintenance / Operations Coordinator,Robin Foster,Lucas Hayes
+Arcadia Refinery Services,Australia,Finance,Finance,Accounts Payable Lead,Parker Martin,Lucas Hayes
+Arcadia Refinery Services,Australia,Technical,Engineering,Reliability Engineer,Emerson Miller,Lucas Hayes
+Arcadia Energy Projects,Canada,Sourcing,Procurement,Procurement Manager,Casey Wilson,Avery Morgan
+Arcadia Energy Projects,Canada,Operations,Operations,Maintenance / Operations Coordinator,Riley Perry,Avery Morgan
+Arcadia Energy Projects,Canada,Finance,Finance,Accounts Payable Lead,Jamie Diaz,Avery Morgan
+Arcadia Marine Engineering,France,Sourcing,Procurement,Procurement Manager,Emerson Miller,Grace Perry
+Arcadia Marine Engineering,France,Operations,Operations,Maintenance / Operations Coordinator,Dylan Lewis,Grace Perry
+Arcadia Marine Engineering,France,Finance,Finance,Accounts Payable Lead,Harper Grant,Grace Perry
+Arcadia Marine Engineering,France,Technical,Engineering,Reliability Engineer,Logan Keller,Grace Perry
+Arcadia Production Services,United Arab Emirates,Sourcing,Procurement,Procurement Manager,Cameron Rossi,Julian Howard
+Arcadia Production Services,United Arab Emirates,Operations,Operations,Maintenance / Operations Coordinator,Drew Morgan,Julian Howard
+Arcadia Production Services,United Arab Emirates,Finance,Finance,Accounts Payable Lead,Ari Howard,Julian Howard
+Arcadia Production Services,United Arab Emirates,Technical,Engineering,Reliability Engineer,Reese Nguyen,Julian Howard
+Arcadia Controls,Kenya,Sourcing,Procurement,Procurement Manager,Logan Keller,Lina Sato
+Arcadia Controls,Kenya,Operations,Operations,Maintenance / Operations Coordinator,Kendall Clark,Lina Sato
+Arcadia Controls,Kenya,Finance,Finance,Accounts Payable Lead,Alex Walker,Lina Sato
+Arcadia Controls,Kenya,Technical,Engineering,Reliability Engineer,Morgan Coleman,Lina Sato
+Arcadia Offshore Systems,South Korea,Sourcing,Procurement,Procurement Manager,Reese Nguyen,Camille Martin
+Arcadia Offshore Systems,South Korea,Operations,Operations,Maintenance / Operations Coordinator,Quinn Santos,Camille Martin
+Arcadia Offshore Systems,South Korea,Finance,Finance,Accounts Payable Lead,Skyler Hayes,Camille Martin
+Arcadia Offshore Systems,South Korea,Technical,Engineering,Reliability Engineer,Robin Foster,Camille Martin
+Arcadia Mechanical Group,Brazil,Sourcing,Procurement,Procurement Manager,Morgan Coleman,Mila Diaz
+Arcadia Mechanical Group,Brazil,Operations,Operations,Maintenance / Operations Coordinator,Taylor Price,Mila Diaz
+Arcadia Mechanical Group,Brazil,Finance,Finance,Accounts Payable Lead,Casey Wilson,Mila Diaz
+Arcadia Industrial Services,Netherlands,Sourcing,Procurement,Procurement Manager,Robin Foster,Leo Foster
+Arcadia Industrial Services,Netherlands,Operations,Operations,Maintenance / Operations Coordinator,Parker Martin,Leo Foster
+Arcadia Industrial Services,Netherlands,Finance,Finance,Accounts Payable Lead,Emerson Miller,Leo Foster
+Arcadia Industrial Services,Netherlands,Technical,Engineering,Reliability Engineer,Dylan Lewis,Leo Foster
