@@ -1,6 +1,6 @@
 {
-  "build": "Aurelis Obsidian Command v8.1 UltraLite 2018-2026",
-  "final_r_file": "Aurelis_Obsidian_Command_v8_1_UltraLite_2018_2026.R",
+  "build": "Aurelis Obsidian Command v8.2 Responsive Financial Statistics 2018-2026",
+  "final_r_file": "app.R",
   "country_donut_zero_length_guard": true,
   "atlas_breakdown_full_reset": true,
   "vector_ui_logo_variants": true,
@@ -10,6 +10,36 @@
   "bs4dash_navbar_dropdown_regression_fixed": true,
   "navbar_custom_li_without_dropdown": 0,
   "sidebar_logo_compact": true,
+  "sidebar_expanded_on_desktop": true,
+  "responsive_auto_resize": true,
+  "financial_statistics_lab": {
+    "datasets": [
+      "revenue",
+      "accounts_receivable",
+      "purchase_orders",
+      "inventory"
+    ],
+    "distributions": [
+      "normal",
+      "student_t",
+      "log_normal",
+      "exponential",
+      "gamma",
+      "poisson",
+      "empirical"
+    ],
+    "comparison_tests": [
+      "welch_t_test",
+      "wilcoxon_rank_sum",
+      "welch_one_way",
+      "kruskal_wallis"
+    ],
+    "missing_value_policies": [
+      "exclude",
+      "median_impute_for_analysis_only"
+    ]
+  },
+  "missing_supplier_representatives_labeled": "Unassigned",
   "author_signature_each_page": "Created by Armel Asopjio",
   "years": [
     2018,

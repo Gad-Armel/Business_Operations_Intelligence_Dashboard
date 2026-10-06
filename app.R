@@ -1,10 +1,11 @@
 ################################################################################
 # Title: AURELIS Global Supply — Interactive Operations Dashboard
+# Author: Armel Asopjio
 # Build Type: Public Advertising / Advisory Demonstration
 # Synthetic data range: 2015-01-01 through 2026-08-12
-# Public build: Aurelis Obsidian Command v7 - Unified Dark Enterprise Interface, Geographic Intelligence & Adaptive Data Safety
+# Public build: Aurelis Obsidian 
 ################################################################################
-# PUBLIC ATLAS BUILD: 2026-08-12 v5.1 FIXED — valid bs4Dash statuses + geographic intelligence + dual-theme command shell + adaptive data safety
+# PUBLIC ATLAS BUILD: 2026-08-12
 # SECTION 1: LIBRARIES & CONFIGURATION
 ################################################################################
 
@@ -26,22 +27,23 @@ library(viridis)
 
 AURELIS_MULTIUSER_ENABLED <- TRUE
 .aurelis_demo_state <- new.env(parent = emptyenv())
-.aurelis_demo_state$sessions <- tibble(session_id=character(),buyer=character(),started_at=as.POSIXct(character()),last_seen=as.POSIXct(character()))
+.aurelis_demo_state$sessions <- tibble(session_id=character(),buyer=character(),role=character(),started_at=as.POSIXct(character()),last_seen=as.POSIXct(character()))
 .aurelis_demo_state$drafts <- tibble(draft_id=character(),owner=character(),quote_number=character(),customer=character(),is_shared=integer(),version=integer(),saved_at=character(),payload_json=character())
-.aurelis_demo_state$activity <- tibble(buyer=character(),event_type=character(),detail=character(),event_at=character())
+.aurelis_demo_state$activity <- tibble(session_id=character(),buyer=character(),role=character(),event_type=character(),detail=character(),event_at=character())
 
-aurelis_multiuser_register_session <- function(session_id,buyer) {
+aurelis_multiuser_register_session <- function(session_id,buyer,role="Buyer") {
   now <- Sys.time()
   .aurelis_demo_state$sessions <- bind_rows(
     .aurelis_demo_state$sessions %>% filter(session_id != !!session_id),
-    tibble(session_id=session_id,buyer=buyer,started_at=now,last_seen=now)
+    tibble(session_id=session_id,buyer=buyer,role=role,started_at=now,last_seen=now)
   )
   invisible(TRUE)
 }
-aurelis_multiuser_touch_session <- function(session_id,buyer) {
+aurelis_multiuser_touch_session <- function(session_id,buyer,role="Buyer") {
   df <- .aurelis_demo_state$sessions
   if (!session_id %in% df$session_id) return(aurelis_multiuser_register_session(session_id,buyer))
   df$buyer[df$session_id==session_id] <- buyer
+  if ("role" %in% names(df)) df$role[df$session_id==session_id] <- role
   df$last_seen[df$session_id==session_id] <- Sys.time()
   .aurelis_demo_state$sessions <- df
   invisible(TRUE)
@@ -54,10 +56,18 @@ aurelis_multiuser_active_sessions <- function(window_minutes=10) {
   cutoff <- Sys.time() - as.numeric(window_minutes)*60
   .aurelis_demo_state$sessions %>% filter(last_seen >= cutoff) %>% arrange(desc(last_seen))
 }
-aurelis_multiuser_log <- function(session_id,buyer,event_type,detail="") {
-  .aurelis_demo_state$activity <- bind_rows(.aurelis_demo_state$activity,tibble(
-    buyer=buyer,event_type=event_type,detail=detail,event_at=format(Sys.time(),"%Y-%m-%d %H:%M:%S")
-  )) %>% tail(500)
+aurelis_multiuser_log <- function(session_id,buyer,event_type,detail="",role="Buyer") {
+  event <- tibble(
+    session_id=session_id,buyer=buyer,role=role,event_type=event_type,detail=detail,event_at=format(Sys.time(),"%Y-%m-%d %H:%M:%S")
+  )
+  .aurelis_demo_state$activity <- bind_rows(.aurelis_demo_state$activity, event) %>% tail(500)
+  if (exists("AURELIS_DATA_DIR", inherits = TRUE)) {
+    path <- file.path(AURELIS_DATA_DIR, "aurelis_activity_log.csv")
+    try(
+      write.table(event, path, sep = ",", row.names = FALSE, col.names = !file.exists(path), append = file.exists(path), qmethod = "double"),
+      silent = TRUE
+    )
+  }
   invisible(TRUE)
 }
 aurelis_multiuser_recent_activity <- function(limit=60) {
@@ -1926,6 +1936,7 @@ body.aurelis-signature[data-aurelis-page='ar_tab'] { --sig-accent: #D55F73; --si
 body.aurelis-signature[data-aurelis-page='contacts_tab'] { --sig-accent: #22C3D6; --sig-accent-soft: rgba(34,195,214,.12); }
 body.aurelis-signature[data-aurelis-page='multi_user_workspace'] { --sig-accent: #7A5AF8; --sig-accent-soft: rgba(122,90,248,.12); }
 body.aurelis-signature[data-aurelis-page='misc_tab'] { --sig-accent: #66778A; --sig-accent-soft: rgba(102,119,138,.12); }
+body.aurelis-signature[data-aurelis-page='product_intelligence'] { --sig-accent: #27D5B2; --sig-accent-soft: rgba(39,213,178,.14); }
 
 body.aurelis-signature {
   background: var(--sig-shell) !important;
@@ -1944,6 +1955,7 @@ body.aurelis-signature .content-wrapper::before {
 }
 
 body.aurelis-signature .main-sidebar {
+  width: 282px !important;
   background:
     radial-gradient(circle at 10% 0%, rgba(34,195,214,.12), transparent 24%),
     linear-gradient(180deg, #07111B 0%, #091C2C 55%, #0D2538 100%) !important;
@@ -2577,6 +2589,45 @@ body.aurelis-shiny-busy .aurelis-busy-bar {
   body.aurelis-signature *::after {
     animation-duration: .01ms !important;
     transition-duration: .01ms !important;
+  }
+}
+
+@media (max-width: 575px) {
+  body.aurelis-signature .main-header.navbar {
+    padding-right: 4px !important;
+    overflow: visible !important;
+  }
+  body.aurelis-signature .main-header .navbar-nav.ml-auto {
+    min-width: 0 !important;
+    width: auto !important;
+    flex: 1 1 auto !important;
+    justify-content: flex-end !important;
+    gap: 2px !important;
+    overflow: visible !important;
+  }
+  body.aurelis-signature .main-header .navbar-nav.ml-auto > .nav-item.dropdown:not(.future-control-item) {
+    display: none !important;
+  }
+  body.aurelis-signature .main-header .navbar-nav.ml-auto > .nav-item:not(.dropdown),
+  body.aurelis-signature .main-header .navbar-nav.ml-auto > .custom-control {
+    display: none !important;
+  }
+  body.aurelis-signature .main-header .future-control-item,
+  body.aurelis-signature .main-header .future-control-item > a,
+  body.aurelis-signature .main-header .navbar-report-button {
+    box-sizing: border-box !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    max-width: 38px !important;
+    height: 38px !important;
+    margin: 0 !important;
+    padding: 8px !important;
+    font-size: 0 !important;
+    justify-content: center !important;
+  }
+  body.aurelis-signature .main-header .future-control-item > a i,
+  body.aurelis-signature .main-header .navbar-report-button i {
+    font-size: .95rem !important;
   }
 }
 "
@@ -4004,7 +4055,113 @@ body.aurelis-signature .atlas-breakdown-reset-floating {
   body.aurelis-signature .header-logo-lockup {
     flex-basis: 285px !important;
     width: 285px !important;
-    min-width: 285px !important;
+    width: 248px !important;
+    background: linear-gradient(180deg, #071522 0%, #050D17 100%) !important;
+    box-shadow: 10px 0 30px rgba(0,0,0,.24) !important;
+  }
+
+  body:not(.sidebar-collapse).aurelis-signature .main-header,
+  body:not(.sidebar-collapse).aurelis-signature .content-wrapper,
+  body:not(.sidebar-collapse).aurelis-signature .main-footer {
+    margin-left: 248px !important;
+  }
+
+  body.aurelis-signature .brand-link {
+    height: 92px !important;
+    min-height: 92px !important;
+    padding: 8px !important;
+    border-bottom: 1px solid rgba(98,231,241,.18) !important;
+  }
+
+  body.aurelis-signature .brand-link .brand-image {
+    width: 132px !important;
+    max-width: 132px !important;
+    max-height: 78px !important;
+  }
+
+  body.aurelis-signature .main-sidebar .sidebar {
+    padding: 7px 7px 28px !important;
+  }
+
+  body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) {
+    margin: 9px 0 0 !important;
+    padding: 0 0 6px !important;
+    border: 0 !important;
+    border-bottom: 1px solid rgba(98,231,241,.13) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview)::before {
+    display: none !important;
+  }
+
+  body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-link {
+    min-height: 34px !important;
+    margin: 0 3px 4px !important;
+    padding: 7px 9px !important;
+    border: 0 !important;
+    border-left: 2px solid #27D5B2 !important;
+    border-radius: 4px !important;
+    background: linear-gradient(90deg, rgba(39,213,178,.13), transparent) !important;
+    box-shadow: none !important;
+    font-size: .60rem !important;
+    letter-spacing: .8px !important;
+  }
+
+  body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-link::after {
+    content: '' !important;
+  }
+
+  body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-treeview {
+    margin: 0 2px !important;
+    padding: 0 0 0 8px !important;
+    border-left: 1px solid rgba(98,231,241,.23) !important;
+  }
+
+  body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-treeview .nav-link {
+    min-height: 31px !important;
+    margin: 1px 0 !important;
+    padding: 6px 7px 6px 10px !important;
+    border-left: 0 !important;
+    border-radius: 6px !important;
+    font-size: .69rem !important;
+    line-height: 1.05 !important;
+  }
+
+  body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-treeview .nav-link.active::after {
+    content: '' !important;
+  }
+
+  body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-treeview .nav-link.active {
+    box-shadow: inset 2px 0 0 #27D5B2, 0 0 12px rgba(39,213,178,.10) !important;
+  }
+
+  body.aurelis-signature .main-sidebar .nav-sidebar .nav-icon {
+    width: 20px !important;
+    margin-right: 5px !important;
+    font-size: .76rem !important;
+  }
+
+  body.sidebar-collapse.aurelis-signature .main-sidebar {
+    width: 78px !important;
+  }
+
+  body.sidebar-collapse.aurelis-signature .main-header,
+  body.sidebar-collapse.aurelis-signature .content-wrapper,
+  body.sidebar-collapse.aurelis-signature .main-footer {
+    margin-left: 78px !important;
+  }
+
+  @media (max-width: 991px) {
+    body.aurelis-signature .main-sidebar { width: 248px !important; }
+    body.aurelis-signature .main-header,
+    body.aurelis-signature .content-wrapper,
+    body.aurelis-signature .main-footer { margin-left: 0 !important; }
+  }
+
+  body.aurelis-signature .main-sidebar {
     max-width: 285px !important;
   }
   body.aurelis-signature .header-logo-lockup img {
@@ -4039,9 +4196,8 @@ small_sidebar_logo_css <- "
 
 body.aurelis-signature .main-sidebar .brand-link {
 
-  /* Fits exactly inside the narrow left menu */
-  width: 118px !important;
-  max-width: 118px !important;
+  width: 100% !important;
+  max-width: 100% !important;
 
   /* Small top section so menu begins immediately underneath */
   height: 76px !important;
@@ -4073,11 +4229,10 @@ body.aurelis-signature .main-sidebar .brand-link {
 body.aurelis-signature .main-sidebar .brand-link .brand-image,
 body.aurelis-signature .main-sidebar .brand-link img.brand-image {
 
-  width: 66px !important;
-  max-width: 66px !important;
-
-  height: 66px !important;
-  max-height: 66px !important;
+  width: calc(100% - 20px) !important;
+  max-width: 228px !important;
+  height: auto !important;
+  max-height: 64px !important;
 
   margin: 0 auto !important;
   padding: 0 !important;
@@ -4623,6 +4778,788 @@ custom_css <- paste0(
   final_navbar_position_css
 )
 
+# Final product skin: a denser, darker command-center shell with a branded
+# light field for charts and tables so operational data remains readable.
+prism_ultimate_css <- "
+:root {
+  --aurelis-prism-bg: #07111D;
+  --aurelis-prism-panel: #0C1B2B;
+  --aurelis-prism-panel-2: #10263A;
+  --aurelis-prism-line: rgba(105,220,239,.18);
+  --aurelis-prism-cyan: #62E7F1;
+  --aurelis-prism-blue: #4C8DFF;
+  --aurelis-prism-mint: #27D5B2;
+}
+
+body.aurelis-signature .main-sidebar {
+  width: 282px !important;
+  background:
+    linear-gradient(180deg, rgba(10,28,44,.98), rgba(4,12,22,.99)),
+    repeating-linear-gradient(135deg, rgba(98,231,241,.035) 0 1px, transparent 1px 14px) !important;
+  border-right: 1px solid var(--aurelis-prism-line) !important;
+}
+
+body:not(.sidebar-collapse).aurelis-signature .main-header,
+body:not(.sidebar-collapse).aurelis-signature .content-wrapper,
+body:not(.sidebar-collapse).aurelis-signature .main-footer {
+  margin-left: 282px !important;
+}
+
+body.sidebar-collapse.aurelis-signature .main-sidebar {
+  width: 78px !important;
+}
+
+body.sidebar-collapse.aurelis-signature .main-header,
+body.sidebar-collapse.aurelis-signature .content-wrapper,
+body.sidebar-collapse.aurelis-signature .main-footer {
+  margin-left: 78px !important;
+}
+
+body.aurelis-signature .brand-link {
+  height: 112px !important;
+  min-height: 112px !important;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(55,213,218,.13), transparent 58%),
+    #071522 !important;
+  border-bottom: 1px solid rgba(98,231,241,.32) !important;
+}
+
+body.aurelis-signature .brand-link .brand-image {
+  width: 160px !important;
+  max-width: 160px !important;
+  max-height: 100px !important;
+  filter: drop-shadow(0 0 15px rgba(98,231,241,.24));
+}
+
+body.aurelis-signature .main-header.navbar {
+  background: rgba(7,17,29,.88) !important;
+  border-bottom: 1px solid rgba(98,231,241,.18) !important;
+  box-shadow: 0 14px 42px rgba(1,7,15,.28) !important;
+}
+
+body.aurelis-signature .header-logo-lockup {
+  background: linear-gradient(110deg, rgba(9,27,43,.98), rgba(15,48,69,.92)) !important;
+  border: 1px solid rgba(98,231,241,.28) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 0 22px rgba(39,213,178,.08) !important;
+}
+
+body.aurelis-signature .header-logo-lockup img {
+  width: 184px !important;
+  height: 48px !important;
+  filter: drop-shadow(0 0 11px rgba(98,231,241,.30));
+}
+
+body.aurelis-signature .nav-sidebar .nav-item > .nav-link:not([href]) {
+  min-height: 36px !important;
+  margin-top: 11px !important;
+  color: #6FE5EF !important;
+  background: rgba(98,231,241,.055) !important;
+  border: 1px solid rgba(98,231,241,.10) !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .64rem !important;
+  font-weight: 850 !important;
+}
+
+/* Module rail: make the five primary domains unmistakable containers. */
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) {
+  position: relative;
+  margin: 13px 5px 0 !important;
+  padding: 7px 0 8px;
+  border: 1px solid rgba(98,231,241,.13);
+  border-radius: 15px;
+  background: linear-gradient(145deg, rgba(98,231,241,.055), rgba(2,12,22,.16));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035);
+}
+
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview)::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 15px;
+  right: 15px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(98,231,241,.28), transparent);
+}
+
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-link {
+  min-height: 34px !important;
+  margin: 0 7px 6px !important;
+  padding: 7px 10px !important;
+  color: #83EDF3 !important;
+  background: linear-gradient(90deg, rgba(98,231,241,.12), rgba(98,231,241,.025)) !important;
+  border: 1px solid rgba(98,231,241,.19) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 0 18px rgba(98,231,241,.05);
+  font-size: .63rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 1.15px !important;
+  text-transform: uppercase;
+}
+
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-link::after {
+  content: 'MODULE';
+  position: absolute;
+  right: 29px;
+  color: rgba(150,230,239,.52);
+  font-size: .47rem;
+  font-weight: 800;
+  letter-spacing: .9px;
+}
+
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-link .right {
+  color: #65E7EF !important;
+  font-size: .62rem !important;
+}
+
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-treeview {
+  position: relative;
+  display: block;
+  margin: 0 6px !important;
+  padding: 1px 0 0 8px !important;
+  border-left: 1px solid rgba(98,231,241,.26);
+}
+
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-treeview::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 9px;
+  left: -1px;
+  width: 1px;
+  background: linear-gradient(180deg, #62E7F1, rgba(98,231,241,0));
+  box-shadow: 0 0 8px rgba(98,231,241,.55);
+}
+
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-treeview .nav-item {
+  position: relative;
+}
+
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-treeview .nav-item::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  width: 8px;
+  height: 1px;
+  background: rgba(98,231,241,.30);
+}
+
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-treeview .nav-link {
+  margin: 2px 4px !important;
+  padding: 8px 9px 8px 12px !important;
+  border: 1px solid transparent !important;
+  border-radius: 9px !important;
+  color: #B5CAD7 !important;
+  background: transparent !important;
+  font-size: .73rem !important;
+}
+
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-treeview .nav-link:hover {
+  color: #F3FDFF !important;
+  background: rgba(98,231,241,.10) !important;
+  border-color: rgba(98,231,241,.17) !important;
+  transform: translateX(2px);
+}
+
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-treeview .nav-link.active {
+  color: #FFFFFF !important;
+  background: linear-gradient(90deg, rgba(39,213,178,.22), rgba(76,141,255,.12)) !important;
+  border-color: rgba(39,213,178,.34) !important;
+  box-shadow: 0 0 18px rgba(39,213,178,.10), inset 3px 0 0 #27D5B2 !important;
+}
+
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-treeview .nav-link.active::after {
+  content: 'LIVE';
+  float: right;
+  color: #6EF4C5;
+  font-size: .46rem;
+  font-weight: 900;
+  letter-spacing: .8px;
+}
+
+body.aurelis-signature .nav-sidebar .nav-treeview .nav-link {
+  min-height: 38px !important;
+  margin: 2px 8px 2px 18px !important;
+  padding: 8px 10px !important;
+  font-size: .76rem !important;
+  border-left: 1px solid rgba(98,231,241,.12) !important;
+}
+
+body.aurelis-signature .content-wrapper {
+  background:
+    radial-gradient(circle at 83% 5%, rgba(76,141,255,.13), transparent 25%),
+    radial-gradient(circle at 12% 88%, rgba(39,213,178,.08), transparent 22%),
+    linear-gradient(145deg, #081522 0%, #0B1C2C 42%, #102438 100%) !important;
+}
+
+body.aurelis-signature .content-wrapper::after {
+  content: '';
+  position: fixed;
+  inset: 78px 0 0 118px;
+  pointer-events: none;
+  opacity: .12;
+  background-image: linear-gradient(rgba(98,231,241,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(98,231,241,.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, black, transparent 75%);
+  z-index: 0;
+}
+
+body.aurelis-signature .content,
+body.aurelis-signature .content-wrapper > .content {
+  max-width: 2040px !important;
+  padding: 18px 24px 34px !important;
+}
+
+body.aurelis-signature .card {
+  background: linear-gradient(145deg, rgba(15,38,58,.94), rgba(8,23,37,.96)) !important;
+  border: 1px solid rgba(98,231,241,.15) !important;
+  box-shadow: 0 18px 48px rgba(0,7,15,.24), inset 0 1px 0 rgba(255,255,255,.035) !important;
+}
+
+body.aurelis-signature .card-header {
+  background: linear-gradient(90deg, rgba(98,231,241,.07), transparent) !important;
+  border-bottom: 1px solid rgba(98,231,241,.12) !important;
+}
+
+body.aurelis-signature .card-header .card-title,
+body.aurelis-signature .card h1,
+body.aurelis-signature .card h2,
+body.aurelis-signature .card h3,
+body.aurelis-signature .card h4,
+body.aurelis-signature .card h5,
+body.aurelis-signature .card strong {
+  color: #E9F7FF !important;
+}
+
+body.aurelis-signature .card p,
+body.aurelis-signature .card label,
+body.aurelis-signature .card .small-tag,
+body.aurelis-signature .card .sub-text {
+  color: #9AB6C9 !important;
+}
+
+body.aurelis-signature .form-control,
+body.aurelis-signature .selectize-input,
+body.aurelis-signature select,
+body.aurelis-signature textarea {
+  color: #E7F6FF !important;
+  background: rgba(2,12,22,.72) !important;
+  border-color: rgba(98,231,241,.20) !important;
+}
+
+body.aurelis-signature table.dataTable,
+body.aurelis-signature table.dataTable tbody td,
+body.aurelis-signature .dataTables_wrapper {
+  color: #D7EBF5 !important;
+  background: transparent !important;
+}
+
+body.aurelis-signature table.dataTable thead th {
+  color: #71E5EF !important;
+  background: rgba(98,231,241,.07) !important;
+  border-bottom: 1px solid rgba(98,231,241,.20) !important;
+}
+
+body.aurelis-signature table.dataTable tbody tr:hover,
+body.aurelis-signature table.dataTable tbody tr.selected {
+  background: rgba(76,141,255,.15) !important;
+}
+
+body.aurelis-signature .btn-primary,
+body.aurelis-signature .btn-info {
+  background: linear-gradient(120deg, #1A8ED1, #1FBFA8) !important;
+  border: 0 !important;
+  box-shadow: 0 8px 22px rgba(31,191,168,.18) !important;
+}
+
+body.aurelis-signature .aurelis-content-watermark {
+  right: 5vw !important;
+  bottom: 5vh !important;
+  width: 520px !important;
+  max-width: 36vw !important;
+  opacity: .075 !important;
+  filter: saturate(1.15) drop-shadow(0 0 18px rgba(98,231,241,.18)) !important;
+}
+
+.aurelis-access-portal {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: radial-gradient(circle at 50% 25%, rgba(39,213,178,.16), transparent 32%), linear-gradient(145deg, #050C16, #0B2135 55%, #07111D);
+}
+
+.aurelis-access-portal-card {
+  width: min(460px, 100%);
+  padding: 30px;
+  border: 1px solid rgba(98,231,241,.28);
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(15,45,66,.97), rgba(5,18,30,.98));
+  box-shadow: 0 30px 100px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.aurelis-access-portal-card img {
+  display: block;
+  width: 230px;
+  max-width: 100%;
+  margin: 0 auto 20px;
+  filter: drop-shadow(0 0 18px rgba(98,231,241,.28));
+}
+
+.aurelis-access-portal-card h1 { color: #F0FBFF; font-size: 1.5rem; }
+.aurelis-access-portal-card p { color: #A7C3D1; line-height: 1.55; }
+.aurelis-access-portal-card label { color: #8CEAF0; font-size: .78rem; }
+.aurelis-access-portal-card .form-control { color: #E8FAFF; background: rgba(2,12,22,.68); border-color: rgba(98,231,241,.22); }
+.aurelis-access-portal-card .btn { width: 100%; margin-top: 8px; }
+.aurelis-access-portal-note { margin-top: 14px; color: #77DCD2 !important; font-size: .72rem; }
+
+body.aurelis-signature .prism-masthead {
+  padding: 22px 24px !important;
+  border: 1px solid rgba(98,231,241,.16) !important;
+  border-radius: 20px !important;
+  background: linear-gradient(125deg, rgba(12,38,58,.96), rgba(8,21,35,.86)) !important;
+  box-shadow: 0 20px 55px rgba(0,8,16,.28), inset 0 1px 0 rgba(255,255,255,.05) !important;
+}
+
+body.aurelis-signature .pi-priority-score,
+body.aurelis-signature .pi-inquiry-result,
+body.aurelis-signature .pi-brief-note {
+  border: 1px solid rgba(98,231,241,.18) !important;
+  border-radius: 14px !important;
+  background: rgba(98,231,241,.06) !important;
+  color: #BFEAF0 !important;
+  padding: 12px 14px !important;
+}
+
+body.aurelis-signature .future-command-deck {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr 1.1fr;
+  gap: 10px;
+}
+
+body.aurelis-signature .future-command-cell {
+  min-height: 118px;
+  padding: 15px 17px;
+  border: 1px solid rgba(98,231,241,.16);
+  border-radius: 16px;
+  background: linear-gradient(140deg, rgba(98,231,241,.075), rgba(2,12,22,.34));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+body.aurelis-signature .future-command-cell.future-command-next {
+  border-color: rgba(39,213,178,.28);
+  background: linear-gradient(140deg, rgba(39,213,178,.13), rgba(2,12,22,.34));
+}
+
+body.aurelis-signature .future-command-cell.future-command-risk {
+  border-color: rgba(255,180,75,.25);
+  background: linear-gradient(140deg, rgba(255,180,75,.10), rgba(2,12,22,.34));
+}
+
+body.aurelis-signature .future-command-kicker {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #65E7EF;
+  font-size: .60rem;
+  font-weight: 850;
+  letter-spacing: 1.25px;
+}
+
+body.aurelis-signature .future-command-cell strong {
+  display: block;
+  margin-top: 7px;
+  color: #F0FBFF !important;
+  font-size: 1.06rem;
+}
+
+body.aurelis-signature .future-command-cell p {
+  min-height: 30px;
+  margin: 5px 0 9px;
+  color: #9AB6C9 !important;
+  font-size: .72rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 991px) {
+  body.aurelis-signature .future-command-deck { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 991px) {
+  body.aurelis-signature .main-sidebar { width: 248px !important; }
+  body.aurelis-signature .main-header,
+  body.aurelis-signature .content-wrapper,
+  body.aurelis-signature .main-footer { margin-left: 0 !important; }
+  body.aurelis-signature .content,
+  body.aurelis-signature .content-wrapper > .content { padding: 12px 10px 22px !important; }
+  body.aurelis-signature .content-wrapper::after { inset: 70px 0 0 0; }
+  body.aurelis-signature .aurelis-content-watermark { max-width: 70vw !important; opacity: .045 !important; }
+}
+
+/* Narrow navigation geometry: remove unused rail space beside the menu. */
+body.aurelis-signature .main-sidebar { width: 164px !important; }
+body:not(.sidebar-collapse).aurelis-signature .main-header,
+body:not(.sidebar-collapse).aurelis-signature .content-wrapper,
+body:not(.sidebar-collapse).aurelis-signature .main-footer { margin-left: 164px !important; }
+body.sidebar-collapse.aurelis-signature .main-sidebar { width: 78px !important; }
+body.sidebar-collapse.aurelis-signature .main-header,
+body.sidebar-collapse.aurelis-signature .content-wrapper,
+body.sidebar-collapse.aurelis-signature .main-footer { margin-left: 78px !important; }
+body.aurelis-signature .brand-link { height: 72px !important; min-height: 72px !important; padding: 5px !important; }
+body.aurelis-signature .brand-link .brand-image { width: 102px !important; max-width: 102px !important; max-height: 62px !important; }
+body.aurelis-signature .main-sidebar .sidebar { padding: 4px 5px 20px !important; }
+body.aurelis-signature .main-sidebar .nav-sidebar .nav-link { width: auto !important; max-width: none !important; }
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) {
+  margin: 6px 0 0 !important; padding: 0 0 4px !important; border: 0 !important;
+  border-bottom: 1px solid rgba(98,231,241,.13) !important; border-radius: 0 !important;
+  background: transparent !important; box-shadow: none !important;
+}
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-link {
+  min-height: 27px !important; margin: 0 2px 2px !important; padding: 5px 7px !important;
+  border: 0 !important; border-left: 2px solid #27D5B2 !important; border-radius: 4px !important;
+  background: linear-gradient(90deg, rgba(39,213,178,.13), transparent) !important;
+  box-shadow: none !important; font-size: .53rem !important; letter-spacing: .55px !important;
+}
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-link::after { content: '' !important; }
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-treeview {
+  margin: 0 2px !important; padding: 0 0 0 8px !important; border-left: 1px solid rgba(98,231,241,.23) !important;
+}
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-treeview .nav-link {
+  min-height: 27px !important; margin: 0 !important; padding: 4px 5px 4px 8px !important;
+  border-left: 0 !important; border-radius: 5px !important; font-size: .61rem !important; line-height: 1 !important;
+}
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-treeview .nav-link.active::after { content: '' !important; }
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-treeview .nav-link.active {
+  box-shadow: inset 2px 0 0 #27D5B2, 0 0 12px rgba(39,213,178,.10) !important;
+}
+body.aurelis-signature .main-sidebar .nav-sidebar .nav-icon { width: 17px !important; margin-right: 3px !important; font-size: .65rem !important; }
+body.aurelis-signature .main-sidebar .nav-sidebar .nav-link::after,
+body.aurelis-signature .main-sidebar .nav-sidebar .nav-link:hover::after,
+body.aurelis-signature .main-sidebar .nav-sidebar .nav-link.active::after {
+  display: none !important;
+  content: none !important;
+  width: 0 !important;
+  box-shadow: none !important;
+}
+body.aurelis-signature .brand-link {
+  height: 64px !important;
+  min-height: 64px !important;
+  max-height: 64px !important;
+  width: 100% !important;
+  max-width: none !important;
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  float: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  background: linear-gradient(110deg, rgba(10,35,52,.98), rgba(5,17,28,.98)) !important;
+  border-bottom: 1px solid rgba(98,231,241,.24) !important;
+  box-shadow: inset 0 -1px 0 rgba(39,213,178,.10) !important;
+}
+body.aurelis-signature .brand-link .brand-image {
+  width: 300px !important;
+  max-width: none !important;
+  height: 58px !important;
+  max-height: 58px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  filter: drop-shadow(0 0 10px rgba(98,231,241,.22)) !important;
+}
+body.aurelis-signature .main-sidebar .sidebar { margin-top: 0 !important; }
+body.aurelis-signature .main-sidebar > .brand-link + .sidebar {
+  position: relative !important;
+  top: 0 !important;
+  clear: both !important;
+  padding-top: 8px !important;
+}
+body.aurelis-signature .main-sidebar > .brand-link + .sidebar > .nav-sidebar > .nav-item:first-child {
+  margin-top: 0 !important;
+}
+@media (max-width: 991px) {
+  body.aurelis-signature .main-sidebar { width: 164px !important; }
+  body.aurelis-signature .main-header,
+  body.aurelis-signature .content-wrapper,
+  body.aurelis-signature .main-footer { margin-left: 0 !important; }
+}
+"
+
+custom_css <- paste0(custom_css, prism_ultimate_css)
+
+responsive_dashboard_css <- "
+/* Keep the sidebar wordmark inside the complete brand block. */
+body.aurelis-signature .main-sidebar > .brand-link {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 78px !important;
+  min-height: 78px !important;
+  max-height: 78px !important;
+  padding: 7px 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+body.aurelis-signature .main-sidebar > .brand-link .brand-image {
+  box-sizing: border-box !important;
+  display: block !important;
+  float: none !important;
+  width: calc(100% - 16px) !important;
+  max-width: 228px !important;
+  height: auto !important;
+  max-height: 62px !important;
+  margin: 0 auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item > .nav-link {
+  min-height: 40px !important;
+  padding: 8px 10px !important;
+  font-size: .82rem !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+}
+
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-link {
+  min-height: 40px !important;
+  font-size: .82rem !important;
+  line-height: 1.2 !important;
+}
+
+body.aurelis-signature .main-sidebar .nav-sidebar .nav-treeview .nav-link {
+  min-height: 36px !important;
+  padding: 7px 8px 7px 12px !important;
+  font-size: .82rem !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+
+body.aurelis-signature .main-sidebar .nav-sidebar > .nav-item:has(> .nav-treeview) > .nav-treeview .nav-link {
+  min-height: 36px !important;
+  font-size: .82rem !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+
+body.aurelis-signature .main-sidebar .nav-sidebar .nav-link .nav-text {
+  min-width: 0;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+
+.content-wrapper,
+.main-header,
+.main-footer {
+  transition: margin-left .2s ease, width .2s ease;
+}
+
+.content-wrapper,
+.content,
+.content-header,
+.main-footer,
+.card,
+.card-body,
+.row > [class*='col-'] {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.financial-stats-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  gap: 10px;
+  margin: 8px 0 16px;
+}
+
+.financial-stats-summary-card {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid rgba(98, 231, 241, .2);
+  border-radius: 12px;
+  background: rgba(8, 26, 40, .72);
+}
+
+.financial-stats-summary-card span {
+  display: block;
+  color: #91a6b8;
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.financial-stats-summary-card strong {
+  display: block;
+  margin-top: 5px;
+  color: #eef5fb;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  overflow-wrap: anywhere;
+}
+
+.financial-stats-note {
+  margin: 10px 0;
+  color: #91a6b8;
+  font-size: .84rem;
+}
+
+.js-plotly-plot,
+.plotly.html-widget,
+.plotly .plot-container,
+.plotly .svg-container,
+.plotly .gl-container {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+@media (min-width: 1200px) {
+  body.aurelis-signature:not(.sidebar-collapse) .main-sidebar,
+  body.aurelis-signature:not(.sidebar-collapse) .main-sidebar::before {
+    width: 164px !important;
+  }
+  body.aurelis-signature:not(.sidebar-collapse) .main-header,
+  body.aurelis-signature:not(.sidebar-collapse) .content-wrapper,
+  body.aurelis-signature:not(.sidebar-collapse) .main-footer {
+    margin-left: 164px !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  body.aurelis-signature:not(.sidebar-collapse) .main-sidebar,
+  body.aurelis-signature:not(.sidebar-collapse) .main-sidebar::before {
+    width: 180px !important;
+  }
+  body.aurelis-signature:not(.sidebar-collapse) .main-header,
+  body.aurelis-signature:not(.sidebar-collapse) .content-wrapper,
+  body.aurelis-signature:not(.sidebar-collapse) .main-footer {
+    margin-left: 180px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  body.aurelis-signature .main-sidebar,
+  body.aurelis-signature .main-sidebar::before {
+    width: min(280px, 86vw) !important;
+    max-width: 86vw !important;
+  }
+  body.aurelis-signature .main-header,
+  body.aurelis-signature .content-wrapper,
+  body.aurelis-signature .main-footer {
+    margin-left: 0 !important;
+  }
+  body.sidebar-collapse.aurelis-signature .main-header,
+  body.sidebar-collapse.aurelis-signature .content-wrapper,
+  body.sidebar-collapse.aurelis-signature .main-footer {
+    margin-left: 0 !important;
+  }
+  body.aurelis-signature .main-sidebar > .brand-link {
+    height: 72px !important;
+    min-height: 72px !important;
+    max-height: 72px !important;
+  }
+  body.aurelis-signature .main-sidebar > .brand-link .brand-image {
+    max-height: 56px !important;
+  }
+  .financial-stats-summary {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr));
+  }
+}
+
+@media (max-width: 575px) {
+  html,
+  body,
+  body.aurelis-signature .wrapper {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  body.aurelis-signature .main-header.navbar {
+    padding-right: 4px !important;
+  }
+  body.aurelis-signature .main-header .navbar-nav.ml-auto {
+    min-width: 0 !important;
+    width: auto !important;
+    flex: 1 1 auto !important;
+    justify-content: flex-end !important;
+    gap: 2px !important;
+  }
+  body.aurelis-signature .main-header .navbar-nav.ml-auto > .nav-item.dropdown:not(.future-control-item):not(.navbar-report-item),
+  body.aurelis-signature .main-header .navbar-nav.ml-auto > .nav-item:not(.dropdown),
+  body.aurelis-signature .main-header .navbar-nav.ml-auto > .custom-control {
+    display: none !important;
+  }
+  body.aurelis-signature .main-header .navbar-nav.ml-auto > .navbar-report-item {
+    box-sizing: border-box !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    max-width: 38px !important;
+    margin: 0 !important;
+  }
+  body.aurelis-signature .main-header .future-control-item,
+  body.aurelis-signature .main-header .future-control-item > a,
+  body.aurelis-signature .main-header .navbar-report-button {
+    box-sizing: border-box !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    max-width: 38px !important;
+    height: 38px !important;
+    margin: 0 !important;
+    padding: 8px !important;
+    font-size: 0 !important;
+    justify-content: center !important;
+  }
+  body.aurelis-signature .main-header .future-control-item > a i,
+  body.aurelis-signature .main-header .navbar-report-button i {
+    font-size: .95rem !important;
+  }
+}
+"
+
+responsive_dashboard_js <- "
+(function() {
+  var resizeTimer;
+  function resizeDashboardWidgets() {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(function() {
+      if (window.Plotly) {
+        document.querySelectorAll('.js-plotly-plot').forEach(function(plot) {
+          if (plot.offsetWidth > 0 && plot.offsetHeight > 0) {
+            window.Plotly.Plots.resize(plot);
+          }
+        });
+      }
+      if (window.jQuery && window.jQuery.fn.dataTable) {
+        window.jQuery('.dataTable').each(function() {
+          if (window.jQuery.fn.dataTable.isDataTable(this)) {
+            window.jQuery(this).DataTable().columns.adjust();
+          }
+        });
+      }
+    }, 120);
+  }
+  window.addEventListener('resize', resizeDashboardWidgets);
+  window.addEventListener('orientationchange', resizeDashboardWidgets);
+  if (window.jQuery) {
+    window.jQuery(document).on(
+      'expanded.pushMenu collapsed.pushMenu expanded.lte.pushmenu collapsed.lte.pushmenu shown.bs.tab',
+      resizeDashboardWidgets
+    );
+  }
+})();
+"
+
+custom_css <- paste0(custom_css, responsive_dashboard_css)
+
 
 # ==============================================================================
 # KEEP YOUR SIGNATURE / INTERACTION SYSTEM
@@ -4651,6 +5588,7 @@ signature_ui_js <- "
       $('body').append('<div class=\"aurelis-card-focus-backdrop\"></div>');
     }
     ensureFooters();
+    stabilizeModuleRail();
   }
 
   function ensureFooters() {
@@ -4665,6 +5603,60 @@ signature_ui_js <- "
   function closeCommand() {
     $('#aurelis-command-panel, #aurelis-command-overlay').removeClass('open');
   }
+
+  function stabilizeModuleRail() {
+    var active = $('.nav-sidebar .nav-treeview .nav-link.active').first();
+    if (!active.length) return;
+    var group = active.closest('.nav-item').closest('.nav-treeview').closest('.nav-item');
+    if (!group.length) return;
+    if (group.attr('data-manual-collapsed') === 'true') return;
+    group.addClass('menu-open');
+    group.children('.nav-treeview').show();
+    group.children('a.nav-link').attr('aria-expanded', 'true');
+  }
+
+  function expandAllModules() {
+    $('.nav-sidebar > .nav-item').has('.nav-treeview').each(function() {
+      var group = $(this);
+      group.addClass('menu-open').removeAttr('data-manual-collapsed');
+      group.children('.nav-treeview').show();
+      group.children('a.nav-link').attr('aria-expanded', 'true');
+    });
+  }
+
+  $(document).on('click', '.nav-sidebar > .nav-item > .nav-link', function(e) {
+    var group = $(this).closest('.nav-item');
+    var tree = group.children('.nav-treeview');
+    if (!tree.length) return;
+
+    e.preventDefault();
+    e.stopImmediatePropagation();
+
+    var isOpen = group.hasClass('menu-open');
+    $('.nav-sidebar > .nav-item.menu-open').not(group).each(function() {
+      var other = $(this);
+      other.removeClass('menu-open').attr('data-manual-collapsed', 'true');
+      other.children('.nav-treeview').stop(true, true).slideUp(140);
+      other.children('a.nav-link').attr('aria-expanded', 'false');
+    });
+
+    if (isOpen) {
+      group.removeClass('menu-open').attr('data-manual-collapsed', 'true');
+      tree.stop(true, true).slideUp(140);
+      $(this).attr('aria-expanded', 'false');
+    } else {
+      group.addClass('menu-open').removeAttr('data-manual-collapsed');
+      tree.stop(true, true).slideDown(140);
+      $(this).attr('aria-expanded', 'true');
+    }
+  });
+
+  $(document).on('click', '.nav-sidebar .nav-treeview .nav-link', function() {
+    $(this).closest('.nav-treeview').closest('.nav-item')
+      .removeAttr('data-manual-collapsed')
+      .addClass('menu-open')
+      .children('.nav-treeview').stop(true, true).show();
+  });
 
   function closeFocus() {
     $('.card.aurelis-card-focus').removeClass('aurelis-card-focus');
@@ -4687,10 +5679,12 @@ signature_ui_js <- "
 
   $(document).on('shiny:connected', function() {
     applySignature();
+    expandAllModules();
   });
 
   $(document).ready(function() {
     applySignature();
+    expandAllModules();
     setTimeout(ensureFooters, 300);
   });
 
@@ -4698,6 +5692,7 @@ signature_ui_js <- "
     setTimeout(function() {
       $('body').attr('data-aurelis-page', getActiveTab());
       ensureFooters();
+      stabilizeModuleRail();
     }, 40);
   });
 
@@ -5251,17 +6246,26 @@ aurelis_logo_source <- paste0("data:image/svg+xml;utf8,",utils::URLencode(aureli
 # High-definition dark-interface logo variants. These are SVG vectors, so they
 # remain perfectly sharp at any monitor scale.
 aurelis_logo_header_svg <- paste0(
-  "<svg xmlns='http://www.w3.org/2000/svg' width='1120' height='260' viewBox='0 0 1120 260'>",
+  "<svg xmlns='http://www.w3.org/2000/svg' width='900' height='260' viewBox='0 0 900 260'>",
   "<defs>",
   "<linearGradient id='triA' x1='0' y1='0' x2='1' y2='1'>",
-  "<stop offset='0%' stop-color='#40D4E4'/>",
-  "<stop offset='100%' stop-color='#1479C9'/>",
+  "<stop offset='0%' stop-color='#7EF5FF'/>",
+  "<stop offset='48%' stop-color='#2CD5D2'/>",
+  "<stop offset='100%' stop-color='#2374E1'/>",
   "</linearGradient>",
+  "<linearGradient id='wordA' x1='0' y1='0' x2='1' y2='1'>",
+  "<stop offset='0%' stop-color='#FFFFFF'/>",
+  "<stop offset='100%' stop-color='#B5D7EF'/>",
+  "</linearGradient>",
+  "<filter id='glowA'><feGaussianBlur stdDeviation='7' result='b'/><feMerge><feMergeNode in='b'/><feMergeNode in='SourceGraphic'/></feMerge></filter>",
   "</defs>",
-  "<path d='M48 198 L128 52 L208 198 Z' fill='url(#triA)'/>",
-  "<path d='M89 198 L128 127 L167 198 Z' fill='#22C9A8'/>",
-  "<text x='255' y='145' font-family='Segoe UI,Arial' font-size='88' font-weight='800' fill='#F7FAFC'>AURELIS</text>",
-  "<text x='261' y='195' font-family='Segoe UI,Arial' font-size='30' font-weight='650' letter-spacing='7' fill='#55B7F4'>GLOBAL SUPPLY</text>",
+  "<ellipse cx='128' cy='130' rx='111' ry='49' fill='none' stroke='#5CE7F2' stroke-opacity='.42' stroke-width='3' transform='rotate(-22 128 130)'/>",
+  "<path d='M48 198 L128 52 L208 198 Z' fill='url(#triA)' filter='url(#glowA)'/>",
+  "<path d='M89 198 L128 127 L167 198 Z' fill='#23D7B7'/>",
+  "<path d='M128 52 L128 198 M78 145 L178 145' stroke='#D9FFFF' stroke-opacity='.48' stroke-width='2'/>",
+  "<circle cx='128' cy='53' r='7' fill='#FFFFFF'/>",
+  "<text x='255' y='145' font-family='Segoe UI,Arial' font-size='88' font-weight='800' letter-spacing='3' fill='url(#wordA)'>AURELIS</text>",
+  "<text x='261' y='195' font-family='Segoe UI,Arial' font-size='30' font-weight='650' letter-spacing='7' fill='#61E1EF'>GLOBAL SUPPLY  /  INTELLIGENCE</text>",
   "</svg>"
 )
 aurelis_logo_header_source <- paste0(
@@ -5277,8 +6281,11 @@ aurelis_logo_sidebar_svg <- paste0(
   "<stop offset='100%' stop-color='#1479C9'/>",
   "</linearGradient>",
   "</defs>",
+  "<ellipse cx='210' cy='190' rx='170' ry='72' fill='none' stroke='#5CE7F2' stroke-opacity='.38' stroke-width='4' transform='rotate(-24 210 190)'/>",
   "<path d='M108 214 L210 40 L312 214 Z' fill='url(#triB)'/>",
-  "<path d='M160 214 L210 126 L260 214 Z' fill='#22C9A8'/>",
+  "<path d='M160 214 L210 126 L260 214 Z' fill='#22D9B8'/>",
+  "<path d='M210 40 L210 214 M145 165 L275 165' stroke='#E7FFFF' stroke-opacity='.45' stroke-width='3'/>",
+  "<circle cx='210' cy='40' r='9' fill='#FFFFFF'/>",
   "<text x='210' y='290' text-anchor='middle' font-family='Segoe UI,Arial' font-size='54' font-weight='800' fill='#F7FAFC'>AURELIS</text>",
   "<text x='210' y='335' text-anchor='middle' font-family='Segoe UI,Arial' font-size='20' font-weight='650' letter-spacing='4' fill='#55B7F4'>GLOBAL SUPPLY</text>",
   "</svg>"
@@ -5389,6 +6396,13 @@ AURELIS_ALLOW_EXCEL_FALLBACK <- FALSE
 AURELIS_QUICKBOOKS_ENABLED <- FALSE
 AURELIS_AUTO_REFRESH_SECONDS <- 300L
 AURELIS_QB_SYNC_SECONDS <- 300L
+AURELIS_ACCESS_CONTROL_ENABLED <- FALSE
+AURELIS_ACCESS_DIRECTORY <- data.frame(
+  email = c("ceo@aurelis.local", "analyst@aurelis.local", "manager@aurelis.local", "buyer@aurelis.local"),
+  role = c("CEO", "Analyst", "Manager", "Buyer"),
+  access_key = c("CEO-FULL", "ANALYST-FULL", "MANAGER-OPS", "BUYER-CLIENTS"),
+  stringsAsFactors = FALSE
+)
 AURELIS_SHARED_REFRESH_STATE <- new.env(parent=emptyenv())
 AURELIS_SHARED_REFRESH_STATE$version <- 1L
 AURELIS_SHARED_REFRESH_STATE$last_refresh <- Sys.time()
@@ -5962,6 +6976,48 @@ load_aurelis_demo_data <- function(target_env=AURELIS_APP_ENV) {
       Active = safe_character(Active),
       across(c(Preferred_Rank,Min_Order_Qty,Typical_Lead_Days,Last_Quoted_Unit_Cost),to_num)
     )
+
+  products_data <- read_demo_csv("Aurelis_Products.csv") %>%
+    adapt_schema(
+      aliases = list(
+        Part_Number = c("Product_Code", "SKU", "Item_Code"),
+        Description = c("Product", "Product_Description", "Product_Service"),
+        Category = c("Product_Category"),
+        Preferred_Supplier = c("Supplier", "Preferred_Vendor"),
+        Base_Unit_Cost = c("Unit_Cost", "Cost", "Last_Quoted_Unit_Cost"),
+        Unit = c("UOM", "Unit_Of_Measure")
+      ),
+      defaults = list(Base_Unit_Cost = 0, Unit = "EA"),
+      dataset_name = "Product Master"
+    ) %>%
+    mutate(
+      Part_Number = safe_character(Part_Number),
+      Description = safe_character(Description),
+      Category = safe_character(Category),
+      Preferred_Supplier = safe_character(Preferred_Supplier),
+      Unit = safe_character(Unit),
+      Base_Unit_Cost = to_num(Base_Unit_Cost)
+    )
+
+  suppliers_data <- read_demo_csv("Aurelis_Suppliers.csv") %>%
+    adapt_schema(
+      aliases = list(
+        Supplier_ID = c("Vendor_ID", "Seller_ID"),
+        Supplier = c("Vendor", "Seller", "Supplier_Name"),
+        Country = c("Supplier_Country", "Nation"),
+        Reliability_Index = c("Reliability", "Reliability_Score"),
+        Active_Since = c("Start_Year", "Founded_Year")
+      ),
+      defaults = list(Reliability_Index = NA_real_, Active_Since = NA_real_),
+      dataset_name = "Supplier Master"
+    ) %>%
+    mutate(
+      Supplier_ID = safe_character(Supplier_ID),
+      Supplier = safe_character(Supplier),
+      Country = safe_character(Country),
+      Reliability_Index = to_num(Reliability_Index),
+      Active_Since = to_num(Active_Since)
+    )
   
   
   geography_data <- read_demo_csv("Aurelis_Geography.csv") %>%
@@ -6002,7 +7058,17 @@ load_aurelis_demo_data <- function(target_env=AURELIS_APP_ENV) {
       Country = safe_character(Country),
       Region = safe_character(Region),
       City = safe_character(City),
-      Representative = safe_character(Representative),
+      Representative = {
+        representative <- safe_character(Representative)
+        missing_representative <- !nzchar(representative)
+        if (any(missing_representative)) {
+          data_diag(paste0(
+            "Geography: ", sum(missing_representative),
+            " record(s) had no assigned representative; labeled 'Unassigned' rather than inventing an owner."
+          ))
+        }
+        ifelse(missing_representative, "Unassigned", representative)
+      },
       Location_Source = safe_character(Location_Source),
       Latitude = safe_numeric(Latitude, 0),
       Longitude = safe_numeric(Longitude, 0)
@@ -6190,6 +7256,17 @@ load_aurelis_demo_data <- function(target_env=AURELIS_APP_ENV) {
   require_nonempty_dataset(inventory_data, "Inventory / Delivery")
   require_nonempty_dataset(quotation_customer_reference, "Customer Reference")
   require_nonempty_dataset(geography_data, "Geography")
+  require_nonempty_dataset(products_data, "Product Master")
+  require_nonempty_dataset(suppliers_data, "Supplier Master")
+
+  catalog_product_gaps <- setdiff(products_data$Part_Number, seller_catalog_data$Product_Code)
+  if (length(catalog_product_gaps) > 0) {
+    data_diag(paste0("Product Master: ", length(catalog_product_gaps), " product(s) have no seller-catalog record."))
+  }
+  catalog_supplier_gaps <- setdiff(seller_catalog_data$Supplier, suppliers_data$Supplier)
+  if (length(catalog_supplier_gaps) > 0) {
+    data_diag(paste0("Supplier Master: ", length(catalog_supplier_gaps), " catalog supplier(s) have no supplier-master record."))
+  }
   
   valid_po_numbers <- unique(daily_po$PO_Number[daily_po$PO_Number != ""])
   
@@ -6385,6 +7462,7 @@ load_aurelis_demo_data <- function(target_env=AURELIS_APP_ENV) {
     daily_po=daily_po,revenue_data=revenue_data,ar_data=ar_data,inventory_data=inventory_data,
     warehouse_inventory_data=warehouse_inventory_data,contacts_data=contacts_data,
     relationship_directory=relationship_directory,seller_catalog_data=seller_catalog_data,
+    products_data=products_data,suppliers_data=suppliers_data,
     geography_data=geography_data,
     quotation_customer_reference=quotation_customer_reference,
     quotation_terms_reference=quotation_terms_reference,all_years=all_years,all_buyers=all_buyers,
@@ -6400,8 +7478,8 @@ load_aurelis_demo_data <- function(target_env=AURELIS_APP_ENV) {
 }
 
 source_registry_table <- function() tibble(
-  Dataset=c("DAILY_PO","REVENUE","AR","INVENTORY","WAREHOUSE_INVENTORY","CONTACTS","DIRECTORY","SELLER_CATALOG","GEOGRAPHY","USER_CLIENTS"),
-  Source=rep("Synthetic Demo CSV Package",10),
+  Dataset=c("DAILY_PO","REVENUE","AR","INVENTORY","WAREHOUSE_INVENTORY","CONTACTS","DIRECTORY","SELLER_CATALOG","PRODUCTS","SUPPLIERS","CUSTOMER_REFERENCE","TERMS_REFERENCE","GEOGRAPHY","USER_CLIENTS"),
+  Source=rep("Synthetic Demo CSV Package",14),
   Detail=c(
     "Aurelis_Daily_PO.csv · fictional purchase orders",
     "Aurelis_Revenue.csv · fictional accounting revenue",
@@ -6411,13 +7489,17 @@ source_registry_table <- function() tibble(
     "Aurelis_Contacts.csv · fictional customer contacts",
     "Aurelis_Directory.csv · fictional customer / buyer / supplier relationships",
     "Aurelis_Seller_Catalog.csv · searchable seller product and service catalog",
+    "Aurelis_Products.csv · synthetic product master and base commercial attributes",
+    "Aurelis_Suppliers.csv · synthetic supplier reference and procurement coverage",
+    "Aurelis_Customer_Reference.csv · quotation and client reference choices",
+    "Aurelis_Terms_Reference.csv · quotation payment and commercial terms",
     "Aurelis_Geography.csv · customer / supplier / representative operating locations",
     "Aurelis_User_Clients.csv · locally registered public-demo clients only"
   ),
-  Loaded_At=rep(AURELIS_DEMO_LOADED_AT,10)
+  Loaded_At=rep(AURELIS_DEMO_LOADED_AT,14)
 )
 
-list_access_tables <- function() c("Daily_PO","Revenue","Accounts_Receivable","Inventory","Warehouse","Contacts","Directory","Seller_Catalog","Geography","User_Clients")
+list_access_tables <- function() c("Daily_PO","Revenue","Accounts_Receivable","Inventory","Warehouse","Contacts","Directory","Seller_Catalog","Products","Suppliers","Customer_Reference","Terms_Reference","Geography","User_Clients")
 list_quickbooks_tables <- function() character(0)
 qb_sdk_state <- function() list(last_success_utc=NA_character_)
 qb_sdk_authorize <- function() stop("External accounting connections are disabled in the public demo.",call.=FALSE)
@@ -6426,6 +7508,181 @@ load_aurelis_demo_data(AURELIS_APP_ENV)
 quotation_customer_choices <- sort(unique(na.omit(c(customer_performance_clients,quotation_customer_reference$Company))))
 quotation_po_choices <- sort(unique(na.omit(inventory_data$PO_Number)))
 quotation_supplier_choices <- sort(unique(na.omit(inventory_data$Supplier)))
+
+aurelis_stats_dataset_choices <- c(
+  "Revenue & profitability" = "revenue",
+  "Accounts receivable" = "ar",
+  "Purchase orders" = "orders",
+  "Inventory" = "inventory"
+)
+
+aurelis_stats_source_frame <- function(source) {
+  switch(
+    as.character(source),
+    revenue = revenue_data,
+    ar = ar_data,
+    orders = daily_po,
+    inventory = inventory_data,
+    stop("Choose a supported financial-statistics dataset.", call. = FALSE)
+  )
+}
+
+aurelis_stats_numeric_fields <- function(data) {
+  if (!is.data.frame(data) || ncol(data) == 0) return(character(0))
+  numeric_field <- vapply(data, function(column) {
+    is.numeric(column) && any(is.finite(column))
+  }, logical(1))
+  names(data)[numeric_field]
+}
+
+aurelis_stats_group_fields <- function(data) {
+  if (!is.data.frame(data) || ncol(data) == 0) return(character(0))
+  group_field <- vapply(data, function(column) {
+    (is.character(column) || is.factor(column)) &&
+      dplyr::n_distinct(column, na.rm = TRUE) > 1 &&
+      dplyr::n_distinct(column, na.rm = TRUE) <= 50
+  }, logical(1))
+  names(data)[group_field]
+}
+
+aurelis_stats_prepare <- function(
+    data,
+    measure,
+    group_by = "",
+    groups = character(0),
+    missing_policy = "exclude"
+) {
+  if (!is.data.frame(data) ||
+      length(measure) != 1 ||
+      is.na(measure) ||
+      !measure %in% names(data)) {
+    stop("Select a numeric measure available in the chosen dataset.", call. = FALSE)
+  }
+  if (!is.numeric(data[[measure]])) {
+    stop("The selected financial-statistics measure is not numeric.", call. = FALSE)
+  }
+  if (length(missing_policy) != 1 || is.na(missing_policy) ||
+      !missing_policy %in% c("exclude", "median")) {
+    stop("Choose a supported missing-value policy.", call. = FALSE)
+  }
+  if (!is.null(group_by) && nzchar(group_by) && !group_by %in% names(data)) {
+    stop("The selected comparison field is not available in this dataset.", call. = FALSE)
+  }
+
+  values <- as.numeric(data[[measure]])
+  finite <- is.finite(values)
+  group_values <- if (is.null(group_by) || !nzchar(group_by)) {
+    rep("All records", length(values))
+  } else {
+    as.character(data[[group_by]])
+  }
+  group_values[is.na(group_values) | !nzchar(trimws(group_values))] <- "Unspecified"
+  selected <- if (length(groups) > 0 && !is.null(group_by) && nzchar(group_by)) {
+    group_values %in% as.character(groups)
+  } else {
+    rep(TRUE, length(values))
+  }
+
+  missing_count <- sum(selected & !finite)
+  imputed_count <- 0L
+  if (identical(missing_policy, "median") && missing_count > 0L && any(selected & finite)) {
+    fill_value <- stats::median(values[selected & finite])
+    values[selected & !finite] <- fill_value
+    finite <- is.finite(values)
+    imputed_count <- missing_count
+  }
+
+  keep <- selected & finite
+  result <- tibble::tibble(
+    value = values[keep],
+    group = factor(group_values[keep], levels = unique(group_values[keep]))
+  )
+  attr(result, "missing_count") <- as.integer(missing_count)
+  attr(result, "imputed_count") <- as.integer(imputed_count)
+  attr(result, "excluded_count") <- as.integer(missing_count - imputed_count)
+  result
+}
+
+aurelis_stats_distribution_fit <- function(values, distribution, degrees_freedom = 5) {
+  values <- values[is.finite(values)]
+  if (length(values) < 2L) stop("At least two usable observations are required.", call. = FALSE)
+  if (!distribution %in% c("Normal", "Student t", "Log-normal", "Exponential", "Gamma", "Poisson", "Empirical")) {
+    stop("Choose a supported statistical distribution.", call. = FALSE)
+  }
+
+  location <- mean(values)
+  spread <- stats::sd(values)
+  if (distribution %in% c("Normal", "Student t") && (!is.finite(spread) || spread <= 0)) {
+    stop("A fitted continuous distribution requires values with non-zero variation.", call. = FALSE)
+  }
+
+  if (distribution == "Normal") {
+    return(list(
+      discrete = FALSE,
+      density = function(x) stats::dnorm(x, mean = location, sd = spread),
+      quantile = function(p) stats::qnorm(p, mean = location, sd = spread)
+    ))
+  }
+  if (distribution == "Student t") {
+    df_input <- suppressWarnings(as.numeric(degrees_freedom))
+    df <- if (length(df_input) == 0 || !is.finite(df_input[[1]])) 5 else df_input[[1]]
+    df <- max(2.01, df)
+    if (!is.finite(df)) df <- 5
+    scale <- spread * sqrt((df - 2) / df)
+    return(list(
+      discrete = FALSE,
+      density = function(x) stats::dt((x - location) / scale, df = df) / scale,
+      quantile = function(p) location + scale * stats::qt(p, df = df)
+    ))
+  }
+  if (distribution == "Log-normal") {
+    if (any(values <= 0)) stop("Log-normal fitting requires strictly positive observations.", call. = FALSE)
+    log_values <- log(values)
+    log_mean <- mean(log_values)
+    log_sd <- stats::sd(log_values)
+    if (!is.finite(log_sd) || log_sd <= 0) stop("Log-normal fitting requires variation in positive observations.", call. = FALSE)
+    return(list(
+      discrete = FALSE,
+      density = function(x) stats::dlnorm(x, meanlog = log_mean, sdlog = log_sd),
+      quantile = function(p) stats::qlnorm(p, meanlog = log_mean, sdlog = log_sd)
+    ))
+  }
+  if (distribution == "Exponential") {
+    if (any(values < 0) || location <= 0) stop("Exponential fitting requires non-negative observations with a positive mean.", call. = FALSE)
+    rate <- 1 / location
+    return(list(
+      discrete = FALSE,
+      density = function(x) stats::dexp(x, rate = rate),
+      quantile = function(p) stats::qexp(p, rate = rate)
+    ))
+  }
+  if (distribution == "Gamma") {
+    variance <- stats::var(values)
+    if (any(values <= 0) || !is.finite(variance) || variance <= 0) {
+      stop("Gamma fitting requires strictly positive observations with non-zero variation.", call. = FALSE)
+    }
+    shape <- location ^ 2 / variance
+    rate <- location / variance
+    return(list(
+      discrete = FALSE,
+      density = function(x) stats::dgamma(x, shape = shape, rate = rate),
+      quantile = function(p) stats::qgamma(p, shape = shape, rate = rate)
+    ))
+  }
+  if (distribution == "Poisson") {
+    if (any(values < 0) || any(abs(values - round(values)) > 1e-8) || location <= 0) {
+      stop("Poisson fitting requires non-negative whole-number observations with a positive mean.", call. = FALSE)
+    }
+    lambda <- location
+    return(list(
+      discrete = TRUE,
+      density = function(x) stats::dpois(round(x), lambda = lambda),
+      quantile = function(p) stats::qpois(p, lambda = lambda)
+    ))
+  }
+
+  list(discrete = FALSE, density = NULL, quantile = NULL)
+}
 
 ################################################################################
 # SECTION 3: UI DEFINITION
@@ -6442,7 +7699,7 @@ ui <- bs4DashPage(
     title = dashboardBrand(
       title = "Aurelis",
       color = "primary",
-      image = aurelis_logo_sidebar_source
+      image = aurelis_logo_header_source
     ),
     fixed = TRUE,
     
@@ -6537,7 +7794,7 @@ ui <- bs4DashPage(
       # REPORT / EXPORT
       # ========================================================================
       tags$li(
-        class = "nav-item dropdown d-flex align-items-center",
+        class = "nav-item dropdown d-flex align-items-center navbar-report-item",
         
         actionLink(
           inputId = "report_current_page",
@@ -6584,71 +7841,45 @@ ui <- bs4DashPage(
     status = "navy",
     elevation = 0,
     fixed = TRUE,
+    width = 164,
+    collapsed = FALSE,
+    minified = FALSE,
+    expandOnHover = FALSE,
     bs4SidebarMenu(
       id = "sidebar_tabs",
       bs4SidebarMenuItem(
-        "Executive Overview", tabName = "exec_overview",
-        icon = icon("tachometer-alt")
+        "Command Center", icon = icon("bullseye"), startExpanded = TRUE,
+        bs4SidebarMenuSubItem("Executive Overview", tabName = "exec_overview", icon = icon("tachometer-alt")),
+        bs4SidebarMenuSubItem("KPI Command Center", tabName = "kpi_board", icon = icon("th-large")),
+        bs4SidebarMenuSubItem("Global Network Atlas", tabName = "global_network", icon = icon("globe-americas")),
+        bs4SidebarMenuSubItem("Executive Activity Observatory", tabName = "executive_observatory", icon = icon("eye"))
       ),
       bs4SidebarMenuItem(
-        "Global Network Atlas", tabName = "global_network",
-        icon = icon("globe-americas")
+        "Commercial Intelligence", icon = icon("chart-line"), startExpanded = TRUE,
+        bs4SidebarMenuSubItem("Sales & Profitability", tabName = "sale_performance", icon = icon("chart-line")),
+        bs4SidebarMenuSubItem("Customer Performance", tabName = "customer_performance", icon = icon("award")),
+        bs4SidebarMenuSubItem("Client Statements", tabName = "client_statement", icon = icon("user-tie")),
+        bs4SidebarMenuSubItem("POs & Buyers", tabName = "monthly_sales", icon = icon("shopping-cart")),
+        bs4SidebarMenuSubItem("Buyer Activity", tabName = "buyer_activity", icon = icon("user-clock")),
+        bs4SidebarMenuSubItem("Financial Statistics", tabName = "financial_statistics", icon = icon("chart-area"))
       ),
       bs4SidebarMenuItem(
-        "My Workspace", tabName = "multi_user_workspace",
-        icon = icon("users-cog")
+        "Supply Chain Control", icon = icon("project-diagram"), startExpanded = TRUE,
+        bs4SidebarMenuSubItem("Orders & Delivery", tabName = "order_tracker", icon = icon("shipping-fast")),
+        bs4SidebarMenuSubItem("Inventory & Warehouse", tabName = "inventory_tab", icon = icon("warehouse")),
+        bs4SidebarMenuSubItem("Suppliers & Procurement", tabName = "buyer_tool", icon = icon("handshake")),
+        bs4SidebarMenuSubItem("Accounts Receivable", tabName = "ar_tab", icon = icon("file-invoice-dollar"))
       ),
       bs4SidebarMenuItem(
-        "KPI Command Center", tabName = "kpi_board",
-        icon = icon("th-large")
+        "Workspace & Studio", icon = icon("magic"), startExpanded = TRUE,
+        bs4SidebarMenuSubItem("My Workspace", tabName = "multi_user_workspace", icon = icon("users-cog")),
+        bs4SidebarMenuSubItem("Quotation Studio", tabName = "quotation_studio", icon = icon("file-signature")),
+        bs4SidebarMenuSubItem("Product Intelligence", tabName = "product_intelligence", icon = icon("gem"))
       ),
       bs4SidebarMenuItem(
-        "Sales & Profitability", tabName = "sale_performance",
-        icon = icon("chart-line")
-      ),
-      bs4SidebarMenuItem(
-        "Quotation Studio", tabName = "quotation_studio",
-        icon = icon("file-signature")
-      ),
-      bs4SidebarMenuItem(
-        "Customer Performance", tabName = "customer_performance",
-        icon = icon("award")
-      ),
-      bs4SidebarMenuItem(
-        "Client Statements", tabName = "client_statement",
-        icon = icon("user-tie")
-      ),
-      bs4SidebarMenuItem(
-        "POs & Buyers", tabName = "monthly_sales",
-        icon = icon("shopping-cart")
-      ),
-      bs4SidebarMenuItem(
-        "Buyer Activity Intelligence", tabName = "buyer_activity",
-        icon = icon("user-clock")
-      ),
-      bs4SidebarMenuItem(
-        "Orders & Delivery", tabName = "order_tracker",
-        icon = icon("shipping-fast")
-      ),
-      bs4SidebarMenuItem(
-        "Inventory & Warehouse", tabName = "inventory_tab",
-        icon = icon("warehouse")
-      ),
-      bs4SidebarMenuItem(
-        "Suppliers & Procurement", tabName = "buyer_tool",
-        icon = icon("handshake")
-      ),
-      bs4SidebarMenuItem(
-        "Accounts Receivable", tabName = "ar_tab",
-        icon = icon("file-invoice-dollar")
-      ),
-      bs4SidebarMenuItem(
-        "Directory & Relationships", tabName = "contacts_tab",
-        icon = icon("address-book")
-      ),
-      bs4SidebarMenuItem(
-        "Demo Data & Process", tabName = "misc_tab",
-        icon = icon("database")
+        "Data & Relationships", icon = icon("database"), startExpanded = TRUE,
+        bs4SidebarMenuSubItem("Directory & Relationships", tabName = "contacts_tab", icon = icon("address-book")),
+        bs4SidebarMenuSubItem("Demo Data & Process", tabName = "misc_tab", icon = icon("database"))
       )
     )
   ),
@@ -6659,6 +7890,7 @@ ui <- bs4DashPage(
       tags$title("Aurelis Obsidian Command — Business Operations Intelligence"),
       tags$meta(name = "description", content = "Aurelis Obsidian Command dark interactive business operations intelligence platform"),
       tags$style(HTML(custom_css)),
+      tags$script(HTML(responsive_dashboard_js)),
       tags$script(HTML(dropdown_layer_js)),
       tags$script(HTML(future_ui_js)),
       tags$script(HTML(signature_ui_js))
@@ -6668,6 +7900,8 @@ ui <- bs4DashPage(
       class = "aurelis-content-watermark",
       tags$img(src = aurelis_logo_header_source, alt = "")
     ),
+
+    uiOutput("aurelis_access_portal"),
     
     div(
       class = "prism-mobile-filter-row d-lg-none",
@@ -6702,14 +7936,19 @@ ui <- bs4DashPage(
               tags$span("Each browser has its own filters and quotation work-in-progress. Shared data refreshes are coordinated, while saved quotation drafts are stored centrally for authorized Aurelis buyers.")
             ),
             fluidRow(
-              column(4, selectizeInput(
+              column(3, selectizeInput(
                 "multi_user_buyer", "Current buyer / workspace owner:",
                 choices = sort(unique(na.omit(all_buyers))),
                 selected = if (length(all_buyers) > 0) all_buyers[[1]] else "",
                 options = list(create = TRUE, placeholder = "Select or enter your name")
               )),
-              column(4, checkboxInput("multi_user_include_shared", "Show shared drafts from other buyers", value = TRUE)),
-              column(4, uiOutput("multi_user_session_status"))
+              column(3, selectInput(
+                "multi_user_role", "Demo access profile:",
+                choices = c("CEO / Executive" = "CEO", "Manager" = "Manager", "Buyer" = "Buyer", "Analyst" = "Analyst"),
+                selected = "Analyst"
+              )),
+              column(3, checkboxInput("multi_user_include_shared", "Show shared drafts from other buyers", value = TRUE)),
+              column(3, uiOutput("multi_user_session_status"))
             ),
             div(
               class = "multiuser-status-grid",
@@ -6748,7 +7987,42 @@ ui <- bs4DashPage(
       ),
       
       ########################################################################
-      # 3.2 EXECUTIVE OVERVIEW TAB
+      # 3.2 EXECUTIVE ACTIVITY OBSERVATORY
+      ########################################################################
+      bs4TabItem(
+        tabName = "executive_observatory",
+        fluidRow(
+          column(
+            width = 12,
+            div(
+              class = "prism-masthead",
+              div(
+                class = "prism-masthead-copy",
+                div(class = "prism-masthead-kicker", icon("eye"), "EXECUTIVE ACTIVITY OBSERVATORY"),
+                tags$h2("See what is happening across the operating floor."),
+                tags$p("A CEO-level view of past actions, live sessions, and future delivery commitments. Demo access is role-aware; production access should be connected to company authentication."),
+                div(class = "prism-mode-pill", icon("lock"), tags$span(textOutput("access_profile_badge", inline = TRUE)))
+              ),
+              div(class = "prism-masthead-stats",
+                  div(class = "prism-masthead-stat", tags$span("Live sessions"), tags$strong(textOutput("exec_live_sessions", inline = TRUE))),
+                  div(class = "prism-masthead-stat", tags$span("Events logged"), tags$strong(textOutput("exec_logged_events", inline = TRUE))),
+                  div(class = "prism-masthead-stat", tags$span("Future commitments"), tags$strong(textOutput("exec_future_commitments", inline = TRUE))))
+            )
+          )
+        ),
+        fluidRow(
+          column(4, bs4Card(title = "Past activity", width = 12, status = "info", solidHeader = TRUE, DTOutput("exec_past_activity"))),
+          column(4, bs4Card(title = "Live employee sessions", width = 12, status = "success", solidHeader = TRUE, DTOutput("exec_live_activity"))),
+          column(4, bs4Card(title = "Future commitments", width = 12, status = "warning", solidHeader = TRUE, DTOutput("exec_future_activity")))
+        ),
+        fluidRow(
+          column(7, bs4Card(title = "Activity by employee and role", width = 12, status = "primary", solidHeader = TRUE, plotlyOutput("exec_activity_by_role", height = "330px"))),
+          column(5, bs4Card(title = "Access governance", width = 12, status = "secondary", solidHeader = TRUE, uiOutput("exec_access_governance")))
+        )
+      ),
+      
+      ########################################################################
+      # 3.3 EXECUTIVE OVERVIEW TAB
       ########################################################################
       bs4TabItem(
         tabName = "exec_overview",
@@ -6767,6 +8041,30 @@ ui <- bs4DashPage(
           column(3, div(class = "kpi-card kpi-navy",
                         tags$p("PURCHASE ORDERS"), tags$h2(textOutput("kpi_total_po")), 
                         tags$p(class = "sub-text", "Orders Tracked")))
+        ),
+
+        fluidRow(
+          bs4Card(
+            title = "AURELIS LIVE OPERATING POSTURE", width = 12,
+            status = "primary", solidHeader = TRUE,
+            div(
+              class = "future-command-deck",
+              div(class = "future-command-cell future-command-health",
+                  tags$span(class = "future-command-kicker", icon("heartbeat"), "NOW"),
+                  tags$strong(textOutput("future_now_signal")),
+                  tags$p(textOutput("future_now_detail"))),
+              div(class = "future-command-cell future-command-next",
+                  tags$span(class = "future-command-kicker", icon("random"), "NEXT BEST MOVE"),
+                  tags$strong(textOutput("future_next_move")),
+                  tags$p(textOutput("future_next_detail")),
+                  actionButton("future_open_next", "Open workspace", icon = icon("arrow-right"), class = "btn-primary btn-sm")),
+              div(class = "future-command-cell future-command-risk",
+                  tags$span(class = "future-command-kicker", icon("exclamation-triangle"), "WATCHLIST"),
+                  tags$strong(textOutput("future_risk_signal")),
+                  tags$p(textOutput("future_risk_detail")),
+                  actionButton("future_open_risk", "Inspect risk", icon = icon("crosshairs"), class = "btn-outline-info btn-sm"))
+            )
+          )
         ),
         
         interaction_tip(
@@ -7419,6 +8717,140 @@ ui <- bs4DashPage(
               "report_performance",
               "Export the current sales summary immediately, or build a customized Excel/PDF report."
             )
+          )
+        )
+      ),
+
+      ########################################################################
+      # 3.4 FINANCIAL STATISTICS & DISTRIBUTION LAB
+      ########################################################################
+      bs4TabItem(
+        tabName = "financial_statistics",
+        fluidRow(
+          bs4Card(
+            title = "Financial Statistics & Distribution Lab",
+            width = 12,
+            status = "primary",
+            solidHeader = TRUE,
+            tags$p(
+              "Explore filtered synthetic financial records, fit common probability distributions, inspect quantile behavior, and compare groups. Global year and month filters apply to every source."
+            ),
+            fluidRow(
+              column(
+                3,
+                selectInput(
+                  "financial_stats_source",
+                  "Dataset",
+                  choices = aurelis_stats_dataset_choices,
+                  selected = "revenue"
+                )
+              ),
+              column(
+                3,
+                selectInput(
+                  "financial_stats_measure",
+                  "Financial measure",
+                  choices = aurelis_stats_numeric_fields(revenue_data),
+                  selected = "Revenue"
+                )
+              ),
+              column(
+                3,
+                selectInput(
+                  "financial_stats_distribution",
+                  "Distribution",
+                  choices = c("Normal", "Student t", "Log-normal", "Exponential", "Gamma", "Poisson", "Empirical"),
+                  selected = "Normal"
+                )
+              ),
+              column(
+                3,
+                sliderInput(
+                  "financial_stats_df",
+                  "Student t degrees of freedom",
+                  min = 2.1,
+                  max = 60,
+                  value = 5,
+                  step = 0.1
+                )
+              )
+            ),
+            fluidRow(
+              column(
+                3,
+                selectInput(
+                  "financial_stats_group_by",
+                  "Compare by",
+                  choices = c("All records" = "", setNames(aurelis_stats_group_fields(revenue_data), str_replace_all(aurelis_stats_group_fields(revenue_data), "_", " "))),
+                  selected = if ("Country" %in% aurelis_stats_group_fields(revenue_data)) "Country" else ""
+                )
+              ),
+              column(
+                5,
+                selectizeInput(
+                  "financial_stats_groups",
+                  "Selected groups (blank = compare available groups)",
+                  choices = sort(unique(na.omit(revenue_data$Country))),
+                  selected = character(0),
+                  multiple = TRUE,
+                  options = list(plugins = list("remove_button"), maxOptions = 100, placeholder = "All available groups")
+                )
+              ),
+              column(
+                4,
+                selectInput(
+                  "financial_stats_missing_policy",
+                  "Missing financial values",
+                  choices = c(
+                    "Exclude missing values" = "exclude",
+                    "Median-fill for synthetic analysis" = "median"
+                  ),
+                  selected = "exclude"
+                )
+              )
+            ),
+            uiOutput("financial_stats_data_note")
+          )
+        ),
+        fluidRow(
+          bs4Card(
+            title = "Sample profile",
+            width = 12,
+            status = "info",
+            solidHeader = TRUE,
+            uiOutput("financial_stats_summary")
+          )
+        ),
+        fluidRow(
+          bs4Card(
+            title = "Observed values and fitted distribution",
+            width = 7,
+            status = "primary",
+            solidHeader = TRUE,
+            plotlyOutput("financial_stats_distribution_plot", height = "380px")
+          ),
+          bs4Card(
+            title = "Distribution quantile check",
+            width = 5,
+            status = "secondary",
+            solidHeader = TRUE,
+            plotlyOutput("financial_stats_qq_plot", height = "380px")
+          )
+        ),
+        fluidRow(
+          bs4Card(
+            title = "Group distributions",
+            width = 7,
+            status = "success",
+            solidHeader = TRUE,
+            plotlyOutput("financial_stats_group_plot", height = "390px")
+          ),
+          bs4Card(
+            title = "Group comparison tests",
+            width = 5,
+            status = "warning",
+            solidHeader = TRUE,
+            uiOutput("financial_stats_comparison")
           )
         )
       ),
@@ -9247,6 +10679,84 @@ ui <- bs4DashPage(
           )
         )
       )
+
+      ,bs4TabItem(
+        tabName = "product_intelligence",
+        fluidRow(
+          column(
+            width = 12,
+            div(
+              class = "prism-masthead",
+              div(
+                class = "prism-masthead-copy",
+                div(class = "prism-masthead-kicker", icon("gem"), "AURELIS PRODUCT INTELLIGENCE"),
+                tags$h2("Find the right product before it becomes a quotation."),
+                tags$p("A focused recommendation studio built on your live catalog, supplier lead times, cost signals, and inventory position."),
+                div(
+                  class = "prism-mode-pill",
+                  icon("shield-alt"),
+                  tags$span("Decision-grade catalog intelligence · synthetic demo data")
+                )
+              ),
+              div(
+                class = "prism-masthead-stats",
+                div(class = "prism-masthead-stat", tags$span("Catalog records"), tags$strong(textOutput("pi_catalog_count", inline = TRUE))),
+                div(class = "prism-masthead-stat", tags$span("Available sellers"), tags$strong(textOutput("pi_supplier_count", inline = TRUE))),
+                div(class = "prism-masthead-stat", tags$span("Recommended view"), tags$strong("Live"))
+              )
+            )
+          )
+        ),
+        fluidRow(
+          column(
+            width = 4,
+            bs4Card(
+              title = "Recommendation brief", width = 12, status = "primary", solidHeader = TRUE,
+              textInput("pi_search", "What are you sourcing?", placeholder = "pump, valve, actuator, service..."),
+              sliderInput("pi_budget", "Target unit cost", min = 0, max = 500000, value = 150000, step = 5000, pre = "$", sep = ","),
+              selectInput("pi_category", "Category", choices = c("All categories" = "all")),
+              selectInput("pi_stock", "Availability", choices = c("Any availability" = "all", "In stock" = "in_stock", "Backorder risk" = "risk")),
+              sliderInput("pi_top_n", "Recommendations", min = 5, max = 20, value = 10, step = 1),
+              div(class = "pi-brief-note", icon("wand-magic-sparkles"), tags$span("Rankings balance relevance, seller preference, price fit, lead time, and operational availability."))
+            ),
+            bs4Card(
+              title = "Priority recommendation", width = 12, status = "warning", solidHeader = TRUE,
+              uiOutput("pi_priority_card")
+            )
+          ),
+          column(
+            width = 8,
+            bs4Card(
+              title = "Recommended products", width = 12, status = "primary", solidHeader = TRUE,
+              DTOutput("pi_rank_table")
+            ),
+            bs4Card(
+              title = "Cost and delivery landscape", width = 12, status = "info", solidHeader = TRUE,
+              plotlyOutput("pi_landscape_plot", height = "330px")
+            )
+          )
+        ),
+        fluidRow(
+          column(
+            width = 7,
+            bs4Card(
+              title = "Catalog explorer", width = 12, status = "secondary", solidHeader = TRUE,
+              DTOutput("pi_catalog_table")
+            )
+          ),
+          column(
+            width = 5,
+            bs4Card(
+              title = "Client inquiry studio", width = 12, status = "success", solidHeader = TRUE,
+              textInput("pi_client", "Client", value = "Northstar Energy"),
+              textAreaInput("pi_request", "Request", rows = 4, placeholder = "Describe the operating need, delivery expectation, and constraints."),
+              actionButton("pi_generate_inquiry", "Generate recommendation brief", icon = icon("file-signature"), class = "btn-primary"),
+              br(), br(),
+              uiOutput("pi_inquiry_result")
+            )
+          )
+        )
+      )
       
     ) # end bs4TabItems
   ), # end body
@@ -9267,6 +10777,52 @@ ui <- bs4DashPage(
 ################################################################################
 
 server <- function(input, output, session) {
+
+  access_state <- reactiveVal(list(
+    authenticated = !isTRUE(AURELIS_ACCESS_CONTROL_ENABLED),
+    email = if (isTRUE(AURELIS_ACCESS_CONTROL_ENABLED)) "" else "analyst@aurelis.local",
+    role = if (isTRUE(AURELIS_ACCESS_CONTROL_ENABLED)) NULL else "Analyst"
+  ))
+
+  output$aurelis_access_portal <- renderUI({
+    state <- access_state()
+    if (!isTRUE(AURELIS_ACCESS_CONTROL_ENABLED) || isTRUE(state$authenticated)) return(NULL)
+    div(
+      class = "aurelis-access-portal",
+      div(
+        class = "aurelis-access-portal-card",
+        tags$img(src = aurelis_logo_header_source, alt = "Aurelis Global Supply"),
+        tags$h1("Enter the Aurelis command layer"),
+        tags$p("Sign in with your company identity. The access key maps the identity to the workspace designed for that position."),
+        textInput("aurelis_login_email", "Work email", placeholder = "name@company.com"),
+        passwordInput("aurelis_login_password", "Password", placeholder = "Company password"),
+        textInput("aurelis_login_key", "Access key", placeholder = "Assigned role key"),
+        actionButton("aurelis_login_submit", "Open command workspace", icon = icon("arrow-right"), class = "btn-primary"),
+        tags$p(class = "aurelis-access-portal-note", textOutput("aurelis_login_message"))
+      )
+    )
+  })
+
+  output$aurelis_login_message <- renderText({
+    if (!isTRUE(AURELIS_ACCESS_CONTROL_ENABLED)) return("Full Analyst access is active for this local build.")
+    "Identity gateway ready."
+  })
+
+  observeEvent(input$aurelis_login_submit, {
+    login_value <- function(value) if (is.null(value) || length(value) == 0 || is.na(value[[1]])) "" else as.character(value[[1]])
+    email <- tolower(str_squish(login_value(input$aurelis_login_email)))
+    password <- login_value(input$aurelis_login_password)
+    key <- toupper(str_squish(login_value(input$aurelis_login_key)))
+    match <- AURELIS_ACCESS_DIRECTORY[AURELIS_ACCESS_DIRECTORY$email == email & AURELIS_ACCESS_DIRECTORY$access_key == key, , drop = FALSE]
+    password_name <- if (nrow(match) == 1) paste0("AURELIS_PASSWORD_", match$role[[1]]) else ""
+    expected_password <- if (nzchar(password_name)) Sys.getenv(password_name, unset = "") else ""
+    if (nrow(match) == 1 && nzchar(expected_password) && identical(password, expected_password)) {
+      access_state(list(authenticated = TRUE, email = email, role = match$role[[1]]))
+      updateSelectInput(session, "multi_user_role", selected = match$role[[1]])
+    } else {
+      showNotification("Identity, access key, or configured company password could not be verified.", type = "error", duration = 5)
+    }
+  }, ignoreInit = TRUE)
   
   observeEvent(input$global_year_mobile, {
     value <- input$global_year_mobile
@@ -9313,6 +10869,7 @@ server <- function(input, output, session) {
   
   workspace_session_state <- new.env(parent = emptyenv())
   workspace_session_state$buyer <- initial_workspace_buyer
+  workspace_session_state$role <- "Buyer"
   
   current_draft_id <- reactiveVal("")
   multiuser_tick <- reactiveVal(0L)
@@ -9333,18 +10890,32 @@ server <- function(input, output, session) {
     workspace_session_state$buyer <- value
     value
   }
+
+  safe_workspace_role <- function() {
+    allowed <- c("CEO", "Manager", "Buyer", "Analyst")
+    state <- access_state()
+    value <- if (isTRUE(AURELIS_ACCESS_CONTROL_ENABLED) && isTRUE(state$authenticated)) state$role else if (is.null(input$multi_user_role) || length(input$multi_user_role) == 0) "Analyst" else as.character(input$multi_user_role[[1]])
+    if (!value %in% allowed) value <- "Buyer"
+    workspace_session_state$role <- value
+    value
+  }
+
+  role_can_see_executive <- function() !isTRUE(AURELIS_ACCESS_CONTROL_ENABLED) || safe_workspace_role() %in% c("CEO", "Analyst")
+  role_can_manage_team <- function() !isTRUE(AURELIS_ACCESS_CONTROL_ENABLED) || safe_workspace_role() %in% c("CEO", "Manager", "Analyst")
   
   # Safe startup: no reactive value is read here.
   aurelis_multiuser_register_session(
     aurelis_session_id,
-    initial_workspace_buyer
+    initial_workspace_buyer,
+    workspace_session_state$role
   )
   
   aurelis_multiuser_log(
     aurelis_session_id,
     initial_workspace_buyer,
     "session_started",
-    "Dashboard browser session opened"
+    "Dashboard browser session opened",
+    workspace_session_state$role
   )
   
   observeEvent(input$multi_user_buyer, {
@@ -9353,16 +10924,26 @@ server <- function(input, output, session) {
     
     aurelis_multiuser_register_session(
       aurelis_session_id,
-      buyer
+      buyer,
+      safe_workspace_role()
     )
     
     aurelis_multiuser_log(
       aurelis_session_id,
       buyer,
       "workspace_selected",
-      paste0("Buyer workspace selected: ", buyer)
+      paste0("Buyer workspace selected: ", buyer),
+      safe_workspace_role()
     )
     
+    multiuser_tick(isolate(multiuser_tick()) + 1L)
+  }, ignoreInit = TRUE)
+
+  observeEvent(input$multi_user_role, {
+    role <- safe_workspace_role()
+    buyer <- safe_workspace_buyer()
+    aurelis_multiuser_register_session(aurelis_session_id, buyer, role)
+    aurelis_multiuser_log(aurelis_session_id, buyer, "access_profile_changed", paste0("Demo access profile selected: ", role), role)
     multiuser_tick(isolate(multiuser_tick()) + 1L)
   }, ignoreInit = TRUE)
   
@@ -9374,7 +10955,8 @@ server <- function(input, output, session) {
         aurelis_session_id,
         buyer_at_close,
         "session_closed",
-        "Dashboard browser session closed"
+        "Dashboard browser session closed",
+        workspace_session_state$role
       ),
       silent = TRUE
     )
@@ -9396,7 +10978,8 @@ server <- function(input, output, session) {
     try(
       aurelis_multiuser_touch_session(
         aurelis_session_id,
-        workspace_session_state$buyer
+      workspace_session_state$buyer,
+      workspace_session_state$role
       ),
       silent = TRUE
     )
@@ -9447,10 +11030,14 @@ server <- function(input, output, session) {
   }
   
   perform_live_refresh <- function(trigger="Manual") {
-    if (isTRUE(isolate(refresh_running()))) return(invisible(FALSE))
+    if (isTRUE(isolate(refresh_running())) || isTRUE(AURELIS_SHARED_REFRESH_STATE$running)) return(invisible(FALSE))
     refresh_running(TRUE)
+    AURELIS_SHARED_REFRESH_STATE$running <- TRUE
     refresh_state(paste(trigger,"synthetic data reload in progress"))
-    on.exit(refresh_running(FALSE),add=TRUE)
+    on.exit({
+      refresh_running(FALSE)
+      AURELIS_SHARED_REFRESH_STATE$running <- FALSE
+    }, add=TRUE)
     result <- tryCatch({
       load_aurelis_demo_data(AURELIS_APP_ENV)
       AURELIS_SHARED_REFRESH_STATE$version <- as.integer(AURELIS_SHARED_REFRESH_STATE$version)+1L
@@ -9459,7 +11046,7 @@ server <- function(input, output, session) {
       refresh_last_success(AURELIS_SHARED_REFRESH_STATE$last_refresh)
       refresh_state(paste0(trigger," synthetic package reload completed"))
       update_live_filter_choices()
-      try(aurelis_multiuser_log(aurelis_session_id,workspace_session_state$buyer,"data_refresh",paste0(trigger," demo reload")),silent=TRUE)
+      try(aurelis_multiuser_log(aurelis_session_id,workspace_session_state$buyer,"data_refresh",paste0(trigger," demo reload"), workspace_session_state$role),silent=TRUE)
       if (identical(trigger,"Manual")) showNotification("Synthetic public-demo data reloaded. No production source was contacted.",type="message",duration=5)
       TRUE
     },error=function(error) {
@@ -9570,6 +11157,10 @@ server <- function(input, output, session) {
     misc_tab = list(
       title = "Demo Data & Digital Operations",
       subtitle = "Review the isolated synthetic data package, public-demo refresh controls, process documentation and export behavior."
+    ),
+    executive_observatory = list(
+      title = "Executive Activity Observatory",
+      subtitle = "Review past employee actions, live sessions, future commitments and role-level operating signals."
     )
   )
   
@@ -9662,6 +11253,24 @@ server <- function(input, output, session) {
     }
     invisible(TRUE)
   }
+
+  role_allowed_tab <- function(tab_name) {
+    if (!isTRUE(AURELIS_ACCESS_CONTROL_ENABLED)) return(TRUE)
+    role <- safe_workspace_role()
+    if (role == "CEO") return(TRUE)
+    if (tab_name == "executive_observatory") return(FALSE)
+    if (role == "Manager") return(tab_name %in% c("exec_overview", "global_network", "multi_user_workspace", "kpi_board", "sale_performance", "quotation_studio", "customer_performance", "client_statement", "monthly_sales", "buyer_activity", "order_tracker", "inventory_tab", "buyer_tool", "ar_tab", "contacts_tab", "product_intelligence", "misc_tab"))
+    if (role == "Analyst") return(tab_name %in% c("exec_overview", "global_network", "kpi_board", "sale_performance", "customer_performance", "client_statement", "monthly_sales", "buyer_activity", "order_tracker", "inventory_tab", "buyer_tool", "ar_tab", "contacts_tab", "product_intelligence", "misc_tab"))
+    tab_name %in% c("exec_overview", "global_network", "multi_user_workspace", "sale_performance", "quotation_studio", "customer_performance", "monthly_sales", "buyer_activity", "order_tracker", "buyer_tool", "product_intelligence")
+  }
+
+  observeEvent(input$sidebar_tabs, {
+    selected <- input$sidebar_tabs
+    if (!is.null(selected) && !role_allowed_tab(selected)) {
+      showNotification("This workspace requires a higher access profile in the Aurelis demo.", type = "warning", duration = 4)
+      navigate_sidebar("exec_overview")
+    }
+  }, ignoreInit = TRUE)
   
   # --------------------------------------------------------------------------
   # Cross-navigation helpers used by interactive charts across the platform.
@@ -10064,6 +11673,334 @@ server <- function(input, output, session) {
     if (input$global_year != "all") df <- df %>% filter(Year == as.numeric(input$global_year))
     if (input$global_month != "all") df <- df %>% filter(Month == as.numeric(input$global_month))
     df
+  })
+
+  observeEvent(input$financial_stats_source, {
+    source_data <- aurelis_stats_source_frame(input$financial_stats_source)
+    measure_fields <- aurelis_stats_numeric_fields(source_data)
+    group_fields <- aurelis_stats_group_fields(source_data)
+    measure_choices <- stats::setNames(
+      measure_fields,
+      stringr::str_replace_all(measure_fields, "_", " ")
+    )
+    group_choices <- c(
+      "All records" = "",
+      stats::setNames(group_fields, stringr::str_replace_all(group_fields, "_", " "))
+    )
+    measure_selected <- if (isolate(input$financial_stats_measure) %in% measure_fields) {
+      isolate(input$financial_stats_measure)
+    } else {
+      measure_fields[[1]]
+    }
+
+    updateSelectInput(
+      session,
+      "financial_stats_measure",
+      choices = measure_choices,
+      selected = measure_selected
+    )
+    updateSelectInput(
+      session,
+      "financial_stats_group_by",
+      choices = group_choices,
+      selected = ""
+    )
+    updateSelectizeInput(
+      session,
+      "financial_stats_groups",
+      choices = character(0),
+      selected = character(0),
+      server = TRUE
+    )
+  }, ignoreInit = TRUE)
+
+  financial_stats_source_data <- reactive({
+    data_version()
+    source <- input$financial_stats_source
+    if (is.null(source) || length(source) == 0 || !source %in% unname(aurelis_stats_dataset_choices)) {
+      validate(need(FALSE, "Choose a financial dataset to continue."))
+    }
+    switch(
+      source,
+      revenue = filtered_revenue(),
+      ar = filtered_ar(),
+      orders = filtered_po(),
+      inventory = filtered_inventory()
+    )
+  })
+
+  financial_stats_prepared <- reactive({
+    source_data <- financial_stats_source_data()
+    measure <- input$financial_stats_measure
+    group_by <- input$financial_stats_group_by
+    selected_groups <- input$financial_stats_groups
+    validate(need(nrow(source_data) > 0, "No records match the current year and month filters."))
+    measure_fields <- aurelis_stats_numeric_fields(source_data)
+    validate(need(length(measure_fields) > 0, "The selected dataset has no usable numeric measures."))
+    if (is.null(measure) || length(measure) != 1 || !measure %in% measure_fields) {
+      measure <- measure_fields[[1]]
+    }
+    group_fields <- aurelis_stats_group_fields(source_data)
+    if (is.null(group_by) || length(group_by) != 1 || !group_by %in% group_fields) {
+      group_by <- ""
+      selected_groups <- character(0)
+    }
+    if (length(selected_groups) > 0 && nzchar(group_by)) {
+      available_groups <- unique(as.character(source_data[[group_by]]))
+      selected_groups <- intersect(as.character(selected_groups), available_groups)
+    }
+
+    if (!is.null(group_by) && nzchar(group_by) && !length(selected_groups)) {
+      group_values <- as.character(source_data[[group_by]])
+      group_values[is.na(group_values) | !nzchar(trimws(group_values))] <- "Unspecified"
+      selected_groups <- names(utils::head(sort(table(group_values), decreasing = TRUE), 8))
+    }
+
+    prepared <- aurelis_stats_prepare(
+      source_data,
+      measure = measure,
+      group_by = group_by,
+      groups = selected_groups,
+      missing_policy = input$financial_stats_missing_policy
+    )
+    validate(need(nrow(prepared) > 0, "No usable numeric values remain for this selection."))
+    prepared
+  })
+
+  output$financial_stats_data_note <- renderUI({
+    prepared <- financial_stats_prepared()
+    missing_count <- attr(prepared, "missing_count")
+    imputed_count <- attr(prepared, "imputed_count")
+    excluded_count <- attr(prepared, "excluded_count")
+    group_note <- if (!is.null(input$financial_stats_group_by) &&
+                      nzchar(input$financial_stats_group_by) &&
+                      !length(input$financial_stats_groups)) {
+      " With no groups selected, the eight largest groups are used for readability."
+    } else {
+      ""
+    }
+    value_note <- if (imputed_count > 0) {
+      paste0(
+        " Median-filled ", scales::comma(imputed_count),
+        " missing value(s); these are synthetic analysis values and do not modify the source data."
+      )
+    } else if (excluded_count > 0) {
+      paste0(" Excluded ", scales::comma(excluded_count), " missing or non-finite value(s) from analysis.")
+    } else {
+      " No missing or non-finite values were found in the selected measure."
+    }
+    div(
+      class = "financial-stats-note",
+      paste0("Values are filtered by the dashboard's global date controls.", value_note, group_note)
+    )
+  })
+
+  output$financial_stats_summary <- renderUI({
+    prepared <- financial_stats_prepared()
+    values <- prepared$value
+    sample_size <- length(values)
+    average <- mean(values)
+    standard_deviation <- if (sample_size > 1) stats::sd(values) else NA_real_
+    confidence_margin <- if (sample_size > 1) {
+      stats::qt(.975, df = sample_size - 1) * standard_deviation / sqrt(sample_size)
+    } else {
+      NA_real_
+    }
+    coefficient_variation <- if (is.finite(average) && average != 0 && is.finite(standard_deviation)) {
+      100 * standard_deviation / abs(average)
+    } else {
+      NA_real_
+    }
+    format_value <- function(value, suffix = "") {
+      if (!is.finite(value)) return("Not available")
+      paste0(scales::number(value, accuracy = 0.01, big.mark = ","), suffix)
+    }
+    summary_cards <- list(
+      c("Usable observations", scales::comma(sample_size)),
+      c("Mean", format_value(average)),
+      c("Median", format_value(stats::median(values))),
+      c("Standard deviation", format_value(standard_deviation)),
+      c("Coefficient of variation", format_value(coefficient_variation, "%")),
+      c(
+        "95% mean confidence interval",
+        if (is.finite(confidence_margin)) {
+          paste0(format_value(average - confidence_margin), " to ", format_value(average + confidence_margin))
+        } else {
+          "Not available"
+        }
+      )
+    )
+    div(
+      class = "financial-stats-summary",
+      lapply(summary_cards, function(card) {
+        div(
+          class = "financial-stats-summary-card",
+          tags$span(card[[1]]),
+          tags$strong(card[[2]])
+        )
+      })
+    )
+  })
+
+  output$financial_stats_distribution_plot <- renderPlotly({
+    prepared <- financial_stats_prepared()
+    values <- prepared$value
+    validate(need(length(values) >= 2, "At least two usable observations are required to fit a distribution."))
+    distribution <- input$financial_stats_distribution
+    fit <- tryCatch(
+      aurelis_stats_distribution_fit(values, distribution, input$financial_stats_df),
+      error = function(error) error
+    )
+    if (inherits(fit, "error")) {
+      validate(need(FALSE, conditionMessage(fit)))
+    }
+
+    data <- data.frame(value = values)
+    if (isTRUE(fit$discrete)) {
+      graph <- ggplot(data, aes(x = value)) +
+        geom_histogram(
+          aes(y = after_stat(count / sum(count))),
+          binwidth = 1,
+          boundary = -0.5,
+          fill = "#32D1C6",
+          color = "#111827",
+          alpha = 0.78
+        )
+      curve_values <- seq(
+        max(0, floor(min(values))),
+        min(ceiling(max(values)), stats::qpois(.999, lambda = mean(values)) + 1),
+        by = 1
+      )
+    } else {
+      graph <- ggplot(data, aes(x = value)) +
+        geom_histogram(
+          aes(y = after_stat(density)),
+          bins = max(10, min(50, round(sqrt(length(values))))),
+          fill = "#32D1C6",
+          color = "#111827",
+          alpha = 0.78
+        )
+      curve_values <- seq(min(values), max(values), length.out = 250)
+    }
+
+    if (!is.null(fit$density) && length(curve_values) > 0) {
+      curve <- data.frame(x = curve_values, density = fit$density(curve_values))
+      graph <- graph + geom_line(
+        data = curve,
+        aes(x = x, y = density),
+        inherit.aes = FALSE,
+        color = "#FFB15C",
+        linewidth = 1.1
+      )
+    }
+    graph <- graph +
+      labs(
+        x = input$financial_stats_measure,
+        y = if (isTRUE(fit$discrete)) "Probability" else "Density",
+        title = paste(distribution, "distribution"),
+        subtitle = paste(scales::comma(length(values)), "usable records")
+      ) +
+      theme_minimal(base_size = 11) +
+      theme(legend.position = "none")
+    plotly::config(plotly::ggplotly(graph, tooltip = c("x", "y")), responsive = TRUE)
+  })
+
+  output$financial_stats_qq_plot <- renderPlotly({
+    prepared <- financial_stats_prepared()
+    values <- prepared$value
+    validate(need(length(values) >= 2, "At least two usable observations are required for a quantile check."))
+    fit <- tryCatch(
+      aurelis_stats_distribution_fit(values, input$financial_stats_distribution, input$financial_stats_df),
+      error = function(error) error
+    )
+    if (inherits(fit, "error")) {
+      validate(need(FALSE, conditionMessage(fit)))
+    }
+    validate(need(
+      !is.null(fit$quantile),
+      "The empirical distribution has no theoretical quantiles to compare."
+    ))
+    probabilities <- stats::ppoints(length(values))
+    qq_data <- data.frame(
+      theoretical = fit$quantile(probabilities),
+      observed = sort(values)
+    )
+    graph <- ggplot(qq_data, aes(x = theoretical, y = observed)) +
+      geom_point(color = "#32D1C6", alpha = 0.68, size = 1.5) +
+      geom_abline(intercept = 0, slope = 1, color = "#FFB15C", linewidth = 0.9) +
+      labs(
+        x = "Theoretical quantiles",
+        y = "Observed quantiles",
+        subtitle = input$financial_stats_distribution
+      ) +
+      theme_minimal(base_size = 11)
+    plotly::config(plotly::ggplotly(graph, tooltip = c("x", "y")), responsive = TRUE)
+  })
+
+  output$financial_stats_group_plot <- renderPlotly({
+    prepared <- financial_stats_prepared()
+    validate(need(
+      !is.null(input$financial_stats_group_by) &&
+        nzchar(input$financial_stats_group_by) &&
+        dplyr::n_distinct(prepared$group) >= 2,
+      "Choose a comparison field and at least two groups."
+    ))
+    graph <- ggplot(prepared, aes(x = group, y = value, fill = group)) +
+      geom_boxplot(outlier.alpha = 0.3, show.legend = FALSE) +
+      coord_flip() +
+      scale_y_continuous(labels = scales::label_number(big.mark = ",")) +
+      labs(x = NULL, y = input$financial_stats_measure) +
+      theme_minimal(base_size = 11)
+    plotly::config(plotly::ggplotly(graph, tooltip = c("x", "y")), responsive = TRUE)
+  })
+
+  output$financial_stats_comparison <- renderUI({
+    prepared <- financial_stats_prepared()
+    validate(need(
+      !is.null(input$financial_stats_group_by) &&
+        nzchar(input$financial_stats_group_by),
+      "Choose a comparison field to run group tests."
+    ))
+    groups <- split(prepared$value, droplevels(prepared$group))
+    groups <- groups[lengths(groups) > 0]
+    validate(need(length(groups) >= 2, "At least two non-empty groups are required for comparison."))
+    format_p <- function(value) {
+      if (!is.finite(value)) "Not available" else format.pval(value, digits = 3, eps = 0.001)
+    }
+    result_block <- function(label, result) {
+      if (inherits(result, "error")) {
+        div(class = "financial-stats-note", paste0(label, ": unavailable — ", conditionMessage(result)))
+      } else {
+        div(class = "financial-stats-summary-card", tags$span(label), tags$strong(format_p(result$p.value)))
+      }
+    }
+    if (length(groups) == 2) {
+      pair_data <- prepared[prepared$group %in% names(groups), , drop = FALSE]
+      parametric <- tryCatch(stats::t.test(value ~ group, data = pair_data), error = function(error) error)
+      rank_test <- tryCatch(
+        stats::wilcox.test(value ~ group, data = pair_data, exact = FALSE),
+        error = function(error) error
+      )
+      tagList(
+        tags$p("Two-group comparison. Welch's t-test does not assume equal group variances; Wilcoxon is rank-based."),
+        result_block("Welch t-test p-value", parametric),
+        result_block("Wilcoxon rank-sum p-value", rank_test)
+      )
+    } else {
+      parametric <- tryCatch(
+        stats::oneway.test(value ~ group, data = prepared, var.equal = FALSE),
+        error = function(error) error
+      )
+      rank_test <- tryCatch(
+        stats::kruskal.test(value ~ group, data = prepared),
+        error = function(error) error
+      )
+      tagList(
+        tags$p("Multiple-group comparison. Welch's one-way test allows unequal variances; Kruskal-Wallis is rank-based."),
+        result_block("Welch one-way test p-value", parametric),
+        result_block("Kruskal-Wallis p-value", rank_test)
+      )
+    }
   })
   
   ##############################################################################
@@ -11016,10 +12953,12 @@ server <- function(input, output, session) {
   
   output$multi_user_session_status <- renderUI({
     buyer <- safe_workspace_buyer()
+    role <- safe_workspace_role()
     div(
       class = "multiuser-session-id",
       tags$strong("Session"), tags$br(), aurelis_session_id,
-      tags$br(), tags$span(paste0("Owner: ", buyer))
+      tags$br(), tags$span(paste0("Owner: ", buyer)),
+      tags$br(), tags$span(paste0("Profile: ", role))
     )
   })
   
@@ -11043,7 +12982,7 @@ server <- function(input, output, session) {
   output$multi_user_session_table <- renderDT({
     multiuser_tick()
     df <- aurelis_multiuser_active_sessions(10) %>%
-      transmute(Buyer = buyer, Started = started_at, `Last Seen` = last_seen)
+      transmute(Buyer = buyer, Role = role, Started = started_at, `Last Seen` = last_seen)
     datatable(df, rownames = FALSE, options = list(dom = "t", paging = FALSE, ordering = FALSE), class = "compact")
   })
   
@@ -11060,8 +12999,124 @@ server <- function(input, output, session) {
   output$multi_user_activity_table <- renderDT({
     multiuser_tick()
     df <- aurelis_multiuser_recent_activity(60) %>%
-      transmute(Buyer = buyer, Activity = event_type, Detail = detail, Time = event_at)
+      transmute(Buyer = buyer, Role = role, Activity = event_type, Detail = detail, Time = event_at)
     datatable(df, rownames = FALSE, options = list(pageLength = 12, dom = "tip", scrollX = TRUE), class = "compact")
+  })
+
+  executive_activity_data <- reactive({
+    multiuser_tick()
+    activity <- .aurelis_demo_state$activity
+    audit_path <- file.path(AURELIS_DATA_DIR, "aurelis_activity_log.csv")
+    if (file.exists(audit_path)) {
+      persisted <- tryCatch(read.csv(audit_path, stringsAsFactors = FALSE), error = function(e) NULL)
+      if (is.data.frame(persisted) && nrow(persisted) > 0) activity <- bind_rows(persisted, activity)
+    }
+    operational_history <- inventory_data %>%
+      filter(Line_Type != "Information", !is.na(Buyer), Buyer != "") %>%
+      transmute(
+        session_id = "operational-history",
+        buyer = Buyer,
+        role = "Buyer",
+        event_type = "purchase_order_activity",
+        detail = paste0("PO ", PO_Number, " · ", Client, " · ", Item_Description),
+        event_at = as.character(Order_Date)
+      ) %>%
+      arrange(desc(event_at)) %>%
+      slice_head(n = 500)
+    activity <- bind_rows(activity, operational_history)
+    if (nrow(activity) == 0) {
+      activity <- tibble(session_id = character(), buyer = character(), role = character(), event_type = character(), detail = character(), event_at = character())
+    } else {
+      activity <- activity %>% distinct(session_id, buyer, role, event_type, detail, event_at, .keep_all = TRUE)
+    }
+    activity
+  })
+
+  output$access_profile_badge <- renderText({
+    role <- safe_workspace_role()
+    if (identical(role, "CEO")) "CEO EXECUTIVE ACCESS · full observatory" else paste0(role, " ACCESS · restricted operating view")
+  })
+
+  output$exec_live_sessions <- renderText({
+    multiuser_tick()
+    format(nrow(aurelis_multiuser_active_sessions(10)), big.mark = ",")
+  })
+
+  output$exec_logged_events <- renderText({
+    if (!role_can_see_executive()) return("Restricted")
+    format(nrow(executive_activity_data()), big.mark = ",")
+  })
+
+  output$exec_future_commitments <- renderText({
+    if (!role_can_see_executive()) return("Restricted")
+    format(sum(!is.na(inventory_data$Delivery_Date) & inventory_data$Delivery_Date >= Sys.Date()), big.mark = ",")
+  })
+
+  output$exec_past_activity <- renderDT({
+    validate(need(role_can_see_executive(), "CEO access required for the employee activity observatory."))
+    df <- executive_activity_data() %>%
+      arrange(desc(event_at)) %>%
+      transmute(Employee = buyer, Role = role, Action = event_type, Detail = detail, Time = event_at)
+    datatable(df, rownames = FALSE, options = list(pageLength = 8, dom = "tip", scrollX = TRUE), class = "compact")
+  })
+
+  output$exec_live_activity <- renderDT({
+    validate(need(role_can_see_executive(), "CEO access required for live employee monitoring."))
+    df <- aurelis_multiuser_active_sessions(10) %>%
+      transmute(Employee = buyer, Role = role, `Session started` = started_at, `Last seen` = last_seen, Status = "Live")
+    datatable(df, rownames = FALSE, options = list(pageLength = 8, dom = "tip", scrollX = TRUE), class = "compact")
+  })
+
+  output$exec_future_activity <- renderDT({
+    validate(need(role_can_see_executive(), "CEO access required for future commitment monitoring."))
+    df <- inventory_data %>%
+      filter(Line_Type != "Information", !is.na(Delivery_Date), Delivery_Date >= Sys.Date()) %>%
+      arrange(Delivery_Date) %>%
+      transmute(
+        Employee = Buyer,
+        Client,
+        Commitment = Item_Description,
+        `Due date` = Delivery_Date,
+        `Days out` = as.integer(Delivery_Date - Sys.Date()),
+        Supplier,
+        Status = Order_Status
+      ) %>%
+      slice_head(n = 100)
+    datatable(df, rownames = FALSE, options = list(pageLength = 8, dom = "tip", scrollX = TRUE), class = "compact")
+  })
+
+  output$exec_activity_by_role <- renderPlotly({
+    validate(need(role_can_see_executive(), "CEO access required for role analytics."))
+    df <- executive_activity_data() %>%
+      count(role, buyer, name = "Events") %>%
+      group_by(role) %>%
+      summarise(Events = sum(Events), Employees = n_distinct(buyer), .groups = "drop") %>%
+      arrange(Events)
+    validate(need(nrow(df) > 0, "No employee activity has been logged yet."))
+    plot_ly(df, x = ~Events, y = ~reorder(role, Events), type = "bar", orientation = "h", text = ~paste(Employees, "employee(s)"), hoverinfo = "text+x", marker = list(color = "#27D5B2")) %>%
+      layout(xaxis = list(title = "Logged actions"), yaxis = list(title = "Access role"), paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)")
+  })
+
+  output$exec_access_governance <- renderUI({
+    role <- safe_workspace_role()
+    if (identical(role, "CEO")) {
+      return(tagList(
+        tags$h4(icon("crown"), " Executive command access"),
+        tags$p("You can inspect session activity, historical events, role patterns, future delivery commitments, and shared quotation behavior."),
+        tags$ul(
+          tags$li(tags$b("CEO:"), " full observatory and cross-team visibility"),
+          tags$li(tags$b("Manager:"), " team operations and shared workspaces"),
+          tags$li(tags$b("Buyer:"), " assigned clients, buyers, suppliers, and quotations"),
+          tags$li(tags$b("Analyst:"), " read-only intelligence and reporting")
+        ),
+        tags$p(class = "metric-definition-note", "This local demo profile is not authentication. Production enforcement must use company identity, server-side authorization, and persistent audit storage.")
+      ))
+    }
+    tagList(
+      tags$h4(icon("lock"), " Restricted observatory"),
+      tags$p(paste0("Current profile: ", role, ". CEO access is required to view employee-level activity.")),
+      tags$p(class = "metric-definition-note", "Your role can still use its permitted operating modules; the observatory intentionally withholds cross-team employee telemetry.")
+    )
   })
   
   quotation_draft_text_ids <- c(
@@ -11142,7 +13197,7 @@ server <- function(input, output, session) {
       is_shared = isTRUE(input$quotation_share_draft), draft_id = existing
     )
     current_draft_id(result$draft_id)
-    aurelis_multiuser_log(aurelis_session_id, safe_workspace_buyer(), "quotation_saved", paste0(input$quotation_number, " · ", input$quotation_customer_name, " · draft ", result$draft_id, " v", result$version))
+    aurelis_multiuser_log(aurelis_session_id, safe_workspace_buyer(), "quotation_saved", paste0(input$quotation_number, " · ", input$quotation_customer_name, " · draft ", result$draft_id, " v", result$version), safe_workspace_role())
     multiuser_tick(isolate(multiuser_tick()) + 1L)
     showNotification(paste0("Quotation draft saved as ", result$draft_id, " (version ", result$version, ")."), type = "message", duration = 5)
   }, ignoreInit = TRUE)
@@ -11157,7 +13212,7 @@ server <- function(input, output, session) {
     snapshot <- jsonlite::fromJSON(row$payload_json[[1]], simplifyDataFrame = TRUE)
     apply_quotation_snapshot(snapshot)
     current_draft_id(row$draft_id[[1]])
-    aurelis_multiuser_log(aurelis_session_id, safe_workspace_buyer(), "quotation_opened", paste0(row$quote_number[[1]], " · draft ", row$draft_id[[1]]))
+    aurelis_multiuser_log(aurelis_session_id, safe_workspace_buyer(), "quotation_opened", paste0(row$quote_number[[1]], " · draft ", row$draft_id[[1]]), safe_workspace_role())
     multiuser_tick(isolate(multiuser_tick()) + 1L)
     if (exists("updatebs4TabItems", mode = "function")) try(updatebs4TabItems(session, "sidebar_tabs", selected = "quotation_studio"), silent = TRUE)
     showNotification(paste0("Draft ", row$draft_id[[1]], " loaded into Quotation Studio."), type = "message", duration = 5)
@@ -11167,7 +13222,7 @@ server <- function(input, output, session) {
     req(input$multi_user_draft_id != "")
     deleted <- aurelis_multiuser_delete_draft(input$multi_user_draft_id, safe_workspace_buyer())
     if (isTRUE(deleted)) {
-      aurelis_multiuser_log(aurelis_session_id, safe_workspace_buyer(), "quotation_deleted", paste0("Draft ", input$multi_user_draft_id))
+      aurelis_multiuser_log(aurelis_session_id, safe_workspace_buyer(), "quotation_deleted", paste0("Draft ", input$multi_user_draft_id), safe_workspace_role())
       if (identical(current_draft_id(), input$multi_user_draft_id)) current_draft_id("")
       multiuser_tick(isolate(multiuser_tick()) + 1L)
       showNotification("Your quotation draft was deleted.", type = "message")
@@ -11277,6 +13332,75 @@ server <- function(input, output, session) {
     )
     datatable(metrics, rownames = FALSE, options = list(dom = "t", paging = FALSE, ordering = FALSE), class = "compact")
   })
+
+  # Future command deck: convert the existing filtered metrics into decisions.
+  future_operating_metrics <- reactive({
+    inv <- filtered_inventory() %>% filter(Line_Type != "Information")
+    revenue <- sum(filtered_revenue()$Revenue, na.rm = TRUE)
+    profit <- sum(filtered_revenue()$Gross_Profit, na.rm = TRUE)
+    ordered <- sum(inv$Quantity, na.rm = TRUE)
+    received <- sum(inv$Received_Qty, na.rm = TRUE)
+    overdue <- sum(as.character(inv$Order_Status) == "Overdue", na.rm = TRUE)
+    backordered <- sum(pmax(inv$Backordered_Qty, 0), na.rm = TRUE)
+    open_ar <- sum(pmax(filtered_ar()$Balance_Remaining, 0), na.rm = TRUE)
+    tibble(
+      revenue = revenue,
+      profit = profit,
+      margin = if (revenue > 0) profit / revenue else NA_real_,
+      fulfillment = if (ordered > 0) received / ordered else NA_real_,
+      overdue = overdue,
+      backordered = backordered,
+      open_ar = open_ar
+    )
+  })
+
+  output$future_now_signal <- renderText({
+    m <- future_operating_metrics()
+    if (is.finite(m$margin) && m$margin >= .25) "Operating posture: strong" else if (is.finite(m$margin)) "Operating posture: watch" else "Operating posture: awaiting signal"
+  })
+
+  output$future_now_detail <- renderText({
+    m <- future_operating_metrics()
+    paste0("", dollar(m$revenue, accuracy = 1), " revenue · ", if (is.finite(m$margin)) percent(m$margin, accuracy = .1) else "N/A", " gross margin")
+  })
+
+  output$future_risk_signal <- renderText({
+    m <- future_operating_metrics()
+    if (m$overdue > 0 || m$backordered > 0) paste(format(m$overdue + m$backordered, big.mark = ","), "exceptions") else "No critical exceptions"
+  })
+
+  output$future_risk_detail <- renderText({
+    m <- future_operating_metrics()
+    paste(format(m$overdue, big.mark = ","), "overdue lines ·", format(m$backordered, big.mark = ","), "backordered units ·", dollar(m$open_ar, accuracy = 1), "open AR")
+  })
+
+  output$future_next_move <- renderText({
+    m <- future_operating_metrics()
+    if (m$overdue > 0 || m$backordered > 0) "Stabilize delivery flow" else if (is.finite(m$open_ar) && m$open_ar > 0) "Prioritize cash conversion" else "Build the next quote"
+  })
+
+  output$future_next_detail <- renderText({
+    m <- future_operating_metrics()
+    if (m$overdue > 0 || m$backordered > 0) "Open the delivery control tower and resolve exceptions." else if (m$open_ar > 0) "Review customer balances and aging before expansion." else "Use Product Intelligence to shape the next opportunity."
+  })
+
+  future_open_tab <- function(tab_name) {
+    if (exists("updatebs4TabItems", mode = "function")) {
+      try(updatebs4TabItems(session, "sidebar_tabs", selected = tab_name), silent = TRUE)
+    } else if (exists("updateTabItems", mode = "function")) {
+      try(updateTabItems(session, "sidebar_tabs", selected = tab_name), silent = TRUE)
+    }
+  }
+
+  observeEvent(input$future_open_next, {
+    m <- future_operating_metrics()
+    future_open_tab(if (m$overdue > 0 || m$backordered > 0) "order_tracker" else if (m$open_ar > 0) "ar_tab" else "product_intelligence")
+  }, ignoreInit = TRUE)
+
+  observeEvent(input$future_open_risk, {
+    m <- future_operating_metrics()
+    future_open_tab(if (m$overdue > 0 || m$backordered > 0) "order_tracker" else "ar_tab")
+  }, ignoreInit = TRUE)
   
   output$kpi_board_customer_rank <- renderPlotly({
     df <- filtered_revenue() %>%
@@ -15628,14 +17752,232 @@ server <- function(input, output, session) {
       selected <- plotly_clicked_value(
         safe_plotly_event_data("plotly_click", source = "supplier_open_value", priority = "event")
       )
+
       if (is.null(selected)) return()
-      
       updateSelectizeInput(session, "seller_catalog_supplier", selected = selected)
       updateSelectizeInput(session, "supplier_compare_suppliers", selected = selected)
       updateSelectizeInput(session, "buyer_search_supplier", selected = selected)
     },
     ignoreInit = TRUE
   )
+
+      ##############################################################################
+      # 4.10 PRODUCT INTELLIGENCE - Catalog Ranking and Inquiry Studio
+      ##############################################################################
+
+      pi_input_value <- function(value, fallback) {
+        if (is.null(value) || length(value) == 0 || all(is.na(value))) fallback else value[[1]]
+      }
+
+      pi_product_master <- reactive({
+        data_version()
+
+        catalog <- seller_catalog_data %>%
+          filter(tolower(Product_Service_Type) %in% c("product", "products", "item", "")) %>%
+          mutate(
+            Product_Code = as.character(Product_Code),
+            Product_Service = as.character(Product_Service),
+            Category = as.character(Category),
+            Supplier = as.character(Supplier),
+            Manufacturer = as.character(Manufacturer),
+            Preferred_Rank = suppressWarnings(as.numeric(Preferred_Rank)),
+            Typical_Lead_Days = suppressWarnings(as.numeric(Typical_Lead_Days)),
+            Last_Quoted_Unit_Cost = suppressWarnings(as.numeric(Last_Quoted_Unit_Cost))
+          )
+
+        stock <- warehouse_inventory_data %>%
+          transmute(
+            Product_Code = as.character(Item_Code),
+            On_Hand = suppressWarnings(as.numeric(On_Hand)),
+            Available = suppressWarnings(as.numeric(Available)),
+            On_Order = suppressWarnings(as.numeric(On_Order))
+          ) %>%
+          filter(!is.na(Product_Code), Product_Code != "") %>%
+          group_by(Product_Code) %>%
+          summarise(
+            On_Hand = sum(On_Hand, na.rm = TRUE),
+            Available = sum(Available, na.rm = TRUE),
+            On_Order = sum(On_Order, na.rm = TRUE),
+            .groups = "drop"
+          )
+
+            order_stock <- inventory_data %>%
+              transmute(
+                Product_Code = as.character(Part_Number),
+                On_Hand = pmax(suppressWarnings(as.numeric(Received_Qty)), 0),
+                Available = pmax(suppressWarnings(as.numeric(Quantity)) - suppressWarnings(as.numeric(Received_Qty)) - suppressWarnings(as.numeric(Backordered_Qty)), 0),
+                On_Order = pmax(suppressWarnings(as.numeric(Backordered_Qty)), 0)
+              ) %>%
+              filter(!is.na(Product_Code), Product_Code != "") %>%
+              group_by(Product_Code) %>%
+              summarise(across(c(On_Hand, Available, On_Order), ~ sum(.x, na.rm = TRUE)), .groups = "drop")
+
+            if (nrow(stock) == 0 || all(stock$On_Hand == 0 & stock$Available == 0 & stock$On_Order == 0)) {
+              stock <- order_stock
+            } else if (nrow(order_stock) > 0) {
+              stock <- full_join(stock, order_stock, by = "Product_Code", suffix = c("", ".orders")) %>%
+                mutate(
+                  On_Hand = coalesce(On_Hand, 0) + coalesce(On_Hand.orders, 0),
+                  Available = coalesce(Available, 0) + coalesce(Available.orders, 0),
+                  On_Order = coalesce(On_Order, 0) + coalesce(On_Order.orders, 0)
+                ) %>%
+                select(Product_Code, On_Hand, Available, On_Order)
+            }
+
+        catalog %>%
+          left_join(stock, by = "Product_Code") %>%
+          mutate(
+            On_Hand = coalesce(On_Hand, 0),
+            Available = coalesce(Available, 0),
+            On_Order = coalesce(On_Order, 0),
+            Preferred_Rank = coalesce(Preferred_Rank, 999),
+            Typical_Lead_Days = coalesce(Typical_Lead_Days, 0),
+            Last_Quoted_Unit_Cost = coalesce(Last_Quoted_Unit_Cost, 0),
+            Availability = case_when(
+              Available > 0 ~ "In stock",
+              On_Order > 0 ~ "Inbound",
+              TRUE ~ "Backorder risk"
+            )
+          ) %>%
+          distinct(Product_Code, Supplier, .keep_all = TRUE)
+      })
+
+      observe({
+        categories <- pi_product_master() %>%
+          pull(Category) %>%
+          unique() %>%
+          sort() %>%
+          na.omit()
+        updateSelectInput(session, "pi_category", choices = c("All categories" = "all", categories))
+      })
+
+      pi_filtered_products <- reactive({
+        df <- pi_product_master()
+        query <- str_to_lower(str_squish(pi_input_value(input$pi_search, "")))
+        category <- pi_input_value(input$pi_category, "all")
+        availability <- pi_input_value(input$pi_stock, "all")
+
+        if (query != "") {
+          searchable <- str_to_lower(paste(df$Product_Code, df$Product_Service, df$Category, df$Supplier, df$Manufacturer))
+          df <- df[str_detect(searchable, fixed(query)), , drop = FALSE]
+        }
+        if (category != "all") df <- df %>% filter(Category == category)
+        if (availability == "in_stock") df <- df %>% filter(Available > 0)
+        if (availability == "risk") df <- df %>% filter(Available <= 0)
+        df
+      })
+
+      pi_ranked_products <- reactive({
+        df <- pi_filtered_products()
+        budget <- suppressWarnings(as.numeric(pi_input_value(input$pi_budget, 0)))
+        query <- str_to_lower(str_squish(pi_input_value(input$pi_search, "")))
+
+        if (nrow(df) == 0) return(df)
+
+        relevance <- if (query == "") 70 else {
+          searchable <- str_to_lower(paste(df$Product_Code, df$Product_Service, df$Category, df$Manufacturer))
+          ifelse(str_detect(searchable, fixed(query)), 100, 35)
+        }
+        price_fit <- if (budget > 0 && any(df$Last_Quoted_Unit_Cost > 0)) {
+          pmax(0, 100 - abs(df$Last_Quoted_Unit_Cost - budget) / budget * 100)
+        } else rep(60, nrow(df))
+        lead_fit <- if (any(df$Typical_Lead_Days > 0)) pmax(0, 100 - df$Typical_Lead_Days * 2) else rep(60, nrow(df))
+        stock_fit <- ifelse(df$Available > 0, 100, ifelse(df$On_Order > 0, 55, 20))
+        preference_fit <- pmax(0, 100 - pmin(df$Preferred_Rank, 10) * 7)
+
+        df %>%
+          mutate(
+            Relevance = relevance,
+            Price_Fit = price_fit,
+            Lead_Fit = lead_fit,
+            Stock_Fit = stock_fit,
+            Preference_Fit = preference_fit,
+            Match_Score = round(
+              Relevance * 0.30 + Price_Fit * 0.22 + Lead_Fit * 0.18 +
+                Stock_Fit * 0.18 + Preference_Fit * 0.12,
+              1
+            )
+          ) %>%
+          arrange(desc(Match_Score), Preferred_Rank, Typical_Lead_Days) %>%
+          slice_head(n = as.integer(pi_input_value(input$pi_top_n, 10)))
+      })
+
+      output$pi_catalog_count <- renderText({ format(nrow(pi_product_master()), big.mark = ",") })
+      output$pi_supplier_count <- renderText({ format(n_distinct(pi_product_master()$Supplier), big.mark = ",") })
+
+      output$pi_rank_table <- renderDT({
+        df <- pi_ranked_products() %>%
+          transmute(
+            Code = Product_Code,
+            Product = Product_Service,
+            Category,
+            Seller = Supplier,
+            Availability,
+            `Lead days` = Typical_Lead_Days,
+            `Quoted cost` = Last_Quoted_Unit_Cost,
+            `Match score` = Match_Score
+          )
+        datatable(df, rownames = FALSE, selection = "single", options = list(pageLength = 8, scrollX = TRUE)) %>%
+          formatCurrency("Quoted cost", currency = "$", digits = 0) %>%
+          formatStyle("Match score", color = styleInterval(c(50, 75), c("#B45309", "#2563EB", "#047857")), fontWeight = "700")
+      })
+
+      output$pi_catalog_table <- renderDT({
+        df <- pi_filtered_products() %>%
+          transmute(Code = Product_Code, Product = Product_Service, Category, Seller = Supplier, Manufacturer, Availability, On_Hand, Available, On_Order)
+        datatable(df, rownames = FALSE, options = list(pageLength = 8, scrollX = TRUE))
+      })
+
+      output$pi_landscape_plot <- renderPlotly({
+        df <- pi_ranked_products()
+        validate(need(nrow(df) > 0, "No catalog records match this brief."))
+        plot_ly(
+          df,
+          x = ~Last_Quoted_Unit_Cost,
+          y = ~Typical_Lead_Days,
+          type = "scatter",
+          mode = "markers",
+          text = ~paste(Product_Service, "<br>Score:", Match_Score, "<br>", Availability),
+          hoverinfo = "text",
+          marker = list(size = 13, color = ~Match_Score, colorscale = "Viridis", showscale = TRUE)
+        ) %>%
+          layout(
+            xaxis = list(title = "Quoted unit cost (USD)"),
+            yaxis = list(title = "Typical lead days"),
+            paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)",
+            margin = list(l = 55, r = 20, t = 20, b = 45)
+          )
+      })
+
+      output$pi_priority_card <- renderUI({
+        df <- pi_ranked_products()
+        if (nrow(df) == 0) return(tags$p("No product matches this brief yet."))
+        product <- df[1, ]
+        tagList(
+          div(class = "pi-priority-score", tags$span("TOP MATCH"), tags$strong(paste0(product$Match_Score, "/100"))),
+          tags$h4(product$Product_Service),
+          tags$p(paste(product$Category, "·", product$Supplier), class = "small-tag"),
+          tags$p(tags$b("Why it leads: "), paste(product$Availability, "with", product$Typical_Lead_Days, "day typical lead time and a", product$Preferred_Rank, "preference rank.")),
+          tags$p(tags$b("Quoted cost: "), dollar_format()(product$Last_Quoted_Unit_Cost))
+        )
+      })
+
+      pi_inquiry_recommendation <- eventReactive(input$pi_generate_inquiry, {
+        req(str_squish(input$pi_request))
+        pi_ranked_products()
+      })
+
+      output$pi_inquiry_result <- renderUI({
+        if (is.null(input$pi_generate_inquiry) || input$pi_generate_inquiry == 0) return(tags$p("Generate a brief to turn the current recommendation into a client-ready starting point."))
+        df <- pi_inquiry_recommendation()
+        if (nrow(df) == 0) return(tags$p("No recommendations were found for this request."))
+        div(
+          class = "pi-inquiry-result",
+          tags$strong(paste("Brief prepared for", input$pi_client)),
+          tags$p(paste("Lead recommendation:", df$Product_Service[[1]])),
+          tags$p(paste("Top", min(3, nrow(df)), "matches are ready for quotation review."))
+        )
+      })
   
   output$buyer_supplier_summary <- renderDT({
     data_version()
@@ -19409,4 +21751,3 @@ server <- function(input, output, session) {
 ################################################################################
 
 shinyApp(ui = ui, server = server)
-
