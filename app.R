@@ -6076,6 +6076,23 @@ body.aurelis-signature .main-header .prism-navbar-filter {
   border-color:var(--pf-border) !important;
   background:rgba(255,255,255,.035) !important;
 }
+body.aurelis-signature .main-header .navbar-nav .nav-link {
+  color:#D5DCE7 !important;
+}
+body.aurelis-signature .main-header .navbar-nav .nav-link:hover,
+body.aurelis-signature .main-header .navbar-nav .nav-link:focus-visible {
+  color:#F0E2B9 !important;
+  background:rgba(212,175,101,.10) !important;
+}
+body.aurelis-signature a:focus-visible,
+body.aurelis-signature button:focus-visible,
+body.aurelis-signature input:focus-visible,
+body.aurelis-signature select:focus-visible,
+body.aurelis-signature textarea:focus-visible,
+body.aurelis-signature [tabindex]:focus-visible {
+  outline:2px solid #E2C98A !important;
+  outline-offset:2px !important;
+}
 
 body.aurelis-signature .btn-primary,
 body.aurelis-signature .btn-info {
