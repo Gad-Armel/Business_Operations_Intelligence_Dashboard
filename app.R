@@ -93,7 +93,7 @@ aurelis_multiuser_save_draft <- function(owner,quote_number,customer,payload_jso
   .aurelis_demo_state$drafts <- bind_rows(df,tibble(
     draft_id=draft_id,owner=owner,quote_number=quote_number,customer=customer,
     is_shared=ifelse(isTRUE(is_shared),1L,0L),version=version,
-    saved_at=format(Sys.time(),"%Y-%m-%d %H:%M:%S"),payload_json=payload_json
+    saved_at=format(Sys.time(),"%Y-%m-%d %H:%M:%S"),payload_json=as.character(payload_json)
   ))
   list(draft_id=draft_id,version=version)
 }
@@ -5558,7 +5558,358 @@ responsive_dashboard_js <- "
 })();
 "
 
-custom_css <- paste0(custom_css, responsive_dashboard_css)
+aurelis_editorial_css <- "
+:root {
+  --aurelis-gold: #D4AF37;
+  --aurelis-platinum: #E2E8F0;
+  --aurelis-slate-muted: #8A98AA;
+  --aurelis-glass: rgba(15, 23, 34, .82);
+  --aurelis-glass-line: rgba(226, 232, 240, .085);
+}
+
+body.aurelis-signature,
+body.aurelis-signature .wrapper {
+  font-family: 'Aptos', 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif !important;
+  font-kerning: normal;
+  font-feature-settings: 'ss01' on;
+}
+
+body.aurelis-signature .content-wrapper {
+  background:
+    radial-gradient(ellipse at 82% 3%, rgba(212,175,55,.055), transparent 28%),
+    radial-gradient(ellipse at 9% 88%, rgba(76,141,255,.055), transparent 26%),
+    linear-gradient(145deg, #0B0E14 0%, #0D1420 54%, #111A27 100%) !important;
+}
+
+body.aurelis-signature .future-page-hero h2,
+body.aurelis-signature .prism-masthead h2,
+body.aurelis-signature .card-header .card-title {
+  font-family: 'Aptos Display', 'Segoe UI Variable Display', 'Segoe UI', sans-serif !important;
+  letter-spacing: -.018em !important;
+  text-wrap: pretty;
+}
+
+body.aurelis-signature .card {
+  border: 1px solid var(--aurelis-glass-line) !important;
+  border-radius: 16px !important;
+  background: var(--aurelis-glass) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(115%) !important;
+  backdrop-filter: blur(16px) saturate(115%) !important;
+  box-shadow: 0 16px 44px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.025) !important;
+}
+
+body.aurelis-signature .card:hover {
+  border-color: rgba(212,175,55,.17) !important;
+  box-shadow: 0 20px 50px rgba(0,0,0,.27), inset 0 1px 0 rgba(255,255,255,.035) !important;
+  transform: translateY(-1px) !important;
+}
+
+body.aurelis-signature .card::before {
+  left: 24px !important;
+  right: 24px !important;
+  height: 1px !important;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,.48), transparent) !important;
+  opacity: .52 !important;
+}
+
+body.aurelis-signature .card-header {
+  min-height: 50px;
+  border-bottom: 1px solid rgba(226,232,240,.065) !important;
+  border-radius: 16px 16px 0 0 !important;
+  background: linear-gradient(100deg, rgba(255,255,255,.035), rgba(255,255,255,.012)) !important;
+}
+
+body.aurelis-signature .card-header .card-title {
+  color: #E7EDF5 !important;
+  font-size: .94rem !important;
+  font-weight: 680 !important;
+}
+
+body.aurelis-signature .card-body {
+  color: #D6DEE8;
+}
+
+body.aurelis-signature .content-wrapper h1,
+body.aurelis-signature .content-wrapper h2,
+body.aurelis-signature .content-wrapper h3,
+body.aurelis-signature .content-wrapper h4,
+body.aurelis-signature .content-wrapper h5 {
+  color: #E8EDF4;
+}
+
+body.aurelis-signature .content-wrapper p,
+body.aurelis-signature .content-wrapper .text-muted {
+  color: #A4B0BF !important;
+}
+
+body.aurelis-signature .kpi-card {
+  border: 1px solid rgba(226,232,240,.075) !important;
+  border-radius: 16px !important;
+  background:
+    radial-gradient(circle at 90% 7%, rgba(212,175,55,.075), transparent 34%),
+    linear-gradient(145deg, rgba(21,31,45,.96), rgba(13,21,32,.96)) !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,.19), inset 0 1px 0 rgba(255,255,255,.035) !important;
+}
+
+body.aurelis-signature .kpi-card h2,
+body.aurelis-signature .financial-stats-summary-card strong,
+body.aurelis-signature .multiuser-status-card strong,
+body.aurelis-signature td.dt-right,
+body.aurelis-signature td.text-right,
+body.aurelis-signature .text-monospace,
+body.aurelis-signature .multiuser-session-id {
+  font-family: 'Cascadia Code', 'SFMono-Regular', Consolas, monospace !important;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+body.aurelis-signature .kpi-card h2 {
+  color: #F1F4F8 !important;
+  letter-spacing: -.04em !important;
+}
+
+body.aurelis-signature .kpi-card p,
+body.aurelis-signature .multiuser-status-card small {
+  color: #8A98AA !important;
+}
+
+body.aurelis-signature .form-control,
+body.aurelis-signature .selectize-input,
+body.aurelis-signature .selectize-input.full,
+body.aurelis-signature select,
+body.aurelis-signature textarea {
+  color: #E5EBF2 !important;
+  border: 1px solid rgba(226,232,240,.12) !important;
+  border-radius: 10px !important;
+  background: rgba(8,14,22,.88) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.025) !important;
+}
+
+body.aurelis-signature .form-control::placeholder,
+body.aurelis-signature .selectize-input input::placeholder {
+  color: #77869A !important;
+  opacity: 1;
+}
+
+body.aurelis-signature .form-control:focus,
+body.aurelis-signature .selectize-input.focus,
+body.aurelis-signature select:focus,
+body.aurelis-signature textarea:focus {
+  border-color: rgba(212,175,55,.62) !important;
+  box-shadow: 0 0 0 3px rgba(212,175,55,.13) !important;
+}
+
+body.aurelis-signature .selectize-dropdown,
+body.aurelis-signature .selectize-dropdown-content,
+body.aurelis-signature .selectize-dropdown .option {
+  color: #E5EBF2 !important;
+  background: #111B29 !important;
+}
+
+body.aurelis-signature .selectize-dropdown .active {
+  color: #FFFFFF !important;
+  background: #203047 !important;
+}
+
+body.aurelis-signature .btn-primary {
+  border: 1px solid rgba(212,175,55,.75) !important;
+  color: #121820 !important;
+  background: linear-gradient(115deg, #D4AF37, #E2C66D) !important;
+  box-shadow: 0 7px 18px rgba(212,175,55,.13) !important;
+}
+
+body.aurelis-signature .btn-primary:hover,
+body.aurelis-signature .btn-primary:focus {
+  color: #0B1118 !important;
+  background: linear-gradient(115deg, #E2C66D, #F0D98F) !important;
+  box-shadow: 0 0 0 3px rgba(212,175,55,.16) !important;
+}
+
+body.aurelis-signature table.dataTable,
+body.aurelis-signature table.table {
+  border: 0 !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  color: #D9E1EA !important;
+  background: transparent !important;
+}
+
+body.aurelis-signature table.dataTable thead th,
+body.aurelis-signature table.table thead th {
+  padding: 11px 13px !important;
+  color: #8795A8 !important;
+  border-top: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 1px solid rgba(226,232,240,.12) !important;
+  border-left: 0 !important;
+  background: rgba(255,255,255,.025) !important;
+  font-size: .68rem !important;
+  font-weight: 750 !important;
+  letter-spacing: .085em !important;
+  text-transform: uppercase;
+}
+
+body.aurelis-signature table.dataTable tbody td,
+body.aurelis-signature table.table tbody td {
+  padding: 10px 13px !important;
+  color: #CBD5E1 !important;
+  border-top: 1px solid rgba(226,232,240,.055) !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  border-left: 0 !important;
+  background: transparent !important;
+  font-variant-numeric: tabular-nums;
+}
+
+body.aurelis-signature table.dataTable tbody tr,
+body.aurelis-signature table.table tbody tr {
+  background: transparent !important;
+  transition: background-color .16s ease;
+}
+
+body.aurelis-signature table.dataTable tbody tr:hover,
+body.aurelis-signature table.table tbody tr:hover {
+  background: rgba(226,232,240,.035) !important;
+}
+
+body.aurelis-signature .dataTables_info,
+body.aurelis-signature .dataTables_length,
+body.aurelis-signature .dataTables_paginate {
+  color: #8290A2 !important;
+  font-size: .75rem !important;
+}
+
+body.aurelis-signature .dataTables_paginate .paginate_button {
+  border: 1px solid transparent !important;
+  border-radius: 999px !important;
+  color: #B9C4D1 !important;
+}
+
+body.aurelis-signature .dataTables_paginate .paginate_button.current,
+body.aurelis-signature .dataTables_paginate .paginate_button:hover {
+  border-color: rgba(212,175,55,.20) !important;
+  color: #F0D98F !important;
+  background: rgba(212,175,55,.09) !important;
+}
+
+body.aurelis-signature .nav-sidebar > .nav-item:has(> .nav-treeview) {
+  margin-top: 16px !important;
+}
+
+body.aurelis-signature .nav-sidebar .nav-link {
+  min-height: 42px !important;
+  height: auto !important;
+  padding: 9px 10px !important;
+  font-size: .86rem !important;
+  line-height: 1.28 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+
+body.aurelis-signature .nav-sidebar .nav-treeview .nav-link {
+  min-height: 39px !important;
+  padding: 8px 8px 8px 11px !important;
+  font-size: .84rem !important;
+}
+
+body.aurelis-signature .nav-sidebar .nav-link .nav-icon {
+  opacity: .82;
+  font-size: .88rem !important;
+  flex: 0 0 19px;
+  margin-right: 6px !important;
+}
+
+body.aurelis-signature .main-header .prism-navbar-filter {
+  margin: 7px 5px !important;
+  padding: 3px 7px !important;
+  border: 1px solid rgba(226,232,240,.09) !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.035) !important;
+}
+
+body.aurelis-signature .main-sidebar > .brand-link {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 8px 12px !important;
+}
+
+body.aurelis-signature:not(.sidebar-collapse) .main-sidebar > .brand-link .brand-image {
+  width: auto !important;
+  max-width: min(228px, 100%) !important;
+  max-height: 78px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  margin: 0 auto !important;
+}
+
+body.aurelis-signature.sidebar-collapse .main-sidebar > .brand-link {
+  height: 74px !important;
+  min-height: 74px !important;
+  max-height: 74px !important;
+  padding: 6px 5px !important;
+}
+
+body.aurelis-signature.sidebar-collapse .main-sidebar > .brand-link .brand-image {
+  width: auto !important;
+  max-width: 66px !important;
+  height: auto !important;
+  max-height: 62px !important;
+  object-fit: contain !important;
+  margin: 0 auto !important;
+}
+
+body.aurelis-signature .header-logo-lockup,
+body.aurelis-signature .aurelis-content-watermark {
+  display: none !important;
+}
+
+body.aurelis-signature .financial-stats-summary-card {
+  border-color: rgba(226,232,240,.09) !important;
+  background: linear-gradient(145deg, rgba(20,31,45,.91), rgba(13,21,32,.88)) !important;
+}
+
+body.aurelis-signature .financial-stats-summary-card span {
+  color: #8795A8 !important;
+  letter-spacing: .085em !important;
+}
+
+body.aurelis-signature .financial-stats-summary-card strong {
+  color: #F0D98F !important;
+}
+
+body.aurelis-signature .multiuser-status-card {
+  border-color: rgba(226,232,240,.08) !important;
+  background: linear-gradient(145deg, rgba(20,31,45,.92), rgba(13,21,32,.9)) !important;
+}
+
+@media (max-width: 767px) {
+  body.aurelis-signature .content {
+    padding: 10px 8px 24px !important;
+  }
+  body.aurelis-signature .card {
+    border-radius: 13px !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(10px) !important;
+  }
+  body.aurelis-signature .card-header {
+    min-height: 46px;
+    padding: 12px 14px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.aurelis-signature *,
+  body.aurelis-signature *::before,
+  body.aurelis-signature *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+"
+
+custom_css <- paste0(custom_css, responsive_dashboard_css, aurelis_editorial_css)
 
 
 # ==============================================================================
@@ -7603,10 +7954,15 @@ aurelis_stats_prepare <- function(
   result
 }
 
-aurelis_stats_distribution_fit <- function(values, distribution, degrees_freedom = 5) {
+aurelis_stats_distribution_fit <- function(
+    values,
+    distribution,
+    degrees_freedom = 5,
+    denominator_degrees_freedom = 10
+) {
   values <- values[is.finite(values)]
   if (length(values) < 2L) stop("At least two usable observations are required.", call. = FALSE)
-  if (!distribution %in% c("Normal", "Student t", "Log-normal", "Exponential", "Gamma", "Poisson", "Empirical")) {
+  if (!distribution %in% c("Normal", "Student t", "F", "Log-normal", "Exponential", "Gamma", "Poisson", "Empirical")) {
     stop("Choose a supported statistical distribution.", call. = FALSE)
   }
 
@@ -7620,7 +7976,9 @@ aurelis_stats_distribution_fit <- function(values, distribution, degrees_freedom
     return(list(
       discrete = FALSE,
       density = function(x) stats::dnorm(x, mean = location, sd = spread),
-      quantile = function(p) stats::qnorm(p, mean = location, sd = spread)
+      cdf = function(x) stats::pnorm(x, mean = location, sd = spread),
+      quantile = function(p) stats::qnorm(p, mean = location, sd = spread),
+      parameters = list(mean = location, standard_deviation = spread)
     ))
   }
   if (distribution == "Student t") {
@@ -7632,7 +7990,27 @@ aurelis_stats_distribution_fit <- function(values, distribution, degrees_freedom
     return(list(
       discrete = FALSE,
       density = function(x) stats::dt((x - location) / scale, df = df) / scale,
-      quantile = function(p) location + scale * stats::qt(p, df = df)
+      cdf = function(x) stats::pt((x - location) / scale, df = df),
+      quantile = function(p) location + scale * stats::qt(p, df = df),
+      parameters = list(location = location, scale = scale, degrees_of_freedom = df)
+    ))
+  }
+  if (distribution == "F") {
+    if (any(values < 0)) {
+      stop("F-distribution probabilities require a non-negative financial measure.", call. = FALSE)
+    }
+    df1_input <- suppressWarnings(as.numeric(degrees_freedom))
+    df2_input <- suppressWarnings(as.numeric(denominator_degrees_freedom))
+    df1 <- if (length(df1_input) == 0 || !is.finite(df1_input[[1]])) 5 else df1_input[[1]]
+    df2 <- if (length(df2_input) == 0 || !is.finite(df2_input[[1]])) 10 else df2_input[[1]]
+    df1 <- max(1, df1)
+    df2 <- max(1, df2)
+    return(list(
+      discrete = FALSE,
+      density = function(x) stats::df(x, df1 = df1, df2 = df2),
+      cdf = function(x) stats::pf(x, df1 = df1, df2 = df2),
+      quantile = function(p) stats::qf(p, df1 = df1, df2 = df2),
+      parameters = list(numerator_degrees_of_freedom = df1, denominator_degrees_of_freedom = df2)
     ))
   }
   if (distribution == "Log-normal") {
@@ -7644,7 +8022,9 @@ aurelis_stats_distribution_fit <- function(values, distribution, degrees_freedom
     return(list(
       discrete = FALSE,
       density = function(x) stats::dlnorm(x, meanlog = log_mean, sdlog = log_sd),
-      quantile = function(p) stats::qlnorm(p, meanlog = log_mean, sdlog = log_sd)
+      cdf = function(x) stats::plnorm(x, meanlog = log_mean, sdlog = log_sd),
+      quantile = function(p) stats::qlnorm(p, meanlog = log_mean, sdlog = log_sd),
+      parameters = list(meanlog = log_mean, standard_deviation_log = log_sd)
     ))
   }
   if (distribution == "Exponential") {
@@ -7653,7 +8033,9 @@ aurelis_stats_distribution_fit <- function(values, distribution, degrees_freedom
     return(list(
       discrete = FALSE,
       density = function(x) stats::dexp(x, rate = rate),
-      quantile = function(p) stats::qexp(p, rate = rate)
+      cdf = function(x) stats::pexp(x, rate = rate),
+      quantile = function(p) stats::qexp(p, rate = rate),
+      parameters = list(rate = rate, mean = location)
     ))
   }
   if (distribution == "Gamma") {
@@ -7666,7 +8048,9 @@ aurelis_stats_distribution_fit <- function(values, distribution, degrees_freedom
     return(list(
       discrete = FALSE,
       density = function(x) stats::dgamma(x, shape = shape, rate = rate),
-      quantile = function(p) stats::qgamma(p, shape = shape, rate = rate)
+      cdf = function(x) stats::pgamma(x, shape = shape, rate = rate),
+      quantile = function(p) stats::qgamma(p, shape = shape, rate = rate),
+      parameters = list(shape = shape, rate = rate)
     ))
   }
   if (distribution == "Poisson") {
@@ -7677,11 +8061,19 @@ aurelis_stats_distribution_fit <- function(values, distribution, degrees_freedom
     return(list(
       discrete = TRUE,
       density = function(x) stats::dpois(round(x), lambda = lambda),
-      quantile = function(p) stats::qpois(p, lambda = lambda)
+      cdf = function(x) stats::ppois(floor(x), lambda = lambda),
+      quantile = function(p) stats::qpois(p, lambda = lambda),
+      parameters = list(lambda = lambda)
     ))
   }
 
-  list(discrete = FALSE, density = NULL, quantile = NULL)
+  list(
+    discrete = FALSE,
+    density = NULL,
+    cdf = function(x) vapply(x, function(threshold) mean(values <= threshold), numeric(1)),
+    quantile = NULL,
+    parameters = list(method = "Observed empirical distribution")
+  )
 }
 
 ################################################################################
@@ -7855,13 +8247,17 @@ ui <- bs4DashPage(
         bs4SidebarMenuSubItem("Executive Activity Observatory", tabName = "executive_observatory", icon = icon("eye"))
       ),
       bs4SidebarMenuItem(
+        "Statistical Analysis",
+        tabName = "financial_statistics",
+        icon = icon("calculator")
+      ),
+      bs4SidebarMenuItem(
         "Commercial Intelligence", icon = icon("chart-line"), startExpanded = TRUE,
         bs4SidebarMenuSubItem("Sales & Profitability", tabName = "sale_performance", icon = icon("chart-line")),
         bs4SidebarMenuSubItem("Customer Performance", tabName = "customer_performance", icon = icon("award")),
         bs4SidebarMenuSubItem("Client Statements", tabName = "client_statement", icon = icon("user-tie")),
         bs4SidebarMenuSubItem("POs & Buyers", tabName = "monthly_sales", icon = icon("shopping-cart")),
-        bs4SidebarMenuSubItem("Buyer Activity", tabName = "buyer_activity", icon = icon("user-clock")),
-        bs4SidebarMenuSubItem("Financial Statistics", tabName = "financial_statistics", icon = icon("chart-area"))
+        bs4SidebarMenuSubItem("Buyer Activity", tabName = "buyer_activity", icon = icon("user-clock"))
       ),
       bs4SidebarMenuItem(
         "Supply Chain Control", icon = icon("project-diagram"), startExpanded = TRUE,
@@ -7938,8 +8334,8 @@ ui <- bs4DashPage(
             fluidRow(
               column(3, selectizeInput(
                 "multi_user_buyer", "Current buyer / workspace owner:",
-                choices = sort(unique(na.omit(all_buyers))),
-                selected = if (length(all_buyers) > 0) all_buyers[[1]] else "",
+                choices = sort(unique(na.omit(c(all_buyers, "Armel Asopjio")))),
+                selected = "Armel Asopjio",
                 options = list(create = TRUE, placeholder = "Select or enter your name")
               )),
               column(3, selectInput(
@@ -8722,18 +9118,18 @@ ui <- bs4DashPage(
       ),
 
       ########################################################################
-      # 3.4 FINANCIAL STATISTICS & DISTRIBUTION LAB
+      # 3.4 STATISTICAL ANALYSIS AND PROBABILITY STUDIO
       ########################################################################
       bs4TabItem(
         tabName = "financial_statistics",
         fluidRow(
           bs4Card(
-            title = "Financial Statistics & Distribution Lab",
+            title = "Statistical Analysis & Probability Studio",
             width = 12,
             status = "primary",
             solidHeader = TRUE,
             tags$p(
-              "Explore filtered synthetic financial records, fit common probability distributions, inspect quantile behavior, and compare groups. Global year and month filters apply to every source."
+              "A dedicated workspace for fitted probability models, cumulative and tail probabilities, interval probabilities, quantiles, confidence intervals and group tests. Financial source data follows the global year/month filters; calculations do not change source records."
             ),
             fluidRow(
               column(
@@ -8758,8 +9154,17 @@ ui <- bs4DashPage(
                 3,
                 selectInput(
                   "financial_stats_distribution",
-                  "Distribution",
-                  choices = c("Normal", "Student t", "Log-normal", "Exponential", "Gamma", "Poisson", "Empirical"),
+                  "Probability model",
+                  choices = c(
+                    "Normal" = "Normal",
+                    "Student t" = "Student t",
+                    "F distribution" = "F",
+                    "Log-normal" = "Log-normal",
+                    "Exponential" = "Exponential",
+                    "Gamma" = "Gamma",
+                    "Poisson" = "Poisson",
+                    "Empirical" = "Empirical"
+                  ),
                   selected = "Normal"
                 )
               ),
@@ -8767,7 +9172,7 @@ ui <- bs4DashPage(
                 3,
                 sliderInput(
                   "financial_stats_df",
-                  "Student t degrees of freedom",
+                  "Student t / F numerator degrees of freedom",
                   min = 2.1,
                   max = 60,
                   value = 5,
@@ -8809,7 +9214,106 @@ ui <- bs4DashPage(
                 )
               )
             ),
+            fluidRow(
+              column(
+                3,
+                sliderInput(
+                  "financial_stats_df2",
+                  "F denominator degrees of freedom",
+                  min = 1,
+                  max = 100,
+                  value = 10,
+                  step = 1
+                )
+              ),
+              column(
+                9,
+                div(
+                  class = "financial-stats-note",
+                  "Distribution probabilities use the selected fitted model. Student t degrees of freedom are adjustable; the F model uses the numerator and denominator degrees of freedom above. Empirical probabilities use the selected observations directly."
+                )
+              )
+            ),
+            fluidRow(
+              column(
+                3,
+                selectInput(
+                  "financial_stats_probability_mode",
+                  "Probability calculation",
+                  choices = c(
+                    "Left tail: P(X <= x)" = "left",
+                    "Right tail: P(X > x)" = "right",
+                    "Interval: P(a < X <= b)" = "interval",
+                    "Quantile: find x at probability p" = "quantile"
+                  ),
+                  selected = "left"
+                )
+              ),
+              column(
+                3,
+                numericInput(
+                  "financial_stats_probability_x",
+                  "Threshold x",
+                  value = stats::median(revenue_data$Revenue, na.rm = TRUE),
+                  step = 100
+                )
+              ),
+              column(
+                3,
+                numericInput(
+                  "financial_stats_probability_lower",
+                  "Interval lower bound a",
+                  value = stats::quantile(revenue_data$Revenue, 0.25, na.rm = TRUE, names = FALSE),
+                  step = 100
+                )
+              ),
+              column(
+                3,
+                numericInput(
+                  "financial_stats_probability_upper",
+                  "Interval upper bound b",
+                  value = stats::quantile(revenue_data$Revenue, 0.75, na.rm = TRUE, names = FALSE),
+                  step = 100
+                )
+              )
+            ),
+            fluidRow(
+              column(
+                3,
+                numericInput(
+                  "financial_stats_probability_p",
+                  "Target probability p",
+                  value = 0.95,
+                  min = 0,
+                  max = 1,
+                  step = 0.01
+                )
+              ),
+              column(
+                9,
+                div(
+                  class = "financial-stats-note",
+                  "For interval calculations, the lower bound must be below the upper bound. Empirical quantiles accept 0 to 1; theoretical quantiles require a probability strictly between 0 and 1."
+                )
+              )
+            ),
             uiOutput("financial_stats_data_note")
+          )
+        ),
+        fluidRow(
+          bs4Card(
+            title = "Probability result",
+            width = 4,
+            status = "warning",
+            solidHeader = TRUE,
+            uiOutput("financial_stats_probability_result")
+          ),
+          bs4Card(
+            title = "Cumulative probability curve",
+            width = 8,
+            status = "primary",
+            solidHeader = TRUE,
+            plotlyOutput("financial_stats_probability_plot", height = "340px")
           )
         ),
         fluidRow(
@@ -8851,6 +9355,19 @@ ui <- bs4DashPage(
             status = "warning",
             solidHeader = TRUE,
             uiOutput("financial_stats_comparison")
+          )
+        ),
+        fluidRow(
+          bs4Card(
+            title = "Group summary and confidence intervals",
+            width = 12,
+            status = "info",
+            solidHeader = TRUE,
+            DTOutput("financial_stats_group_summary"),
+            tags$p(
+              class = "metric-definition-note",
+              "Group confidence intervals are 95% t-intervals for each group mean; the comparison tests below report their assumptions and test statistics."
+            )
           )
         )
       ),
@@ -9930,7 +10447,11 @@ ui <- bs4DashPage(
               ))
             ),
             interaction_tip(
-              "Search by product, part number or service. Select a seller in the table or a supplier chart to focus the procurement workspace."
+              "Search by product, part number or service. Select an item and add it directly to the active quotation, or select a seller to focus the procurement workspace."
+            ),
+            actionButton(
+              "seller_catalog_add_to_quote", "Add selected item to active quotation",
+              icon = icon("cart-plus"), class = "btn-primary"
             ),
             DTOutput("seller_catalog_table") %>% withSpinner(color = brand_sky)
           )
@@ -10015,6 +10536,14 @@ ui <- bs4DashPage(
               actionButton("quotation_new_quote", "New Quote", icon = icon("plus-circle"), class = "btn-primary"),
               actionButton("quotation_copy_quote", "Duplicate Number", icon = icon("copy"), class = "btn-outline-primary"),
               actionButton("quotation_save_draft", "Save Draft", icon = icon("save"), class = "btn-success"),
+              selectizeInput(
+                "quotation_saved_draft_id", NULL,
+                choices = c("Open a saved quote" = ""),
+                selected = "",
+                options = list(placeholder = "Open a saved quote", maxOptions = 1000),
+                width = "260px"
+              ),
+              actionButton("quotation_open_saved_draft", "Open", icon = icon("folder-open"), class = "btn-outline-primary"),
               checkboxInput("quotation_share_draft", "Share with buyers", value = FALSE),
               tags$span(class = "text-muted small", "Database defaults remain editable. A historical order can be cloned in Step 2. Saved drafts are stored in the central multi-user workspace.")
             ),
@@ -10052,8 +10581,8 @@ ui <- bs4DashPage(
               column(3, textInput("quotation_customer_email", "Customer email:", value = "")),
               column(3, selectizeInput(
                 "quotation_prepared_by", "Prepared by:",
-                choices = sort(unique(na.omit(c(all_buyers, all_staff_rev)))),
-                selected = if (length(all_buyers) > 0) all_buyers[[1]] else "",
+                choices = sort(unique(na.omit(c(all_buyers, all_staff_rev, "Armel Asopjio")))),
+                selected = "Armel Asopjio",
                 options = list(create = TRUE, placeholder = "Buyer / representative")
               )),
               column(3, textInput("quotation_delivery_location", "Delivery location:", value = ""))
@@ -10123,6 +10652,33 @@ ui <- bs4DashPage(
               actionButton("quotation_reset_lines", "Clear Lines", icon = icon("eraser"), class = "btn-outline-secondary"),
               downloadButton("quotation_line_template", "CSV Template", icon = icon("file-csv"), class = "btn-outline-primary")
             ),
+            fluidRow(
+              column(
+                4,
+                textInput(
+                  "quotation_catalog_search", "Find a catalog item:",
+                  placeholder = "Part number, product, service or seller"
+                )
+              ),
+              column(
+                4,
+                selectizeInput(
+                  "quotation_catalog_supplier", "Filter by seller:",
+                  choices = c("All sellers" = "all"),
+                  selected = "all",
+                  options = list(placeholder = "All sellers", maxOptions = 5000)
+                )
+              ),
+              column(
+                4,
+                br(),
+                actionButton(
+                  "quotation_add_catalog_item", "Add selected catalog item",
+                  icon = icon("cart-plus"), class = "btn-primary"
+                )
+              )
+            ),
+            DTOutput("quotation_catalog_table"),
             DTOutput("quotation_line_table") %>% withSpinner(color = brand_blue),
             fluidRow(
               column(4, checkboxInput("quotation_use_cost_override", "Use a manual total-item-cost override", value = TRUE)),
@@ -10728,6 +11284,11 @@ ui <- bs4DashPage(
             width = 8,
             bs4Card(
               title = "Recommended products", width = 12, status = "primary", solidHeader = TRUE,
+              actionButton(
+                "pi_add_recommendation_to_quote", "Add selected recommendation to active quotation",
+                icon = icon("cart-plus"), class = "btn-primary"
+              ),
+              br(), br(),
               DTOutput("pi_rank_table")
             ),
             bs4Card(
@@ -10741,6 +11302,11 @@ ui <- bs4DashPage(
             width = 7,
             bs4Card(
               title = "Catalog explorer", width = 12, status = "secondary", solidHeader = TRUE,
+              actionButton(
+                "pi_add_catalog_to_quote", "Add selected catalog item to active quotation",
+                icon = icon("cart-plus"), class = "btn-primary"
+              ),
+              br(), br(),
               DTOutput("pi_catalog_table")
             )
           ),
@@ -10861,15 +11427,11 @@ server <- function(input, output, session) {
   # FIXED_v2:
   # Workspace ownership is normal per-session state, not a reactiveVal.
   # It is therefore safe during server startup and session shutdown.
-  initial_workspace_buyer <- if (length(all_buyers) > 0) {
-    all_buyers[[1]]
-  } else {
-    "Unassigned Buyer"
-  }
+  initial_workspace_buyer <- "Armel Asopjio"
   
   workspace_session_state <- new.env(parent = emptyenv())
   workspace_session_state$buyer <- initial_workspace_buyer
-  workspace_session_state$role <- "Buyer"
+  workspace_session_state$role <- "Analyst"
   
   current_draft_id <- reactiveVal("")
   multiuser_tick <- reactiveVal(0L)
@@ -11767,6 +12329,206 @@ server <- function(input, output, session) {
     prepared
   })
 
+  financial_stats_probability <- reactive({
+    prepared <- financial_stats_prepared()
+    values <- prepared$value
+    distribution <- input$financial_stats_distribution
+    mode <- input$financial_stats_probability_mode
+    validate(need(length(values) >= 2, "At least two usable observations are required for probability calculations."))
+    validate(need(mode %in% c("left", "right", "interval", "quantile"), "Choose a supported probability calculation."))
+
+    fit <- tryCatch(
+      aurelis_stats_distribution_fit(
+        values,
+        distribution,
+        input$financial_stats_df,
+        input$financial_stats_df2
+      ),
+      error = function(error) error
+    )
+    if (inherits(fit, "error")) validate(need(FALSE, conditionMessage(fit)))
+    validate(need(is.function(fit$cdf), "The selected model does not provide cumulative probabilities."))
+
+    read_number <- function(value, label) {
+      number <- suppressWarnings(as.numeric(value))
+      validate(need(length(number) == 1 && is.finite(number), paste("Enter a valid", label, "value.")))
+      number[[1]]
+    }
+    markers <- tibble::tibble(x = numeric(), probability = numeric(), label = character())
+    if (mode %in% c("left", "right")) {
+      threshold <- read_number(input$financial_stats_probability_x, "threshold")
+      cumulative_probability <- fit$cdf(threshold)
+      probability <- if (mode == "left") cumulative_probability else 1 - cumulative_probability
+      markers <- tibble::tibble(
+        x = threshold,
+        probability = cumulative_probability,
+        label = paste0("x = ", scales::number(threshold, big.mark = ","), " · F(x) = ", scales::percent(cumulative_probability, accuracy = 0.01))
+      )
+      result <- list(probability = probability, quantile = NULL, threshold = threshold)
+    } else if (mode == "interval") {
+      lower <- read_number(input$financial_stats_probability_lower, "lower bound")
+      upper <- read_number(input$financial_stats_probability_upper, "upper bound")
+      validate(need(lower < upper, "The interval lower bound must be less than its upper bound."))
+      lower_probability <- fit$cdf(lower)
+      upper_probability <- fit$cdf(upper)
+      probability <- upper_probability - lower_probability
+      markers <- tibble::tibble(
+        x = c(lower, upper),
+        probability = c(lower_probability, upper_probability),
+        label = c(
+          paste0("a = ", scales::number(lower, big.mark = ","), " · F(a) = ", scales::percent(lower_probability, accuracy = 0.01)),
+          paste0("b = ", scales::number(upper, big.mark = ","), " · F(b) = ", scales::percent(upper_probability, accuracy = 0.01))
+        )
+      )
+      result <- list(probability = probability, quantile = NULL, lower = lower, upper = upper)
+    } else {
+      target_probability <- read_number(input$financial_stats_probability_p, "target probability")
+      validate(need(target_probability >= 0 && target_probability <= 1, "Target probability p must be between 0 and 1."))
+      if (!identical(distribution, "Empirical")) {
+        validate(need(target_probability > 0 && target_probability < 1, "A theoretical quantile requires p strictly between 0 and 1."))
+      }
+      target_quantile <- if (identical(distribution, "Empirical")) {
+        as.numeric(stats::quantile(values, probs = target_probability, names = FALSE, type = 7))
+      } else {
+        fit$quantile(target_probability)
+      }
+      validate(need(length(target_quantile) == 1 && is.finite(target_quantile), "The selected model could not calculate this quantile."))
+      markers <- tibble::tibble(
+        x = target_quantile,
+        probability = target_probability,
+        label = paste0("p = ", scales::percent(target_probability, accuracy = 0.01), " · x = ", scales::number(target_quantile, big.mark = ","))
+      )
+      result <- list(probability = target_probability, quantile = target_quantile, target_probability = target_probability)
+    }
+
+    result$mode <- mode
+    result$distribution <- distribution
+    result$sample_size <- length(values)
+    result$markers <- markers
+    result$parameters <- fit$parameters
+    result$cdf <- fit$cdf
+    result$values <- values
+    result$calculation_detail <- switch(
+      mode,
+      left = paste0("Threshold x = ", scales::number(result$threshold, accuracy = 0.01, big.mark = ",")),
+      right = paste0("Threshold x = ", scales::number(result$threshold, accuracy = 0.01, big.mark = ",")),
+      interval = paste0(
+        "Interval: (", scales::number(result$lower, accuracy = 0.01, big.mark = ","),
+        ", ", scales::number(result$upper, accuracy = 0.01, big.mark = ","), "]"
+      ),
+      quantile = paste0("Target probability p = ", scales::percent(result$target_probability, accuracy = 0.01))
+    )
+    result
+  })
+
+  output$financial_stats_probability_result <- renderUI({
+    result <- financial_stats_probability()
+    number <- function(value) scales::number(value, accuracy = 0.0001, big.mark = ",")
+    parameter_text <- if (length(result$parameters) > 0) {
+      paste(
+        names(result$parameters),
+        vapply(result$parameters, function(value) {
+          if (is.numeric(value)) number(value) else as.character(value)
+        }, character(1)),
+        sep = " = ",
+        collapse = " · "
+      )
+    } else {
+      "No fitted parameters"
+    }
+    calculation_label <- switch(
+      result$mode,
+      left = "P(X ≤ x)",
+      right = "P(X > x)",
+      interval = "P(a < X ≤ b)",
+      quantile = "Quantile x at p"
+    )
+    model_label <- if (identical(result$distribution, "F")) "F distribution" else result$distribution
+    primary_value <- if (result$mode == "quantile") {
+      paste0(number(result$quantile), " at ", scales::percent(result$target_probability, accuracy = 0.01))
+    } else {
+      paste0(
+        scales::percent(result$probability, accuracy = 0.0001),
+        " (", number(result$probability), ")"
+      )
+    }
+    div(
+      class = "financial-stats-summary",
+      div(
+        class = "financial-stats-summary-card",
+        tags$span(paste(model_label, calculation_label)),
+        tags$strong(primary_value),
+        tags$small(result$calculation_detail)
+      ),
+      div(
+        class = "financial-stats-summary-card",
+        tags$span("Model inputs"),
+        tags$strong(parameter_text)
+      ),
+      div(
+        class = "financial-stats-summary-card",
+        tags$span("Observations used"),
+        tags$strong(scales::comma(result$sample_size))
+      ),
+      tags$p(
+        class = "metric-definition-note",
+        if (identical(result$distribution, "Empirical")) {
+          "Empirical results use the selected records directly and do not assume a parametric distribution."
+        } else {
+          "Probability results are estimates from the selected model fitted to the filtered sample; they are not guaranteed forecasts."
+        }
+      )
+    )
+  })
+
+  output$financial_stats_probability_plot <- renderPlotly({
+    result <- financial_stats_probability()
+    lower <- min(result$values)
+    upper <- max(result$values)
+    if (identical(result$distribution, "F")) lower <- max(0, lower)
+    if (!is.finite(lower) || !is.finite(upper)) {
+      validate(need(FALSE, "The selected observations do not define a finite plotting range."))
+    }
+    if (lower >= upper) {
+      padding <- max(abs(lower) * 0.05, 1)
+      lower <- lower - padding
+      upper <- upper + padding
+    }
+    curve_x <- seq(lower, upper, length.out = 250)
+    curve <- tibble::tibble(
+      x = curve_x,
+      probability = result$cdf(curve_x)
+    ) %>%
+      filter(is.finite(probability))
+    validate(need(nrow(curve) > 1, "The selected model could not produce a probability curve."))
+    plot_ly() %>%
+      add_lines(
+        data = curve,
+        x = ~x,
+        y = ~probability,
+        name = "Cumulative probability",
+        line = list(color = "#2F6EA5", width = 3),
+        hovertemplate = "x = %{x:,.2f}<br>F(x) = %{y:.2%}<extra></extra>"
+      ) %>%
+      add_markers(
+        data = result$markers,
+        x = ~x,
+        y = ~probability,
+        text = ~label,
+        name = "Selected calculation",
+        marker = list(color = "#E67E22", size = 11),
+        hovertemplate = "%{text}<extra></extra>"
+      ) %>%
+      layout(
+        xaxis = list(title = input$financial_stats_measure, automargin = TRUE),
+        yaxis = list(title = "Cumulative probability", tickformat = ".0%", range = c(0, 1)),
+        margin = list(l = 65, r = 25, t = 20, b = 55),
+        paper_bgcolor = "rgba(0,0,0,0)",
+        plot_bgcolor = "rgba(0,0,0,0)"
+      ) %>%
+      config(displaylogo = FALSE, responsive = TRUE)
+  })
+
   output$financial_stats_data_note <- renderUI({
     prepared <- financial_stats_prepared()
     missing_count <- attr(prepared, "missing_count")
@@ -11848,7 +12610,12 @@ server <- function(input, output, session) {
     validate(need(length(values) >= 2, "At least two usable observations are required to fit a distribution."))
     distribution <- input$financial_stats_distribution
     fit <- tryCatch(
-      aurelis_stats_distribution_fit(values, distribution, input$financial_stats_df),
+      aurelis_stats_distribution_fit(
+        values,
+        distribution,
+        input$financial_stats_df,
+        input$financial_stats_df2
+      ),
       error = function(error) error
     )
     if (inherits(fit, "error")) {
@@ -11910,7 +12677,12 @@ server <- function(input, output, session) {
     values <- prepared$value
     validate(need(length(values) >= 2, "At least two usable observations are required for a quantile check."))
     fit <- tryCatch(
-      aurelis_stats_distribution_fit(values, input$financial_stats_distribution, input$financial_stats_df),
+      aurelis_stats_distribution_fit(
+        values,
+        input$financial_stats_distribution,
+        input$financial_stats_df,
+        input$financial_stats_df2
+      ),
       error = function(error) error
     )
     if (inherits(fit, "error")) {
@@ -11954,6 +12726,41 @@ server <- function(input, output, session) {
     plotly::config(plotly::ggplotly(graph, tooltip = c("x", "y")), responsive = TRUE)
   })
 
+  output$financial_stats_group_summary <- renderDT({
+    prepared <- financial_stats_prepared()
+    validate(need(
+      !is.null(input$financial_stats_group_by) &&
+        nzchar(input$financial_stats_group_by),
+      "Choose a comparison field to see group summaries."
+    ))
+    summary <- prepared %>%
+      group_by(Group = group) %>%
+      summarise(
+        `Sample size` = n(),
+        Mean = mean(value),
+        Median = stats::median(value),
+        `Standard deviation` = if (n() > 1) stats::sd(value) else NA_real_,
+        `95% CI lower` = if (n() > 1) {
+          mean(value) - stats::qt(0.975, df = n() - 1) * stats::sd(value) / sqrt(n())
+        } else {
+          NA_real_
+        },
+        `95% CI upper` = if (n() > 1) {
+          mean(value) + stats::qt(0.975, df = n() - 1) * stats::sd(value) / sqrt(n())
+        } else {
+          NA_real_
+        },
+        .groups = "drop"
+      )
+    datatable(
+      summary,
+      rownames = FALSE,
+      options = list(pageLength = 8, scrollX = TRUE, autoWidth = TRUE)
+    ) %>%
+      formatRound(c("Mean", "Median", "Standard deviation", "95% CI lower", "95% CI upper"), digits = 2) %>%
+      formatRound("Sample size", digits = 0)
+  })
+
   output$financial_stats_comparison <- renderUI({
     prepared <- financial_stats_prepared()
     validate(need(
@@ -11971,7 +12778,44 @@ server <- function(input, output, session) {
       if (inherits(result, "error")) {
         div(class = "financial-stats-note", paste0(label, ": unavailable — ", conditionMessage(result)))
       } else {
-        div(class = "financial-stats-summary-card", tags$span(label), tags$strong(format_p(result$p.value)))
+        statistic_name <- names(result$statistic)
+        if (is.null(statistic_name) || length(statistic_name) == 0 || is.na(statistic_name[[1]])) {
+          statistic_name <- "Statistic"
+        } else {
+          statistic_name <- statistic_name[[1]]
+        }
+        statistic <- if (length(result$statistic) > 0) {
+          paste0(
+            statistic_name, " = ",
+            scales::number(as.numeric(result$statistic[[1]]), accuracy = 0.0001, big.mark = ",")
+          )
+        } else {
+          "Test statistic unavailable"
+        }
+        degrees <- if (length(result$parameter) > 0) {
+          paste0(
+            " · df = ",
+            paste(scales::number(as.numeric(result$parameter), accuracy = 0.01, big.mark = ","), collapse = ", ")
+          )
+        } else {
+          ""
+        }
+        confidence_interval <- if (length(result$conf.int) == 2) {
+          paste0(
+            " · 95% CI: ",
+            scales::number(result$conf.int[[1]], accuracy = 0.01, big.mark = ","),
+            " to ",
+            scales::number(result$conf.int[[2]], accuracy = 0.01, big.mark = ",")
+          )
+        } else {
+          ""
+        }
+        div(
+          class = "financial-stats-summary-card",
+          tags$span(label),
+          tags$strong(paste0("p = ", format_p(result$p.value))),
+          tags$small(paste0(statistic, degrees, confidence_interval))
+        )
       }
     }
     if (length(groups) == 2) {
@@ -11996,7 +12840,11 @@ server <- function(input, output, session) {
         error = function(error) error
       )
       tagList(
-        tags$p("Multiple-group comparison. Welch's one-way test allows unequal variances; Kruskal-Wallis is rank-based."),
+        tags$p("Multiple-group comparison. The classical F-test assumes equal variances; Welch's one-way test allows unequal variances; Kruskal-Wallis is rank-based."),
+        result_block(
+          "Classical one-way F-test",
+          tryCatch(stats::oneway.test(value ~ group, data = prepared, var.equal = TRUE), error = function(error) error)
+        ),
         result_block("Welch one-way test p-value", parametric),
         result_block("Kruskal-Wallis p-value", rank_test)
       )
@@ -12326,6 +13174,11 @@ server <- function(input, output, session) {
     selected <- atlas_selected_key()
     df$Marker_Line_Width <- ifelse(df$Entity_Key == selected, 3.5, .7)
     df$Marker_Line_Color <- ifelse(df$Entity_Key == selected, "#FFD76B", "rgba(255,255,255,.75)")
+    df <- df %>%
+      select(
+        Entity_Type, Entity_Key, Map_Longitude, Map_Latitude, Marker_Size,
+        Marker_Line_Width, Marker_Line_Color, Hover_Text
+      )
     
     chart <- plot_ly(
       df,
@@ -12372,7 +13225,8 @@ server <- function(input, output, session) {
           coastlinecolor = "rgba(160,183,209,.22)",
           showframe = FALSE,
           bgcolor = "rgba(0,0,0,0)"
-        )
+        ),
+        uirevision = "aurelis-atlas-world"
       ) %>%
       config(
         displaylogo = FALSE,
@@ -12949,6 +13803,14 @@ server <- function(input, output, session) {
     selected <- isolate(input$multi_user_draft_id)
     if (is.null(selected) || !selected %in% df$draft_id) selected <- ""
     updateSelectizeInput(session, "multi_user_draft_id", choices = c("Select a draft" = "", choices), selected = selected, server = TRUE)
+    quick_selected <- isolate(input$quotation_saved_draft_id)
+    if (is.null(quick_selected) || !quick_selected %in% df$draft_id) quick_selected <- current_draft_id()
+    if (is.null(quick_selected) || !quick_selected %in% df$draft_id) quick_selected <- ""
+    updateSelectizeInput(
+      session, "quotation_saved_draft_id",
+      choices = c("Open a saved quote" = "", choices),
+      selected = quick_selected, server = TRUE
+    )
   })
   
   output$multi_user_session_status <- renderUI({
@@ -13167,7 +14029,15 @@ server <- function(input, output, session) {
       }
     }
     for (id in quotation_draft_checkbox_ids) if (!is.null(values[[id]])) updateCheckboxInput(session, id, value = isTRUE(values[[id]]))
-    if (!is.null(values$quotation_date)) updateDateInput(session, "quotation_date", value = as.Date(values$quotation_date))
+    if (!is.null(values$quotation_date)) {
+      saved_date <- as.character(unlist(values$quotation_date, use.names = FALSE))
+      parsed_date <- if (length(saved_date) > 0) suppressWarnings(as.Date(saved_date[[1]])) else as.Date(NA)
+      if (length(parsed_date) == 1 && !is.na(parsed_date)) {
+        updateDateInput(session, "quotation_date", value = parsed_date)
+      } else {
+        showNotification("The saved quotation date is invalid; the current date was retained.", type = "warning")
+      }
+    }
     if (!is.null(snapshot$lines)) {
       lines <- as.data.frame(snapshot$lines, stringsAsFactors = FALSE)
       required <- c("Line", "Part_Number", "Description", "Quantity", "Unit", "Supplier", "Vendor_Unit_Cost", "Supplier_Discount_Pct")
@@ -13181,6 +14051,40 @@ server <- function(input, output, session) {
     }
     invisible(TRUE)
   }
+
+  load_quotation_draft <- function(draft_id) {
+    if (is.null(draft_id) || length(draft_id) == 0 || is.na(draft_id[[1]]) || !nzchar(draft_id[[1]])) {
+      showNotification("Choose a saved quotation first.", type = "warning")
+      return(invisible(FALSE))
+    }
+    row <- aurelis_multiuser_get_draft(as.character(draft_id[[1]]))
+    if (is.null(row)) {
+      showNotification("That draft no longer exists.", type = "warning")
+      return(invisible(FALSE))
+    }
+    snapshot <- jsonlite::fromJSON(row$payload_json[[1]], simplifyDataFrame = TRUE)
+    apply_quotation_snapshot(snapshot)
+    current_draft_id(row$draft_id[[1]])
+    updateSelectizeInput(session, "quotation_saved_draft_id", selected = row$draft_id[[1]])
+    aurelis_multiuser_log(
+      aurelis_session_id, safe_workspace_buyer(), "quotation_opened",
+      paste0(row$quote_number[[1]], " · draft ", row$draft_id[[1]]),
+      safe_workspace_role()
+    )
+    multiuser_tick(isolate(multiuser_tick()) + 1L)
+    if (exists("updatebs4TabItems", mode = "function")) {
+      try(updatebs4TabItems(session, "sidebar_tabs", selected = "quotation_studio"), silent = TRUE)
+    }
+    showNotification(
+      paste0("Draft ", row$draft_id[[1]], " loaded into Quotation Studio."),
+      type = "message", duration = 5
+    )
+    invisible(TRUE)
+  }
+
+  observeEvent(input$quotation_open_saved_draft, {
+    load_quotation_draft(input$quotation_saved_draft_id)
+  }, ignoreInit = TRUE)
   
   observeEvent(input$quotation_save_draft, {
     req(requireNamespace("jsonlite", quietly = TRUE))
@@ -13203,19 +14107,7 @@ server <- function(input, output, session) {
   }, ignoreInit = TRUE)
   
   observeEvent(input$multi_user_load_draft, {
-    req(input$multi_user_draft_id != "")
-    row <- aurelis_multiuser_get_draft(input$multi_user_draft_id)
-    if (is.null(row)) {
-      showNotification("That draft no longer exists.", type = "warning")
-      return()
-    }
-    snapshot <- jsonlite::fromJSON(row$payload_json[[1]], simplifyDataFrame = TRUE)
-    apply_quotation_snapshot(snapshot)
-    current_draft_id(row$draft_id[[1]])
-    aurelis_multiuser_log(aurelis_session_id, safe_workspace_buyer(), "quotation_opened", paste0(row$quote_number[[1]], " · draft ", row$draft_id[[1]]), safe_workspace_role())
-    multiuser_tick(isolate(multiuser_tick()) + 1L)
-    if (exists("updatebs4TabItems", mode = "function")) try(updatebs4TabItems(session, "sidebar_tabs", selected = "quotation_studio"), silent = TRUE)
-    showNotification(paste0("Draft ", row$draft_id[[1]], " loaded into Quotation Studio."), type = "message", duration = 5)
+    load_quotation_draft(input$multi_user_draft_id)
   }, ignoreInit = TRUE)
   
   observeEvent(input$multi_user_delete_draft, {
@@ -17694,7 +18586,6 @@ server <- function(input, output, session) {
     if (idx < 1 || idx > nrow(df)) return()
     
     selected_supplier <- df$Supplier[[idx]]
-    updateSelectizeInput(session, "seller_catalog_supplier", selected = selected_supplier)
     updateSelectizeInput(session, "supplier_compare_suppliers", selected = selected_supplier)
     updateSelectizeInput(session, "buyer_search_supplier", selected = selected_supplier)
   }, ignoreInit = TRUE)
@@ -18220,6 +19111,147 @@ server <- function(input, output, session) {
   }
   
   quotation_lines <- reactiveVal(quotation_new_line_frame())
+
+  append_catalog_product_to_quote <- function(product) {
+    if (is.null(product) || nrow(product) != 1) {
+      showNotification("Select one catalog item before adding it to a quotation.", type = "warning")
+      return(invisible(FALSE))
+    }
+    product_field <- function(name, default = "") {
+      if (!name %in% names(product) || length(product[[name]]) == 0) return(default)
+      value <- product[[name]][[1]]
+      if (length(value) == 0 || is.na(value)) default else as.character(value)
+    }
+    part_number <- str_squish(product_field("Product_Code"))
+    description <- str_squish(product_field("Product_Service"))
+    if (!nzchar(description)) description <- part_number
+    if (!nzchar(part_number) && !nzchar(description)) {
+      showNotification("This catalog record has no product code or description and cannot be quoted.", type = "error")
+      return(invisible(FALSE))
+    }
+    raw_cost <- suppressWarnings(as.numeric(product_field("Last_Quoted_Unit_Cost", NA_character_)))
+    has_price <- length(raw_cost) == 1 && is.finite(raw_cost) && raw_cost >= 0
+    unit <- if (identical(product_field("Product_Service_Type"), "Service")) "LOT" else "EA"
+    line <- quotation_new_line_frame() %>%
+      mutate(
+        Part_Number = part_number,
+        Description = description,
+        Unit = unit,
+        Supplier = str_squish(product_field("Supplier")),
+        Vendor_Unit_Cost = if (has_price) raw_cost else 0
+      )
+    lines <- quotation_lines()
+    placeholder <- nrow(lines) == 1 &&
+      !nzchar(str_squish(coalesce(lines$Part_Number[[1]], ""))) &&
+      !nzchar(str_squish(coalesce(lines$Description[[1]], "")))
+    if (placeholder) {
+      lines <- line
+    } else {
+      lines <- bind_rows(lines, line)
+    }
+    quotation_lines(lines %>% mutate(Line = row_number()))
+    if (has_price) {
+      showNotification(
+        paste0(description, " added to ", coalesce(input$quotation_number, "the active quote"), "."),
+        type = "message", duration = 4
+      )
+    } else {
+      showNotification(
+        paste0(description, " added with a zero vendor cost because no valid catalog price was available; enter and verify the cost before issuing the quote."),
+        type = "warning", duration = 7
+      )
+    }
+    invisible(TRUE)
+  }
+
+  quotation_catalog_products <- reactive({
+    data_version()
+    df <- seller_catalog_data
+    search_term <- str_to_lower(str_squish(coalesce(input$quotation_catalog_search, "")))
+    if (nzchar(search_term)) {
+      searchable <- str_to_lower(paste(
+        coalesce(df$Product_Code, ""),
+        coalesce(df$Product_Service, ""),
+        coalesce(df$Category, ""),
+        coalesce(df$Supplier, ""),
+        coalesce(df$Manufacturer, "")
+      ))
+      df <- df[str_detect(searchable, fixed(search_term)), , drop = FALSE]
+    }
+    selected_supplier <- input$quotation_catalog_supplier
+    if (!is.null(selected_supplier) && !identical(selected_supplier, "all")) {
+      df <- df %>% filter(Supplier == selected_supplier)
+    }
+    df %>% arrange(Product_Service_Type, Category, Product_Service, Supplier)
+  })
+
+  observe({
+    suppliers <- sort(unique(na.omit(as.character(seller_catalog_data$Supplier))))
+    selected <- isolate(input$quotation_catalog_supplier)
+    if (is.null(selected) || !selected %in% c("all", suppliers)) selected <- "all"
+    updateSelectizeInput(
+      session, "quotation_catalog_supplier",
+      choices = c("All sellers" = "all", setNames(suppliers, suppliers)),
+      selected = selected, server = TRUE
+    )
+  })
+
+  output$quotation_catalog_table <- renderDT({
+    df <- quotation_catalog_products() %>%
+      transmute(
+        Type = Product_Service_Type,
+        Category,
+        Code = Product_Code,
+        Product = Product_Service,
+        Seller = Supplier,
+        `Quoted cost` = Last_Quoted_Unit_Cost,
+        Currency
+      )
+    datatable(
+      df, rownames = FALSE, selection = "single",
+      options = list(pageLength = 6, scrollX = TRUE, autoWidth = TRUE)
+    ) %>% formatCurrency("Quoted cost", currency = "$", digits = 2)
+  })
+
+  observeEvent(input$quotation_add_catalog_item, {
+    selected <- input$quotation_catalog_table_rows_selected
+    products <- quotation_catalog_products()
+    if (is.null(selected) || length(selected) != 1 || selected[[1]] < 1 || selected[[1]] > nrow(products)) {
+      showNotification("Select one item from the quotation catalog first.", type = "warning")
+      return()
+    }
+    append_catalog_product_to_quote(products[selected[[1]], , drop = FALSE])
+  }, ignoreInit = TRUE)
+
+  observeEvent(input$seller_catalog_add_to_quote, {
+    selected <- input$seller_catalog_table_rows_selected
+    products <- seller_catalog_filtered()
+    if (is.null(selected) || length(selected) != 1 || selected[[1]] < 1 || selected[[1]] > nrow(products)) {
+      showNotification("Select one seller-catalog item first.", type = "warning")
+      return()
+    }
+    append_catalog_product_to_quote(products[selected[[1]], , drop = FALSE])
+  }, ignoreInit = TRUE)
+
+  observeEvent(input$pi_add_catalog_to_quote, {
+    selected <- input$pi_catalog_table_rows_selected
+    products <- pi_filtered_products()
+    if (is.null(selected) || length(selected) != 1 || selected[[1]] < 1 || selected[[1]] > nrow(products)) {
+      showNotification("Select one catalog item first.", type = "warning")
+      return()
+    }
+    append_catalog_product_to_quote(products[selected[[1]], , drop = FALSE])
+  }, ignoreInit = TRUE)
+
+  observeEvent(input$pi_add_recommendation_to_quote, {
+    selected <- input$pi_rank_table_rows_selected
+    products <- pi_ranked_products()
+    if (is.null(selected) || length(selected) != 1 || selected[[1]] < 1 || selected[[1]] > nrow(products)) {
+      showNotification("Select one recommended product first.", type = "warning")
+      return()
+    }
+    append_catalog_product_to_quote(products[selected[[1]], , drop = FALSE])
+  }, ignoreInit = TRUE)
   
   quotation_line_calculated <- reactive({
     df <- quotation_lines()
@@ -19287,6 +20319,7 @@ server <- function(input, output, session) {
   
   observeEvent(input$quotation_new_quote, {
     current_draft_id("")
+    updateSelectizeInput(session, "quotation_saved_draft_id", selected = "")
     updateCheckboxInput(session, "quotation_share_draft", value = FALSE)
     updateTextInput(session, "quotation_number", value = paste0("Q-", format(Sys.time(), "%Y%m%d-%H%M%S")))
     updateDateInput(session, "quotation_date", value = Sys.Date())
@@ -20192,7 +21225,7 @@ server <- function(input, output, session) {
       if (identical(metric, "orders")) {
         df %>%
           group_by(across(all_of(group_cols))) %>%
-          summarise(Value = n_distinct(PO_Number), .groups = "drop")
+          summarise(Value = as.numeric(n_distinct(PO_Number)), .groups = "drop")
       } else if (identical(metric, "backorders")) {
         df %>%
           group_by(across(all_of(group_cols))) %>%
@@ -20212,7 +21245,7 @@ server <- function(input, output, session) {
         Target_Key = paste0("C:", Client),
         Source_Label = Buyer,
         Target_Label = Client,
-        Value
+        Value = as.numeric(Value)
       )
     
     customer_supplier <- summarise_flow(history, c("Client", "Supplier")) %>%
@@ -20223,7 +21256,7 @@ server <- function(input, output, session) {
         Target_Key = paste0("S:", Supplier),
         Source_Label = Client,
         Target_Label = Supplier,
-        Value
+        Value = as.numeric(Value)
       )
     
     links <- bind_rows(buyer_customer, customer_supplier) %>%
@@ -20247,13 +21280,15 @@ server <- function(input, output, session) {
         node_dictionary %>% select(Target_Key = Key, Target_ID = Node_ID),
         by = "Target_Key"
       ) %>%
-      mutate(
-        Hover_Value = case_when(
-          metric == "orders" ~ paste0(format(Value, big.mark = ","), " distinct PO(s)"),
-          metric == "backorders" ~ dollar(Value, accuracy = 1),
-          TRUE ~ dollar(Value, accuracy = 1)
-        )
-      )
+      mutate(Value = as.numeric(Value))
+
+    links$Hover_Value <- if (identical(metric, "orders")) {
+      paste0(format(links$Value, big.mark = ","), " distinct PO(s)")
+    } else if (identical(metric, "backorders")) {
+      dollar(links$Value, accuracy = 1)
+    } else {
+      dollar(links$Value, accuracy = 1)
+    }
     
     metric_label <- switch(
       metric,

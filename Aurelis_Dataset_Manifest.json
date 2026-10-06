@@ -1,6 +1,22 @@
 {
-  "build": "Aurelis Obsidian Command v8.2 Responsive Financial Statistics 2018-2026",
+  "build": "Aurelis Obsidian Command v8.4 Statistical Probability Studio and Quote Studio 2018-2026",
   "final_r_file": "app.R",
+  "default_analyst_identity": "Armel Asopjio",
+  "analyst_full_access_local_build": true,
+  "relationship_flow_numeric_metrics": true,
+  "atlas_map_payload_reduced": true,
+  "quotation_catalog_add_to_quote": true,
+  "quotation_saved_draft_quick_switch": true,
+  "statistics_separate_sidebar_menu": true,
+  "statistics_cdf_probability_plot": true,
+  "statistics_interval_tail_quantile_calculations": true,
+  "visual_design": {
+    "theme": "Obsidian glass with restrained champagne accents",
+    "typography": "Local geometric system stack with tabular monospaced numerals",
+    "tables": "Low-contrast horizontal dividers and subdued metadata",
+    "reduced_motion_support": true,
+    "single_primary_logo": true
+  },
   "country_donut_zero_length_guard": true,
   "atlas_breakdown_full_reset": true,
   "vector_ui_logo_variants": true,
@@ -22,17 +38,32 @@
     "distributions": [
       "normal",
       "student_t",
+      "F_distribution",
       "log_normal",
       "exponential",
       "gamma",
       "poisson",
       "empirical"
     ],
+    "probability_calculations": [
+      "left_tail_cdf",
+      "right_tail",
+      "interval_probability",
+      "quantile"
+    ],
     "comparison_tests": [
       "welch_t_test",
       "wilcoxon_rank_sum",
+      "classical_one_way_F_test",
       "welch_one_way",
       "kruskal_wallis"
+    ],
+    "group_numerical_summaries": [
+      "sample_size",
+      "mean",
+      "median",
+      "standard_deviation",
+      "95_percent_mean_confidence_interval"
     ],
     "missing_value_policies": [
       "exclude",
