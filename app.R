@@ -133,12 +133,12 @@ brand_mist   <- "#18222E"
 brand_cloud  <- "#111922"
 brand_border <- "#2A3543"
 
-pal_executive   <- c("#FF7A45", "#FFC857", "#F0544F", "#32D1C6", "#8A72F5", "#63D99A")
-pal_sales       <- c("#FF7A45", "#FFB15C", "#FFC857", "#32D1C6", "#63D99A", "#8A72F5")
-pal_performance <- c("#FFC857", "#FF7A45", "#32D1C6", "#8A72F5", "#63D99A", "#F0544F")
-pal_ar          <- c("#63D99A", "#32D1C6", "#FFC857", "#FF8A5C", "#F0544F", "#8A72F5")
-pal_contacts    <- c("#32D1C6", "#FF7A45", "#FFC857", "#63D99A", "#8A72F5")
-pal_buyer       <- c("#FFC857", "#FF7A45", "#32D1C6", "#63D99A", "#8A72F5")
+pal_executive   <- c("#D4AF65", "#84A7C7", "#C98570", "#74AAA5", "#A995C8", "#8AA694")
+pal_sales       <- c("#D4AF65", "#C98570", "#84A7C7", "#74AAA5", "#8AA694", "#A995C8")
+pal_performance <- c("#D4AF65", "#84A7C7", "#8AA694", "#A995C8", "#74AAA5", "#C98570")
+pal_ar          <- c("#8AA694", "#74AAA5", "#D4AF65", "#C98570", "#A995C8", "#84A7C7")
+pal_contacts    <- c("#84A7C7", "#D4AF65", "#C98570", "#8AA694", "#A995C8")
+pal_buyer       <- c("#D4AF65", "#84A7C7", "#74AAA5", "#8AA694", "#A995C8")
 
 # Custom CSS: professional, accessible, responsive and low visual fatigue.
 custom_css <- "
@@ -5911,6 +5911,365 @@ body.aurelis-signature .multiuser-status-card {
 
 custom_css <- paste0(custom_css, responsive_dashboard_css, aurelis_editorial_css)
 
+executive_finish_css <- "
+/* Executive finish: one restrained Obsidian / champagne system across pages. */
+body.aurelis-signature,
+body.aurelis-signature .wrapper {
+  --pf-bg:#0B0E14;
+  --pf-surface:rgba(19,27,46,.82);
+  --pf-surface-2:rgba(23,33,52,.82);
+  --pf-text:#E8EDF5;
+  --pf-muted:#9AA7B8;
+  --pf-border:rgba(226,232,240,.085);
+  --pf-accent:#D4AF65;
+  --pf-accent-2:#E2C98A;
+  --pf-accent-soft:rgba(212,175,101,.13);
+  --pf-shadow:0 18px 52px rgba(0,0,0,.20);
+  --pf-shadow-strong:0 26px 72px rgba(0,0,0,.30);
+  background:var(--pf-bg) !important;
+  color:var(--pf-text) !important;
+}
+body.aurelis-signature[data-aurelis-page] {
+  --pf-bg:#0B0E14;
+  --pf-surface:rgba(19,27,46,.82);
+  --pf-surface-2:rgba(23,33,52,.82);
+  --pf-text:#E8EDF5;
+  --pf-muted:#9AA7B8;
+  --pf-border:rgba(226,232,240,.085);
+  --pf-accent:#D4AF65;
+  --pf-accent-2:#E2C98A;
+  --pf-accent-soft:rgba(212,175,101,.13);
+}
+body.aurelis-signature[data-aurelis-page='financial_statistics'] .card-header .card-title {
+  font-family:Georgia,'Times New Roman',serif !important;
+  font-weight:500 !important;
+  letter-spacing:-.015em !important;
+}
+body.aurelis-signature .content-wrapper {
+  background:
+    radial-gradient(ellipse at 92% 0%,rgba(212,175,101,.075),transparent 29%),
+    radial-gradient(ellipse at 8% 80%,rgba(76,112,151,.10),transparent 34%),
+    #0B0E14 !important;
+}
+
+body.aurelis-signature,
+body.aurelis-signature .content-wrapper,
+body.aurelis-signature .main-sidebar,
+body.aurelis-signature .main-header,
+body.aurelis-signature .main-footer,
+body.aurelis-signature .card,
+body.aurelis-signature .form-control,
+body.aurelis-signature .selectize-input,
+body.aurelis-signature select,
+body.aurelis-signature textarea {
+  font-family:Inter,'Segoe UI',-apple-system,BlinkMacSystemFont,Arial,sans-serif !important;
+}
+body.aurelis-signature .prism-masthead h2,
+body.aurelis-signature .future-page-hero h2 {
+  font-family:Georgia,'Times New Roman',serif !important;
+  font-weight:500 !important;
+  letter-spacing:-.015em !important;
+}
+
+body.aurelis-signature .main-header,
+body.aurelis-signature .main-sidebar,
+body.aurelis-signature .card,
+body.aurelis-signature .future-page-hero,
+body.aurelis-signature .prism-filter-dock,
+body.aurelis-signature .kpi-card,
+body.aurelis-signature .financial-stats-summary-card,
+body.aurelis-signature .multiuser-status-card {
+  background-color:rgba(19,27,46,.78) !important;
+  border-color:var(--pf-border) !important;
+  backdrop-filter:blur(16px) saturate(125%);
+  -webkit-backdrop-filter:blur(16px) saturate(125%);
+}
+body.aurelis-signature .card {
+  border-radius:17px !important;
+  box-shadow:0 16px 42px rgba(0,0,0,.19) !important;
+}
+body.aurelis-signature .card::before {
+  height:2px !important;
+  background:linear-gradient(90deg,rgba(212,175,101,.78),rgba(226,201,138,.16) 58%,transparent) !important;
+  opacity:.58 !important;
+}
+body.aurelis-signature .card:hover {
+  transform:translateY(-1px) !important;
+  box-shadow:0 20px 50px rgba(0,0,0,.25) !important;
+}
+body.aurelis-signature .card-header {
+  min-height:46px !important;
+  border-bottom-color:rgba(226,232,240,.065) !important;
+}
+body.aurelis-signature .card[class*='card-'] > .card-header,
+body.aurelis-signature .card[class*='card-'] > .card-header.bg-primary,
+body.aurelis-signature .card[class*='card-'] > .card-header.bg-info,
+body.aurelis-signature .card[class*='card-'] > .card-header.bg-success,
+body.aurelis-signature .card[class*='card-'] > .card-header.bg-warning,
+body.aurelis-signature .card[class*='card-'] > .card-header.bg-secondary,
+body.aurelis-signature .card[class*='card-'] > .card-header.bg-danger {
+  background:linear-gradient(110deg,rgba(212,175,101,.055),rgba(255,255,255,.012)) !important;
+  color:#E8EDF5 !important;
+}
+body.aurelis-signature .card-header .card-title {
+  color:#F0F3F8 !important;
+  font-size:.86rem !important;
+  letter-spacing:.005em;
+}
+body.aurelis-signature .card-body { color:var(--pf-text) !important; }
+body.aurelis-signature .control-label,
+body.aurelis-signature .form-group > label {
+  color:#B7C1CE !important;
+  font-size:.76rem !important;
+  font-weight:660 !important;
+  letter-spacing:.01em !important;
+}
+body.aurelis-signature .financial-stats-intro {
+  max-width:1050px;
+  margin:4px 0 17px !important;
+  color:#A3AFBE !important;
+  font-size:.88rem !important;
+  line-height:1.65 !important;
+}
+body.aurelis-signature .content-wrapper h1,
+body.aurelis-signature .content-wrapper h2,
+body.aurelis-signature .content-wrapper h3,
+body.aurelis-signature .content-wrapper h4,
+body.aurelis-signature .content-wrapper h5 { color:#F0F3F8; }
+body.aurelis-signature .content-wrapper p,
+body.aurelis-signature .content-wrapper .text-muted,
+body.aurelis-signature .content-wrapper .metric-definition-note {
+  color:var(--pf-muted) !important;
+}
+
+body.aurelis-signature .main-sidebar {
+  background:
+    radial-gradient(ellipse at 45% 0%,rgba(212,175,101,.10),transparent 26%),
+    linear-gradient(180deg,#101622,#0C1119) !important;
+}
+body.aurelis-signature .brand-link {
+  border-bottom:1px solid rgba(226,232,240,.075) !important;
+}
+body.aurelis-signature .nav-sidebar > .nav-item {
+  margin-top:7px !important;
+  margin-bottom:9px !important;
+}
+body.aurelis-signature .nav-sidebar > .nav-item > .nav-link {
+  color:#AAB5C4 !important;
+  font-weight:650 !important;
+}
+body.aurelis-signature .nav-sidebar > .nav-item > .nav-link.active {
+  background:linear-gradient(145deg,rgba(212,175,101,.15),rgba(255,255,255,.035)) !important;
+  border-color:rgba(212,175,101,.17) !important;
+}
+body.aurelis-signature .nav-sidebar .nav-link.active .nav-icon {
+  color:#D4AF65 !important;
+  filter:drop-shadow(0 0 8px rgba(212,175,101,.22)) !important;
+}
+body.aurelis-signature .future-control-button,
+body.aurelis-signature .navbar-report-button {
+  border-color:var(--pf-border) !important;
+  background:rgba(255,255,255,.035) !important;
+  color:#D5DCE7 !important;
+}
+body.aurelis-signature .main-header .prism-navbar-filter {
+  border-color:var(--pf-border) !important;
+  background:rgba(255,255,255,.035) !important;
+}
+
+body.aurelis-signature .btn-primary,
+body.aurelis-signature .btn-info {
+  background:linear-gradient(110deg,#C4A15A,#DFC783) !important;
+  color:#17140D !important;
+  font-weight:720 !important;
+}
+body.aurelis-signature .btn-success {
+  background:linear-gradient(110deg,#637E69,#78947B) !important;
+  border-color:transparent !important;
+  color:#F4F8F4 !important;
+}
+body.aurelis-signature .btn-warning {
+  background:linear-gradient(110deg,#B58E48,#D2AF65) !important;
+  border-color:transparent !important;
+  color:#17140D !important;
+}
+body.aurelis-signature .btn-danger {
+  background:linear-gradient(110deg,#9B5357,#BE7072) !important;
+  border-color:transparent !important;
+}
+body.aurelis-signature .form-control,
+body.aurelis-signature .selectize-input,
+body.aurelis-signature select,
+body.aurelis-signature textarea {
+  border-color:rgba(226,232,240,.10) !important;
+  background:rgba(8,13,21,.62) !important;
+  color:#E8EDF5 !important;
+}
+body.aurelis-signature .form-control:focus,
+body.aurelis-signature .selectize-input.focus,
+body.aurelis-signature select:focus,
+body.aurelis-signature textarea:focus {
+  border-color:rgba(212,175,101,.55) !important;
+  box-shadow:0 0 0 3px rgba(212,175,101,.10) !important;
+}
+body.aurelis-signature .selectize-dropdown,
+body.aurelis-signature .selectize-dropdown .option {
+  background:#141D2A !important;
+  color:#E8EDF5 !important;
+}
+body.aurelis-signature .selectize-dropdown .active {
+  background:rgba(212,175,101,.16) !important;
+}
+
+body.aurelis-signature table.dataTable {
+  border-collapse:separate !important;
+  border-spacing:0 !important;
+}
+body.aurelis-signature table.dataTable thead th {
+  padding:12px 14px !important;
+  border-bottom:1px solid rgba(226,232,240,.09) !important;
+  background:rgba(255,255,255,.025) !important;
+  color:#8391A3 !important;
+  font-size:.64rem !important;
+  font-weight:700 !important;
+  letter-spacing:.08em !important;
+}
+body.aurelis-signature table.dataTable tbody td {
+  padding:11px 14px !important;
+  border-top:1px solid rgba(226,232,240,.045) !important;
+  border-right:0 !important;
+  background:transparent !important;
+  color:#DCE3EC !important;
+}
+body.aurelis-signature table.dataTable tbody tr:hover td {
+  background:rgba(255,255,255,.035) !important;
+}
+body.aurelis-signature table.dataTable tbody tr.selected td {
+  background:rgba(212,175,101,.10) !important;
+}
+body.aurelis-signature .dataTables_wrapper .dataTables_info,
+body.aurelis-signature .dataTables_wrapper .dataTables_paginate,
+body.aurelis-signature .dataTables_wrapper .dataTables_length,
+body.aurelis-signature .dataTables_wrapper .dataTables_filter {
+  color:#8997A8 !important;
+  font-size:.70rem !important;
+}
+body.aurelis-signature .dataTables_wrapper .paginate_button {
+  border:1px solid transparent !important;
+  border-radius:999px !important;
+  color:#AFBAC8 !important;
+}
+body.aurelis-signature .dataTables_wrapper .paginate_button.current {
+  border-color:rgba(212,175,101,.18) !important;
+  background:rgba(212,175,101,.11) !important;
+  color:#E7CE92 !important;
+}
+body.aurelis-signature .dataTables_wrapper .dataTables_length select {
+  width:auto !important;
+  min-width:62px;
+}
+
+body.aurelis-signature .financial-stats-note,
+body.aurelis-signature .multiuser-banner,
+body.aurelis-signature .quote-help-card,
+body.aurelis-signature .customer-milestone-card,
+body.aurelis-signature .customer-resume-card {
+  border:1px solid var(--pf-border) !important;
+  border-radius:13px !important;
+  background:linear-gradient(125deg,rgba(212,175,101,.055),rgba(255,255,255,.018)) !important;
+  color:#AAB6C5 !important;
+}
+body.aurelis-signature .financial-stats-summary {
+  gap:10px !important;
+}
+body.aurelis-signature .financial-stats-summary-card {
+  min-height:84px;
+  padding:13px 15px !important;
+  border-radius:14px !important;
+  background:linear-gradient(145deg,rgba(212,175,101,.045),rgba(255,255,255,.018)) !important;
+  box-shadow:inset 0 1px rgba(255,255,255,.025);
+}
+body.aurelis-signature .financial-stats-summary-card > span {
+  color:#91A0B2 !important;
+  font-size:.65rem !important;
+  letter-spacing:.075em !important;
+}
+body.aurelis-signature .financial-stats-summary-card > strong {
+  color:#F0E2B9 !important;
+  font-family:Consolas,'SFMono-Regular',Menlo,monospace !important;
+  font-size:.96rem !important;
+  font-variant-numeric:tabular-nums;
+}
+body.aurelis-signature .financial-stats-summary-card small {
+  display:block;
+  margin-top:5px;
+  color:#8E9BAD !important;
+  font-size:.68rem !important;
+  line-height:1.5;
+}
+body.aurelis-signature .financial-stats-note {
+  padding:11px 13px !important;
+  font-size:.75rem;
+  line-height:1.55;
+}
+body.aurelis-signature .financial-stats-summary-card + p {
+  grid-column:1 / -1;
+}
+body.aurelis-signature .multiuser-session-id,
+body.aurelis-signature .aurelis-session-timestamp,
+body.aurelis-signature .financial-stats-summary-card strong,
+body.aurelis-signature .kpi-card h2,
+body.aurelis-signature .kpi-value {
+  font-variant-numeric:tabular-nums lining-nums;
+}
+body.aurelis-signature .multiuser-session-id {
+  font-family:Consolas,'SFMono-Regular',Menlo,monospace !important;
+  color:#9AA7B8 !important;
+}
+body.aurelis-signature .multiuser-status-card strong:first-child::before {
+  content:'';
+  display:inline-block;
+  width:7px;
+  height:7px;
+  margin-right:8px;
+  border-radius:50%;
+  background:#8DA58D;
+  box-shadow:0 0 0 3px rgba(141,165,141,.12);
+  vertical-align:middle;
+}
+
+body.aurelis-signature .atlas-map-shell {
+  border-color:var(--pf-border) !important;
+  background:radial-gradient(circle at 50% 45%,rgba(212,175,101,.07),transparent 39%),#090D14 !important;
+}
+body.aurelis-signature .plot-container,
+body.aurelis-signature .svg-container,
+body.aurelis-signature .plotly {
+  background:transparent !important;
+}
+body.aurelis-signature .aurelis-signature-footer {
+  color:#758294 !important;
+  border-top-color:rgba(226,232,240,.07) !important;
+  font-variant-numeric:tabular-nums;
+}
+
+@media (max-width:991px) {
+  body.aurelis-signature .card { border-radius:14px !important; }
+  body.aurelis-signature .financial-stats-summary-card { min-height:76px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  body.aurelis-signature *,
+  body.aurelis-signature *::before,
+  body.aurelis-signature *::after {
+    scroll-behavior:auto !important;
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+}
+"
+custom_css <- paste0(custom_css, executive_finish_css)
+
 
 # ==============================================================================
 # KEEP YOUR SIGNATURE / INTERACTION SYSTEM
@@ -9129,6 +9488,7 @@ ui <- bs4DashPage(
             status = "primary",
             solidHeader = TRUE,
             tags$p(
+              class = "financial-stats-intro",
               "A dedicated workspace for fitted probability models, cumulative and tail probabilities, interval probabilities, quantiles, confidence intervals and group tests. Financial source data follows the global year/month filters; calculations do not change source records."
             ),
             fluidRow(
@@ -12438,9 +12798,9 @@ server <- function(input, output, session) {
     }
     calculation_label <- switch(
       result$mode,
-      left = "P(X ≤ x)",
-      right = "P(X > x)",
-      interval = "P(a < X ≤ b)",
+      left = "P(X ≤ threshold)",
+      right = "P(X > threshold)",
+      interval = "P(lower < X ≤ upper)",
       quantile = "Quantile x at p"
     )
     model_label <- if (identical(result$distribution, "F")) "F distribution" else result$distribution
