@@ -1,0 +1,78 @@
+source("R/workspace_engine.R")
+source("R/analysis_workspace.R")
+assert_close <- function(x,y,tol=1e-9) stopifnot(isTRUE(all.equal(as.numeric(x),as.numeric(y),tolerance=tol)))
+expect_error <- function(expr) stopifnot(inherits(tryCatch({force(expr);NULL},error=function(e)e),"error"))
+fixture <- data.frame(Date=as.Date("2025-01-01")+0:11,Revenue=1:12,Cost=seq(.5,6,.5),
+                      Country=rep(c("A","B"),each=6),check.names=FALSE)
+stats <- aw_describe(1:10)
+assert_close(stats$Value[stats$Statistic=="Mean"],5.5)
+assert_close(stats$Value[stats$Statistic=="Variance"],var(1:10))
+assert_close(stats$Value[stats$Statistic=="Mean CI lower"],t.test(1:10)$conf.int[1])
+stopifnot(nrow(aw_filter(fixture,list(Revenue=c(3,8),Country="A")))==4)
+stopifnot(nrow(aw_filter(fixture,search="B"))==6)
+missing <- fixture; missing$Revenue[1]<-NA_real_
+stopifnot(nrow(aw_filter(missing,list(Revenue=c(2,3)),keep_missing=TRUE))==3)
+stopifnot(nrow(aw_filter(missing,list(Revenue=c(2,3)),keep_missing=FALSE))==2)
+stopifnot(nrow(aw_filter(fixture,list(Country="nonexistent")))==0)
+stopifnot(nrow(aw_filter(fixture[FALSE,]))==0)
+assert_close(aw_formula("(Revenue - Cost) / Revenue * 100",fixture),rep(50,12))
+assert_close(aw_formula("round(sqrt(Revenue), 3)",fixture),round(sqrt(fixture$Revenue),3))
+for(expr in c("system('whoami')","base::system('whoami')","Revenue <- 1","get('Revenue')","Revenue[1]","{Revenue}","Revenue; Cost")) expect_error(aw_formula(expr,fixture))
+test<-aw_test(fixture,"Revenue","welch","Country",c("A","B"))
+assert_close(test$test$p.value,t.test(1:6,7:12)$p.value)
+assert_close(aw_test(fixture,"Revenue","one",benchmark=4)$test$p.value,t.test(1:12,mu=4)$p.value)
+expect_error(aw_test(fixture,"Revenue","welch","Country","A"))
+profile<-aw_profile(missing); stopifnot(profile$Missing[profile$Field=="Revenue"]==1)
+sim1<-aw_simulate(1:20); sim2<-aw_simulate(1:20)
+stopifnot(identical(sim1,sim2))
+set.seed(99); before<-.Random.seed; invisible(aw_simulate(1:20)); stopifnot(identical(before,.Random.seed))
+series<-data.frame(period=seq(as.Date("2024-01-01"),by="month",length.out=12),value=(1:12)*10)
+assert_close(aw_forecast(series,3)$prediction[,"fit"],c(130,140,150))
+files<-aw_catalog("data"); stopifnot(nrow(files)>=17)
+for(path in files$path) stopifnot(is.data.frame(aw_read(path)))
+if(requireNamespace("openxlsx",quietly=TRUE)) {
+  workbook<-tempfile(fileext=".xlsx")
+  openxlsx::write.xlsx(list(Revenue=fixture,Costs=fixture[,c("Date","Cost")]),workbook)
+  stopifnot(ncol(aw_read(workbook,sheet="Costs"))==2,nrow(aw_read(workbook,sheet="Revenue"))==12)
+  unlink(workbook)
+}
+message("PASS: reference statistics, filters, empty selection, formulas and code rejection, hypothesis tests, simulation reproducibility, RNG isolation, forecast, all source files.")
+
+# Exercise Shiny's actual reactive module, without a browser.
+library(shiny); library(DT); library(plotly)
+shiny::testServer(aw_workspace_server,args=list(data_dir="data",version=reactiveVal(0),navigate=function(tab)NULL),{
+  session$setInputs(dataset="Aurelis_Revenue.csv",delimiter=",",keep_missing=FALSE,deduplicate=FALSE,
+    search="",outliers="keep",measure="Revenue",confidence=.95,section="explorer")
+  session$flushReact()
+  stopifnot(nrow(raw())==1896,nrow(data())==1896)
+  session$setInputs(search="Japan")
+  stopifnot(nrow(data())>0,all(data()$Country=="Japan"))
+  session$setInputs(search="no_such_customer_12345")
+  stopifnot(nrow(data())==0)
+  session$setInputs(search="",facet_fields="Revenue",facet_7_min=100000,facet_7_max=200000)
+  stopifnot(all(data()$Revenue>=100000 & data()$Revenue<=200000))
+  session$setInputs(facet_fields=character(),formula="(Revenue - Cost)/Revenue*100",apply_formula=1)
+  stopifnot("Calculated_Metric" %in% names(data()))
+  session$setInputs(dataset="Aurelis_Products.csv")
+  stopifnot(!"Calculated_Metric" %in% names(data()))
+})
+message("PASS: Shiny module switching, search, numeric ranges, calculated metric and source reset.")
+
+library(dplyr)
+source("R/overview_server.R")
+last_navigation<-NULL
+overview_fixture<-data.frame(Customer=c("A","B"),Revenue=c(100,200),Cost=c(70,140),Gross_Profit=c(30,60))
+ar_fixture<-data.frame(Customer=c("A","B"),Balance_Remaining=c(10,20),Days_Past_Due=c(0,10))
+overview_test_server<-function(input,output,session) {
+  aw_overview_server(input,output,session,reactive(overview_fixture),reactive(ar_fixture),
+    function(tab) last_navigation<<-tab)
+}
+shiny::testServer(overview_test_server,{
+  session$setInputs(aw_customer_pulse_rows_selected=1)
+  stopifnot(identical(last_navigation,"customer_performance"))
+  session$setInputs(aw_open_lab=1)
+  stopifnot(identical(last_navigation,"analysis_lab"))
+  session$setInputs(aw_open_receivables=1)
+  stopifnot(identical(last_navigation,"ar_tab"))
+})
+message("PASS: customer drill-down and executive action navigation.")

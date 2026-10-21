@@ -10,6 +10,7 @@
 ################################################################################
 
 library(shiny)
+options(shiny.maxRequestSize = max(getOption('shiny.maxRequestSize', 5 * 1024^2), 100 * 1024^2))
 library(bs4Dash)
 library(ggplot2)
 library(dplyr)
@@ -6562,7 +6563,7 @@ signature_ui_js <- "
   });
 
   function obsidianRestylePlots() {
-
+    if (window.AurelisV2) return;
     if (!window.Plotly) return;
 
     $('.js-plotly-plot').each(function() {
@@ -6870,6 +6871,7 @@ read_excel_quiet <- function(...) {
 # Explicitly register click events on every interactive Plotly object.
 register_plotly_click <- function(chart) {
   chart <- plotly::event_register(chart, "plotly_click")
+  if (exists("AURELIS_THEME_V2") && isTRUE(AURELIS_THEME_V2)) chart <- plotly::config(chart, topojsonURL = "./")
   chart
 }
 
@@ -7116,6 +7118,11 @@ find_aurelis_app_dir <- function() {
 
 AURELIS_APP_DIR <- find_aurelis_app_dir()
 AURELIS_APP_ENV <- environment()
+source(file.path(AURELIS_APP_DIR, 'R', 'workspace_engine.R'), local = TRUE)
+source(file.path(AURELIS_APP_DIR, 'R', 'analysis_workspace.R'), local = TRUE)
+source(file.path(AURELIS_APP_DIR, 'R', 'overview_server.R'), local = TRUE)
+source(file.path(AURELIS_APP_DIR, 'R', 'aurelis_theme.R'), local = TRUE)
+source(file.path(AURELIS_APP_DIR, 'R', 'presentation_generator.R'), local = TRUE)
 AURELIS_DATA_DIR <- file.path(AURELIS_APP_DIR,"data")
 AURELIS_DATA_SOURCE_MODE <- "SYNTHETIC_DEMO"
 AURELIS_ACCESS_DB_PATH <- file.path(AURELIS_DATA_DIR,"Aurelis_Daily_PO.csv")
@@ -7214,48 +7221,9 @@ safe_date <- function(x) {
 
 read_demo_csv <- function(name) {
   path <- file.path(AURELIS_DATA_DIR, name)
-  if (!file.exists(path)) {
-    stop(paste0("Required public-demo dataset is missing: ", name), call. = FALSE)
-  }
-  
-  attempts <- list(
-    list(fileEncoding = "UTF-8-BOM", sep = ","),
-    list(fileEncoding = "UTF-8", sep = ","),
-    list(fileEncoding = "latin1", sep = ","),
-    list(fileEncoding = "UTF-8", sep = ";")
-  )
-  
-  last_error <- NULL
-  for (attempt in attempts) {
-    result <- tryCatch(
-      read.csv(
-        path,
-        stringsAsFactors = FALSE,
-        check.names = FALSE,
-        fileEncoding = attempt$fileEncoding,
-        sep = attempt$sep,
-        na.strings = c("", "NA", "N/A", "NULL", "null")
-      ),
-      error = function(e) {
-        last_error <<- e
-        NULL
-      }
-    )
-    if (!is.null(result) && ncol(result) > 0) {
-      names(result) <- str_squish(str_replace(names(result), "^\\ufeff", ""))
-      return(result)
-    }
-  }
-  
-  stop(
-    paste0(
-      "Could not read ", name, ". ",
-      if (is.null(last_error)) "Unknown parsing error." else conditionMessage(last_error)
-    ),
-    call. = FALSE
-  )
+  if (!file.exists(path)) stop(paste0("Required public-demo dataset is missing: ", name), call. = FALSE)
+  aw_read(path)
 }
-
 adapt_schema <- function(df, aliases, defaults = list(), dataset_name = "dataset") {
   if (!is.data.frame(df)) df <- as.data.frame(df, stringsAsFactors = FALSE)
   
@@ -8616,16 +8584,17 @@ ui <- bs4DashPage(
     bs4SidebarMenu(
       id = "sidebar_tabs",
       bs4SidebarMenuItem(
+        'Analysis & Probability', icon = icon('flask'), startExpanded = TRUE,
+        bs4SidebarMenuSubItem('Analysis Lab', tabName = 'analysis_lab', icon = icon('flask')),
+        bs4SidebarMenuSubItem('Presentation Studio', tabName = 'presentation_studio', icon = icon('desktop')),
+        bs4SidebarMenuSubItem('Probability Studio', tabName = 'financial_statistics', icon = icon('calculator'))
+      ),
+      bs4SidebarMenuItem(
         "Command Center", icon = icon("bullseye"), startExpanded = TRUE,
-        bs4SidebarMenuSubItem("Executive Overview", tabName = "exec_overview", icon = icon("tachometer-alt")),
+        bs4SidebarMenuSubItem("Executive Overview", tabName = "exec_overview", icon = icon("tachometer-alt"), selected = TRUE),
         bs4SidebarMenuSubItem("KPI Command Center", tabName = "kpi_board", icon = icon("th-large")),
         bs4SidebarMenuSubItem("Global Network Atlas", tabName = "global_network", icon = icon("globe-americas")),
         bs4SidebarMenuSubItem("Executive Activity Observatory", tabName = "executive_observatory", icon = icon("eye"))
-      ),
-      bs4SidebarMenuItem(
-        "Statistical Analysis",
-        tabName = "financial_statistics",
-        icon = icon("calculator")
       ),
       bs4SidebarMenuItem(
         "Commercial Intelligence", icon = icon("chart-line"), startExpanded = TRUE,
@@ -8662,6 +8631,9 @@ ui <- bs4DashPage(
       tags$title("Aurelis Obsidian Command — Business Operations Intelligence"),
       tags$meta(name = "description", content = "Aurelis Obsidian Command dark interactive business operations intelligence platform"),
       tags$style(HTML(custom_css)),
+      tags$link(rel = 'stylesheet', type = 'text/css', href = 'workspace.css'),
+      aurelis_theme_assets(),
+      tags$script(src = 'workspace.js'),
       tags$script(HTML(responsive_dashboard_js)),
       tags$script(HTML(dropdown_layer_js)),
       tags$script(HTML(future_ui_js)),
@@ -8674,6 +8646,7 @@ ui <- bs4DashPage(
     ),
 
     uiOutput("aurelis_access_portal"),
+    if (isTRUE(AURELIS_THEME_V2)) tagList(uiOutput("v2_scope"), div(id = "v2-priorities-panel", hidden = NA, uiOutput("v2_priorities"))),
     
     div(
       class = "prism-mobile-filter-row d-lg-none",
@@ -8691,6 +8664,8 @@ ui <- bs4DashPage(
     
     
     bs4TabItems(
+      bs4TabItem(tabName = 'analysis_lab', aw_workspace_ui('lab')),
+      bs4TabItem(tabName = 'presentation_studio', ap_ui('presentation')),
       
       ########################################################################
       # 3.1 MULTI-USER WORKSPACE
@@ -8715,9 +8690,9 @@ ui <- bs4DashPage(
                 options = list(create = TRUE, placeholder = "Select or enter your name")
               )),
               column(3, selectInput(
-                "multi_user_role", "Demo access profile:",
-                choices = c("CEO / Executive" = "CEO", "Manager" = "Manager", "Buyer" = "Buyer", "Analyst" = "Analyst"),
-                selected = "Analyst"
+                "multi_user_role", "Access profile:",
+                choices = c("Developer / Full access" = "CEO", "Manager" = "Manager", "Buyer" = "Buyer", "Analyst" = "Analyst"),
+                selected = "CEO"
               )),
               column(3, checkboxInput("multi_user_include_shared", "Show shared drafts from other buyers", value = TRUE)),
               column(3, uiOutput("multi_user_session_status"))
@@ -8796,90 +8771,8 @@ ui <- bs4DashPage(
       ########################################################################
       # 3.3 EXECUTIVE OVERVIEW TAB
       ########################################################################
-      bs4TabItem(
-        tabName = "exec_overview",
-        
-        # KPI Row
-        fluidRow(
-          column(3, div(class = "kpi-card kpi-blue",
-                        tags$p("TOTAL REVENUE"), tags$h2(textOutput("kpi_total_revenue")), 
-                        tags$p(class = "sub-text", "Filtered Period"))),
-          column(3, div(class = "kpi-card kpi-teal",
-                        tags$p("GROSS PROFIT"), tags$h2(textOutput("kpi_total_profit")), 
-                        tags$p(class = "sub-text", "Filtered Period"))),
-          column(3, div(class = "kpi-card kpi-coral",
-                        tags$p("OUTSTANDING AR"), tags$h2(textOutput("kpi_total_ar")), 
-                        tags$p(class = "sub-text", "Balance Remaining"))),
-          column(3, div(class = "kpi-card kpi-navy",
-                        tags$p("PURCHASE ORDERS"), tags$h2(textOutput("kpi_total_po")), 
-                        tags$p(class = "sub-text", "Orders Tracked")))
-        ),
+      bs4TabItem(tabName = 'exec_overview', aw_overview_ui()),
 
-        fluidRow(
-          bs4Card(
-            title = "AURELIS LIVE OPERATING POSTURE", width = 12,
-            status = "primary", solidHeader = TRUE,
-            div(
-              class = "future-command-deck",
-              div(class = "future-command-cell future-command-health",
-                  tags$span(class = "future-command-kicker", icon("heartbeat"), "NOW"),
-                  tags$strong(textOutput("future_now_signal")),
-                  tags$p(textOutput("future_now_detail"))),
-              div(class = "future-command-cell future-command-next",
-                  tags$span(class = "future-command-kicker", icon("random"), "NEXT BEST MOVE"),
-                  tags$strong(textOutput("future_next_move")),
-                  tags$p(textOutput("future_next_detail")),
-                  actionButton("future_open_next", "Open workspace", icon = icon("arrow-right"), class = "btn-primary btn-sm")),
-              div(class = "future-command-cell future-command-risk",
-                  tags$span(class = "future-command-kicker", icon("exclamation-triangle"), "WATCHLIST"),
-                  tags$strong(textOutput("future_risk_signal")),
-                  tags$p(textOutput("future_risk_detail")),
-                  actionButton("future_open_risk", "Inspect risk", icon = icon("crosshairs"), class = "btn-outline-info btn-sm"))
-            )
-          )
-        ),
-        
-        interaction_tip(
-          "Click a top-customer bar to open that customer's performance profile. Click a sales-representative segment to open Sales & Profitability for that representative."
-        ),
-        
-        # Revenue Trend full width
-        fluidRow(
-          bs4Card(title = "Monthly Revenue and Gross Profit", width = 12, 
-                  status = "primary", solidHeader = TRUE, collapsible = TRUE,
-                  plotlyOutput("exec_revenue_trend", height = "350px") %>% withSpinner(color = "#2F6EA5"))
-        ),
-        
-        # Top 10 Clients Bar + Profit Margin Donut (side by side)
-        fluidRow(
-          bs4Card(title = "Top 10 Clients by Revenue", width = 7, 
-                  status = "warning", solidHeader = TRUE, collapsible = TRUE,
-                  plotlyOutput("exec_top_clients", height = "350px") %>% withSpinner(color = "#9A6A27")),
-          bs4Card(title = "Gross Profit Contribution by Sales Representative", width = 5, 
-                  status = "success", solidHeader = TRUE, collapsible = TRUE,
-                  plotlyOutput("exec_profit_donut", height = "350px") %>% withSpinner(color = "#3C7474"))
-        ),
-        
-        # Country Treemap full width
-        fluidRow(
-          bs4Card(title = "Revenue by Country", width = 12, 
-                  status = "info", solidHeader = TRUE, collapsible = TRUE,
-                  plotlyOutput("exec_country_treemap", height = "380px") %>% withSpinner(color = "#6FA8D6"))
-        ),
-        
-        # Year-over-Year comparison at bottom
-        fluidRow(
-          bs4Card(title = "Year-over-Year Revenue Comparison", width = 12, 
-                  status = "secondary", solidHeader = TRUE, collapsible = TRUE,
-                  plotlyOutput("exec_yoy_comparison", height = "320px") %>% withSpinner(color = "#607D8B"),
-                  report_action_bar("report_exec", "Build an executive report from the current global filters."))
-        )
-      ),
-      
-      
-      ########################################################################
-      # 3.3 GLOBAL NETWORK ATLAS
-      ########################################################################
       bs4TabItem(
         tabName = "global_network",
         
@@ -11723,8 +11616,8 @@ server <- function(input, output, session) {
 
   access_state <- reactiveVal(list(
     authenticated = !isTRUE(AURELIS_ACCESS_CONTROL_ENABLED),
-    email = if (isTRUE(AURELIS_ACCESS_CONTROL_ENABLED)) "" else "analyst@aurelis.local",
-    role = if (isTRUE(AURELIS_ACCESS_CONTROL_ENABLED)) NULL else "Analyst"
+    email = if (isTRUE(AURELIS_ACCESS_CONTROL_ENABLED)) "" else "developer@aurelis.local",
+    role = if (isTRUE(AURELIS_ACCESS_CONTROL_ENABLED)) NULL else "CEO"
   ))
 
   output$aurelis_access_portal <- renderUI({
@@ -11747,7 +11640,7 @@ server <- function(input, output, session) {
   })
 
   output$aurelis_login_message <- renderText({
-    if (!isTRUE(AURELIS_ACCESS_CONTROL_ENABLED)) return("Full Analyst access is active for this local build.")
+    if (!isTRUE(AURELIS_ACCESS_CONTROL_ENABLED)) return("Developer mode: full access to every workspace and feature is active for this local build.")
     "Identity gateway ready."
   })
 
@@ -11808,7 +11701,7 @@ server <- function(input, output, session) {
   
   workspace_session_state <- new.env(parent = emptyenv())
   workspace_session_state$buyer <- initial_workspace_buyer
-  workspace_session_state$role <- "Analyst"
+  workspace_session_state$role <- "CEO"
   
   current_draft_id <- reactiveVal("")
   multiuser_tick <- reactiveVal(0L)
@@ -11833,7 +11726,7 @@ server <- function(input, output, session) {
   safe_workspace_role <- function() {
     allowed <- c("CEO", "Manager", "Buyer", "Analyst")
     state <- access_state()
-    value <- if (isTRUE(AURELIS_ACCESS_CONTROL_ENABLED) && isTRUE(state$authenticated)) state$role else if (is.null(input$multi_user_role) || length(input$multi_user_role) == 0) "Analyst" else as.character(input$multi_user_role[[1]])
+    value <- if (!isTRUE(AURELIS_ACCESS_CONTROL_ENABLED)) "CEO" else if (isTRUE(state$authenticated)) state$role else if (is.null(input$multi_user_role) || length(input$multi_user_role) == 0) "Analyst" else as.character(input$multi_user_role[[1]])
     if (!value %in% allowed) value <- "Buyer"
     workspace_session_state$role <- value
     value
@@ -12033,6 +11926,8 @@ server <- function(input, output, session) {
   })
   
   future_page_copy <- list(
+    presentation_studio = list(title = 'Presentation Studio', subtitle = 'Turn evidence into executive stories and business recommendations.'),
+    analysis_lab = list(title = 'Analysis Lab', subtitle = 'Explore source tables, profile measures and model decisions.'),
     multi_user_workspace = list(
       title = "My Multi-User Workspace",
       subtitle = "Identify your buyer workspace, coordinate concurrent sessions and save or reopen quotation drafts without interfering with another buyer's active work."
@@ -12197,6 +12092,7 @@ server <- function(input, output, session) {
     if (!isTRUE(AURELIS_ACCESS_CONTROL_ENABLED)) return(TRUE)
     role <- safe_workspace_role()
     if (role == "CEO") return(TRUE)
+    if (tab_name %in% c('analysis_lab', 'financial_statistics', 'presentation_studio')) return(role %in% c('CEO', 'Analyst', 'Manager'))
     if (tab_name == "executive_observatory") return(FALSE)
     if (role == "Manager") return(tab_name %in% c("exec_overview", "global_network", "multi_user_workspace", "kpi_board", "sale_performance", "quotation_studio", "customer_performance", "client_statement", "monthly_sales", "buyer_activity", "order_tracker", "inventory_tab", "buyer_tool", "ar_tab", "contacts_tab", "product_intelligence", "misc_tab"))
     if (role == "Analyst") return(tab_name %in% c("exec_overview", "global_network", "kpi_board", "sale_performance", "customer_performance", "client_statement", "monthly_sales", "buyer_activity", "order_tracker", "inventory_tab", "buyer_tool", "ar_tab", "contacts_tab", "product_intelligence", "misc_tab"))
@@ -13520,7 +13416,7 @@ server <- function(input, output, session) {
     } else {
       marker_size <- scales::rescale(
         magnitude,
-        to = c(7, 31),
+        to = c(8, 34),
         from = range(magnitude, na.rm = TRUE)
       )
     }
@@ -13934,11 +13830,20 @@ server <- function(input, output, session) {
       values = ~Value,
       customdata = ~Custom,
       branchvalues = "total",
-      maxdepth = 3,
+      maxdepth = 2,
       marker = list(
-        colors = rep(c("#FF7A45", "#FFC857", "#F0544F", "#32D1C6", "#63D99A", "#8A72F5"), length.out = nrow(df))
+        colors = vapply(df$ID, function(id) {
+          continent <- strsplit(id, "::", fixed = TRUE)[[1]][2]
+          palette <- c(Africa = "#E9AB52", Asia = "#648DF0", Europe = "#9276DA",
+                       `North America` = "#38B8AA", `South America` = "#E77D91", Oceania = "#64B3D4")
+          value <- unname(palette[continent])
+          if (is.na(value)) "#648DF0" else value
+        }, character(1)),
+        line = list(color = "rgba(255,255,255,.85)", width = 2)
       ),
-      hovertemplate = "<b>%{label}</b><br>Value: %{value:,.0f}<extra></extra>"
+      textinfo = "label+percent entry",
+      insidetextorientation = "auto",
+      hovertemplate = "<b>%{label}</b><br>Value: %{value:,.0f}<br>Share of parent: %{percentParent:.1%}<br>Click to explore this region<extra></extra>"
     ) %>%
       layout(
         margin = list(l = 10, r = 10, t = 10, b = 10),
@@ -14938,70 +14843,24 @@ server <- function(input, output, session) {
   # Revenue & Profit Monthly Trend
   output$exec_revenue_trend <- renderPlotly({
     data_version()
-    req(nrow(filtered_revenue()) > 0)
-    
+    validate(need(nrow(filtered_revenue()) > 0, "No revenue records match these filters."))
     monthly <- filtered_revenue() %>%
-      group_by(Year, Month, Month_Abbr) %>%
-      summarise(
-        Revenue = sum(Revenue, na.rm = TRUE),
-        Profit = sum(Gross_Profit, na.rm = TRUE),
-        .groups = "drop"
-      ) %>%
-      arrange(Year, Month) %>%
-      mutate(
-        Period = paste(Month_Abbr, Year),
-        Hover_Revenue = paste0("Revenue: $", format(round(Revenue), big.mark = ",")),
-        Hover_Profit = paste0("Gross profit: $", format(round(Profit), big.mark = ","))
-      )
-    
-    monthly$Period <- factor(monthly$Period, levels = monthly$Period)
-    
-    plot_ly(monthly, source = "exec_period") %>%
-      add_trace(
-        x = ~Period, y = ~Revenue,
-        type = "scatter", mode = "lines",
-        name = "Revenue",
-        line = list(color = "#FF7A45", width = 3, shape = "spline"),
-        fill = "tozeroy",
-        fillcolor = "rgba(255,122,69,0.25)",
-        text = ~Hover_Revenue,
-        hovertemplate = "<b>%{x}</b><br>%{text}<extra></extra>"
-      ) %>%
-      add_trace(
-        x = ~Period, y = ~Profit,
-        type = "scatter", mode = "lines+markers",
-        name = "Gross Profit",
-        yaxis = "y2",
-        line = list(color = "#FFC857", width = 3, shape = "spline"),
-        marker = list(
-          color = "#FFC857", size = 7,
-          line = list(color = "#111827", width = 1)
-        ),
-        text = ~Hover_Profit,
-        hovertemplate = "<b>%{x}</b><br>%{text}<extra></extra>"
-      ) %>%
-      layout(
-        yaxis = list(
-          title = "Revenue ($)", tickformat = "$,.0f",
-          gridcolor = "rgba(255,255,255,.065)"
-        ),
-        yaxis2 = list(
-          title = "Profit ($)", overlaying = "y", side = "right",
-          tickformat = "$,.0f", showgrid = FALSE
-        ),
-        xaxis = list(
-          title = "", tickangle = -45,
-          gridcolor = "rgba(255,255,255,.035)"
-        ),
-        legend = list(orientation = "h", y = 1.10),
-        margin = list(b = 80, l = 70, r = 70, t = 20),
-        plot_bgcolor = "rgba(0,0,0,0)",
-        paper_bgcolor = "rgba(0,0,0,0)",
-        font = list(color = "#CBD6E3")
-      ) %>%
-      config(displaylogo = FALSE, responsive = TRUE)
+      mutate(Period = as.Date(sprintf("%04d-%02d-01", Year, Month))) %>%
+      group_by(Period) %>% summarise(Revenue = sum(Revenue, na.rm=TRUE),
+        Profit = sum(Gross_Profit, na.rm=TRUE), .groups="drop") %>% arrange(Period)
+    plot_ly(monthly, source="exec_period") %>%
+      add_lines(x=~Period,y=~Revenue,name="Revenue",line=list(color="#7dd3b0",width=2),
+        fill="tozeroy",fillcolor="rgba(125,211,176,.06)",hovertemplate="%{x|%b %Y}<br>Revenue: $%{y:,.0f}<extra></extra>") %>%
+      add_lines(x=~Period,y=~Profit,name="Gross profit",line=list(color="#8cb4ec",width=2),
+        hovertemplate="%{x|%b %Y}<br>Gross profit: $%{y:,.0f}<extra></extra>") %>%
+      layout(yaxis=list(title="USD",tickformat="$.2s",gridcolor="#29303a",zeroline=FALSE),
+        xaxis=list(title="",nticks=7,showgrid=FALSE,zeroline=FALSE),
+        legend=list(orientation="h",y=1.15,font=list(size=11)),
+        margin=list(b=45,l=60,r=20,t=25),hovermode="x unified",
+        plot_bgcolor="transparent",paper_bgcolor="transparent",
+        font=list(color="#a8b3c2",family="Segoe UI, sans-serif",size=11)) %>%
+      config(displaylogo=FALSE,responsive=TRUE,displayModeBar="hover")
   })
-  
   # Profit Margin Distribution
   output$exec_profit_donut <- renderPlotly({
     data_version()
@@ -15013,6 +14872,7 @@ server <- function(input, output, session) {
       filter(Profit > 0) %>%
       arrange(desc(Profit))
     
+    if (isTRUE(AURELIS_THEME_V2)) return(register_plotly_click(aurelis_category_chart(staff_profit, "Staff", "Profit", "exec_rep_profit")))
     chart <- plot_ly(
       staff_profit,
       source = "exec_rep_profit",
@@ -15998,6 +15858,7 @@ server <- function(input, output, session) {
     data_version()
     req(input$cust_perf_client != "")
     df <- relationship_order_history
+    if (!"History_Source" %in% names(df)) df$History_Source <- "Synthetic relationship history"
     
     if (input$cust_perf_scope == "global") {
       if (!is.null(input$global_year) && input$global_year != "all") {
@@ -19538,6 +19399,10 @@ server <- function(input, output, session) {
         type = "warning", duration = 7
       )
     }
+    if (isTRUE(AURELIS_THEME_V2)) {
+      navigate_sidebar("quotation_studio")
+      session$sendCustomMessage("aurelis-quote-step", 3L)
+    }
     invisible(TRUE)
   }
 
@@ -21595,7 +21460,7 @@ server <- function(input, output, session) {
     validate(need(nrow(history) > 0, "No complete buyer–customer–seller links are available."))
     
     metric <- coalesce(input$contact_flow_metric, "value")
-    limit_n <- suppressWarnings(as.integer(coalesce(input$contact_flow_limit, 25)))
+    limit_n <- suppressWarnings(as.integer(coalesce(input$contact_flow_limit, "25")))
     if (!is.finite(limit_n) || limit_n < 5) limit_n <- 25L
     
     summarise_flow <- function(df, group_cols) {
@@ -23156,6 +23021,18 @@ server <- function(input, output, session) {
     showNotification("Note saved for this session.", type = "message", duration = 3)
   })
   
+  session$onFlushed(function() navigate_sidebar('exec_overview'), once = TRUE)
+  lab_workspace <- aw_workspace_server('lab', AURELIS_DATA_DIR, data_version, navigate_sidebar,
+    can_access = reactive(isTRUE(access_state()$authenticated) && role_allowed_tab('analysis_lab')))
+  ap_server('presentation', list(lab = lab_workspace$data, revenue = filtered_revenue,
+    ar = filtered_ar, orders = filtered_po, inventory = filtered_inventory),
+    can_access = reactive(isTRUE(access_state()$authenticated) && role_allowed_tab('presentation_studio')),
+    dashboard_scope = reactive(paste('Global year:', input$global_year, '| global month:', input$global_month)))
+  aw_overview_server(input, output, session, filtered_revenue, filtered_ar, navigate_sidebar)
+  aurelis_theme_server(input, output, session, filtered_revenue, filtered_ar, filtered_po,
+    filtered_inventory, reactive({ data_version(); revenue_data }), reactive({ data_version(); daily_po }),
+    data_version, navigate_sidebar, function(page) isTRUE(access_state()$authenticated) && role_allowed_tab(page),
+    lab_workspace, function() AURELIS_SHARED_REFRESH_STATE$last_refresh, warehouse_filtered_base)
 } # end server
 
 ################################################################################

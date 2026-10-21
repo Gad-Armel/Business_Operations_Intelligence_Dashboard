@@ -1,0 +1,9 @@
+.Rproj.user/
+.RData
+.Rhistory
+.Renviron
+.env
+.env.*
+!.env.example
+exports/
+*.log

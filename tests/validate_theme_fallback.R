@@ -1,0 +1,11 @@
+Sys.setenv(AURELIS_THEME_V2 = "false")
+try(Sys.setlocale("LC_CTYPE", "English_United States.utf8"), silent = TRUE)
+app <- source("app.R", encoding = "UTF-8")$value
+stopifnot(inherits(app, "shiny.appobj"), !isTRUE(AURELIS_THEME_V2))
+html <- htmltools::renderTags(ui)
+document <- paste(html$head, html$html)
+stopifnot(!grepl("aurelis-theme.css", document, fixed = TRUE))
+stopifnot(!grepl("v2_kpi_revenue", document, fixed = TRUE))
+stopifnot(grepl("aw_customer_pulse", document, fixed = TRUE))
+stopifnot(grepl("kpi_total_revenue", document, fixed = TRUE))
+message("PASS: feature flag disables v2 assets/components and keeps legacy Overview IDs.")

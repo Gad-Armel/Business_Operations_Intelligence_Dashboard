@@ -1,0 +1,1 @@
+({errors:window.__v2Errors,connected:Shiny.shinyapp.isConnected(),socket:Shiny.shinyapp.$socket?.readyState,config:Shiny.shinyapp.config,body:document.body.className,dependencies:[...document.querySelectorAll('script[src]')].map(s=>s.src).filter(s=>s.includes('shiny'))})
