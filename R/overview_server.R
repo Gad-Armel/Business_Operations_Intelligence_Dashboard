@@ -1,21 +1,178 @@
 # These surfaces use the existing dashboard's global year / month filters.
+aurelis_portfolio_summary <- function(revenue, receivables) {
+  revenue <- as.data.frame(revenue)
+  receivables <- as.data.frame(receivables)
+  required_revenue <- c("Customer", "Revenue", "Gross_Profit")
+  required_receivables <- c("Customer", "Balance_Remaining")
+  if (!all(required_revenue %in% names(revenue))) {
+    stop("Revenue data must contain Customer, Revenue and Gross_Profit.", call. = FALSE)
+  }
+  if (!all(required_receivables %in% names(receivables))) {
+    stop("Receivables data must contain Customer and Balance_Remaining.", call. = FALSE)
+  }
+  if (!is.numeric(revenue$Revenue) || !is.numeric(revenue$Gross_Profit) ||
+      !is.numeric(receivables$Balance_Remaining)) {
+    stop("Portfolio revenue, profit and balance fields must be numeric.", call. = FALSE)
+  }
+
+  revenue$Customer <- trimws(as.character(revenue$Customer))
+  revenue <- revenue[!is.na(revenue$Customer) & nzchar(revenue$Customer), , drop = FALSE]
+  summary <- revenue %>%
+    group_by(Customer) %>%
+    summarise(
+      Revenue = sum(Revenue, na.rm = TRUE),
+      Gross_Profit = sum(Gross_Profit, na.rm = TRUE),
+      Invoices = dplyr::n(),
+      .groups = "drop"
+    )
+  receivables$Customer <- trimws(as.character(receivables$Customer))
+  receivables <- receivables[!is.na(receivables$Customer) & nzchar(receivables$Customer), , drop = FALSE]
+  balances <- receivables %>%
+    group_by(Customer) %>%
+    summarise(Outstanding = sum(Balance_Remaining, na.rm = TRUE), .groups = "drop")
+  summary <- left_join(summary, balances, by = "Customer")
+  summary$Outstanding[is.na(summary$Outstanding)] <- 0
+  summary <- summary[
+    is.finite(summary$Revenue) & is.finite(summary$Gross_Profit) &
+      is.finite(summary$Outstanding),
+    ,
+    drop = FALSE
+  ]
+  summary$Margin <- ifelse(summary$Revenue != 0, 100 * summary$Gross_Profit / summary$Revenue, NA_real_)
+  total <- sum(summary$Revenue)
+  summary$Share <- if (is.finite(total) && total != 0) 100 * summary$Revenue / total else NA_real_
+  summary <- summary[order(summary$Revenue, decreasing = TRUE), , drop = FALSE]
+  rownames(summary) <- NULL
+  summary
+}
+
+aurelis_portfolio_chart <- function(summary, source = "aw_client_portfolio") {
+  required <- c("Customer", "Revenue", "Gross_Profit", "Outstanding", "Margin", "Share")
+  if (!all(required %in% names(summary))) {
+    stop("Portfolio chart data is missing required customer metrics.", call. = FALSE)
+  }
+  summary <- summary[order(summary$Revenue, decreasing = TRUE), , drop = FALSE]
+  summary <- summary[
+    is.finite(summary$Margin) & is.finite(summary$Share) &
+      is.finite(summary$Revenue) & is.finite(summary$Gross_Profit) &
+      is.finite(summary$Outstanding),
+    ,
+    drop = FALSE
+  ]
+  shiny::validate(shiny::need(nrow(summary) > 0, "No customers have finite revenue and margin values in this period."))
+
+  summary$Tier <- ifelse(
+    seq_len(nrow(summary)) <= 5,
+    "Top five by revenue",
+    "Other customers"
+  )
+  portfolio_revenue <- sum(summary$Revenue)
+  weighted_margin <- if (is.finite(portfolio_revenue) && portfolio_revenue != 0) {
+    100 * sum(summary$Gross_Profit) / portfolio_revenue
+  } else {
+    NA_real_
+  }
+  median_share <- stats::median(summary$Share)
+  colors <- c("Top five by revenue" = "#D8B875", "Other customers" = "#79D8BB")
+  max_balance <- max(abs(summary$Outstanding), na.rm = TRUE)
+  size_ref <- if (is.finite(max_balance) && max_balance > 0) 2 * max_balance / 30^2 else 1
+
+  chart <- plotly::plot_ly(source = source)
+  for (tier in names(colors)) {
+    points <- summary[summary$Tier == tier, , drop = FALSE]
+    if (!nrow(points)) next
+    points$Hover <- paste0(
+      "<b>", htmltools::htmlEscape(points$Customer), "</b>",
+      "<br>", points$Tier,
+      "<br>Revenue: ", scales::dollar(points$Revenue, accuracy = 1),
+      "<br>Gross margin: ", scales::percent(points$Margin / 100, accuracy = 0.1),
+      "<br>Portfolio share: ", scales::percent(points$Share / 100, accuracy = 0.1),
+      "<br>Outstanding balance: ", scales::dollar(points$Outstanding, accuracy = 1),
+      "<br>Invoice rows: ", format(points$Invoices, big.mark = ",")
+    )
+    chart <- plotly::add_markers(
+      chart,
+      data = points,
+      x = ~Margin,
+      y = ~Share,
+      key = ~Customer,
+      customdata = ~Customer,
+      text = ~Hover,
+      name = tier,
+      marker = list(
+        color = unname(colors[[tier]]),
+        size = ~abs(Outstanding),
+        sizemode = "area",
+        sizeref = size_ref,
+        sizemin = 7,
+        line = list(color = "#F4EFE4", width = 1)
+      ),
+      hovertemplate = "%{text}<extra></extra>"
+    )
+  }
+
+  shapes <- list()
+  if (is.finite(weighted_margin)) {
+    shapes[[length(shapes) + 1L]] <- list(
+      type = "line", x0 = weighted_margin, x1 = weighted_margin,
+      y0 = min(summary$Share), y1 = max(summary$Share),
+      line = list(color = "rgba(216,184,117,.68)", dash = "dot", width = 1)
+    )
+  }
+  if (nrow(summary) > 1) {
+    shapes[[length(shapes) + 1L]] <- list(
+      type = "line", x0 = min(summary$Margin), x1 = max(summary$Margin),
+      y0 = median_share, y1 = median_share,
+      line = list(color = "rgba(121,216,187,.52)", dash = "dot", width = 1)
+    )
+  }
+
+  plotly::config(
+    plotly::layout(
+      chart,
+      xaxis = list(title = "Gross margin (%)", ticksuffix = "%", zeroline = FALSE, gridcolor = "rgba(177,187,201,.12)"),
+      yaxis = list(title = "Share of portfolio revenue (%)", ticksuffix = "%", zeroline = FALSE, gridcolor = "rgba(177,187,201,.12)"),
+      legend = list(orientation = "h", x = 0, y = 1.12),
+      shapes = shapes,
+      margin = list(l = 72, r = 24, t = 32, b = 62),
+      hovermode = "closest",
+      paper_bgcolor = "transparent",
+      plot_bgcolor = "transparent",
+      font = list(family = "Inter, Segoe UI, sans-serif", size = 12)
+    ),
+    displaylogo = FALSE,
+    displayModeBar = "hover",
+    responsive = TRUE
+  ) |>
+    plotly::event_register("plotly_click")
+}
+
 aw_overview_server <- function(input, output, session, revenue, receivables, navigate) {
   pulse <- reactive({
-    rev <- revenue(); ar <- receivables()
-    if (!nrow(rev)) return(data.frame())
-    summary <- rev %>% group_by(Customer) %>% summarise(
-      Revenue=sum(Revenue,na.rm=TRUE), Gross_Profit=sum(Gross_Profit,na.rm=TRUE),
-      Invoices=dplyr::n(), .groups="drop")
-    balances <- ar %>% group_by(Customer) %>% summarise(
-      Outstanding=sum(Balance_Remaining,na.rm=TRUE), .groups="drop")
-    summary <- left_join(summary,balances,by="Customer")
-    summary$Outstanding[is.na(summary$Outstanding)]<-0
-    summary$Margin<-ifelse(summary$Revenue!=0,100*summary$Gross_Profit/summary$Revenue,NA_real_)
-    total<-sum(summary$Revenue)
-    summary$Share<-if(total!=0) 100*summary$Revenue/total else NA_real_
-    summary<-summary[order(summary$Revenue,decreasing=TRUE),]
-    summary[,c("Customer","Revenue","Gross_Profit","Margin","Share","Invoices","Outstanding")]
+    aurelis_portfolio_summary(revenue(), receivables())
   })
+  output$aw_client_portfolio <- plotly::renderPlotly({
+    shiny::validate(shiny::need(nrow(pulse()) > 0, "No revenue records match the current header filters."))
+    aurelis_portfolio_chart(pulse())
+  })
+  observeEvent(plotly::event_data("plotly_click", source = "aw_client_portfolio", priority = "event"), {
+    selected <- plotly::event_data("plotly_click", source = "aw_client_portfolio", priority = "event")
+    if (is.null(selected) || !nrow(selected)) return()
+    customer <- if ("key" %in% names(selected)) {
+      as.character(selected$key[[1]])
+    } else if ("customdata" %in% names(selected)) {
+      as.character(selected$customdata[[1]])
+    } else {
+      showNotification("This chart selection did not include a customer identifier.", type = "error")
+      return()
+    }
+    if (is.na(customer) || !nzchar(customer)) {
+      showNotification("This chart selection did not include a customer identifier.", type = "error")
+      return()
+    }
+    updateSelectizeInput(session, "cust_perf_client", selected = customer)
+    navigate("customer_performance")
+  }, ignoreInit = TRUE)
   output$aw_customer_pulse <- DT::renderDT({
     df<-pulse()
     validate(need(nrow(df)>0,"No revenue records match the current header filters."))

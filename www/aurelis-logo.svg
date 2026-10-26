@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" role="img" aria-labelledby="title desc">
+  <title id="title">Aurelis Global Supply Intelligence</title>
+  <desc id="desc">Faceted A monogram with a restrained champagne and jade orbit beside the Aurelis wordmark.</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f0d99d"/>
+      <stop offset=".52" stop-color="#d0ad63"/>
+      <stop offset="1" stop-color="#9c7a3f"/>
+    </linearGradient>
+    <linearGradient id="jade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a6d2c1"/>
+      <stop offset="1" stop-color="#517b70"/>
+    </linearGradient>
+  </defs>
+  <path d="M100 24 181 205H19Z" fill="#101923" stroke="url(#gold)" stroke-width="3"/>
+  <path d="m100 24 0 181h81Z" fill="url(#gold)"/>
+  <path d="m100 24 0 181H19Z" fill="url(#jade)"/>
+  <path d="m58 172 42-83 42 83h-22l-20-39-20 39Z" fill="#f5f0e5"/>
+  <path d="M100 24v181" stroke="#f5f0e5" stroke-opacity=".74" stroke-width="2"/>
+  <path d="M28 143a101 101 0 0 1 144-89" fill="none" stroke="url(#gold)" stroke-opacity=".58" stroke-width="2"/>
+  <text x="230" y="137" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="84" font-weight="650" letter-spacing="8" fill="#f5f0e5">AURELIS</text>
+  <text x="237" y="184" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="550" letter-spacing="6" fill="#d5bd87">GLOBAL SUPPLY · INTELLIGENCE</text>
+</svg>

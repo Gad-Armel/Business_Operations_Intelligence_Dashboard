@@ -6963,66 +6963,19 @@ html_report_table <- function(df,empty_message="No records are available.") {
 
 aurelis_logo_svg <- paste0(
   "<svg xmlns='http://www.w3.org/2000/svg' width='820' height='220' viewBox='0 0 820 220'>",
-  "<rect width='820' height='220' rx='28' fill='white'/>",
-  "<path d='M62 150 L120 45 L178 150 Z' fill='#1479C9'/>",
-  "<path d='M93 150 L120 101 L147 150 Z' fill='#20BFA9'/>",
-  "<text x='210' y='122' font-family='Segoe UI,Arial' font-size='68' font-weight='800' fill='#071A2B'>AURELIS</text>",
-  "<text x='214' y='164' font-family='Segoe UI,Arial' font-size='24' font-weight='600' letter-spacing='5' fill='#1479C9'>GLOBAL SUPPLY</text>",
+  "<rect width='820' height='220' rx='28' fill='#F8F6F0'/>",
+  "<path d='M54 161 114 48 174 161Z' fill='#142331' stroke='#9F8145' stroke-width='3'/>",
+  "<path d='m114 48 33 113h-33Z' fill='#D2B36F'/>",
+  "<path d='m114 48-33 113h33Z' fill='#527F79'/>",
+  "<path d='m85 143 29-53 29 53h-16l-13-25-13 25Z' fill='#F8F6F0'/>",
+  "<path d='M114 48v113' stroke='#F8F6F0' stroke-opacity='.72' stroke-width='2'/>",
+  "<text x='208' y='118' font-family='Inter,Segoe UI,Arial,sans-serif' font-size='66' font-weight='650' letter-spacing='4' fill='#142331'>AURELIS</text>",
+  "<text x='214' y='158' font-family='Inter,Segoe UI,Arial,sans-serif' font-size='20' font-weight='600' letter-spacing='4' fill='#80683A'>GLOBAL SUPPLY  /  INTELLIGENCE</text>",
   "</svg>"
 )
 aurelis_logo_source <- paste0("data:image/svg+xml;utf8,",utils::URLencode(aurelis_logo_svg,reserved=TRUE))
-
-# High-definition dark-interface logo variants. These are SVG vectors, so they
-# remain perfectly sharp at any monitor scale.
-aurelis_logo_header_svg <- paste0(
-  "<svg xmlns='http://www.w3.org/2000/svg' width='900' height='260' viewBox='0 0 900 260'>",
-  "<defs>",
-  "<linearGradient id='triA' x1='0' y1='0' x2='1' y2='1'>",
-  "<stop offset='0%' stop-color='#7EF5FF'/>",
-  "<stop offset='48%' stop-color='#2CD5D2'/>",
-  "<stop offset='100%' stop-color='#2374E1'/>",
-  "</linearGradient>",
-  "<linearGradient id='wordA' x1='0' y1='0' x2='1' y2='1'>",
-  "<stop offset='0%' stop-color='#FFFFFF'/>",
-  "<stop offset='100%' stop-color='#B5D7EF'/>",
-  "</linearGradient>",
-  "<filter id='glowA'><feGaussianBlur stdDeviation='7' result='b'/><feMerge><feMergeNode in='b'/><feMergeNode in='SourceGraphic'/></feMerge></filter>",
-  "</defs>",
-  "<ellipse cx='128' cy='130' rx='111' ry='49' fill='none' stroke='#5CE7F2' stroke-opacity='.42' stroke-width='3' transform='rotate(-22 128 130)'/>",
-  "<path d='M48 198 L128 52 L208 198 Z' fill='url(#triA)' filter='url(#glowA)'/>",
-  "<path d='M89 198 L128 127 L167 198 Z' fill='#23D7B7'/>",
-  "<path d='M128 52 L128 198 M78 145 L178 145' stroke='#D9FFFF' stroke-opacity='.48' stroke-width='2'/>",
-  "<circle cx='128' cy='53' r='7' fill='#FFFFFF'/>",
-  "<text x='255' y='145' font-family='Segoe UI,Arial' font-size='88' font-weight='800' letter-spacing='3' fill='url(#wordA)'>AURELIS</text>",
-  "<text x='261' y='195' font-family='Segoe UI,Arial' font-size='30' font-weight='650' letter-spacing='7' fill='#61E1EF'>GLOBAL SUPPLY  /  INTELLIGENCE</text>",
-  "</svg>"
-)
-aurelis_logo_header_source <- paste0(
-  "data:image/svg+xml;utf8,",
-  utils::URLencode(aurelis_logo_header_svg, reserved = TRUE)
-)
-
-aurelis_logo_sidebar_svg <- paste0(
-  "<svg xmlns='http://www.w3.org/2000/svg' width='420' height='420' viewBox='0 0 420 420'>",
-  "<defs>",
-  "<linearGradient id='triB' x1='0' y1='0' x2='1' y2='1'>",
-  "<stop offset='0%' stop-color='#40D4E4'/>",
-  "<stop offset='100%' stop-color='#1479C9'/>",
-  "</linearGradient>",
-  "</defs>",
-  "<ellipse cx='210' cy='190' rx='170' ry='72' fill='none' stroke='#5CE7F2' stroke-opacity='.38' stroke-width='4' transform='rotate(-24 210 190)'/>",
-  "<path d='M108 214 L210 40 L312 214 Z' fill='url(#triB)'/>",
-  "<path d='M160 214 L210 126 L260 214 Z' fill='#22D9B8'/>",
-  "<path d='M210 40 L210 214 M145 165 L275 165' stroke='#E7FFFF' stroke-opacity='.45' stroke-width='3'/>",
-  "<circle cx='210' cy='40' r='9' fill='#FFFFFF'/>",
-  "<text x='210' y='290' text-anchor='middle' font-family='Segoe UI,Arial' font-size='54' font-weight='800' fill='#F7FAFC'>AURELIS</text>",
-  "<text x='210' y='335' text-anchor='middle' font-family='Segoe UI,Arial' font-size='20' font-weight='650' letter-spacing='4' fill='#55B7F4'>GLOBAL SUPPLY</text>",
-  "</svg>"
-)
-aurelis_logo_sidebar_source <- paste0(
-  "data:image/svg+xml;utf8,",
-  utils::URLencode(aurelis_logo_sidebar_svg, reserved = TRUE)
-)
+aurelis_logo_header_source <- "aurelis-logo.svg"
+aurelis_logo_sidebar_source <- "aurelis-mark.svg"
 report_logo_file <- function() ""
 report_logo_data_uri <- function() aurelis_logo_source
 
@@ -8642,7 +8595,7 @@ ui <- bs4DashPage(
     
     div(
       class = "aurelis-content-watermark",
-      tags$img(src = aurelis_logo_header_source, alt = "")
+      tags$img(src = aurelis_logo_sidebar_source, alt = "")
     ),
 
     uiOutput("aurelis_access_portal"),

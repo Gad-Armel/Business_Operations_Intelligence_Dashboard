@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-labelledby="title desc">
+  <title id="title">Aurelis A monogram</title>
+  <desc id="desc">Faceted champagne and jade triangular monogram.</desc>
+  <path d="M110 16 204 197H16Z" fill="#101923" stroke="#d2b36f" stroke-width="3"/>
+  <path d="m110 16 0 181h94Z" fill="#d2b36f"/>
+  <path d="m110 16 0 181H16Z" fill="#668f80"/>
+  <path d="m63 164 47-91 47 91h-25l-22-43-22 43Z" fill="#f5f0e5"/>
+  <path d="M110 16v181" stroke="#f5f0e5" stroke-opacity=".72" stroke-width="2"/>
+  <path d="M28 142a101 101 0 0 1 144-89" fill="none" stroke="#d2b36f" stroke-opacity=".58" stroke-width="2"/>
+</svg>

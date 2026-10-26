@@ -40,6 +40,8 @@ Press **Ctrl+K** (or Cmd+K) to search and open any workspace. **Light mode / Dar
 
 The navigation is ordered from executive overview through commercial and supply-chain operations to the dedicated **Analyst Studio**. The Analyst Studio keeps the **Analysis Lab**, **Probability Studio**, and **Presentation Studio** as separate workspaces. It is a single-analyst workflow, not a claim of exclusive access: the sample role selector is not authentication, and a production deployment needs company identity and authorization controls. The visual system uses a dark, champagne-accented luxury theme with a persistent light-mode option and responsive layouts. Existing records remain synthetic demonstration data; the redesign does not add or fabricate dataset rows.
 
+The executive overview also includes an interactive **Client portfolio map**. Each point represents a client; its horizontal position is gross margin, vertical position is its share of period revenue, bubble area represents outstanding balance, and gold distinguishes the top five clients by revenue. The dotted guides show the weighted portfolio margin and median client revenue share. Hover for actual values and click a point to open the corresponding client profile. Clients with undefined margins (for example, zero-revenue clients) are omitted from this chart rather than assigned an artificial value. The logo uses matching vector wordmark and monogram assets in the navigation, overview, footer, watermark and browser tab.
+
 ## Files and validation
 
 ```text
@@ -50,6 +52,8 @@ R/overview_server.R       Executive customer table and computed brief
 www/workspace.css         Shared dark design system and responsive layout
 www/aurelis-theme.css     Shared dashboard layout, controls and chart styling
 www/aurelis-luxe.css      Responsive premium finish and light-mode companion
+www/aurelis-logo.svg      Aurelis vector wordmark for dashboard and footer
+www/aurelis-mark.svg      Matching faceted monogram for brand accents
 www/workspace.js          Accessible keyboard command palette
 tests/                    Engine, reactive-module, app and local browser checks
 ```

@@ -5,6 +5,7 @@ library(DT)
 source("R/aurelis_theme.R")
 source("R/analysis_workspace.R")
 source("R/workspace_engine.R")
+source("R/overview_server.R")
 stopifnot(isTRUE(AURELIS_THEME_V2))
 # Calendar comparisons, rollover, missing baselines and zero denominators.
 stopifnot(is.null(aurelis_comparison_period("all", "all")))
@@ -24,6 +25,29 @@ stopifnot(identical(bar$x$data[[1]]$type, "bar"), sum(bar$x$data[[1]]$x) == sum(
 stopifnot(setequal(as.character(bar$x$data[[1]]$key), categories$Staff))
 ring <- plotly::plotly_build(aurelis_category_chart(head(categories, 4), "Staff", "Profit", "same-source"))
 stopifnot(identical(ring$x$data[[1]]$type, "pie"), ring$x$data[[1]]$hole == .58)
+
+portfolio_revenue <- data.frame(
+  Customer = c("Alpha", " Alpha ", "Beta", "Cedar", "Delta", "Elm", "Fern", "No revenue", NA),
+  Revenue = c(100, 50, 250, 100, 90, 80, 70, 0, 40),
+  Gross_Profit = c(30, 10, 75, 25, 18, 24, 14, 0, 10)
+)
+portfolio_ar <- data.frame(
+  Customer = c("Alpha", "Alpha", "Beta", "Unmatched"),
+  Balance_Remaining = c(20, 5, 10, 100)
+)
+portfolio <- aurelis_portfolio_summary(portfolio_revenue, portfolio_ar)
+stopifnot(nrow(portfolio) == 7L, portfolio$Customer[[1]] == "Beta")
+stopifnot(portfolio$Revenue[portfolio$Customer == "Alpha"] == 150)
+stopifnot(portfolio$Outstanding[portfolio$Customer == "Alpha"] == 25)
+stopifnot(isTRUE(all.equal(sum(portfolio$Share), 100)))
+stopifnot(abs(portfolio$Margin[portfolio$Customer == "Alpha"] - 100 * 40 / 150) < 1e-10)
+portfolio_plot <- plotly::plotly_build(aurelis_portfolio_chart(portfolio))
+portfolio_traces <- portfolio_plot$x$data
+stopifnot(length(portfolio_traces) == 2L)
+stopifnot(all(vapply(portfolio_traces, function(trace) identical(trace$type, "scatter"), logical(1))))
+stopifnot(setequal(unlist(lapply(portfolio_traces, function(trace) trace$key)), portfolio$Customer[portfolio$Customer != "No revenue"]))
+stopifnot(all(vapply(portfolio_traces, function(trace) identical(trace$mode, "markers"), logical(1))))
+stopifnot(length(portfolio_plot$x$layout$shapes) == 2L)
 
 rev <- data.frame(Date = as.Date(c("2025-01-01","2025-12-01","2026-01-01")), Year = c(2025,2025,2026), Month = c(1,12,1),
   Revenue = c(100,100,120), Gross_Profit = c(30,30,40), Customer = c("Alpha", "Beta", "Alpha"), Invoice_Ref = c("INV-A","INV-B","INV-C"))
