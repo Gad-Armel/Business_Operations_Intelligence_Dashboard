@@ -8584,12 +8584,6 @@ ui <- bs4DashPage(
     bs4SidebarMenu(
       id = "sidebar_tabs",
       bs4SidebarMenuItem(
-        'Analysis & Probability', icon = icon('flask'), startExpanded = TRUE,
-        bs4SidebarMenuSubItem('Analysis Lab', tabName = 'analysis_lab', icon = icon('flask')),
-        bs4SidebarMenuSubItem('Presentation Studio', tabName = 'presentation_studio', icon = icon('desktop')),
-        bs4SidebarMenuSubItem('Probability Studio', tabName = 'financial_statistics', icon = icon('calculator'))
-      ),
-      bs4SidebarMenuItem(
         "Command Center", icon = icon("bullseye"), startExpanded = TRUE,
         bs4SidebarMenuSubItem("Executive Overview", tabName = "exec_overview", icon = icon("tachometer-alt"), selected = TRUE),
         bs4SidebarMenuSubItem("KPI Command Center", tabName = "kpi_board", icon = icon("th-large")),
@@ -8610,6 +8604,12 @@ ui <- bs4DashPage(
         bs4SidebarMenuSubItem("Inventory & Warehouse", tabName = "inventory_tab", icon = icon("warehouse")),
         bs4SidebarMenuSubItem("Suppliers & Procurement", tabName = "buyer_tool", icon = icon("handshake")),
         bs4SidebarMenuSubItem("Accounts Receivable", tabName = "ar_tab", icon = icon("file-invoice-dollar"))
+      ),
+      bs4SidebarMenuItem(
+        "Analyst Studio", icon = icon("chart-pie"), startExpanded = TRUE,
+        bs4SidebarMenuSubItem("Analysis Lab", tabName = "analysis_lab", icon = icon("flask")),
+        bs4SidebarMenuSubItem("Probability Studio", tabName = "financial_statistics", icon = icon("calculator")),
+        bs4SidebarMenuSubItem("Presentation Studio", tabName = "presentation_studio", icon = icon("desktop"))
       ),
       bs4SidebarMenuItem(
         "Workspace & Studio", icon = icon("magic"), startExpanded = TRUE,

@@ -1,0 +1,324 @@
+/* AURELIS signature finish: warm metal accents, calm contrast and tactile controls. */
+body.aurelis-v2 {
+  --lux-bg: #0a1018;
+  --lux-panel: #111a25;
+  --lux-raised: #172333;
+  --lux-line: #29394a;
+  --lux-text: #edf2f7;
+  --lux-muted: #a5b2c1;
+  --lux-gold: #d8b875;
+  --lux-gold-bright: #f0d69a;
+  --lux-mint: #79d8bb;
+  --lux-shadow: 0 16px 42px rgba(0, 0, 0, .22);
+  color: var(--lux-text)!important;
+}
+
+body.aurelis-v2:not(.aw-light) .content-wrapper,
+body.aurelis-v2:not(.aw-light) .wrapper {
+  background:
+    radial-gradient(ellipse at 84% 4%, rgba(91, 116, 133, .11), transparent 32rem),
+    radial-gradient(ellipse at 18% 42%, rgba(45, 91, 86, .08), transparent 34rem),
+    var(--lux-bg)!important;
+}
+
+body.aurelis-v2 .main-header {
+  background: rgba(13, 20, 29, .94)!important;
+  border-bottom: 1px solid rgba(216, 184, 117, .2)!important;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .13)!important;
+  backdrop-filter: blur(18px);
+}
+
+body.aurelis-v2 .main-sidebar {
+  background: linear-gradient(180deg, #111923 0%, #0d141d 100%)!important;
+  border-right: 1px solid rgba(216, 184, 117, .19)!important;
+}
+
+body.aurelis-v2 .brand-link {
+  border-bottom: 1px solid rgba(216, 184, 117, .19)!important;
+}
+
+body.aurelis-v2 .nav-sidebar>.nav-item {
+  margin-bottom: 8px!important;
+}
+
+body.aurelis-v2 .nav-sidebar>.nav-item>.nav-link {
+  color: #c4b38e!important;
+  letter-spacing: .09em!important;
+  transition: color .18s ease, background .18s ease, border-color .18s ease;
+}
+
+body.aurelis-v2 .nav-sidebar .nav-treeview .nav-link {
+  transition: color .18s ease, background .18s ease, transform .18s ease;
+}
+
+body.aurelis-v2 .nav-sidebar .nav-treeview .nav-link:hover {
+  background: rgba(216, 184, 117, .08)!important;
+  color: var(--lux-gold-bright)!important;
+  transform: translateX(2px);
+}
+
+body.aurelis-v2 .nav-sidebar .nav-link.active {
+  background: linear-gradient(100deg, rgba(216, 184, 117, .16), rgba(121, 216, 187, .08))!important;
+  color: #f5e5bf!important;
+  box-shadow: inset 2px 0 var(--lux-gold)!important;
+}
+
+body.aurelis-v2 .nav-sidebar .nav-link.active .nav-icon {
+  color: var(--lux-gold-bright)!important;
+}
+
+body.aurelis-v2 .aw-page-heading {
+  padding: 12px 0 18px;
+  border-bottom: 1px solid rgba(216, 184, 117, .16);
+  margin-bottom: 22px!important;
+}
+
+body.aurelis-v2 .aw-eyebrow,
+body.aurelis-v2 .v2-scope-label {
+  color: var(--lux-gold)!important;
+  letter-spacing: .16em!important;
+}
+
+body.aurelis-v2 .aw-page-heading h1 {
+  background: linear-gradient(105deg, #fff9eb 4%, #dbc28c 56%, #a9d8c8 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.aurelis-v2 .card,
+body.aurelis-v2 .aw-panel,
+body.aurelis-v2 .aw-overview-kpis,
+body.aurelis-v2 .prism-filter-dock,
+body.aurelis-v2 .future-page-hero {
+  background: linear-gradient(145deg, rgba(24, 35, 48, .97), rgba(15, 23, 33, .98))!important;
+  border: 1px solid rgba(148, 166, 184, .16)!important;
+  border-radius: 11px!important;
+  box-shadow: var(--lux-shadow)!important;
+  overflow: hidden;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+body.aurelis-v2 .card:hover,
+body.aurelis-v2 .aw-panel:hover {
+  border-color: rgba(216, 184, 117, .34)!important;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, .28)!important;
+}
+
+body.aurelis-v2 .card-header,
+body.aurelis-v2 .aw-panel-heading {
+  background: linear-gradient(90deg, rgba(216, 184, 117, .055), transparent 72%)!important;
+  border-bottom: 1px solid rgba(216, 184, 117, .13)!important;
+}
+
+body.aurelis-v2 .card-header .card-title,
+body.aurelis-v2 .aw-panel-heading h3 {
+  color: #f0e6d1!important;
+}
+
+body.aurelis-v2 .aw-overview-kpis {
+  padding: 19px 0!important;
+}
+
+body.aurelis-v2 .aw-overview-kpis>.aw-stat {
+  border-color: rgba(216, 184, 117, .17)!important;
+}
+
+body.aurelis-v2 .aw-stat>strong,
+body.aurelis-v2 .v2-kpi>strong {
+  color: #f6edda!important;
+  text-shadow: 0 0 28px rgba(216, 184, 117, .1);
+}
+
+body.aurelis-v2 .v2-scope-bar {
+  border-color: rgba(216, 184, 117, .16)!important;
+  background: rgba(18, 27, 38, .78)!important;
+  border-radius: 9px!important;
+}
+
+body.aurelis-v2 .v2-tool,
+body.aurelis-v2 .v2-scope-chip,
+body.aurelis-v2 .aw-theme-toggle,
+body.aurelis-v2 .aw-command-trigger {
+  border-color: rgba(216, 184, 117, .25)!important;
+  transition: color .18s ease, background .18s ease, border-color .18s ease, transform .18s ease;
+}
+
+body.aurelis-v2 .v2-tool:hover,
+body.aurelis-v2 .v2-scope-chip:hover,
+body.aurelis-v2 .aw-theme-toggle:hover,
+body.aurelis-v2 .aw-command-trigger:hover {
+  background: rgba(216, 184, 117, .12)!important;
+  border-color: rgba(216, 184, 117, .52)!important;
+  color: var(--lux-gold-bright)!important;
+  transform: translateY(-1px);
+}
+
+body.aurelis-v2 .btn,
+body.aurelis-v2 .form-control,
+body.aurelis-v2 .selectize-input,
+body.aurelis-v2 select {
+  border-radius: 7px!important;
+}
+
+body.aurelis-v2 .btn-primary {
+  background: linear-gradient(120deg, #dfc17e, #b49a62)!important;
+  border-color: #d1b471!important;
+  color: #17202a!important;
+  box-shadow: 0 5px 16px rgba(216, 184, 117, .15)!important;
+}
+
+body.aurelis-v2 .btn-primary:hover {
+  background: linear-gradient(120deg, #f0d69a, #c7aa70)!important;
+  color: #101821!important;
+  transform: translateY(-1px);
+}
+
+body.aurelis-v2 .aw-workspace :focus-visible,
+body.aurelis-v2 .main-sidebar :focus-visible,
+body.aurelis-v2 .main-header :focus-visible {
+  outline: 2px solid var(--lux-gold)!important;
+  outline-offset: 3px!important;
+}
+
+body.aurelis-v2 .form-control:focus,
+body.aurelis-v2 .selectize-input.focus {
+  border-color: var(--lux-gold)!important;
+  box-shadow: 0 0 0 3px rgba(216, 184, 117, .13)!important;
+}
+
+body.aurelis-v2 .nav-tabs {
+  border-bottom-color: rgba(216, 184, 117, .2)!important;
+}
+
+body.aurelis-v2 .nav-tabs .nav-link.active {
+  border-bottom-color: var(--lux-gold)!important;
+  color: var(--lux-gold-bright)!important;
+}
+
+body.aurelis-v2 table.dataTable thead th {
+  background: #1b2836!important;
+  color: #d9c89f!important;
+}
+
+body.aurelis-v2 table.dataTable tbody tr:hover td {
+  background: #1d2a37!important;
+}
+
+body.aurelis-v2 .aw-insight-surface,
+body.aurelis-v2 .aw-note {
+  border-radius: 8px!important;
+}
+
+body.aurelis-v2 .aw-insight-surface {
+  background: linear-gradient(115deg, rgba(42, 63, 57, .68), rgba(22, 35, 42, .92))!important;
+  border-color: rgba(121, 216, 187, .24)!important;
+}
+
+body.aurelis-v2 .aw-brief-item {
+  border-color: rgba(216, 184, 117, .13)!important;
+}
+
+body.aurelis-v2 .aw-brief-label {
+  color: var(--lux-gold)!important;
+}
+
+body.aurelis-v2 .aw-workspace .modebar-btn:hover path {
+  fill: var(--lux-gold-bright)!important;
+}
+
+body.aurelis-v2.aw-light {
+  --lux-bg: #f3f1eb;
+  --lux-panel: #fffefa;
+  --lux-raised: #f8f5ed;
+  --lux-line: #ded7c7;
+  --lux-text: #253141;
+  --lux-muted: #5a6776;
+  --lux-gold: #876a30;
+  --lux-gold-bright: #72551c;
+  --lux-mint: #267765;
+  --lux-shadow: 0 12px 32px rgba(38, 46, 55, .07);
+}
+
+body.aurelis-v2.aw-light .content-wrapper,
+body.aurelis-v2.aw-light .wrapper {
+  background:
+    radial-gradient(ellipse at 84% 4%, rgba(216, 184, 117, .12), transparent 32rem),
+    #f3f1eb!important;
+}
+
+body.aurelis-v2.aw-light .main-header {
+  background: rgba(255, 254, 250, .94)!important;
+  border-bottom-color: rgba(135, 106, 48, .2)!important;
+}
+
+body.aurelis-v2.aw-light .main-sidebar {
+  background: linear-gradient(180deg, #fffefa 0%, #f6f2e9 100%)!important;
+  border-right-color: rgba(135, 106, 48, .2)!important;
+}
+
+body.aurelis-v2.aw-light .card,
+body.aurelis-v2.aw-light .aw-panel,
+body.aurelis-v2.aw-light .aw-overview-kpis,
+body.aurelis-v2.aw-light .prism-filter-dock,
+body.aurelis-v2.aw-light .future-page-hero {
+  background: linear-gradient(145deg, #fffefa, #faf8f2)!important;
+  border-color: #e2dccf!important;
+}
+
+body.aurelis-v2.aw-light .card-header,
+body.aurelis-v2.aw-light .aw-panel-heading {
+  background: linear-gradient(90deg, rgba(135, 106, 48, .07), transparent 72%)!important;
+  border-bottom-color: #e8e1d3!important;
+}
+
+body.aurelis-v2.aw-light .card-header .card-title,
+body.aurelis-v2.aw-light .aw-panel-heading h3,
+body.aurelis-v2.aw-light .aw-stat>strong,
+body.aurelis-v2.aw-light .v2-kpi>strong {
+  color: #273447!important;
+}
+
+body.aurelis-v2.aw-light .aw-page-heading h1 {
+  background-image: linear-gradient(105deg, #29384a, #80652e 65%, #397b6c);
+}
+
+body.aurelis-v2.aw-light .v2-scope-bar {
+  background: rgba(255, 254, 250, .88)!important;
+  border-color: #e2dccf!important;
+}
+
+body.aurelis-v2.aw-light .aw-insight-surface {
+  background: linear-gradient(115deg, #eaf3ec, #f5f7f3)!important;
+  border-color: #cbded0!important;
+}
+
+body.aurelis-v2.aw-light table.dataTable thead th {
+  background: #f2eee5!important;
+  color: #66552f!important;
+}
+
+body.aurelis-v2.aw-light table.dataTable tbody tr:hover td {
+  background: #f4f1e8!important;
+}
+
+@media (max-width: 767px) {
+  body.aurelis-v2 .aw-page-heading {
+    padding-top: 4px;
+  }
+
+  body.aurelis-v2 .card,
+  body.aurelis-v2 .aw-panel {
+    border-radius: 9px!important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.aurelis-v2 *,
+  body.aurelis-v2 *::before,
+  body.aurelis-v2 *::after {
+    scroll-behavior: auto!important;
+    transition-duration: .01ms!important;
+    animation-duration: .01ms!important;
+  }
+}

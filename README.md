@@ -38,6 +38,8 @@ The decision brief and analyst brief are first-class surfaces driven by actual c
 
 Press **Ctrl+K** (or Cmd+K) to search and open any workspace. **Light mode / Dark mode** changes the workspace theme and remembers your browser preference; the navigation remains dark. Plotly's toolbar exports charts as images. The existing Report / Export controls remain available on their existing pages. The new Lab exports CSV; it does not promise a PDF or Excel analysis report.
 
+The navigation is ordered from executive overview through commercial and supply-chain operations to the dedicated **Analyst Studio**. The Analyst Studio keeps the **Analysis Lab**, **Probability Studio**, and **Presentation Studio** as separate workspaces. It is a single-analyst workflow, not a claim of exclusive access: the sample role selector is not authentication, and a production deployment needs company identity and authorization controls. The visual system uses a dark, champagne-accented luxury theme with a persistent light-mode option and responsive layouts. Existing records remain synthetic demonstration data; the redesign does not add or fabricate dataset rows.
+
 ## Files and validation
 
 ```text
@@ -46,6 +48,8 @@ R/workspace_engine.R      Pure filtering, file reading, statistics and simulatio
 R/analysis_workspace.R    Shiny workspace module and executive UI
 R/overview_server.R       Executive customer table and computed brief
 www/workspace.css         Shared dark design system and responsive layout
+www/aurelis-theme.css     Shared dashboard layout, controls and chart styling
+www/aurelis-luxe.css      Responsive premium finish and light-mode companion
 www/workspace.js          Accessible keyboard command palette
 tests/                    Engine, reactive-module, app and local browser checks
 ```
