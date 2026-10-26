@@ -6,9 +6,10 @@ aurelis_theme_assets <- function() {
   shiny::tagList(
     shiny::tags$meta(name = "aurelis-theme-v2", content = "enabled"),
     shiny::tags$link(rel = "stylesheet", href = "aurelis-theme.css"),
-    shiny::tags$link(rel = "stylesheet", href = "aurelis-luxe.css"),
+    shiny::tags$link(rel = "stylesheet", href = "aurelis-luxe.css?v=about-guide-1"),
     shiny::tags$link(rel = "icon", type = "image/svg+xml", href = "favicon.svg"),
-    shiny::tags$script(src = "aurelis-ui.js")
+    shiny::tags$script(src = "aurelis-ui.js?v=about-guide-1"),
+    shiny::tags$script(src = "aurelis-help.js?v=about-guide-1")
   )
 }
 

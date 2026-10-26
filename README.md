@@ -42,6 +42,8 @@ The navigation is ordered from executive overview through commercial and supply-
 
 The executive overview also includes an interactive **Client portfolio map**. Each point represents a client; its horizontal position is gross margin, vertical position is its share of period revenue, bubble area represents outstanding balance, and gold distinguishes the top five clients by revenue. The dotted guides show the weighted portfolio margin and median client revenue share. Hover for actual values and click a point to open the corresponding client profile. Clients with undefined margins (for example, zero-revenue clients) are omitted from this chart rather than assigned an artificial value. The logo uses matching vector wordmark and monogram assets in the navigation, overview, footer, watermark and browser tab.
 
+The complete menu-by-menu guide, examples, data-scope notes, and demo limitations are in [ABOUT.md](ABOUT.md). In the dashboard, use **Help** in the top bar (or press `?`) for the searchable page guide, current-page orientation, and guided task routes.
+
 ## Files and validation
 
 ```text

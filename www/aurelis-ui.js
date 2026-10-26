@@ -87,6 +87,7 @@
     let favorites = read('favorites', []).filter(x => typeof x === 'string').slice(0, 8);
     let recents = read('recent', []).filter(x => typeof x === 'string').slice(0, 6);
     let page = 'exec_overview';
+    window.aurelisCurrentPage = page;
     let previousPage = '';
     const restorePage = read('last-page', null);
     let restoredPage = false;
@@ -462,6 +463,8 @@
     function changedPage(id) {
       if (!id || page === id && previousPage) return;
       previousPage = page; page = id;
+      window.aurelisCurrentPage = id;
+      window.dispatchEvent(new CustomEvent('aurelis:pagechange', {detail: {page: id}}));
       recents = [id, ...recents.filter(x => x !== id)].slice(0, 6); write('recent', recents);
       if (restoredPage) write('last-page', id);
       mobile.querySelectorAll('[data-v2-page]').forEach(b => { if (b.dataset.v2Page === id) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); });
@@ -482,6 +485,8 @@
       Shiny.addCustomMessageHandler('aurelis-quote-step', step => setTimeout(() => { quoteSetup(); goQuoteStep(Number(step)); }, 300));
       Shiny.addCustomMessageHandler('aurelis-capabilities', message => {
         allowedPages = message.pages;
+        window.aurelisCapabilities = message;
+        window.dispatchEvent(new CustomEvent('aurelis:capabilities', {detail: message}));
         body.dataset.workspaceRole = message.role;
         renderFavorites();
         const layouts = {

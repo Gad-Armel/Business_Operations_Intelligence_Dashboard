@@ -8489,12 +8489,29 @@ ui <- bs4DashPage(
           inputId = "report_current_page",
           label = "Report / Export",
           icon = icon("file-export"),
-          
+
           class = "nav-link navbar-report-button"
         )
       ),
-      
-      
+
+      if (isTRUE(AURELIS_THEME_V2)) {
+        tags$li(
+          class = "nav-item dropdown aurelis-help-nav",
+          tags$button(
+            id = "aurelis-help-button",
+            type = "button",
+            class = "nav-link aurelis-help-trigger",
+            `aria-haspopup` = "dialog",
+            `aria-controls` = "aurelis-help-dialog",
+            `aria-label` = "Open dashboard help",
+            title = "Open the interactive field guide (shortcut: ?)",
+            icon("question-circle"),
+            tags$span("Help")
+          )
+        )
+      },
+
+
       # ========================================================================
       # INFORMATION
       # ========================================================================
